@@ -1,0 +1,32 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+--	This circuit signExtend or ZeroExtend bytes or half words coming from memory/reg_file to the reg_file/memory depending on a select signal.
+entity Mem_SignExt is	
+	 port(Reg_in, Mem_in: in std_logic_vector(31 downto 0);
+		 Sel: in std_logic_vector(2 downto 0);
+		 To_Mem, To_Reg: out std_logic_vector(31 downto 0));
+end entity;
+
+architecture arch of Mem_SignExt is
+	
+Begin 
+	Process(Sel, Reg_in, Mem_in) Begin 
+		Case Sel is 
+			when "000"=> To_Mem<= Reg_in;
+						 To_Reg<= Mem_in;
+			--ZeroExt for Unsigned Values			
+			when "001"=> To_Mem<= (31 downto 8=>'0') & Reg_in (7 downto 0);
+						 To_Reg<= (31 downto 8=>'0') & Mem_in (7 downto 0);
+			when "010"=> To_Mem<= (31 downto 16=>'0') & Reg_in (15 downto 0);
+						 To_Reg<= (31 downto 16=>'0') & Mem_in (15 downto 0);
+			--SignExt for Signed values
+			when "101"=> To_Mem<= (31 downto 8=>Reg_in(7))  & Reg_in (7 downto 0);
+						 To_Reg<= (31 downto 8=>Mem_in(7))  & Mem_in (7 downto 0);
+			when "110"=> To_Mem<= (31 downto 16=>Reg_in(15)) & Reg_in (15 downto 0);
+						 To_Reg<= (31 downto 16=>Mem_in(15)) & Mem_in (15 downto 0);
+			when others=> To_Mem<= (others=>'Z');
+						  To_Reg<= (others=>'Z');
+		end case;
+	end process;
+end architecture;
+			

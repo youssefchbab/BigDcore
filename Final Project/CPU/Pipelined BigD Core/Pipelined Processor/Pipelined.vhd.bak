@@ -1,0 +1,107 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+--Includes the Datapath and the control unit (The memory is set as a perapheral)
+entity Pipelined is
+  port (
+    clk, reset: in std_logic;
+    instruction: in std_logic_vector (31 downto 0);
+    ReadData: in std_logic_vector (31 downto 0);
+    MemWrite: out std_logic;
+    Pc: out std_logic_vector(31 downto 0) ;
+    DataAdr: out std_logic_vector(31 downto 0) ;
+    WriteData: out std_logic_vector(31 downto 0)
+  ) ;
+end Pipelined;
+
+architecture arch of Pipelined is
+  component P_Control_Unit is
+    port(
+      clk, reset: in std_logic;
+      Zero, Alu_LSB: in std_logic;
+      Funct7: in std_logic_vector(6 downto 0) ;
+      Opcode: in std_logic_vector(6 downto 0) ;
+      Funct3: in std_logic_vector(2 downto 0) ;
+      Alu_control: out std_logic_vector(3 downto 0) ;
+      ImmExt: out std_logic_vector(2 downto 0);
+      Word_Half_Byte: out std_logic_vector(1 downto 0);
+      RegWrite: out std_logic;
+      MemWrite: out std_logic;
+      Mem_Ext_cntr: out std_logic_vector(2 downto 0);
+      Write_Back_cntr: out std_logic_vector(1 downto 0);
+      Pc_clr: out std_logic;
+      Pc_select: out std_logic_vector(1 downto 0);
+      Alu_input: out std_logic;
+      Alu_input_for_auipc_and_lui: out std_logic_vector(1 downto 0)
+    );
+  end component;
+  component P_Datapath is
+    port (
+      Clk,Reset: in std_logic;
+      Alu_Input_for_auipc_and_lui: in std_logic_vector(1 downto 0) ;
+      Alu_cntr: in std_logic_vector(3 downto 0) ;
+      Alu_input: in std_logic;
+      ImmExt_cntr: in std_logic_vector(2 downto 0) ;
+      MemExt_cntr: in std_logic_vector(2 downto 0) ;
+      Pc_clr: in std_logic; --Later to be replaced by Reset
+      Pc_select: in std_logic_vector(1 downto 0) ;
+      Reg_file_WE: in std_logic;
+      Word_Half_Byte_sel: in std_logic_vector(1 downto 0) ;
+      Write_back_cntr: in std_logic_vector(1 downto 0) ;
+      ReadData: in std_logic_vector(31 downto 0) ;
+      Instruction: in std_logic_vector(31 downto 0);
+      Alu_LSB: out std_logic;
+      Zero: out std_logic;--Siganl indicating the result is 0
+      DataAdr: out std_logic_vector(31 downto 0) ;
+      WriteData: out std_logic_vector(31 downto 0) ;
+      PC: out std_logic_vector(31 downto 0)
+      --Funct3, Funct7 and Opcode are removed from original
+    );
+  end component;
+  Signal Alu_LSB, Zero: std_logic ;
+  Signal Alu_control: std_logic_vector(3 downto 0) ;
+  Signal ImmExt, Mem_Ext_cntr: std_logic_vector(2 downto 0) ;
+  Signal Word_Half_Byte, Write_Back_cntr: std_logic_vector(1 downto 0) ;
+  Signal Pc_select, Alu_input_for_auipc_and_lui: std_logic_vector(1 downto 0) ;
+  Signal RegWrite, Pc_clr, Alu_input: std_logic;
+  
+begin
+
+  Datapath: P_Datapath port map(
+    clk, reset,
+    Alu_input_for_auipc_and_lui,
+    Alu_control,
+    Alu_input,
+    ImmExt,
+    Mem_Ext_cntr,
+    Pc_clr,
+    Pc_select,
+    RegWrite,
+    Word_Half_Byte,
+    Write_Back_cntr,
+    ReadData,
+    Instruction,
+    Alu_LSB,
+    Zero,
+    DataAdr,
+    WriteData,
+    PC
+  );
+  ControlUnit: P_Control_Unit port map(
+    clk, reset,
+    Alu_LSB, Zero,
+    instruction(31 downto 25),
+    instruction(6 downto 0),
+    instruction(14 downto 12),
+    Alu_control;
+    ImmExt;
+    Word_Half_Byte;
+    RegWrite;
+    MemWrite;
+    Mem_Ext_cntr;
+    Write_Back_cntr;
+    Pc_clr;
+    Pc_select;
+    Alu_input;
+    Alu_input_for_auipc_and_lui
+  );
+end arch ; -- arch

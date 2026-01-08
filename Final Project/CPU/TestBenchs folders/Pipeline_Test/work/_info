@@ -1,0 +1,1280 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dF:/Quartus18.1/Learning/TestBneches/CPU_Test
+Eadder
+Z0 w1744903976
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dC:/Users/dell/Desktop/Final Project/CPU/TestBenchs folders/Pipeline_Test
+Z5 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Adder.vhd
+Z6 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Adder.vhd
+l0
+L5
+VYVoRTmN<C_KVBW`739cL[1
+!s100 a1;ad^Dh]7QLm?bhGFCL60
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1763583685
+!i10b 1
+Z9 !s108 1763583685.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Adder.vhd|
+Z11 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Adder.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Aarch
+R1
+R2
+R3
+DEx4 work 5 adder 0 22 YVoRTmN<C_KVBW`739cL[1
+l13
+L11
+V@ZEJ=ZZU_6mV;lQ92^>B^1
+!s100 7n6b^Na7c:K_a>:?gzcCn0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eadderss_shift
+Z14 w1746044657
+R1
+R2
+R3
+R4
+Z15 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Adderss_Shift.vhd
+Z16 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Adderss_Shift.vhd
+l0
+L5
+V?ED?KZ8b9E@T=imHBh=el0
+!s100 noohaR_<V@lE@?=zRW_kK0
+R7
+32
+Z17 !s110 1763583686
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Adderss_Shift.vhd|
+Z19 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Adderss_Shift.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 13 adderss_shift 0 22 ?ED?KZ8b9E@T=imHBh=el0
+l12
+L10
+VElEEo>Vdn@=;`zTm6ehjL3
+!s100 AlH^f59]RYA0DW8O1Xo?:3
+R7
+32
+R17
+!i10b 1
+R9
+R18
+R19
+!i113 1
+R12
+R13
+Ealu
+Z20 w1763400789
+R1
+R2
+R3
+R4
+Z21 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/ALU.vhd
+Z22 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/ALU.vhd
+l0
+L5
+VXfCGV_azFL]d_W`7ZN=@Z0
+!s100 ?Q<^a:obDCnE7H0:GCWGG3
+R7
+32
+R17
+!i10b 1
+Z23 !s108 1763583686.000000
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/ALU.vhd|
+Z25 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/ALU.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 3 alu 0 22 XfCGV_azFL]d_W`7ZN=@Z0
+l24
+L14
+Ve<zokP[=VCJob]oP7Pi8Q2
+!s100 4jl9KZOB]<Y`JLEZKL;^z2
+R7
+32
+R17
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R12
+R13
+Ealu_cntr
+Z26 w1748978328
+R2
+R3
+R4
+Z27 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Alu_cntr.vhd
+Z28 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Alu_cntr.vhd
+l0
+L4
+V6:JbKHleDgg@CMd4OW2?@3
+!s100 ^Ug3z=WO4U28EgJSaFSeN1
+R7
+32
+R17
+!i10b 1
+R23
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Alu_cntr.vhd|
+Z30 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Alu_cntr.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 8 alu_cntr 0 22 6:JbKHleDgg@CMd4OW2?@3
+l55
+L13
+VI=^YEH>bLR>OiRlAK:Z:03
+!s100 Z`hU13lJPaj?R1R5W:^[W1
+R7
+32
+R17
+!i10b 1
+R23
+R29
+R30
+!i113 1
+R12
+R13
+Ebit_manipulation_load
+Z31 w1749041909
+R2
+R3
+R4
+Z32 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Bit_Manipulation_Load.vhd
+Z33 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Bit_Manipulation_Load.vhd
+l0
+L5
+V]X1_dH1IQSjmUB=nN6kQJ3
+!s100 X::3YC1Y66Og7B3JLg>M91
+R7
+32
+R17
+!i10b 1
+R23
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Bit_Manipulation_Load.vhd|
+Z35 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Bit_Manipulation_Load.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 21 bit_manipulation_load 0 22 ]X1_dH1IQSjmUB=nN6kQJ3
+l26
+L13
+VaN1OnabFWQ3[0:Fm3H2263
+!s100 XhE7[5ndLkhAMWPGN@[cE1
+R7
+32
+R17
+!i10b 1
+R23
+R34
+R35
+!i113 1
+R12
+R13
+Ebit_manipulation_store
+Z36 w1759841929
+R2
+R3
+R4
+Z37 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Bit_Manipulation_Store.vhd
+Z38 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Bit_Manipulation_Store.vhd
+l0
+L5
+VggVOQAYn9`QN7iOYYd[]f1
+!s100 UQkTF<EG7SSNR<zjj:Bi62
+R7
+32
+R17
+!i10b 1
+R23
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Bit_Manipulation_Store.vhd|
+Z40 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Bit_Manipulation_Store.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 22 bit_manipulation_store 0 22 ggVOQAYn9`QN7iOYYd[]f1
+l26
+L13
+VWC10MhW=J1INnY_e8eYI82
+!s100 jJ`dJ13?]^54``]OLm0bC0
+R7
+32
+R17
+!i10b 1
+R23
+R39
+R40
+!i113 1
+R12
+R13
+Econstant_value
+Z41 w1746030364
+R1
+R2
+R3
+R4
+Z42 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Constant_value.vhd
+Z43 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Constant_value.vhd
+l0
+L5
+Vg2>oWJ]B3^9ZcXHA=I8bP2
+!s100 7ViAn9SJzl[mG3BSPOO]A2
+R7
+32
+R17
+!i10b 1
+R23
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Constant_value.vhd|
+Z45 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Constant_value.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 14 constant_value 0 22 g2>oWJ]B3^9ZcXHA=I8bP2
+l13
+L11
+V:X?O:3m[>WB>_1QLI2n3H0
+!s100 Y>7a8zD^4cYcf1G2XK1_82
+R7
+32
+R17
+!i10b 1
+R23
+R44
+R45
+!i113 1
+R12
+R13
+Edata_mem
+Z46 w1744672023
+R1
+R2
+R3
+R4
+Z47 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Data_mem.vhd
+Z48 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Data_mem.vhd
+l0
+L5
+VQBZI^JW>FG5BfTPimdcaW1
+!s100 ^TbH@HgI0ef0bY8QQ58dG3
+R7
+32
+R17
+!i10b 1
+R23
+Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Data_mem.vhd|
+Z50 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Data_mem.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 8 data_mem 0 22 QBZI^JW>FG5BfTPimdcaW1
+l14
+L11
+VBeM1jCkW7dOEokzSi5m[23
+!s100 lhbZ;z>O>X=8>0NLeDLmQ0
+R7
+32
+R17
+!i10b 1
+R23
+R49
+R50
+!i113 1
+R12
+R13
+Eexcution_flow
+Z51 w1763574199
+R2
+R3
+R4
+Z52 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/excution_flow.vhd
+Z53 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/excution_flow.vhd
+l0
+L4
+Vd]Fdin:5f]dF3AzZak6_f1
+!s100 Uk4`TG[bdNF1YQgiTf`BQ3
+R7
+32
+Z54 !s110 1763583687
+!i10b 1
+Z55 !s108 1763583687.000000
+Z56 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/excution_flow.vhd|
+Z57 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/excution_flow.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 13 excution_flow 0 22 d]Fdin:5f]dF3AzZak6_f1
+l16
+L14
+V3hmSH2nET@bl19K`0A32Y1
+!s100 g>7MdO4=1a^Am5_3Zl6jV0
+R7
+32
+R54
+!i10b 1
+R55
+R56
+R57
+!i113 1
+R12
+R13
+Efirst_stage
+Z58 w1746102340
+R2
+R3
+R4
+Z59 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/First_stage.vhd
+Z60 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/First_stage.vhd
+l0
+L4
+V;YK>`QS@nOZOQX^A:OQLN3
+!s100 P[PALIM13=gBhJc3TW3;C0
+R7
+32
+R54
+!i10b 1
+R55
+Z61 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/First_stage.vhd|
+Z62 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/First_stage.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 11 first_stage 0 22 ;YK>`QS@nOZOQX^A:OQLN3
+l13
+L10
+VWCTQ2F0ak=SNGJWGCB^JJ0
+!s100 5l@CBdmFH4_Q=Pk=UA_2W1
+R7
+32
+R54
+!i10b 1
+R55
+R61
+R62
+!i113 1
+R12
+R13
+Eimmext
+Z63 w1748858178
+R2
+R3
+R4
+Z64 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/ImmExt.vhd
+Z65 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/ImmExt.vhd
+l0
+L5
+V0eiX9L7]hfZGdJbj6J:?f3
+!s100 V;KhNeR0B]jMFDOa_jW]03
+R7
+32
+R54
+!i10b 1
+R55
+Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/ImmExt.vhd|
+Z67 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/ImmExt.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 6 immext 0 22 0eiX9L7]hfZGdJbj6J:?f3
+l13
+L11
+VM^^jHBMmSdIn:I6Z@:Imc0
+!s100 SkIS>dmo@CJ]h7?IR;XK<3
+R7
+32
+R54
+!i10b 1
+R55
+R66
+R67
+!i113 1
+R12
+R13
+Elast_stage
+Z68 w1746102328
+R2
+R3
+R4
+Z69 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Last_stage.vhd
+Z70 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Last_stage.vhd
+l0
+L4
+VGkGJNQ94]4KS<^?WT?fb>2
+!s100 jg34<k]mKRZ4GORE^S30m0
+R7
+32
+R54
+!i10b 1
+R55
+Z71 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Last_stage.vhd|
+Z72 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Last_stage.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 10 last_stage 0 22 GkGJNQ94]4KS<^?WT?fb>2
+l13
+L10
+V=ZhTl@3g0ijzKgbS<k:JQ1
+!s100 W]jj4PGnVObeZER4Y<]jV3
+R7
+32
+R54
+!i10b 1
+R55
+R71
+R72
+!i113 1
+R12
+R13
+Elpm_dff0
+Z73 w1745183239
+R2
+R3
+R4
+Z74 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/lpm_dff0.vhd
+Z75 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/lpm_dff0.vhd
+l0
+L42
+VdU<CJkGROK<O3ac6Si=460
+!s100 SaK3R>a7oJLD?ZM@zfSA41
+R7
+32
+Z76 !s110 1763583688
+!i10b 1
+Z77 !s108 1763583688.000000
+Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/lpm_dff0.vhd|
+Z79 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/lpm_dff0.vhd|
+!i113 1
+R12
+R13
+Asyn
+R2
+R3
+DEx4 work 8 lpm_dff0 0 22 dU<CJkGROK<O3ac6Si=460
+l73
+L53
+V^b7?R3LP2V[N8E7;_iLM52
+!s100 RTf^:>b>YP_kZ;T_=>@m;0
+R7
+32
+R76
+!i10b 1
+R77
+R78
+R79
+!i113 1
+R12
+R13
+Elpm_mux0
+Z80 w1748786995
+Z81 DPx3 lpm 14 lpm_components 0 22 BZZBj]8LhndN7CkCjD@L`2
+R2
+R3
+R4
+Z82 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/lpm_mux0.vhd
+Z83 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/lpm_mux0.vhd
+l0
+L42
+V;QmlGAYR0mOeAf4=EfYEW2
+!s100 PAD^dD3U>X<E`<;RD8US02
+R7
+32
+R76
+!i10b 1
+R77
+Z84 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/lpm_mux0.vhd|
+Z85 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/lpm_mux0.vhd|
+!i113 1
+R12
+R13
+Asyn
+R81
+R2
+R3
+DEx4 work 8 lpm_mux0 0 22 ;QmlGAYR0mOeAf4=EfYEW2
+l64
+L54
+VT6Xk6B<UQVN<53k<NR@1B1
+!s100 ^N8DTZH>a1eGWGH3j_PK<2
+R7
+32
+R76
+!i10b 1
+R77
+R84
+R85
+!i113 1
+R12
+R13
+Elpm_mux1
+Z86 w1748787473
+R81
+R2
+R3
+R4
+Z87 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/lpm_mux1.vhd
+Z88 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/lpm_mux1.vhd
+l0
+L42
+V=32kSQiXCO_Ho0c;SUaRS1
+!s100 LQUoZ_eh8NidRllaM>XMB3
+R7
+32
+R76
+!i10b 1
+R77
+Z89 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/lpm_mux1.vhd|
+Z90 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/lpm_mux1.vhd|
+!i113 1
+R12
+R13
+Asyn
+R81
+R2
+R3
+DEx4 work 8 lpm_mux1 0 22 =32kSQiXCO_Ho0c;SUaRS1
+l64
+L53
+VMk>ZZUj@7fZ^i7mjlK;H]0
+!s100 z<bAzffJ0zdkk]nUJ]6=g3
+R7
+32
+R76
+!i10b 1
+R77
+R89
+R90
+!i113 1
+R12
+R13
+Emem_signext
+Z91 w1760815103
+R2
+R3
+R4
+Z92 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/mem_signext.vhd
+Z93 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/mem_signext.vhd
+l0
+L4
+V:zd4mA^;hz8eVPmS18<nm0
+!s100 ?271d;jjUbZj7`mgG6>oj2
+R7
+32
+R76
+!i10b 1
+R77
+Z94 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/mem_signext.vhd|
+Z95 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/mem_signext.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 11 mem_signext 0 22 :zd4mA^;hz8eVPmS18<nm0
+l14
+L11
+V4P^Y44LN4ii8k]fk@Yg4]2
+!s100 iPJJBK<hG^;mzm[3WZ>kI3
+R7
+32
+R76
+!i10b 1
+R77
+R94
+R95
+!i113 1
+R12
+R13
+Emux2
+Z96 w1763584873
+R2
+R3
+R4
+Z97 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Mux2.vhd
+Z98 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Mux2.vhd
+l0
+L4
+Vj_42jKR3Fb^V8T`zLOaTW0
+!s100 J:gVPcA5ek]W[mh3n3GmB1
+R7
+32
+Z99 !s110 1763584876
+!i10b 1
+Z100 !s108 1763584876.000000
+Z101 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Mux2.vhd|
+Z102 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Mux2.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 4 mux2 0 22 j_42jKR3Fb^V8T`zLOaTW0
+l13
+L11
+VD4[3HMb;B6f<1U^4QRSPI1
+!s100 iP0`ae4l[6:e`RhHPkQSQ1
+R7
+32
+R99
+!i10b 1
+R100
+R101
+R102
+!i113 1
+R12
+R13
+Emux3
+Z103 w1744898845
+R2
+R3
+R4
+Z104 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Mux3.vhd
+Z105 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Mux3.vhd
+l0
+L4
+VAF1<A7W>Umal`G7]z^ao03
+!s100 DlS<z[d5[cIbXH5@<c4E61
+R7
+32
+R76
+!i10b 1
+R77
+Z106 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Mux3.vhd|
+Z107 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Mux3.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 4 mux3 0 22 AF1<A7W>Umal`G7]z^ao03
+l13
+L11
+VG<ShN3=:hnS=H4;ZaiSN;2
+!s100 3eUc3zzQL^BA;bf4]bIHL1
+R7
+32
+R76
+!i10b 1
+R77
+R106
+R107
+!i113 1
+R12
+R13
+Emux4
+Z108 w1763584929
+R2
+R3
+R4
+Z109 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Mux4.vhd
+Z110 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Mux4.vhd
+l0
+L4
+V2>6o_L<kb3b[2D;5Z1>3g0
+!s100 UCY1NS<N?CDzModiU?dJZ2
+R7
+32
+Z111 !s110 1763584935
+!i10b 1
+Z112 !s108 1763584935.000000
+Z113 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Mux4.vhd|
+Z114 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Mux4.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 4 mux4 0 22 2>6o_L<kb3b[2D;5Z1>3g0
+l13
+L11
+VLX6Emgcn9RdaTh=]X0kGc0
+!s100 ]nTjVhHj7RaK6FPf:@M2Q2
+R7
+32
+R111
+!i10b 1
+R112
+R113
+R114
+!i113 1
+R12
+R13
+Ep_control_unit
+Z115 w1763577339
+R2
+R3
+R4
+Z116 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/P_Control_Unit.vhd
+Z117 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/P_Control_Unit.vhd
+l0
+L4
+VJFgg5>R>hF4`a>=FSb4960
+!s100 @i>DZYeAZlGMZg9=hbgFI3
+R7
+32
+Z118 !s110 1763583689
+!i10b 1
+Z119 !s108 1763583689.000000
+Z120 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/P_Control_Unit.vhd|
+Z121 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/P_Control_Unit.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 14 p_control_unit 0 22 JFgg5>R>hF4`a>=FSb4960
+l101
+L25
+VFd@L[T6j7_6gcJH>L37FC3
+!s100 ;F33bl`0kT[So:XIAi_nm1
+R7
+32
+R118
+!i10b 1
+R119
+R120
+R121
+!i113 1
+R12
+R13
+Ep_datapath
+Z122 w1763661842
+R1
+R2
+R3
+R4
+Z123 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/P_Datapath.vhd
+Z124 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/P_Datapath.vhd
+l0
+L11
+VZPP^fieze:gY^UdlXbfMb3
+!s100 2]O`IE]A[;I:N7bRmnUXE2
+R7
+32
+Z125 !s110 1763661849
+!i10b 1
+Z126 !s108 1763661849.000000
+Z127 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/P_Datapath.vhd|
+Z128 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/P_Datapath.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 10 p_datapath 0 22 ZPP^fieze:gY^UdlXbfMb3
+l149
+L35
+VgoLFDbIo9]XiJRW6^FdHg2
+!s100 08FTk`1ezZYf@l0TD_AN01
+R7
+32
+R125
+!i10b 1
+R126
+R127
+R128
+!i113 1
+R12
+R13
+Ep_fullprocessor
+Z129 w1763585162
+R2
+R3
+R4
+Z130 8C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\Pipelined Full Processor\P_FullProcessor.vhd
+Z131 FC:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\Pipelined Full Processor\P_FullProcessor.vhd
+l0
+L5
+Vg=J[n<`3S`@Xi:ehAG3ci3
+!s100 ElP3I_1_C;VDX<5WKB7K91
+R7
+32
+Z132 !s110 1763585167
+!i10b 1
+Z133 !s108 1763585167.000000
+Z134 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\Pipelined Full Processor\P_FullProcessor.vhd|
+Z135 !s107 C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\Pipelined Full Processor\P_FullProcessor.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 15 p_fullprocessor 0 22 g=J[n<`3S`@Xi:ehAG3ci3
+l52
+L12
+V_KmV614_`zGKmCC_9o@2n1
+!s100 ^H7oPNdkc^@?8hPCm3mDc2
+R7
+32
+R132
+!i10b 1
+R133
+R134
+R135
+!i113 1
+R12
+R13
+Ep_main_unit
+Z136 w1763663874
+R2
+R3
+R4
+Z137 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/P_Main_unit.vhd
+Z138 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/P_Main_unit.vhd
+l0
+L4
+VHgi>6E7;YkV>i]R[^6mnR2
+!s100 k2nni1>Y?emzHQhJVWMVH0
+R7
+32
+Z139 !s110 1763664776
+!i10b 1
+Z140 !s108 1763664776.000000
+Z141 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/P_Main_unit.vhd|
+Z142 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/P_Main_unit.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 11 p_main_unit 0 22 Hgi>6E7;YkV>i]R[^6mnR2
+l34
+L23
+VgdS1A2Z?RT4bN4Yk7_bg[2
+!s100 =KZlo2XfhF30NHIzN?nY31
+R7
+32
+R139
+!i10b 1
+R140
+R141
+R142
+!i113 1
+R12
+R13
+Epipeline_test
+Z143 w1763585249
+R2
+R3
+R4
+Z144 8C:/Users/dell/Desktop/Final Project/CPU/TestBenchs folders/Pipeline_Test/Pipeline_Test.vhd
+Z145 FC:/Users/dell/Desktop/Final Project/CPU/TestBenchs folders/Pipeline_Test/Pipeline_Test.vhd
+l0
+L4
+VS]TlnUX6d2jhDh6IN0XV`2
+!s100 <oW[zQ<ZHU_IaP]jjV=HV2
+R7
+32
+Z146 !s110 1763585256
+!i10b 1
+Z147 !s108 1763585256.000000
+Z148 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/TestBenchs folders/Pipeline_Test/Pipeline_Test.vhd|
+Z149 !s107 C:/Users/dell/Desktop/Final Project/CPU/TestBenchs folders/Pipeline_Test/Pipeline_Test.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 13 pipeline_test 0 22 S]TlnUX6d2jhDh6IN0XV`2
+l15
+L7
+VfMh=PlFjU<TQ85dJEFGXg2
+!s100 ;d5gIQR^Q?C[i<XW7lHg?2
+R7
+32
+R146
+!i10b 1
+R147
+R148
+R149
+!i113 1
+R12
+R13
+Epipelined
+Z150 w1763652339
+R2
+R3
+R4
+Z151 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Pipelined.vhd
+Z152 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Pipelined.vhd
+l0
+L4
+VVPfIQiiHLE_EdG995HLN83
+!s100 kJdYFS=:zczOiVVhI;f5U2
+R7
+32
+Z153 !s110 1763652353
+!i10b 1
+Z154 !s108 1763652353.000000
+Z155 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Pipelined.vhd|
+Z156 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Pipelined.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 9 pipelined 0 22 VPfIQiiHLE_EdG995HLN83
+l76
+L16
+Vje=GA?3VkT6`f@4mVnO[N2
+!s100 UTPl;bic6IOgYJ0o?X`mO1
+R7
+32
+R153
+!i10b 1
+R154
+R155
+R156
+!i113 1
+R12
+R13
+Eram
+Z157 w1763648492
+R1
+R2
+R3
+R4
+Z158 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/ram.vhd
+Z159 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/ram.vhd
+l0
+L4
+V;IPHXW7B@:zOTl]4nDT6E2
+!s100 DH?[2nXVeP<SBTk>XMLZX2
+R7
+32
+Z160 !s110 1763648496
+!i10b 1
+Z161 !s108 1763648496.000000
+Z162 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/ram.vhd|
+Z163 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/ram.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 3 ram 0 22 ;IPHXW7B@:zOTl]4nDT6E2
+l20
+L15
+VMaC6VoLAkfo3=0oZO69W71
+!s100 YU=KFQS@n>_Ad8T^71ZK91
+R7
+32
+R160
+!i10b 1
+R161
+R162
+R163
+!i113 1
+R12
+R13
+Eram_inst
+Z164 w1763667008
+R1
+R2
+R3
+R4
+Z165 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/RAM_Inst.vhd
+Z166 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/RAM_Inst.vhd
+l0
+L5
+VUZWSCC3^IngT[VmFY@0S70
+!s100 <lIFS]@kfejFOgRJl98En3
+R7
+32
+Z167 !s110 1763667016
+!i10b 1
+Z168 !s108 1763667016.000000
+Z169 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/RAM_Inst.vhd|
+Z170 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/RAM_Inst.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+Z171 DEx4 work 8 ram_inst 0 22 UZWSCC3^IngT[VmFY@0S70
+l44
+L16
+V?1J[317AF9bLZHanlF>hn3
+!s100 5lQmlkm[l<m?Ue?gmdbG]2
+R7
+32
+R167
+!i10b 1
+R168
+R169
+R170
+!i113 1
+R12
+R13
+Ereg
+Z172 w1749033899
+R2
+R3
+R4
+Z173 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg.vhd
+Z174 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg.vhd
+l0
+L4
+VMjIz@0MEC=RcKeQQE0n_<3
+!s100 b]ieH;MhS]EPZT^QhI;b=3
+R7
+32
+Z175 !s110 1763583690
+!i10b 1
+Z176 !s108 1763583690.000000
+Z177 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg.vhd|
+Z178 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 3 reg 0 22 MjIz@0MEC=RcKeQQE0n_<3
+l16
+L14
+VbUM74@U6@IdzKlSegOZg@1
+!s100 MI>Cz]lT9[ac`b1S>m4C^0
+R7
+32
+R175
+!i10b 1
+R176
+R177
+R178
+!i113 1
+R12
+R13
+Ereg_5bit
+Z179 w1763404265
+R2
+R3
+R4
+Z180 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/reg_5bit.vhd
+Z181 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/reg_5bit.vhd
+l0
+L4
+V2YJBFImNS4?0Om7eK]C7;0
+!s100 UB79<Ya;KF6YYDTmi1O8G2
+R7
+32
+R175
+!i10b 1
+R176
+Z182 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/reg_5bit.vhd|
+Z183 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/reg_5bit.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 8 reg_5bit 0 22 2YJBFImNS4?0Om7eK]C7;0
+l16
+L14
+V1Z@X^J=IccaVkYJeoDgAS2
+!s100 zG1K4O^E>zON5m>0<kA];1
+R7
+32
+R175
+!i10b 1
+R176
+R182
+R183
+!i113 1
+R12
+R13
+Ereg_6bit
+Z184 w1763571096
+R2
+R3
+R4
+Z185 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg_6bit.vhd
+Z186 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg_6bit.vhd
+l0
+L4
+VT5]m6V5fhFX0<>EgE=nS?1
+!s100 FJ_jLOOeQRCT37jO9o4OL0
+R7
+32
+R175
+!i10b 1
+R176
+Z187 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg_6bit.vhd|
+Z188 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg_6bit.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 8 reg_6bit 0 22 T5]m6V5fhFX0<>EgE=nS?1
+l16
+L14
+VDTZCCQ:NT1VbV06kE@fie3
+!s100 Aj]YK2^FIXJfSf<2l^6U>2
+R7
+32
+R175
+!i10b 1
+R176
+R187
+R188
+!i113 1
+R12
+R13
+Ereg_9bit
+Z189 w1763570249
+R2
+R3
+R4
+Z190 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg_9bit.vhd
+Z191 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg_9bit.vhd
+l0
+L4
+V0z]RVPo?]H7^?O1a>0Cl=2
+!s100 VN=eJ<Wb;PY[]>obKTFBA3
+R7
+32
+R175
+!i10b 1
+R176
+Z192 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg_9bit.vhd|
+Z193 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg_9bit.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 8 reg_9bit 0 22 0z]RVPo?]H7^?O1a>0Cl=2
+l16
+L14
+VKP66Al?;BV3O]d;bDDn:E0
+!s100 PElo<BLQjQEAH^^I6NXbH1
+R7
+32
+R175
+!i10b 1
+R176
+R192
+R193
+!i113 1
+R12
+R13
+Ereg_file
+Z194 w1748866428
+R1
+R2
+R3
+R4
+Z195 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg_File.vhd
+Z196 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg_File.vhd
+l0
+L5
+Vl=gC4Gk^R4BgJ4^_HEXgb2
+!s100 X>KdLUD9a4b9o=[U@c6bm3
+R7
+32
+R175
+!i10b 1
+R176
+Z197 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg_File.vhd|
+Z198 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Full Processor/Reg_File.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 8 reg_file 0 22 l=gC4Gk^R4BgJ4^_HEXgb2
+l16
+L12
+VmWKjdjQFHbbL`3n6T>cCC1
+!s100 Sged9ZLPbj592mi;d[hi51
+R7
+32
+R175
+!i10b 1
+R176
+R197
+R198
+!i113 1
+R12
+R13

@@ -1,0 +1,235 @@
+Simulator report for Address_Mod
+Wed Apr 30 21:23:16 2025
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 64 nodes     ;
+; Simulation Coverage         ;      19.35 % ;
+; Total Number of Transitions ; 65           ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                             ;
++--------------------------------------------------------------------------------------------+-----------------------------------+---------------+
+; Option                                                                                     ; Setting                           ; Default Value ;
++--------------------------------------------------------------------------------------------+-----------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                        ; Timing        ;
+; Start time                                                                                 ; 0 ns                              ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF                              ;               ;
+; Vector input source                                                                        ; ../ALU_Myapproach/Address_Mod.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                ; On            ;
+; Check outputs                                                                              ; Off                               ; Off           ;
+; Report simulation coverage                                                                 ; On                                ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                ; On            ;
+; Detect setup and hold time violations                                                      ; Off                               ; Off           ;
+; Detect glitches                                                                            ; Off                               ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                               ; Off           ;
+; Generate Signal Activity File                                                              ; Off                               ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                               ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                               ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                        ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                               ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                               ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                              ; Auto          ;
++--------------------------------------------------------------------------------------------+-----------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      19.35 % ;
+; Total nodes checked                                 ; 64           ;
+; Total output ports checked                          ; 62           ;
+; Total output ports with complete 1/0-value coverage ; 12           ;
+; Total output ports with no 1/0-value coverage       ; 12           ;
+; Total output ports with no 1-value coverage         ; 32           ;
+; Total output ports with no 0-value coverage         ; 30           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                    ;
++------------------------------+------------------------------+------------------+
+; Node Name                    ; Output Port Name             ; Output Port Type ;
++------------------------------+------------------------------+------------------+
+; |Address_Mod|Address_in[4]   ; |Address_Mod|Address_in[4]   ; out              ;
+; |Address_Mod|Address_in[5]   ; |Address_Mod|Address_in[5]   ; out              ;
+; |Address_Mod|Address_in[7]   ; |Address_Mod|Address_in[7]   ; out              ;
+; |Address_Mod|Address_in[16]  ; |Address_Mod|Address_in[16]  ; out              ;
+; |Address_Mod|Address_in[22]  ; |Address_Mod|Address_in[22]  ; out              ;
+; |Address_Mod|Address_in[23]  ; |Address_Mod|Address_in[23]  ; out              ;
+; |Address_Mod|Address_out[2]  ; |Address_Mod|Address_out[2]  ; pin_out          ;
+; |Address_Mod|Address_out[3]  ; |Address_Mod|Address_out[3]  ; pin_out          ;
+; |Address_Mod|Address_out[5]  ; |Address_Mod|Address_out[5]  ; pin_out          ;
+; |Address_Mod|Address_out[14] ; |Address_Mod|Address_out[14] ; pin_out          ;
+; |Address_Mod|Address_out[20] ; |Address_Mod|Address_out[20] ; pin_out          ;
+; |Address_Mod|Address_out[21] ; |Address_Mod|Address_out[21] ; pin_out          ;
++------------------------------+------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                       ;
++------------------------------+------------------------------+------------------+
+; Node Name                    ; Output Port Name             ; Output Port Type ;
++------------------------------+------------------------------+------------------+
+; |Address_Mod|Address_in[2]   ; |Address_Mod|Address_in[2]   ; out              ;
+; |Address_Mod|Address_in[8]   ; |Address_Mod|Address_in[8]   ; out              ;
+; |Address_Mod|Address_in[9]   ; |Address_Mod|Address_in[9]   ; out              ;
+; |Address_Mod|Address_in[10]  ; |Address_Mod|Address_in[10]  ; out              ;
+; |Address_Mod|Address_in[13]  ; |Address_Mod|Address_in[13]  ; out              ;
+; |Address_Mod|Address_in[15]  ; |Address_Mod|Address_in[15]  ; out              ;
+; |Address_Mod|Address_in[17]  ; |Address_Mod|Address_in[17]  ; out              ;
+; |Address_Mod|Address_in[19]  ; |Address_Mod|Address_in[19]  ; out              ;
+; |Address_Mod|Address_in[20]  ; |Address_Mod|Address_in[20]  ; out              ;
+; |Address_Mod|Address_in[24]  ; |Address_Mod|Address_in[24]  ; out              ;
+; |Address_Mod|Address_in[26]  ; |Address_Mod|Address_in[26]  ; out              ;
+; |Address_Mod|Address_in[27]  ; |Address_Mod|Address_in[27]  ; out              ;
+; |Address_Mod|Address_in[28]  ; |Address_Mod|Address_in[28]  ; out              ;
+; |Address_Mod|Address_in[30]  ; |Address_Mod|Address_in[30]  ; out              ;
+; |Address_Mod|Address_in[31]  ; |Address_Mod|Address_in[31]  ; out              ;
+; |Address_Mod|Address_out[0]  ; |Address_Mod|Address_out[0]  ; pin_out          ;
+; |Address_Mod|Address_out[6]  ; |Address_Mod|Address_out[6]  ; pin_out          ;
+; |Address_Mod|Address_out[7]  ; |Address_Mod|Address_out[7]  ; pin_out          ;
+; |Address_Mod|Address_out[8]  ; |Address_Mod|Address_out[8]  ; pin_out          ;
+; |Address_Mod|Address_out[11] ; |Address_Mod|Address_out[11] ; pin_out          ;
+; |Address_Mod|Address_out[13] ; |Address_Mod|Address_out[13] ; pin_out          ;
+; |Address_Mod|Address_out[15] ; |Address_Mod|Address_out[15] ; pin_out          ;
+; |Address_Mod|Address_out[17] ; |Address_Mod|Address_out[17] ; pin_out          ;
+; |Address_Mod|Address_out[18] ; |Address_Mod|Address_out[18] ; pin_out          ;
+; |Address_Mod|Address_out[22] ; |Address_Mod|Address_out[22] ; pin_out          ;
+; |Address_Mod|Address_out[24] ; |Address_Mod|Address_out[24] ; pin_out          ;
+; |Address_Mod|Address_out[25] ; |Address_Mod|Address_out[25] ; pin_out          ;
+; |Address_Mod|Address_out[26] ; |Address_Mod|Address_out[26] ; pin_out          ;
+; |Address_Mod|Address_out[28] ; |Address_Mod|Address_out[28] ; pin_out          ;
+; |Address_Mod|Address_out[29] ; |Address_Mod|Address_out[29] ; pin_out          ;
+; |Address_Mod|Address_out[30] ; |Address_Mod|Address_out[30] ; pin_out          ;
+; |Address_Mod|Address_out[31] ; |Address_Mod|Address_out[31] ; pin_out          ;
++------------------------------+------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                       ;
++------------------------------+------------------------------+------------------+
+; Node Name                    ; Output Port Name             ; Output Port Type ;
++------------------------------+------------------------------+------------------+
+; |Address_Mod|Address_in[2]   ; |Address_Mod|Address_in[2]   ; out              ;
+; |Address_Mod|Address_in[3]   ; |Address_Mod|Address_in[3]   ; out              ;
+; |Address_Mod|Address_in[6]   ; |Address_Mod|Address_in[6]   ; out              ;
+; |Address_Mod|Address_in[10]  ; |Address_Mod|Address_in[10]  ; out              ;
+; |Address_Mod|Address_in[11]  ; |Address_Mod|Address_in[11]  ; out              ;
+; |Address_Mod|Address_in[12]  ; |Address_Mod|Address_in[12]  ; out              ;
+; |Address_Mod|Address_in[13]  ; |Address_Mod|Address_in[13]  ; out              ;
+; |Address_Mod|Address_in[14]  ; |Address_Mod|Address_in[14]  ; out              ;
+; |Address_Mod|Address_in[18]  ; |Address_Mod|Address_in[18]  ; out              ;
+; |Address_Mod|Address_in[21]  ; |Address_Mod|Address_in[21]  ; out              ;
+; |Address_Mod|Address_in[25]  ; |Address_Mod|Address_in[25]  ; out              ;
+; |Address_Mod|Address_in[26]  ; |Address_Mod|Address_in[26]  ; out              ;
+; |Address_Mod|Address_in[28]  ; |Address_Mod|Address_in[28]  ; out              ;
+; |Address_Mod|Address_in[29]  ; |Address_Mod|Address_in[29]  ; out              ;
+; |Address_Mod|Address_out[0]  ; |Address_Mod|Address_out[0]  ; pin_out          ;
+; |Address_Mod|Address_out[1]  ; |Address_Mod|Address_out[1]  ; pin_out          ;
+; |Address_Mod|Address_out[4]  ; |Address_Mod|Address_out[4]  ; pin_out          ;
+; |Address_Mod|Address_out[8]  ; |Address_Mod|Address_out[8]  ; pin_out          ;
+; |Address_Mod|Address_out[9]  ; |Address_Mod|Address_out[9]  ; pin_out          ;
+; |Address_Mod|Address_out[10] ; |Address_Mod|Address_out[10] ; pin_out          ;
+; |Address_Mod|Address_out[11] ; |Address_Mod|Address_out[11] ; pin_out          ;
+; |Address_Mod|Address_out[12] ; |Address_Mod|Address_out[12] ; pin_out          ;
+; |Address_Mod|Address_out[16] ; |Address_Mod|Address_out[16] ; pin_out          ;
+; |Address_Mod|Address_out[19] ; |Address_Mod|Address_out[19] ; pin_out          ;
+; |Address_Mod|Address_out[23] ; |Address_Mod|Address_out[23] ; pin_out          ;
+; |Address_Mod|Address_out[24] ; |Address_Mod|Address_out[24] ; pin_out          ;
+; |Address_Mod|Address_out[26] ; |Address_Mod|Address_out[26] ; pin_out          ;
+; |Address_Mod|Address_out[27] ; |Address_Mod|Address_out[27] ; pin_out          ;
+; |Address_Mod|Address_out[30] ; |Address_Mod|Address_out[30] ; pin_out          ;
+; |Address_Mod|Address_out[31] ; |Address_Mod|Address_out[31] ; pin_out          ;
++------------------------------+------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed Apr 30 21:23:16 2025
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off Address_Mod -c Address_Mod
+Info: Using vector source file "../ALU_Myapproach/Address_Mod.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      19.35 %
+Info: Number of transitions in simulation is 65
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 146 megabytes
+    Info: Processing ended: Wed Apr 30 21:23:16 2025
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

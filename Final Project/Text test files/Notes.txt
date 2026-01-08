@@ -1,0 +1,6 @@
+1- Shoul i add a bunch of register to fix the pc and instruction fetching issue.
+3- Check one last time the +4 issue.
+2- Shoul i add a cach?
+
+Note: It is extremely confusing but i found it to be correct. When requiring to jump by X bytes you need to specify X*2 in the assembly code for some reason.
+- When storing in data mem store with a differnece of +1 not +4 due to the shift in address before reaching the mem.

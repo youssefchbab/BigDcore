@@ -1,0 +1,67 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+
+entity Control_Unit is
+    port(
+        Alu_LSB,Zero: in std_logic;
+        Funct7: in std_logic_vector(6 downto 0) ;
+        Opcode: in std_logic_vector(6 downto 0) ;
+        Funct3: in std_logic_vector(2 downto 0) ;
+        Alu_control: out std_logic_vector(3 downto 0) ;
+        ImmExt: out std_logic_vector(2 downto 0);
+        Word_Half_Byte: out std_logic_vector(1 downto 0);
+        RegWrite: out std_logic;
+        MemWrite: out std_logic;
+        Mem_Ext_cntr: out std_logic_vector(2 downto 0);
+        Write_Back_cntr: out std_logic_vector(1 downto 0);
+        Pc_clr: out std_logic;
+        Pc_select: out std_logic_vector(1 downto 0);
+        Alu_input: out std_logic;
+        Alu_input_for_auipc_and_lui: out std_logic_vector(1 downto 0)
+    );
+end entity;
+
+architecture arch of Control_Unit is
+    component Alu_cntr is
+        port(
+            Opcode: in std_logic_vector(6 downto 0) ;
+            Funct3: in std_logic_vector(2 downto 0) ;
+            Funct7_Bit5: in std_logic;--Only need Bit-5
+            Alu_Op: out std_logic_vector(3 downto 0)
+        );
+    end component;
+    component Main_unit is
+        port (
+            Zero : in std_logic;
+            Alu_LSB: in std_logic; --added input for Conditionals
+            Funct3: in std_logic_vector(2 downto 0);
+            Opcode: in std_logic_vector(6 downto 0);
+            ImmExt: out std_logic_vector(2 downto 0);--Done
+            Word_Half_Byte: out std_logic_vector(1 downto 0);--Done
+            RegWrite: out std_logic;--Done
+            MemWrite: out std_logic;--Done
+            Mem_Ext_cntr: out std_logic_vector(2 downto 0);--Done
+            Write_Back_cntr: out std_logic_vector(1 downto 0);--Done
+            Pc_clr: out std_logic;--Done
+            Pc_select: out std_logic_vector(1 downto 0);--Done
+            Alu_input: out std_logic;--Done
+            Alu_input_for_auipc_and_lui: out std_logic_vector(1 downto 0)--Done
+        ) ;    
+    end component;
+Begin
+    Alu_Control_Unit: Alu_cntr port map(Opcode, Funct3, Funct7(5), Alu_control);
+    Main_Control_Unit: Main_unit 
+        port map(
+            Zero, Alu_LSB, Funct3, Opcode,
+            ImmExt,
+            Word_Half_Byte,
+            RegWrite,
+            MemWrite,
+            Mem_Ext_cntr,
+            Write_Back_cntr,
+            Pc_clr,
+            Pc_select,
+            Alu_input,
+            Alu_input_for_auipc_and_lui
+        );
+end arch ; -- arch

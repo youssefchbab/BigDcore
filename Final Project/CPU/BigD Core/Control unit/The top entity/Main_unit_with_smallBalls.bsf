@@ -1,0 +1,127 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 304 224)
+	(text "Main_unit_with_smallBalls" (rect 5 0 106 12)(font "Arial" ))
+	(text "inst" (rect 8 192 20 204)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Zero" (rect 0 0 20 12)(font "Arial" ))
+		(text "Zero" (rect 21 27 41 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "Alu_LSB" (rect 0 0 37 12)(font "Arial" ))
+		(text "Alu_LSB" (rect 21 43 58 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "Funct3[2..0]" (rect 0 0 47 12)(font "Arial" ))
+		(text "Funct3[2..0]" (rect 21 59 68 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "Opcode[6..0]" (rect 0 0 50 12)(font "Arial" ))
+		(text "Opcode[6..0]" (rect 21 75 71 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 288 32)
+		(output)
+		(text "ImmExt[2..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "ImmExt[2..0]" (rect 214 27 267 39)(font "Arial" ))
+		(line (pt 288 32)(pt 272 32)(line_width 3))
+	)
+	(port
+		(pt 288 48)
+		(output)
+		(text "Word_Half_Byte[1..0]" (rect 0 0 89 12)(font "Arial" ))
+		(text "Word_Half_Byte[1..0]" (rect 178 43 267 55)(font "Arial" ))
+		(line (pt 288 48)(pt 272 48)(line_width 3))
+	)
+	(port
+		(pt 288 64)
+		(output)
+		(text "RegWrite" (rect 0 0 40 12)(font "Arial" ))
+		(text "RegWrite" (rect 227 59 267 71)(font "Arial" ))
+		(line (pt 288 64)(pt 272 64)(line_width 1))
+	)
+	(port
+		(pt 288 80)
+		(output)
+		(text "MemWrite" (rect 0 0 43 12)(font "Arial" ))
+		(text "MemWrite" (rect 224 75 267 87)(font "Arial" ))
+		(line (pt 288 80)(pt 272 80)(line_width 1))
+	)
+	(port
+		(pt 288 96)
+		(output)
+		(text "Mem_Ext_cntr[2..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "Mem_Ext_cntr[2..0]" (rect 185 91 267 103)(font "Arial" ))
+		(line (pt 288 96)(pt 272 96)(line_width 3))
+	)
+	(port
+		(pt 288 112)
+		(output)
+		(text "Write_Back_cntr[1..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "Write_Back_cntr[1..0]" (rect 179 107 267 119)(font "Arial" ))
+		(line (pt 288 112)(pt 272 112)(line_width 3))
+	)
+	(port
+		(pt 288 128)
+		(output)
+		(text "Pc_clr" (rect 0 0 25 12)(font "Arial" ))
+		(text "Pc_clr" (rect 242 123 267 135)(font "Arial" ))
+		(line (pt 288 128)(pt 272 128)(line_width 1))
+	)
+	(port
+		(pt 288 144)
+		(output)
+		(text "Pc_select[1..0]" (rect 0 0 57 12)(font "Arial" ))
+		(text "Pc_select[1..0]" (rect 210 139 267 151)(font "Arial" ))
+		(line (pt 288 144)(pt 272 144)(line_width 3))
+	)
+	(port
+		(pt 288 160)
+		(output)
+		(text "Alu_input" (rect 0 0 37 12)(font "Arial" ))
+		(text "Alu_input" (rect 230 155 267 167)(font "Arial" ))
+		(line (pt 288 160)(pt 272 160)(line_width 1))
+	)
+	(port
+		(pt 288 176)
+		(output)
+		(text "Alu_input_for_auipc_and_lui[1..0]" (rect 0 0 133 12)(font "Arial" ))
+		(text "Alu_input_for_auipc_and_lui[1..0]" (rect 134 171 267 183)(font "Arial" ))
+		(line (pt 288 176)(pt 272 176)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 272 192)(line_width 1))
+	)
+)

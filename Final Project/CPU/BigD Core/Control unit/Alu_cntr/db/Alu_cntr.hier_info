@@ -1,0 +1,19 @@
+|Alu_cntr
+op_code[0] => ~NO_FANOUT~
+op_code[1] => ~NO_FANOUT~
+op_code[2] => ~NO_FANOUT~
+op_code[3] => ~NO_FANOUT~
+op_code[4] => ~NO_FANOUT~
+op_code[5] => ~NO_FANOUT~
+op_code[6] => ~NO_FANOUT~
+funct3[0] => ~NO_FANOUT~
+funct3[1] => ~NO_FANOUT~
+funct3[2] => ~NO_FANOUT~
+funct7 => ~NO_FANOUT~
+imm30 => ~NO_FANOUT~
+Alu_cntr[0] <= <GND>
+Alu_cntr[1] <= <GND>
+Alu_cntr[2] <= <GND>
+Alu_cntr[3] <= <GND>
+
+

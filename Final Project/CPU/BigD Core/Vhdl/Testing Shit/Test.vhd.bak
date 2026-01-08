@@ -1,0 +1,16 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+
+entity Test is
+	port(a: in std_logic_vector(32 downto 0);
+		 y: out std_logic);
+end entity;
+
+architecture arch of Test is
+	Signal temp: std_logic_vector(32 downto 0);
+Begin 
+	ANding: for i in 1 to 31 generate 
+				temp(i)<= temp(i-1) and a(i);
+			end generate;
+		y<= temp(31);
+end architecture;

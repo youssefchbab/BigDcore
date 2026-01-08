@@ -1,0 +1,43 @@
+# ========================================
+# EXPECTED REGISTER VALUES
+# ========================================
+# After execution completes:
+#
+# x1  = 255 (0xFF) - loaded from memory byte
+# x2  = 200 (0xC8) - doubled by function
+# x3  = 170 (0xAA) - return marker
+# x4  = 187 (0xBB) - function marker
+# x5  = 5 - loop counter final value
+# x6  = 10 - original value
+# x7  = 204 (0xCC) - loop done marker
+# x8  = 1 - positive marker
+# x9  = 30 - logical AND result
+# x10 = 200 - memory base address (within 256-word limit)
+# x11 = 30 - logical OR result
+# x12 = 30 - XOR result
+# x13 = 85 - XORI result
+# x14 = 15 - ANDI result
+# x15 = 255 - ORI result
+# x16 = 2 - shift amount
+# x17 = 40 - shift left result
+# x18 = 63 - shift right logical result
+# x19 = -2 - shift right arithmetic result
+# x20 = 240 - shift left immediate result
+# x21 = 15 - shift right immediate result
+# x22 = -3 - shift right arithmetic immediate
+# x23 = 1 - SLT result (10 < 20)
+# x24 = 0 - SLTU result
+# x25 = 1 - SLTI result
+# x26 = 0 - SLTIU result
+# x27 = 1 - BEQ taken marker
+# x28 = 2 - BNE taken marker
+# x29 = 30 - loaded from memory
+# x30 = 10 - loaded from memory
+# x31 = 255 (0xFF) - SUCCESS marker
+#
+# Memory at base address (word 200):
+# [200]  = 30 (0x0000001E)
+# [201]  = 10 (0x0000000A)
+# [202]  = 15 (lower 16 bits stored at byte offset 8)
+# [202]  = 255 (byte stored at offset 10)
+# [203]  = computed result (should be > 100)

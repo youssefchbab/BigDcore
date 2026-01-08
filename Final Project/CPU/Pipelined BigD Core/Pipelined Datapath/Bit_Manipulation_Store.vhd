@@ -1,0 +1,30 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+-- We had an issue due to our memory being word addressable not Byte addressable to fix this we introduced this circuit:
+-- 		This circuit takes data from the memory and register file and generate an uncorrupted data ready to be loaded to memory (store instruction)
+entity Bit_Manipulation_Store is
+	port(Mem_Data: in std_logic_vector(31 downto 0);
+		 Reg_Data: in std_logic_vector(31 downto 0);
+		 Sel_Mode: in std_logic_vector(1 downto 0);--Selects what to take A word, a half-word or a byte Sent by the control unit
+		 Sel_data: in std_logic_vector(1 downto 0);--Extracted from the 2 LSB's of the Address
+		 Data_out: out std_logic_vector(31 downto 0));
+end entity; 
+--Store inst
+architecture arch of Bit_Manipulation_Store is
+	Signal A1, A2: std_logic_vector(31 downto 0);--A1 holds the Modified Regdata, A2 holds he Modified Memdata
+	component Last_stage is
+		port(A1, A2: in std_logic_vector(31 downto 0);
+			 M,S: in std_logic_vector(1 downto 0);--M is sent by the CU, S is extracted from the 2 lsb's of address
+			 Data_out: out std_logic_vector(31 downto 0));
+	end component;
+	component First_stage is
+		port(Mem_in: in std_logic_vector(31 downto 0);
+			 M,S: in std_logic_vector(1 downto 0);
+			 A2: out std_logic_vector(31 downto 0));
+	end component;
+	
+Begin
+	A1<= Reg_Data;
+	First: First_stage port map(Mem_Data, Sel_Mode, Sel_data, A2);
+	Last: Last_stage port map(A1, A2, Sel_Mode, Sel_data, Data_out);
+end architecture;

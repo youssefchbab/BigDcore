@@ -1,0 +1,64 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 64 64 280 192)
+	(text "Bit_Manipulation" (rect 5 0 84 12)(font "Arial" ))
+	(text "inst" (rect 8 112 25 124)(font "Arial" ))
+	(port
+		(pt 216 104)
+		(input)
+		(text "Mem_Data[31..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "Mem_Data[31..0]" (rect 108 96 192 108)(font "Arial" ))
+		(line (pt 200 104)(pt 216 104)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "Reg_Data[31..0]" (rect 0 0 81 12)(font "Arial" ))
+		(text "Reg_Data[31..0]" (rect 21 43 102 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "Sel_Mode[1..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "Sel_Mode[1..0]" (rect 21 59 94 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "Sel_data[1..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "Sel_data[1..0]" (rect 21 75 89 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "Data_out[31..0]" (rect 0 0 76 12)(font "Arial" ))
+		(text "Data_out[31..0]" (rect 119 27 195 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 112)(line_width 1))
+	)
+)

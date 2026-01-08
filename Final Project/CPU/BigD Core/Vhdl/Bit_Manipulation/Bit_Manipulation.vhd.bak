@@ -1,0 +1,73 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+-- We had an issue due to our memory being word addressable not Byte addressable to fix this we introduced this circuit:
+-- 		This circuit takes data from the memory and register file and generate an uncorrupted data ready to be loaded to memory (store instruction)
+entity Bit_Manipulation is
+	port(Mem_Data: in std_logic_vector(31 downto 0);
+		 Reg_Data: in std_logic_vector(31 downto 0);
+		 Sel_Mode: in std_logic_vector(1 downto 0);--Selects what to take A word, a half-word or a byte Sent by the control unit
+		 Sel_data: in std_logic_vector(1 downto 0);--Extracted from the 2 LSB's of the Address
+		 Data_out: out std_logic_vector(31 downto 0));
+end entity; 
+--Store inst
+architecture arch of Bit_Manipulation is
+	Signal A1, A2: std_logic_vector(31 downto 0);--A1 holds the Modified Regdata, A2 holds he Modified Memdata
+	Signal half_sel, Byte_sel: std_logic_vector(31 downto 0);
+	
+	---Signal First_Byte: std_logic_vector(31 downto 0);
+	--Signal First_Half: std_logic_vector(31 downto 0);
+Begin 	
+	--First_Byte<= (31 downto 8=> '0') & (7 downto 0=>'1');
+	--First_Half<= (31 downto 16=> '0') & (15 downto 0=>'1');
+	
+	
+	--uncessary
+	--Process(Reg_data, Sel_Mode, First_Half, First_Byte) Begin 
+	--	case Sel_Mode is
+	--		When "00"=> A1<= Reg_data;
+	--		when "01"=> A1<= Reg_data and First_Half;
+	--		when "10"=> A1<= Reg_data and First_Byte;
+	--		when others =>A1<= (Others=>'Z');
+	--	end case;
+	--end process;
+	A1<= Reg_Data;
+	process(Mem_data, Sel_Mode, Half_Sel, Byte_sel) Begin 
+		case Sel_Mode is 
+			when "00"=> A2<= Mem_data;
+			when "01"=> A2<= Mem_data and Half_Sel;
+			when "10"=> A2<= Mem_data and Byte_sel;
+			when others=> A2<=(others=>'Z');
+		end case;
+	end process;
+	
+	process(Sel_data) Begin 
+		case sel_data is
+			When "00"=> Half_Sel<= (31 downto 16=>'1') & (15 downto 0=>'0');
+						Byte_Sel<= (31 downto 8=>'1')  & (7 downto 0=>'0');
+						
+			When "01"=> Half_Sel<= (31 downto 16=>'0') & (15 downto 0=>'1');
+						Byte_Sel<= (31 downto 16=>'1') & (15 downto 8=>'0') & (7 downto 0=>'0');
+						
+			when "10"=> Half_Sel<= (31 downto 16=>'1') & (15 downto 0=>'0');
+						Byte_Sel<= (31 downto 24=>'1') & (23 downto 16=>'0') & (15 downto 0=>'0');
+						
+			When "11"=> Half_Sel<= (31 downto 16=>'0') & (15 downto 0=>'1');
+						Byte_Sel<= (31 downto 24=>'0') & (23 downto 0 => '0');
+						
+			when others=> Half_Sel<= (others=>'-');
+						  Byte_Sel<= (others=>'-');
+		end case;
+	end process;
+	
+	process(Sel_Data,A1, A2) Begin
+		case Sel_data is
+			When "00"=> Data_out<=A1 or A2;
+			When "01"=> Data_out<=A2(31 downto 16) & (A2(15 downto 8) or A1(7 downto 0)) & A2(7 downto 0);
+			When "10"=> Data_out<=A2(31 downto 24) & (A2(23 downto 16) or A1(7 downto 0)) & A2(15 downto 0);
+			When "11"=> Data_out<=(A2(31 downto 24) or A1(7 downto 0)) & A2(23 downto 0);
+			when others=> Data_out<=(others=>'-');
+		end case;
+	end process;
+
+			
+end architecture;

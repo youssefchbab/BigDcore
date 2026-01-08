@@ -1,0 +1,23 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+use ieee.Numeric_std.all;
+--2Kb Data memory
+entity data_mem is
+	port(clk,we: in std_logic;
+		 a,wd: in std_logic_vector(31 downto 0);
+		 rd: out std_logic_vector(31 downto 0));
+end entity;
+
+architecture arch of data_mem is
+	type ram_mem is array (63 downto 0) of std_logic_vector(31 downto 0);
+	Signal mem: ram_mem;
+Begin
+	process(clk,we) Begin
+		if (rising_edge(clk)) then
+			if(we='1')then
+				mem(to_integer(unsigned(a)))<= wd;
+			end if;
+		end if;
+		rd<=mem(to_integer(unsigned(a));
+	end process;
+end architecture;

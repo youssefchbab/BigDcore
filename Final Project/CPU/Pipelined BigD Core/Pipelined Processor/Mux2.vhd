@@ -1,0 +1,17 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+
+entity Mux2 is
+	generic(N: integer:= 32);
+	port(a,b: in std_logic_vector(N-1 downto 0);
+		 sel: in std_logic;
+		 y: out std_logic_vector(N-1 downto 0));
+end entity; 
+
+architecture arch of Mux2 is
+	
+Begin 
+	with sel select 
+		y<= a when '0',
+			b when '1';
+end;

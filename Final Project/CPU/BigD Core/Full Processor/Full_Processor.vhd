@@ -1,0 +1,68 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+--This processor includes the whole processor with RAMs included
+
+entity Full_Processor is
+  port (
+        clk,Reset: in std_logic;
+        WE_instMem: in std_logic;--Write Enable For the instruction Memory
+        Inst_Write: in std_logic_vector(31 downto 0) ;
+        ReadData_out: out std_logic_vector(31 downto 0)
+    ) ;
+  
+end Full_Processor;
+
+architecture arch of Full_Processor is
+    component Processor is
+        port(
+            clk,Reset: in std_logic;
+            Instruction: in std_logic_vector(31 downto 0) ;
+            ReadData: in std_logic_vector(31 downto 0) ;
+            MemWrite: out std_logic;
+            Pc: out std_logic_vector(31 downto 0) ;
+            DataAdr: out std_logic_vector(31 downto 0) ;
+            WriteData: out std_logic_vector(31 downto 0)
+        );
+    end component; 
+
+    component RAM is
+		  generic(N: integer := 32);
+        port(
+            clk, Reset: in std_logic;
+            WE: in std_logic;
+            WriteData: in std_logic_vector(N-1 downto 0) ;
+            DataAdr: in std_logic_vector(N-1 downto 0) ;
+            ReadData: out std_logic_vector(N-1 downto 0) 
+        );
+    end component;
+
+    --Signal Declaration 
+    Signal MemWrite: std_logic;
+    Signal Instruction: std_logic_vector(31 downto 0) ;
+    Signal Pc: std_logic_vector(31 downto 0) ;
+    Signal DataAdr: std_logic_vector(31 downto 0) ;
+    Signal WriteData: std_logic_vector(31 downto 0) ;
+    Signal ReadData: std_logic_vector(31 downto 0) ;
+Begin
+    CPU: Processor port map(
+        clk, Reset,
+        Instruction,
+        ReadData,
+        MemWrite,
+        Pc,
+        DataAdr,
+        WriteData);
+    Data_Memory: RAM port map(
+        clk, Reset,
+        MemWrite,
+        WriteData,
+        DataAdr,
+        ReadData);
+    Instruction_Memory: RAM port map(
+        clk, Reset,
+        WE_instMem,
+        Inst_Write,
+        Pc,
+        instruction);
+    ReadData_out<=ReadData;
+end arch ; -- arch

@@ -1,0 +1,980 @@
+Analysis & Synthesis report for P_Datapath
+Tue Nov 18 12:40:27 2025
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Reg:Pc_Register
+ 12. Parameter Settings for User Entity Instance: Reg:instruction_PLR
+ 13. Parameter Settings for User Entity Instance: Mux3:Pc_Selection
+ 14. Parameter Settings for User Entity Instance: Adder:Pc_Plus_Four
+ 15. Parameter Settings for User Entity Instance: Reg:PC_PLR
+ 16. Parameter Settings for User Entity Instance: Reg:Pc_Plus_Four_PLR
+ 17. Parameter Settings for User Entity Instance: Reg:Imm_Extended_PLR
+ 18. Parameter Settings for User Entity Instance: Reg_5bit:Reg3_Address_PLR
+ 19. Parameter Settings for User Entity Instance: Reg:Reg_file_Register1_PLR3
+ 20. Parameter Settings for User Entity Instance: Reg:Reg_file_Register2_PLR3
+ 21. Parameter Settings for User Entity Instance: Reg:Pc_PLR_Seocnd
+ 22. Parameter Settings for User Entity Instance: Reg:Pc_Plus_Four_PLR_Second
+ 23. Parameter Settings for User Entity Instance: Mux3:ALU_in_A
+ 24. Parameter Settings for User Entity Instance: Mux2:ALU_in_B
+ 25. Parameter Settings for User Entity Instance: ALU:Alu_Unit
+ 26. Parameter Settings for User Entity Instance: Adder:Target_Address
+ 27. Parameter Settings for User Entity Instance: Reg:Alu_result_PLR
+ 28. Parameter Settings for User Entity Instance: Reg_5bit:Reg3_Address_PLR_second
+ 29. Parameter Settings for User Entity Instance: Reg:Reg2_PLR
+ 30. Parameter Settings for User Entity Instance: Reg:Pc_Plus_Four_PLR_Third
+ 31. Parameter Settings for User Entity Instance: Reg:Alu_result_PLR_second
+ 32. Parameter Settings for User Entity Instance: Reg_5bit:Reg3_Address_PLR_Third
+ 33. Parameter Settings for User Entity Instance: Reg:Read_Data_PLR
+ 34. Parameter Settings for User Entity Instance: Reg:Pc_Plus_Four_PLR_Fourth
+ 35. Parameter Settings for User Entity Instance: Mux3:WriteBack
+ 36. Port Connectivity Checks: "Mux3:ALU_in_A"
+ 37. Port Connectivity Checks: "Adder:Pc_Plus_Four"
+ 38. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++------------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Nov 18 12:40:27 2025        ;
+; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
+; Revision Name                      ; P_Datapath                                   ;
+; Top-level Entity Name              ; P_Datapath                                   ;
+; Family                             ; Cyclone II                                   ;
+; Total logic elements               ; 3,787                                        ;
+;     Total combinational functions  ; 2,827                                        ;
+;     Dedicated logic registers      ; 1,444                                        ;
+; Total registers                    ; 1444                                         ;
+; Total pins                         ; 185                                          ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 0                                            ;
+; Embedded Multiplier 9-bit elements ; 0                                            ;
+; Total PLLs                         ; 0                                            ;
++------------------------------------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; P_Datapath         ; P_Datapath         ;
+; Family name                                                                ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                                              ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------------------------------------+
+; P_Datapath.vhd                   ; yes             ; User VHDL File        ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/P_Datapath.vhd             ;
+; reg.vhd                          ; yes             ; Auto-Found VHDL File  ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/reg.vhd                    ;
+; mux3.vhd                         ; yes             ; Auto-Found VHDL File  ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/mux3.vhd                   ;
+; adder.vhd                        ; yes             ; Auto-Found VHDL File  ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/adder.vhd                  ;
+; reg_file.vhd                     ; yes             ; Auto-Found VHDL File  ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/reg_file.vhd               ;
+; immext.vhd                       ; yes             ; Auto-Found VHDL File  ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/immext.vhd                 ;
+; reg_5bit.vhd                     ; yes             ; Auto-Found VHDL File  ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/reg_5bit.vhd               ;
+; mux2.vhd                         ; yes             ; Auto-Found VHDL File  ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/mux2.vhd                   ;
+; alu.vhd                          ; yes             ; Auto-Found VHDL File  ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/alu.vhd                    ;
+; bit_manipulation_store.vhd       ; yes             ; Auto-Found VHDL File  ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/bit_manipulation_store.vhd ;
+; first_stage.vhd                  ; yes             ; Auto-Found VHDL File  ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/first_stage.vhd            ;
+; last_stage.vhd                   ; yes             ; Auto-Found VHDL File  ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/last_stage.vhd             ;
+; adderss_shift.vhd                ; yes             ; Auto-Found VHDL File  ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/adderss_shift.vhd          ;
+; mem_signext.vhd                  ; yes             ; Auto-Found VHDL File  ; C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/Pipelined Datapath/mem_signext.vhd            ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 3,787 ;
+;                                             ;       ;
+; Total combinational functions               ; 2827  ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 2049  ;
+;     -- 3 input functions                    ; 377   ;
+;     -- <=2 input functions                  ; 401   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 2673  ;
+;     -- arithmetic mode                      ; 154   ;
+;                                             ;       ;
+; Total registers                             ; 1444  ;
+;     -- Dedicated logic registers            ; 1444  ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 185   ;
+; Maximum fan-out node                        ; Clk   ;
+; Maximum fan-out                             ; 1444  ;
+; Total fan-out                               ; 15245 ;
+; Average fan-out                             ; 3.42  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                   ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------+--------------+
+; |P_Datapath                                  ; 2827 (0)          ; 1444 (0)     ; 0           ; 0            ; 0       ; 0         ; 185  ; 0            ; |P_Datapath                                                           ; work         ;
+;    |ALU:Alu_Unit|                            ; 686 (686)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|ALU:Alu_Unit                                              ; work         ;
+;    |Bit_Manipulation_Store:Bit_Manipulation| ; 134 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Bit_Manipulation_Store:Bit_Manipulation                   ; work         ;
+;       |First_stage:First|                    ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First ; work         ;
+;       |Last_stage:Last|                      ; 122 (122)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last   ; work         ;
+;    |ImmExt:Immediate_Extension|              ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|ImmExt:Immediate_Extension                                ; work         ;
+;    |Mem_SignExt:Memory_Extension|            ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Mem_SignExt:Memory_Extension                              ; work         ;
+;    |Mux2:ALU_in_B|                           ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Mux2:ALU_in_B                                             ; work         ;
+;    |Mux3:ALU_in_A|                           ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Mux3:ALU_in_A                                             ; work         ;
+;    |Mux3:WriteBack|                          ; 94 (94)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Mux3:WriteBack                                            ; work         ;
+;    |Reg:Alu_result_PLR_second|               ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:Alu_result_PLR_second                                 ; work         ;
+;    |Reg:Alu_result_PLR|                      ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:Alu_result_PLR                                        ; work         ;
+;    |Reg:Imm_Extended_PLR|                    ; 35 (35)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:Imm_Extended_PLR                                      ; work         ;
+;    |Reg:PC_PLR|                              ; 30 (30)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:PC_PLR                                                ; work         ;
+;    |Reg:Pc_PLR_Seocnd|                       ; 30 (30)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:Pc_PLR_Seocnd                                         ; work         ;
+;    |Reg:Pc_Plus_Four_PLR_Fourth|             ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:Pc_Plus_Four_PLR_Fourth                               ; work         ;
+;    |Reg:Pc_Plus_Four_PLR_Second|             ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:Pc_Plus_Four_PLR_Second                               ; work         ;
+;    |Reg:Pc_Plus_Four_PLR_Third|              ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:Pc_Plus_Four_PLR_Third                                ; work         ;
+;    |Reg:Pc_Plus_Four_PLR|                    ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:Pc_Plus_Four_PLR                                      ; work         ;
+;    |Reg:Pc_Register|                         ; 31 (31)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:Pc_Register                                           ;              ;
+;    |Reg:Read_Data_PLR|                       ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:Read_Data_PLR                                         ; work         ;
+;    |Reg:Reg2_PLR|                            ; 2 (2)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:Reg2_PLR                                              ; work         ;
+;    |Reg:Reg_file_Register1_PLR3|             ; 674 (674)         ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:Reg_file_Register1_PLR3                               ; work         ;
+;    |Reg:Reg_file_Register2_PLR3|             ; 672 (672)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:Reg_file_Register2_PLR3                               ; work         ;
+;    |Reg:instruction_PLR|                     ; 25 (25)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg:instruction_PLR                                       ; work         ;
+;    |Reg_5bit:Reg3_Address_PLR_Third|         ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg_5bit:Reg3_Address_PLR_Third                           ; work         ;
+;    |Reg_5bit:Reg3_Address_PLR_second|        ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg_5bit:Reg3_Address_PLR_second                          ; work         ;
+;    |Reg_5bit:Reg3_Address_PLR|               ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg_5bit:Reg3_Address_PLR                                 ; work         ;
+;    |Reg_File:Register_File|                  ; 38 (38)           ; 992 (992)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|Reg_File:Register_File                                    ; work         ;
+;    |adder:Pc_Plus_Four|                      ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|adder:Pc_Plus_Four                                        ; work         ;
+;    |adder:Target_Address|                    ; 34 (34)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P_Datapath|adder:Target_Address                                      ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++----------------------------------------+----------------------------------------------+
+; Register name                          ; Reason for Removal                           ;
++----------------------------------------+----------------------------------------------+
+; Reg:Reg_file_Register2_PLR3|Q[0]       ; Merged with Reg:Reg2_PLR|Q[0]                ;
+; Reg:Reg_file_Register2_PLR3|Q[1]       ; Merged with Reg:Reg2_PLR|Q[1]                ;
+; Reg:Reg_file_Register2_PLR3|Q[2]       ; Merged with Reg:Reg2_PLR|Q[2]                ;
+; Reg:Reg_file_Register2_PLR3|Q[3]       ; Merged with Reg:Reg2_PLR|Q[3]                ;
+; Reg:Reg_file_Register2_PLR3|Q[4]       ; Merged with Reg:Reg2_PLR|Q[4]                ;
+; Reg:Reg_file_Register2_PLR3|Q[5]       ; Merged with Reg:Reg2_PLR|Q[5]                ;
+; Reg:Reg_file_Register2_PLR3|Q[6]       ; Merged with Reg:Reg2_PLR|Q[6]                ;
+; Reg:Reg_file_Register2_PLR3|Q[7]       ; Merged with Reg:Reg2_PLR|Q[7]                ;
+; Reg:Reg_file_Register2_PLR3|Q[8]       ; Merged with Reg:Reg2_PLR|Q[8]                ;
+; Reg:Reg_file_Register2_PLR3|Q[9]       ; Merged with Reg:Reg2_PLR|Q[9]                ;
+; Reg:Reg_file_Register2_PLR3|Q[10]      ; Merged with Reg:Reg2_PLR|Q[10]               ;
+; Reg:Reg_file_Register2_PLR3|Q[11]      ; Merged with Reg:Reg2_PLR|Q[11]               ;
+; Reg:Reg_file_Register2_PLR3|Q[12]      ; Merged with Reg:Reg2_PLR|Q[12]               ;
+; Reg:Reg_file_Register2_PLR3|Q[13]      ; Merged with Reg:Reg2_PLR|Q[13]               ;
+; Reg:Reg_file_Register2_PLR3|Q[14]      ; Merged with Reg:Reg2_PLR|Q[14]               ;
+; Reg:Reg_file_Register2_PLR3|Q[15]      ; Merged with Reg:Reg2_PLR|Q[15]               ;
+; Reg:Reg_file_Register2_PLR3|Q[16]      ; Merged with Reg:Reg2_PLR|Q[16]               ;
+; Reg:Reg_file_Register2_PLR3|Q[17]      ; Merged with Reg:Reg2_PLR|Q[17]               ;
+; Reg:Reg_file_Register2_PLR3|Q[18]      ; Merged with Reg:Reg2_PLR|Q[18]               ;
+; Reg:Reg_file_Register2_PLR3|Q[19]      ; Merged with Reg:Reg2_PLR|Q[19]               ;
+; Reg:Reg_file_Register2_PLR3|Q[20]      ; Merged with Reg:Reg2_PLR|Q[20]               ;
+; Reg:Reg_file_Register2_PLR3|Q[21]      ; Merged with Reg:Reg2_PLR|Q[21]               ;
+; Reg:Reg_file_Register2_PLR3|Q[22]      ; Merged with Reg:Reg2_PLR|Q[22]               ;
+; Reg:Reg_file_Register2_PLR3|Q[23]      ; Merged with Reg:Reg2_PLR|Q[23]               ;
+; Reg:Reg_file_Register2_PLR3|Q[24]      ; Merged with Reg:Reg2_PLR|Q[24]               ;
+; Reg:Reg_file_Register2_PLR3|Q[25]      ; Merged with Reg:Reg2_PLR|Q[25]               ;
+; Reg:Reg_file_Register2_PLR3|Q[26]      ; Merged with Reg:Reg2_PLR|Q[26]               ;
+; Reg:Reg_file_Register2_PLR3|Q[27]      ; Merged with Reg:Reg2_PLR|Q[27]               ;
+; Reg:Reg_file_Register2_PLR3|Q[28]      ; Merged with Reg:Reg2_PLR|Q[28]               ;
+; Reg:Reg_file_Register2_PLR3|Q[29]      ; Merged with Reg:Reg2_PLR|Q[29]               ;
+; Reg:Reg_file_Register2_PLR3|Q[30]      ; Merged with Reg:Reg2_PLR|Q[30]               ;
+; Reg:Reg_file_Register2_PLR3|Q[31]      ; Merged with Reg:Reg2_PLR|Q[31]               ;
+; Reg:PC_PLR|Q[0]                        ; Merged with Reg:Pc_Plus_Four_PLR|Q[0]        ;
+; Reg:PC_PLR|Q[1]                        ; Merged with Reg:Pc_Plus_Four_PLR|Q[1]        ;
+; Reg:Pc_PLR_Seocnd|Q[0]                 ; Merged with Reg:Pc_Plus_Four_PLR_Second|Q[0] ;
+; Reg:Pc_PLR_Seocnd|Q[1]                 ; Merged with Reg:Pc_Plus_Four_PLR_Second|Q[1] ;
+; Reg_File:Register_File|M[0][0]         ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][1]         ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][2]         ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][3]         ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][4]         ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][5]         ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][6]         ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][7]         ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][8]         ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][9]         ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][10]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][11]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][12]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][13]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][14]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][15]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][16]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][17]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][18]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][19]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][20]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][21]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][22]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][23]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][24]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][25]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][26]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][27]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][28]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][29]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][30]        ; Stuck at GND due to stuck port clock_enable  ;
+; Reg_File:Register_File|M[0][31]        ; Stuck at GND due to stuck port clock_enable  ;
+; Total Number of Removed Registers = 68 ;                                              ;
++----------------------------------------+----------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1444  ;
+; Number of registers using Synchronous Clear  ; 54    ;
+; Number of registers using Synchronous Load   ; 30    ;
+; Number of registers using Asynchronous Clear ; 992   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 994   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |P_Datapath|Reg:Pc_Register|Q[1]                                            ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |P_Datapath|Reg:Pc_Register|Q[25]                                           ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |P_Datapath|Reg:Imm_Extended_PLR|Q[16]                                      ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |P_Datapath|Reg:Imm_Extended_PLR|Q[22]                                      ;
+; 34:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |P_Datapath|Reg:Reg_file_Register1_PLR3|Q[7]                                ;
+; 34:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |P_Datapath|Reg:Reg2_PLR|Q[22]                                              ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |P_Datapath|Reg:Imm_Extended_PLR|Q[8]                                       ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |P_Datapath|Reg:Imm_Extended_PLR|Q[4]                                       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |P_Datapath|Mux3:ALU_in_A|Mux28                                             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |P_Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Mux39   ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |P_Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Mux59   ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |P_Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Mux48   ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |P_Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Mux41   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |P_Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|Mux42 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |P_Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|Mux48 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |P_Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|Mux63 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |P_Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|Mux38 ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |P_Datapath|Mux3:WriteBack|Mux9                                             ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |P_Datapath|Mux3:WriteBack|Mux20                                            ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; No         ; |P_Datapath|Mux3:WriteBack|Mux31                                            ;
+; 17:1               ; 7 bits    ; 77 LEs        ; 49 LEs               ; 28 LEs                 ; No         ; |P_Datapath|ALU:Alu_Unit|Mux23                                              ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 49 LEs               ; 21 LEs                 ; No         ; |P_Datapath|ALU:Alu_Unit|Mux14                                              ;
+; 18:1               ; 4 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |P_Datapath|ALU:Alu_Unit|Mux26                                              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 32 LEs               ; 12 LEs                 ; No         ; |P_Datapath|ALU:Alu_Unit|Mux7                                               ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |P_Datapath|ALU:Alu_Unit|Mux29                                              ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; No         ; |P_Datapath|ALU:Alu_Unit|Mux3                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Pc_Register ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; n              ; 32    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:instruction_PLR ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; n              ; 32    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Mux3:Pc_Selection ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; n              ; 32    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Adder:Pc_Plus_Four ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; n              ; 32    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:PC_PLR ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 32    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Pc_Plus_Four_PLR ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; n              ; 32    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Imm_Extended_PLR ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; n              ; 32    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg_5bit:Reg3_Address_PLR ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; n              ; 5     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Reg_file_Register1_PLR3 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; n              ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Reg_file_Register2_PLR3 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; n              ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Pc_PLR_Seocnd ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; n              ; 32    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Pc_Plus_Four_PLR_Second ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; n              ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Mux3:ALU_in_A ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 32    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Mux2:ALU_in_B ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 32    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU:Alu_Unit ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; alu_bits       ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Adder:Target_Address ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; n              ; 32    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Alu_result_PLR ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; n              ; 32    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg_5bit:Reg3_Address_PLR_second ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; n              ; 5     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Reg2_PLR ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; n              ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Pc_Plus_Four_PLR_Third ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; n              ; 32    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Alu_result_PLR_second ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; n              ; 32    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg_5bit:Reg3_Address_PLR_Third ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 5     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Read_Data_PLR ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; n              ; 32    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Pc_Plus_Four_PLR_Fourth ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; n              ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Mux3:WriteBack ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; n              ; 32    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "Mux3:ALU_in_A" ;
++------+-------+----------+-----------------+
+; Port ; Type  ; Severity ; Details         ;
++------+-------+----------+-----------------+
+; c    ; Input ; Info     ; Stuck at GND    ;
++------+-------+----------+-----------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "Adder:Pc_Plus_Four" ;
++----------+-------+----------+------------------+
+; Port     ; Type  ; Severity ; Details          ;
++----------+-------+----------+------------------+
+; a[31..3] ; Input ; Info     ; Stuck at GND     ;
+; a[1..0]  ; Input ; Info     ; Stuck at GND     ;
+; a[2]     ; Input ; Info     ; Stuck at VCC     ;
++----------+-------+----------+------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue Nov 18 12:40:15 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off P_Datapath -c P_Datapath
+Info: Found 2 design units, including 1 entities, in source file p_datapath.vhd
+    Info: Found design unit 1: P_Datapath-arch
+    Info: Found entity 1: P_Datapath
+Info: Elaborating entity "P_Datapath" for the top level hierarchy
+Warning: Using design file reg.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Reg-arch
+    Info: Found entity 1: Reg
+Info: Elaborating entity "Reg" for hierarchy "Reg:Pc_Register"
+Warning: Using design file mux3.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Mux3-arch
+    Info: Found entity 1: Mux3
+Info: Elaborating entity "Mux3" for hierarchy "Mux3:Pc_Selection"
+Warning: Using design file adder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: adder-arch
+    Info: Found entity 1: adder
+Info: Elaborating entity "Adder" for hierarchy "Adder:Pc_Plus_Four"
+Warning: Using design file reg_file.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Reg_File-arch
+    Info: Found entity 1: Reg_File
+Info: Elaborating entity "Reg_File" for hierarchy "Reg_File:Register_File"
+Warning: Using design file immext.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: ImmExt-arch
+    Info: Found entity 1: ImmExt
+Info: Elaborating entity "ImmExt" for hierarchy "ImmExt:Immediate_Extension"
+Warning: Using design file reg_5bit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Reg_5bit-arch
+    Info: Found entity 1: Reg_5bit
+Info: Elaborating entity "Reg_5bit" for hierarchy "Reg_5bit:Reg3_Address_PLR"
+Warning: Using design file mux2.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Mux2-arch
+    Info: Found entity 1: Mux2
+Info: Elaborating entity "Mux2" for hierarchy "Mux2:ALU_in_B"
+Warning: Using design file alu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Alu-arch
+    Info: Found entity 1: ALU
+Info: Elaborating entity "ALU" for hierarchy "ALU:Alu_Unit"
+Warning: Using design file bit_manipulation_store.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Bit_Manipulation_Store-arch
+    Info: Found entity 1: Bit_Manipulation_Store
+Info: Elaborating entity "Bit_Manipulation_Store" for hierarchy "Bit_Manipulation_Store:Bit_Manipulation"
+Warning: Using design file first_stage.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: First_stage-arch
+    Info: Found entity 1: First_stage
+Info: Elaborating entity "First_stage" for hierarchy "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First"
+Warning: Using design file last_stage.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Last_stage-arch
+    Info: Found entity 1: Last_stage
+Info: Elaborating entity "Last_stage" for hierarchy "Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last"
+Warning: Using design file adderss_shift.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Adderss_Shift-arch
+    Info: Found entity 1: Adderss_Shift
+Info: Elaborating entity "Adderss_Shift" for hierarchy "Adderss_Shift:Addr_Shift"
+Warning: Using design file mem_signext.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Mem_SignExt-arch
+    Info: Found entity 1: Mem_SignExt
+Info: Elaborating entity "Mem_SignExt" for hierarchy "Mem_SignExt:Memory_Extension"
+Warning (10492): VHDL Process Statement warning at mem_signext.vhd(33): signal "Mem_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mem_signext.vhd(38): signal "Mem_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mem_signext.vhd(39): signal "Mem_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning: Tri-state node(s) do not directly drive top-level pin(s)
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mem_SignExt:Memory_Extension|To_Reg[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:WriteBack|Z[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ALU:Alu_Unit|Alu_out[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:ALU_in_A|Z[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "ImmExt:Immediate_Extension|Imm_Extended[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "Mux3:Pc_Selection|Z[31]" feeding internal logic into a wire
+Warning: Tri-state node(s) do not directly drive top-level pin(s)
+    Warning: Converted the fan-out from the tri-state buffer "ALU:Alu_Unit|Alu_out[0]" to the node "ALU:Alu_Unit|Equal0" into an OR gate
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DataAdr[30]" is stuck at GND
+    Warning (13410): Pin "DataAdr[31]" is stuck at GND
+Warning: Design contains 7 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Instruction[0]"
+    Warning (15610): No output dependent on input pin "Instruction[1]"
+    Warning (15610): No output dependent on input pin "Instruction[2]"
+    Warning (15610): No output dependent on input pin "Instruction[3]"
+    Warning (15610): No output dependent on input pin "Instruction[4]"
+    Warning (15610): No output dependent on input pin "Instruction[5]"
+    Warning (15610): No output dependent on input pin "Instruction[6]"
+Info: Implemented 4005 device resources after synthesis - the final resource count might be different
+    Info: Implemented 87 input pins
+    Info: Implemented 98 output pins
+    Info: Implemented 3820 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 253 warnings
+    Info: Peak virtual memory: 255 megabytes
+    Info: Processing ended: Tue Nov 18 12:40:27 2025
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:11
+
+

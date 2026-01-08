@@ -1,0 +1,417 @@
+TimeQuest Timing Analyzer report for Main_unit_With_smallBalls
+Mon Jun 02 14:22:03 2025
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Propagation Delay
+ 12. Minimum Propagation Delay
+ 13. Clock Transfers
+ 14. Report TCCS
+ 15. Report RSKM
+ 16. Unconstrained Paths
+ 17. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; Main_unit_With_smallBalls                          ;
+; Device Family      ; MAX II                                             ;
+; Device Name        ; EPM240T100C3                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Slow Model                                         ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
+----------
+; Clocks ;
+----------
+No clocks to report.
+
+
+----------------
+; Fmax Summary ;
+----------------
+No paths to report.
+
+
+-----------------
+; Setup Summary ;
+-----------------
+No paths to report.
+
+
+----------------
+; Hold Summary ;
+----------------
+No paths to report.
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
+-------------------------------
+; Minimum Pulse Width Summary ;
+-------------------------------
+No paths to report.
+
+
++-------------------------------------------------------------------------+
+; Propagation Delay                                                       ;
++------------+--------------------------------+--------+----+----+--------+
+; Input Port ; Output Port                    ; RR     ; RF ; FR ; FF     ;
++------------+--------------------------------+--------+----+----+--------+
+; Alu_LSB    ; Pc_select[0]                   ; 8.494  ;    ;    ; 8.494  ;
+; Alu_LSB    ; Pc_select[1]                   ; 8.142  ;    ;    ; 8.142  ;
+; Funct3[0]  ; ImmExt[0]                      ; 8.508  ;    ;    ; 8.508  ;
+; Funct3[0]  ; ImmExt[2]                      ; 7.568  ;    ;    ; 7.568  ;
+; Funct3[0]  ; Mem_Ext_cntr[0]                ; 4.859  ;    ;    ; 4.859  ;
+; Funct3[0]  ; Pc_select[0]                   ; 8.513  ;    ;    ; 8.513  ;
+; Funct3[0]  ; Pc_select[1]                   ; 8.161  ;    ;    ; 8.161  ;
+; Funct3[0]  ; Word_Half_Byte[0]              ; 6.428  ;    ;    ; 6.428  ;
+; Funct3[0]  ; Word_Half_Byte[1]              ; 6.378  ;    ;    ; 6.378  ;
+; Funct3[1]  ; ImmExt[0]                      ; 8.835  ;    ;    ; 8.835  ;
+; Funct3[1]  ; ImmExt[2]                      ; 7.895  ;    ;    ; 7.895  ;
+; Funct3[1]  ; Mem_Ext_cntr[1]                ; 4.873  ;    ;    ; 4.873  ;
+; Funct3[1]  ; Pc_select[0]                   ; 7.831  ;    ;    ; 7.831  ;
+; Funct3[1]  ; Pc_select[1]                   ; 7.479  ;    ;    ; 7.479  ;
+; Funct3[1]  ; Word_Half_Byte[1]              ; 6.705  ;    ;    ; 6.705  ;
+; Funct3[2]  ; Mem_Ext_cntr[2]                ; 5.174  ;    ;    ; 5.174  ;
+; Funct3[2]  ; Pc_select[0]                   ; 8.451  ;    ;    ; 8.451  ;
+; Funct3[2]  ; Pc_select[1]                   ; 8.099  ;    ;    ; 8.099  ;
+; Opcode[0]  ; Alu_input                      ; 11.095 ;    ;    ; 11.095 ;
+; Opcode[0]  ; Alu_input_for_auipc_and_lui[0] ; 7.519  ;    ;    ; 7.519  ;
+; Opcode[0]  ; Alu_input_for_auipc_and_lui[1] ; 7.136  ;    ;    ; 7.136  ;
+; Opcode[0]  ; MemWrite                       ; 7.144  ;    ;    ; 7.144  ;
+; Opcode[0]  ; Pc_select[0]                   ; 10.761 ;    ;    ; 10.761 ;
+; Opcode[0]  ; Pc_select[1]                   ; 10.409 ;    ;    ; 10.409 ;
+; Opcode[0]  ; RegWrite                       ; 9.065  ;    ;    ; 9.065  ;
+; Opcode[0]  ; Word_Half_Byte[0]              ; 8.677  ;    ;    ; 8.677  ;
+; Opcode[0]  ; Word_Half_Byte[1]              ; 8.625  ;    ;    ; 8.625  ;
+; Opcode[0]  ; Write_Back_cntr[0]             ; 8.334  ;    ;    ; 8.334  ;
+; Opcode[0]  ; Write_Back_cntr[1]             ; 6.515  ;    ;    ; 6.515  ;
+; Opcode[1]  ; Alu_input                      ; 11.281 ;    ;    ; 11.281 ;
+; Opcode[1]  ; Alu_input_for_auipc_and_lui[0] ; 7.703  ;    ;    ; 7.703  ;
+; Opcode[1]  ; Alu_input_for_auipc_and_lui[1] ; 7.320  ;    ;    ; 7.320  ;
+; Opcode[1]  ; MemWrite                       ; 7.328  ;    ;    ; 7.328  ;
+; Opcode[1]  ; Pc_select[0]                   ; 10.947 ;    ;    ; 10.947 ;
+; Opcode[1]  ; Pc_select[1]                   ; 10.595 ;    ;    ; 10.595 ;
+; Opcode[1]  ; RegWrite                       ; 9.251  ;    ;    ; 9.251  ;
+; Opcode[1]  ; Word_Half_Byte[0]              ; 8.861  ;    ;    ; 8.861  ;
+; Opcode[1]  ; Word_Half_Byte[1]              ; 8.809  ;    ;    ; 8.809  ;
+; Opcode[1]  ; Write_Back_cntr[0]             ; 8.520  ;    ;    ; 8.520  ;
+; Opcode[1]  ; Write_Back_cntr[1]             ; 6.492  ;    ;    ; 6.492  ;
+; Opcode[2]  ; Alu_input                      ; 8.560  ;    ;    ; 8.560  ;
+; Opcode[2]  ; Alu_input_for_auipc_and_lui[0] ; 7.010  ;    ;    ; 7.010  ;
+; Opcode[2]  ; Alu_input_for_auipc_and_lui[1] ; 6.628  ;    ;    ; 6.628  ;
+; Opcode[2]  ; ImmExt[0]                      ; 7.666  ;    ;    ; 7.666  ;
+; Opcode[2]  ; ImmExt[1]                      ; 6.498  ;    ;    ; 6.498  ;
+; Opcode[2]  ; ImmExt[2]                      ; 6.725  ;    ;    ; 6.725  ;
+; Opcode[2]  ; MemWrite                       ; 6.633  ;    ;    ; 6.633  ;
+; Opcode[2]  ; Pc_select[0]                   ; 8.226  ;    ;    ; 8.226  ;
+; Opcode[2]  ; Pc_select[1]                   ; 7.874  ;    ;    ; 7.874  ;
+; Opcode[2]  ; RegWrite                       ; 8.117  ;    ;    ; 8.117  ;
+; Opcode[2]  ; Word_Half_Byte[0]              ; 8.166  ;    ;    ; 8.166  ;
+; Opcode[2]  ; Word_Half_Byte[1]              ; 8.114  ;    ;    ; 8.114  ;
+; Opcode[2]  ; Write_Back_cntr[0]             ; 6.479  ;    ;    ; 6.479  ;
+; Opcode[2]  ; Write_Back_cntr[1]             ; 7.206  ;    ;    ; 7.206  ;
+; Opcode[3]  ; Alu_input                      ; 8.560  ;    ;    ; 8.560  ;
+; Opcode[3]  ; Alu_input_for_auipc_and_lui[0] ; 7.713  ;    ;    ; 7.713  ;
+; Opcode[3]  ; Alu_input_for_auipc_and_lui[1] ; 7.330  ;    ;    ; 7.330  ;
+; Opcode[3]  ; ImmExt[0]                      ; 8.411  ;    ;    ; 8.411  ;
+; Opcode[3]  ; ImmExt[1]                      ; 6.535  ;    ;    ; 6.535  ;
+; Opcode[3]  ; MemWrite                       ; 7.338  ;    ;    ; 7.338  ;
+; Opcode[3]  ; Pc_select[0]                   ; 8.226  ;    ;    ; 8.226  ;
+; Opcode[3]  ; Pc_select[1]                   ; 7.874  ;    ;    ; 7.874  ;
+; Opcode[3]  ; RegWrite                       ; 8.822  ;    ;    ; 8.822  ;
+; Opcode[3]  ; Word_Half_Byte[0]              ; 8.871  ;    ;    ; 8.871  ;
+; Opcode[3]  ; Word_Half_Byte[1]              ; 8.819  ;    ;    ; 8.819  ;
+; Opcode[3]  ; Write_Back_cntr[0]             ; 7.434  ;    ;    ; 7.434  ;
+; Opcode[3]  ; Write_Back_cntr[1]             ; 7.299  ;    ;    ; 7.299  ;
+; Opcode[4]  ; Alu_input                      ; 10.128 ;    ;    ; 10.128 ;
+; Opcode[4]  ; Alu_input_for_auipc_and_lui[0] ; 6.772  ;    ;    ; 6.772  ;
+; Opcode[4]  ; Alu_input_for_auipc_and_lui[1] ; 6.390  ;    ;    ; 6.390  ;
+; Opcode[4]  ; ImmExt[0]                      ; 5.917  ;    ;    ; 5.917  ;
+; Opcode[4]  ; ImmExt[2]                      ; 5.985  ;    ;    ; 5.985  ;
+; Opcode[4]  ; MemWrite                       ; 6.393  ;    ;    ; 6.393  ;
+; Opcode[4]  ; Pc_select[0]                   ; 9.794  ;    ;    ; 9.794  ;
+; Opcode[4]  ; Pc_select[1]                   ; 9.442  ;    ;    ; 9.442  ;
+; Opcode[4]  ; RegWrite                       ; 8.098  ;    ;    ; 8.098  ;
+; Opcode[4]  ; Word_Half_Byte[0]              ; 7.926  ;    ;    ; 7.926  ;
+; Opcode[4]  ; Word_Half_Byte[1]              ; 7.874  ;    ;    ; 7.874  ;
+; Opcode[4]  ; Write_Back_cntr[0]             ; 5.944  ;    ;    ; 5.944  ;
+; Opcode[4]  ; Write_Back_cntr[1]             ; 6.387  ;    ;    ; 6.387  ;
+; Opcode[5]  ; Alu_input                      ; 10.264 ;    ;    ; 10.264 ;
+; Opcode[5]  ; Alu_input_for_auipc_and_lui[0] ; 6.893  ;    ;    ; 6.893  ;
+; Opcode[5]  ; Alu_input_for_auipc_and_lui[1] ; 6.510  ;    ;    ; 6.510  ;
+; Opcode[5]  ; ImmExt[0]                      ; 7.262  ;    ;    ; 7.262  ;
+; Opcode[5]  ; MemWrite                       ; 6.526  ;    ;    ; 6.526  ;
+; Opcode[5]  ; Pc_select[0]                   ; 9.930  ;    ;    ; 9.930  ;
+; Opcode[5]  ; Pc_select[1]                   ; 9.578  ;    ;    ; 9.578  ;
+; Opcode[5]  ; RegWrite                       ; 8.234  ;    ;    ; 8.234  ;
+; Opcode[5]  ; Word_Half_Byte[0]              ; 8.059  ;    ;    ; 8.059  ;
+; Opcode[5]  ; Word_Half_Byte[1]              ; 8.007  ;    ;    ; 8.007  ;
+; Opcode[5]  ; Write_Back_cntr[1]             ; 7.315  ;    ;    ; 7.315  ;
+; Opcode[6]  ; Alu_input                      ; 10.317 ;    ;    ; 10.317 ;
+; Opcode[6]  ; Alu_input_for_auipc_and_lui[0] ; 7.780  ;    ;    ; 7.780  ;
+; Opcode[6]  ; Alu_input_for_auipc_and_lui[1] ; 7.397  ;    ;    ; 7.397  ;
+; Opcode[6]  ; ImmExt[0]                      ; 8.366  ;    ;    ; 8.366  ;
+; Opcode[6]  ; ImmExt[1]                      ; 6.498  ;    ;    ; 6.498  ;
+; Opcode[6]  ; ImmExt[2]                      ; 6.521  ;    ;    ; 6.521  ;
+; Opcode[6]  ; MemWrite                       ; 7.405  ;    ;    ; 7.405  ;
+; Opcode[6]  ; Pc_select[0]                   ; 9.983  ;    ;    ; 9.983  ;
+; Opcode[6]  ; Pc_select[1]                   ; 9.631  ;    ;    ; 9.631  ;
+; Opcode[6]  ; RegWrite                       ; 8.889  ;    ;    ; 8.889  ;
+; Opcode[6]  ; Word_Half_Byte[0]              ; 8.938  ;    ;    ; 8.938  ;
+; Opcode[6]  ; Word_Half_Byte[1]              ; 8.886  ;    ;    ; 8.886  ;
+; Opcode[6]  ; Write_Back_cntr[0]             ; 7.389  ;    ;    ; 7.389  ;
+; Opcode[6]  ; Write_Back_cntr[1]             ; 7.368  ;    ;    ; 7.368  ;
+; Zero       ; Pc_select[0]                   ; 8.600  ;    ;    ; 8.600  ;
+; Zero       ; Pc_select[1]                   ; 8.248  ;    ;    ; 8.248  ;
++------------+--------------------------------+--------+----+----+--------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Propagation Delay                                             ;
++------------+--------------------------------+-------+----+----+-------+
+; Input Port ; Output Port                    ; RR    ; RF ; FR ; FF    ;
++------------+--------------------------------+-------+----+----+-------+
+; Alu_LSB    ; Pc_select[0]                   ; 8.494 ;    ;    ; 8.494 ;
+; Alu_LSB    ; Pc_select[1]                   ; 8.142 ;    ;    ; 8.142 ;
+; Funct3[0]  ; ImmExt[0]                      ; 8.508 ;    ;    ; 8.508 ;
+; Funct3[0]  ; ImmExt[2]                      ; 7.568 ;    ;    ; 7.568 ;
+; Funct3[0]  ; Mem_Ext_cntr[0]                ; 4.859 ;    ;    ; 4.859 ;
+; Funct3[0]  ; Pc_select[0]                   ; 8.513 ;    ;    ; 8.513 ;
+; Funct3[0]  ; Pc_select[1]                   ; 8.161 ;    ;    ; 8.161 ;
+; Funct3[0]  ; Word_Half_Byte[0]              ; 6.428 ;    ;    ; 6.428 ;
+; Funct3[0]  ; Word_Half_Byte[1]              ; 6.378 ;    ;    ; 6.378 ;
+; Funct3[1]  ; ImmExt[0]                      ; 8.835 ;    ;    ; 8.835 ;
+; Funct3[1]  ; ImmExt[2]                      ; 7.895 ;    ;    ; 7.895 ;
+; Funct3[1]  ; Mem_Ext_cntr[1]                ; 4.873 ;    ;    ; 4.873 ;
+; Funct3[1]  ; Pc_select[0]                   ; 7.831 ;    ;    ; 7.831 ;
+; Funct3[1]  ; Pc_select[1]                   ; 7.479 ;    ;    ; 7.479 ;
+; Funct3[1]  ; Word_Half_Byte[1]              ; 6.705 ;    ;    ; 6.705 ;
+; Funct3[2]  ; Mem_Ext_cntr[2]                ; 5.174 ;    ;    ; 5.174 ;
+; Funct3[2]  ; Pc_select[0]                   ; 7.450 ;    ;    ; 7.450 ;
+; Funct3[2]  ; Pc_select[1]                   ; 7.098 ;    ;    ; 7.098 ;
+; Opcode[0]  ; Alu_input                      ; 7.668 ;    ;    ; 7.668 ;
+; Opcode[0]  ; Alu_input_for_auipc_and_lui[0] ; 7.519 ;    ;    ; 7.519 ;
+; Opcode[0]  ; Alu_input_for_auipc_and_lui[1] ; 7.136 ;    ;    ; 7.136 ;
+; Opcode[0]  ; MemWrite                       ; 7.144 ;    ;    ; 7.144 ;
+; Opcode[0]  ; Pc_select[0]                   ; 9.393 ;    ;    ; 9.393 ;
+; Opcode[0]  ; Pc_select[1]                   ; 9.038 ;    ;    ; 9.038 ;
+; Opcode[0]  ; RegWrite                       ; 8.628 ;    ;    ; 8.628 ;
+; Opcode[0]  ; Word_Half_Byte[0]              ; 8.677 ;    ;    ; 8.677 ;
+; Opcode[0]  ; Word_Half_Byte[1]              ; 8.625 ;    ;    ; 8.625 ;
+; Opcode[0]  ; Write_Back_cntr[0]             ; 8.334 ;    ;    ; 8.334 ;
+; Opcode[0]  ; Write_Back_cntr[1]             ; 6.515 ;    ;    ; 6.515 ;
+; Opcode[1]  ; Alu_input                      ; 7.852 ;    ;    ; 7.852 ;
+; Opcode[1]  ; Alu_input_for_auipc_and_lui[0] ; 7.703 ;    ;    ; 7.703 ;
+; Opcode[1]  ; Alu_input_for_auipc_and_lui[1] ; 7.320 ;    ;    ; 7.320 ;
+; Opcode[1]  ; MemWrite                       ; 7.328 ;    ;    ; 7.328 ;
+; Opcode[1]  ; Pc_select[0]                   ; 9.579 ;    ;    ; 9.579 ;
+; Opcode[1]  ; Pc_select[1]                   ; 9.224 ;    ;    ; 9.224 ;
+; Opcode[1]  ; RegWrite                       ; 8.812 ;    ;    ; 8.812 ;
+; Opcode[1]  ; Word_Half_Byte[0]              ; 8.861 ;    ;    ; 8.861 ;
+; Opcode[1]  ; Word_Half_Byte[1]              ; 8.809 ;    ;    ; 8.809 ;
+; Opcode[1]  ; Write_Back_cntr[0]             ; 8.520 ;    ;    ; 8.520 ;
+; Opcode[1]  ; Write_Back_cntr[1]             ; 6.492 ;    ;    ; 6.492 ;
+; Opcode[2]  ; Alu_input                      ; 6.732 ;    ;    ; 6.732 ;
+; Opcode[2]  ; Alu_input_for_auipc_and_lui[0] ; 7.010 ;    ;    ; 7.010 ;
+; Opcode[2]  ; Alu_input_for_auipc_and_lui[1] ; 6.628 ;    ;    ; 6.628 ;
+; Opcode[2]  ; ImmExt[0]                      ; 7.241 ;    ;    ; 7.241 ;
+; Opcode[2]  ; ImmExt[1]                      ; 6.498 ;    ;    ; 6.498 ;
+; Opcode[2]  ; ImmExt[2]                      ; 6.725 ;    ;    ; 6.725 ;
+; Opcode[2]  ; MemWrite                       ; 6.633 ;    ;    ; 6.633 ;
+; Opcode[2]  ; Pc_select[0]                   ; 6.511 ;    ;    ; 6.511 ;
+; Opcode[2]  ; Pc_select[1]                   ; 6.496 ;    ;    ; 6.496 ;
+; Opcode[2]  ; RegWrite                       ; 6.521 ;    ;    ; 6.521 ;
+; Opcode[2]  ; Word_Half_Byte[0]              ; 8.166 ;    ;    ; 8.166 ;
+; Opcode[2]  ; Word_Half_Byte[1]              ; 8.114 ;    ;    ; 8.114 ;
+; Opcode[2]  ; Write_Back_cntr[0]             ; 6.479 ;    ;    ; 6.479 ;
+; Opcode[2]  ; Write_Back_cntr[1]             ; 7.206 ;    ;    ; 7.206 ;
+; Opcode[3]  ; Alu_input                      ; 7.862 ;    ;    ; 7.862 ;
+; Opcode[3]  ; Alu_input_for_auipc_and_lui[0] ; 7.713 ;    ;    ; 7.713 ;
+; Opcode[3]  ; Alu_input_for_auipc_and_lui[1] ; 7.330 ;    ;    ; 7.330 ;
+; Opcode[3]  ; ImmExt[0]                      ; 7.277 ;    ;    ; 7.277 ;
+; Opcode[3]  ; ImmExt[1]                      ; 6.535 ;    ;    ; 6.535 ;
+; Opcode[3]  ; MemWrite                       ; 7.338 ;    ;    ; 7.338 ;
+; Opcode[3]  ; Pc_select[0]                   ; 8.226 ;    ;    ; 8.226 ;
+; Opcode[3]  ; Pc_select[1]                   ; 6.504 ;    ;    ; 6.504 ;
+; Opcode[3]  ; RegWrite                       ; 6.530 ;    ;    ; 6.530 ;
+; Opcode[3]  ; Word_Half_Byte[0]              ; 8.871 ;    ;    ; 8.871 ;
+; Opcode[3]  ; Word_Half_Byte[1]              ; 8.819 ;    ;    ; 8.819 ;
+; Opcode[3]  ; Write_Back_cntr[0]             ; 7.434 ;    ;    ; 7.434 ;
+; Opcode[3]  ; Write_Back_cntr[1]             ; 7.299 ;    ;    ; 7.299 ;
+; Opcode[4]  ; Alu_input                      ; 7.624 ;    ;    ; 7.624 ;
+; Opcode[4]  ; Alu_input_for_auipc_and_lui[0] ; 6.772 ;    ;    ; 6.772 ;
+; Opcode[4]  ; Alu_input_for_auipc_and_lui[1] ; 6.390 ;    ;    ; 6.390 ;
+; Opcode[4]  ; ImmExt[0]                      ; 5.917 ;    ;    ; 5.917 ;
+; Opcode[4]  ; ImmExt[2]                      ; 5.985 ;    ;    ; 5.985 ;
+; Opcode[4]  ; MemWrite                       ; 6.393 ;    ;    ; 6.393 ;
+; Opcode[4]  ; Pc_select[0]                   ; 8.426 ;    ;    ; 8.426 ;
+; Opcode[4]  ; Pc_select[1]                   ; 8.071 ;    ;    ; 8.071 ;
+; Opcode[4]  ; RegWrite                       ; 7.877 ;    ;    ; 7.877 ;
+; Opcode[4]  ; Word_Half_Byte[0]              ; 7.926 ;    ;    ; 7.926 ;
+; Opcode[4]  ; Word_Half_Byte[1]              ; 7.874 ;    ;    ; 7.874 ;
+; Opcode[4]  ; Write_Back_cntr[0]             ; 5.944 ;    ;    ; 5.944 ;
+; Opcode[4]  ; Write_Back_cntr[1]             ; 6.387 ;    ;    ; 6.387 ;
+; Opcode[5]  ; Alu_input                      ; 7.744 ;    ;    ; 7.744 ;
+; Opcode[5]  ; Alu_input_for_auipc_and_lui[0] ; 6.893 ;    ;    ; 6.893 ;
+; Opcode[5]  ; Alu_input_for_auipc_and_lui[1] ; 6.510 ;    ;    ; 6.510 ;
+; Opcode[5]  ; ImmExt[0]                      ; 6.472 ;    ;    ; 6.472 ;
+; Opcode[5]  ; MemWrite                       ; 6.526 ;    ;    ; 6.526 ;
+; Opcode[5]  ; Pc_select[0]                   ; 8.562 ;    ;    ; 8.562 ;
+; Opcode[5]  ; Pc_select[1]                   ; 8.207 ;    ;    ; 8.207 ;
+; Opcode[5]  ; RegWrite                       ; 8.010 ;    ;    ; 8.010 ;
+; Opcode[5]  ; Word_Half_Byte[0]              ; 8.059 ;    ;    ; 8.059 ;
+; Opcode[5]  ; Word_Half_Byte[1]              ; 8.007 ;    ;    ; 8.007 ;
+; Opcode[5]  ; Write_Back_cntr[1]             ; 7.315 ;    ;    ; 7.315 ;
+; Opcode[6]  ; Alu_input                      ; 7.929 ;    ;    ; 7.929 ;
+; Opcode[6]  ; Alu_input_for_auipc_and_lui[0] ; 7.780 ;    ;    ; 7.780 ;
+; Opcode[6]  ; Alu_input_for_auipc_and_lui[1] ; 7.397 ;    ;    ; 7.397 ;
+; Opcode[6]  ; ImmExt[0]                      ; 7.286 ;    ;    ; 7.286 ;
+; Opcode[6]  ; ImmExt[1]                      ; 6.498 ;    ;    ; 6.498 ;
+; Opcode[6]  ; ImmExt[2]                      ; 6.521 ;    ;    ; 6.521 ;
+; Opcode[6]  ; MemWrite                       ; 7.405 ;    ;    ; 7.405 ;
+; Opcode[6]  ; Pc_select[0]                   ; 8.615 ;    ;    ; 8.615 ;
+; Opcode[6]  ; Pc_select[1]                   ; 8.260 ;    ;    ; 8.260 ;
+; Opcode[6]  ; RegWrite                       ; 8.287 ;    ;    ; 8.287 ;
+; Opcode[6]  ; Word_Half_Byte[0]              ; 8.938 ;    ;    ; 8.938 ;
+; Opcode[6]  ; Word_Half_Byte[1]              ; 8.886 ;    ;    ; 8.886 ;
+; Opcode[6]  ; Write_Back_cntr[0]             ; 7.389 ;    ;    ; 7.389 ;
+; Opcode[6]  ; Write_Back_cntr[1]             ; 7.368 ;    ;    ; 7.368 ;
+; Zero       ; Pc_select[0]                   ; 8.600 ;    ;    ; 8.600 ;
+; Zero       ; Pc_select[1]                   ; 8.248 ;    ;    ; 8.248 ;
++------------+--------------------------------+-------+----+----+-------+
+
+
+-------------------
+; Clock Transfers ;
+-------------------
+Nothing to report.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 12    ; 12   ;
+; Unconstrained Input Port Paths  ; 107   ; 107  ;
+; Unconstrained Output Ports      ; 17    ; 17   ;
+; Unconstrained Output Port Paths ; 107   ; 107  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Mon Jun 02 14:22:02 2025
+Info: Command: quartus_sta Main_unit_With_smallBalls -c Main_unit_With_smallBalls
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Main_unit_With_smallBalls.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning (332068): No clocks defined in design.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info (332159): No clocks to report
+Info (332140): No fmax paths to report
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332140): No Minimum Pulse Width paths to report
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4588 megabytes
+    Info: Processing ended: Mon Jun 02 14:22:03 2025
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

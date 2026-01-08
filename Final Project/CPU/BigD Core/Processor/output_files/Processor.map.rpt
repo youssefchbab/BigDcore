@@ -1,0 +1,796 @@
+Analysis & Synthesis report for Processor
+Wed Jun 04 18:10:07 2025
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit
+ 12. Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Mux3:WriteBack_Mux
+ 13. Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Adder:Targer_Address
+ 14. Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Adder:PC_Plus_Four
+ 15. Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Mux3:Pc_Selection
+ 16. Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Reg:Pc_Register
+ 17. Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Mux3:Alu_input_A_Mux
+ 18. Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Mux2:Alu_input_B_Mux
+ 19. Port Connectivity Checks: "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux"
+ 20. Port Connectivity Checks: "Datapath:Datapath_unit|Adder:PC_Plus_Four"
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jun 04 18:10:07 2025      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; Processor                                  ;
+; Top-level Entity Name              ; Processor                                  ;
+; Family                             ; Cyclone IV GX                              ;
+; Total logic elements               ; 3,630                                      ;
+;     Total combinational functions  ; 2,668                                      ;
+;     Dedicated logic registers      ; 1,026                                      ;
+; Total registers                    ; 1026                                       ;
+; Total pins                         ; 163                                        ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total GXB Receiver Channel PCS     ; 0                                          ;
+; Total GXB Receiver Channel PMA     ; 0                                          ;
+; Total GXB Transmitter Channel PCS  ; 0                                          ;
+; Total GXB Transmitter Channel PMA  ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; Processor          ; Processor          ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
+;     Processors 5-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------------------+---------+
+; Processor.vhd                    ; yes             ; User VHDL File        ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/Processor.vhd             ;         ;
+; datapath.vhd                     ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/datapath.vhd              ;         ;
+; reg_file.vhd                     ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/reg_file.vhd              ;         ;
+; alu.vhd                          ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/alu.vhd                   ;         ;
+; adderss_shift.vhd                ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/adderss_shift.vhd         ;         ;
+; bit_manipulation_load.vhd        ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/bit_manipulation_load.vhd ;         ;
+; first_stage.vhd                  ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/first_stage.vhd           ;         ;
+; last_stage.vhd                   ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/last_stage.vhd            ;         ;
+; mem_signext.vhd                  ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/mem_signext.vhd           ;         ;
+; mux3.vhd                         ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/mux3.vhd                  ;         ;
+; immext.vhd                       ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/immext.vhd                ;         ;
+; adder.vhd                        ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/adder.vhd                 ;         ;
+; reg.vhd                          ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/reg.vhd                   ;         ;
+; mux2.vhd                         ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/mux2.vhd                  ;         ;
+; control_unit.vhd                 ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/control_unit.vhd          ;         ;
+; alu_cntr.vhd                     ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/alu_cntr.vhd              ;         ;
+; main_unit.vhd                    ; yes             ; Auto-Found VHDL File  ; D:/Work and shit/Quartus13/Project Files/BigD Core/Processor/main_unit.vhd             ;         ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 163              ;
+; DSP block 9-bit elements ; 0                ;
+; Maximum fan-out node     ; Reset~input      ;
+; Maximum fan-out          ; 1027             ;
+; Total fan-out            ; 14385            ;
+; Average fan-out          ; 3.58             ;
++--------------------------+------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                          ;
++-----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                             ; Library Name ;
++-----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------+--------------+
+; |Processor                                          ; 2668 (0)          ; 1026 (0)     ; 0           ; 0            ; 0       ; 0         ; 0         ; 163  ; 0            ; |Processor                                                                                      ; work         ;
+;    |Control_Unit:Controlling_unit|                  ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Control_Unit:Controlling_unit                                                        ; work         ;
+;       |Alu_cntr:Alu_Control_Unit|                   ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Control_Unit:Controlling_unit|Alu_cntr:Alu_Control_Unit                              ; work         ;
+;       |Main_unit:Main_Control_Unit|                 ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Control_Unit:Controlling_unit|Main_unit:Main_Control_Unit                            ; work         ;
+;    |Datapath:Datapath_unit|                         ; 2624 (0)          ; 1026 (0)     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit                                                               ; work         ;
+;       |ALU:Arithmetic_Logic_Unit|                   ; 758 (758)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit                                     ; work         ;
+;       |Bit_Manipulation_Load:Bit_Manipulation_unit| ; 135 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit                   ; work         ;
+;          |First_stage:First|                        ; 28 (28)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First ; work         ;
+;          |Last_stage:Last|                          ; 107 (107)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last   ; work         ;
+;       |ImmExt:Immediate_Extension|                  ; 41 (41)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit|ImmExt:Immediate_Extension                                    ; work         ;
+;       |Mem_SignExt:Memory_Sign_Extension|           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension                             ; work         ;
+;       |Mux2:Alu_input_B_Mux|                        ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit|Mux2:Alu_input_B_Mux                                          ; work         ;
+;       |Mux3:Alu_input_A_Mux|                        ; 737 (737)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit|Mux3:Alu_input_A_Mux                                          ; work         ;
+;       |Mux3:WriteBack_Mux|                          ; 68 (68)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit|Mux3:WriteBack_Mux                                            ; work         ;
+;       |Reg:Pc_Register|                             ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit|Reg:Pc_Register                                               ; work         ;
+;       |Reg_File:Register_File|                      ; 693 (693)         ; 994 (994)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit|Reg_File:Register_File                                        ; work         ;
+;       |adder:PC_Plus_Four|                          ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit|adder:PC_Plus_Four                                            ; work         ;
+;       |adder:Targer_Address|                        ; 100 (100)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Processor|Datapath:Datapath_unit|adder:Targer_Address                                          ; work         ;
++-----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                              ;
++--------------------------------------------------------+----------------------------------------+
+; Register name                                          ; Reason for Removal                     ;
++--------------------------------------------------------+----------------------------------------+
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][2]  ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][3]  ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][4]  ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][5]  ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][6]  ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][7]  ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][8]  ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][9]  ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][10] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][11] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][12] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][13] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][14] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][15] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][16] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][17] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][18] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][19] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][20] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][21] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][22] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][23] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][24] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][25] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][26] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][27] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][28] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][29] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][30] ; Stuck at GND due to stuck port data_in ;
+; Datapath:Datapath_unit|Reg_File:Register_File|M[0][31] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 30                 ;                                        ;
++--------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1026  ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 994   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 996   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Processor|Datapath:Datapath_unit|Reg:Pc_Register|Q[0]                                                ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |Processor|Datapath:Datapath_unit|Reg:Pc_Register|Q[11]                                               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Mux38   ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Mux59   ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Mux48   ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Mux40   ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|ImmExt:Immediate_Extension|Mux23                                    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|Mux40 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|Mux50 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|Mux62 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|Mux39 ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Processor|Datapath:Datapath_unit|Mux3:WriteBack_Mux|Mux27                                            ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|Reg_File:Register_File|R2[10]                                       ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|Mux3:WriteBack_Mux|Mux4                                             ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |Processor|Datapath:Datapath_unit|ImmExt:Immediate_Extension|Mux6                                     ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|ImmExt:Immediate_Extension|Mux2                                     ;
+; 128:1              ; 2 bits    ; 170 LEs       ; 18 LEs               ; 152 LEs                ; No         ; |Processor|Control_Unit:Controlling_unit|Main_unit:Main_Control_Unit|Mux6                             ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|Mux3:WriteBack_Mux|Mux17                                            ;
+; 35:1               ; 32 bits   ; 736 LEs       ; 736 LEs              ; 0 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Mux18                                          ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 10 LEs               ; 8 LEs                  ; No         ; |Processor|Control_Unit:Controlling_unit|Alu_cntr:Alu_Control_Unit|Mux6                               ;
+; 17:1               ; 7 bits    ; 77 LEs        ; 56 LEs               ; 21 LEs                 ; No         ; |Processor|Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Mux17                                     ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 56 LEs               ; 14 LEs                 ; No         ; |Processor|Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Mux11                                     ;
+; 18:1               ; 4 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; No         ; |Processor|Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Mux24                                     ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 36 LEs               ; 8 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Mux7                                      ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Mux28                                     ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; No         ; |Processor|Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Mux3                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; alu_bits       ; 32    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Mux3:WriteBack_Mux ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Adder:Targer_Address ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Adder:PC_Plus_Four ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Mux3:Pc_Selection ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Reg:Pc_Register ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Mux3:Alu_input_A_Mux ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:Datapath_unit|Mux2:Alu_input_B_Mux ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Port Connectivity Checks: "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux" ;
++------+-------+----------+-----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                       ;
++------+-------+----------+-----------------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                                  ;
++------+-------+----------+-----------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "Datapath:Datapath_unit|Adder:PC_Plus_Four" ;
++----------+-------+----------+-----------------------------------------+
+; Port     ; Type  ; Severity ; Details                                 ;
++----------+-------+----------+-----------------------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND                            ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND                            ;
+; b[2]     ; Input ; Info     ; Stuck at VCC                            ;
++----------+-------+----------+-----------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Wed Jun 04 18:10:00 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file processor.vhd
+    Info (12022): Found design unit 1: Processor-arch
+    Info (12023): Found entity 1: Processor
+Info (12127): Elaborating entity "Processor" for the top level hierarchy
+Warning (12125): Using design file datapath.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Datapath-arch
+    Info (12023): Found entity 1: Datapath
+Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:Datapath_unit"
+Warning (12125): Using design file reg_file.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Reg_File-arch
+    Info (12023): Found entity 1: Reg_File
+Info (12128): Elaborating entity "Reg_File" for hierarchy "Datapath:Datapath_unit|Reg_File:Register_File"
+Warning (12125): Using design file alu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Alu-arch
+    Info (12023): Found entity 1: ALU
+Info (12128): Elaborating entity "ALU" for hierarchy "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit"
+Warning (12125): Using design file adderss_shift.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Adderss_Shift-arch
+    Info (12023): Found entity 1: Adderss_Shift
+Info (12128): Elaborating entity "Adderss_Shift" for hierarchy "Datapath:Datapath_unit|Adderss_Shift:Address_Bits_Shift"
+Warning (12125): Using design file bit_manipulation_load.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Bit_Manipulation_Load-arch
+    Info (12023): Found entity 1: Bit_Manipulation_Load
+Info (12128): Elaborating entity "Bit_Manipulation_Load" for hierarchy "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit"
+Warning (12125): Using design file first_stage.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: First_stage-arch
+    Info (12023): Found entity 1: First_stage
+Info (12128): Elaborating entity "First_stage" for hierarchy "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First"
+Warning (12125): Using design file last_stage.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Last_stage-arch
+    Info (12023): Found entity 1: Last_stage
+Info (12128): Elaborating entity "Last_stage" for hierarchy "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last"
+Warning (12125): Using design file mem_signext.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Mem_SignExt-arch
+    Info (12023): Found entity 1: Mem_SignExt
+Info (12128): Elaborating entity "Mem_SignExt" for hierarchy "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension"
+Warning (12125): Using design file mux3.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Mux3-arch
+    Info (12023): Found entity 1: Mux3
+Info (12128): Elaborating entity "Mux3" for hierarchy "Datapath:Datapath_unit|Mux3:WriteBack_Mux"
+Warning (12125): Using design file immext.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: ImmExt-arch
+    Info (12023): Found entity 1: ImmExt
+Info (12128): Elaborating entity "ImmExt" for hierarchy "Datapath:Datapath_unit|ImmExt:Immediate_Extension"
+Warning (12125): Using design file adder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: adder-arch
+    Info (12023): Found entity 1: adder
+Info (12128): Elaborating entity "Adder" for hierarchy "Datapath:Datapath_unit|Adder:Targer_Address"
+Warning (12125): Using design file reg.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Reg-arch
+    Info (12023): Found entity 1: Reg
+Info (12128): Elaborating entity "Reg" for hierarchy "Datapath:Datapath_unit|Reg:Pc_Register"
+Warning (12125): Using design file mux2.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Mux2-arch
+    Info (12023): Found entity 1: Mux2
+Info (12128): Elaborating entity "Mux2" for hierarchy "Datapath:Datapath_unit|Mux2:Alu_input_B_Mux"
+Warning (12125): Using design file control_unit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Control_Unit-arch
+    Info (12023): Found entity 1: Control_Unit
+Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:Controlling_unit"
+Warning (12125): Using design file alu_cntr.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Alu_cntr-arch
+    Info (12023): Found entity 1: Alu_cntr
+Info (12128): Elaborating entity "Alu_cntr" for hierarchy "Control_Unit:Controlling_unit|Alu_cntr:Alu_Control_Unit"
+Warning (12125): Using design file main_unit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Main_unit-arch
+    Info (12023): Found entity 1: Main_unit
+Info (12128): Elaborating entity "Main_unit" for hierarchy "Control_Unit:Controlling_unit|Main_unit:Main_Control_Unit"
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[0]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[4]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[5]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[6]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[7]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[8]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[9]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[10]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[11]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[12]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[13]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[14]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[15]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[16]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[17]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[18]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[19]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[20]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[21]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[22]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[23]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[24]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[25]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[26]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[27]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[28]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[29]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[30]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Alu_input_A_Mux|Z[31]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[0]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[4]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[5]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[6]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[7]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[8]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[9]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[10]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[11]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[12]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[13]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[14]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[15]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[16]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[17]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[18]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[19]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[20]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[21]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[22]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[23]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[24]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[25]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[26]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[27]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[28]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[29]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[30]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:Pc_Selection|Z[31]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[0]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[4]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[5]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[6]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[7]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[8]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[9]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[10]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[11]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[12]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[13]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[14]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[15]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[16]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[17]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[18]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[19]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[20]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[21]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[22]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[23]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[24]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[25]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[26]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[27]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[28]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[29]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[30]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ImmExt:Immediate_Extension|Imm_Extended[31]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[0]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[4]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[5]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[6]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[7]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[8]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[9]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[10]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[11]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[12]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[13]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[14]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[15]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[16]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[17]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[18]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[19]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[20]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[21]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[22]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[23]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[24]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[25]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[26]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[27]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[28]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[29]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[30]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mux3:WriteBack_Mux|Z[31]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[0]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[4]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[5]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[6]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[7]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[8]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[9]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[10]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[11]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[12]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[13]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[14]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[15]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[16]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[17]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[18]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[19]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[20]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[21]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[22]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[23]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[24]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[25]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[26]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[27]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[28]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[29]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[30]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Mem_SignExt:Memory_Sign_Extension|To_Reg[31]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[0]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[4]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[5]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[6]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[7]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[8]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[9]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[10]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[11]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[12]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[13]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[14]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[15]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[16]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[17]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[18]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[19]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[20]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[21]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[22]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[23]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[24]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[25]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[26]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[27]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[28]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[29]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[30]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|First_stage:First|A2[31]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_LSB" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[1]" feeding internal logic into a wire
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[2]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[3]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[4]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[5]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[6]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[7]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[8]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[9]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[10]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[11]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[12]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[13]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[14]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[15]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[16]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[17]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[18]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[19]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[20]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[21]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[22]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[23]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[24]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[25]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[26]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[27]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[28]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[29]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[30]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Alu_out[31]" to the node "Datapath:Datapath_unit|ALU:Arithmetic_Logic_Unit|Equal0" into an OR gate
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[0]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[1]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[2]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[3]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[4]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[5]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[6]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[7]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[8]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[9]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[10]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[11]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[12]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[13]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[14]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[15]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[16]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[17]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[18]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[19]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[20]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[21]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[22]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[23]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[24]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[25]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[26]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[27]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[28]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[29]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[30]"
+    Warning (13010): Node "Datapath:Datapath_unit|Bit_Manipulation_Load:Bit_Manipulation_unit|Last_stage:Last|Data_out[31]"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DataAdr[30]" is stuck at GND
+    Warning (13410): Pin "DataAdr[31]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 3825 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 66 input pins
+    Info (21059): Implemented 97 output pins
+    Info (21061): Implemented 3662 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 278 warnings
+    Info: Peak virtual memory: 4734 megabytes
+    Info: Processing ended: Wed Jun 04 18:10:07 2025
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
+
+

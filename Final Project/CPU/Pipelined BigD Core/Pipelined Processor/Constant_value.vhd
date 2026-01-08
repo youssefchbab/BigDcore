@@ -1,0 +1,15 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+use ieee.Numeric_std.all;
+
+entity Constant_value is
+	generic(bit_width: integer:= 32;
+			Number: integer:=4);
+	port(output: out std_logic_vector(bit_width-1 downto 0));
+end entity;
+
+architecture arch of Constant_value is
+
+Begin 	
+	output<= std_logic_vector(to_unsigned(Number, bit_width));
+end architecture;

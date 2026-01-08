@@ -1,0 +1,101 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+
+entity Alu_cntr is
+  port (
+    Opcode: in std_logic_vector(6 downto 0) ;
+    Funct3: in std_logic_vector(2 downto 0) ;
+    Funct7_Bit5: in std_logic_vector;--Only need Bit-5
+    Alu_Op: out std_logic_vector(3 downto 0) 
+  );
+end Alu_cntr;
+
+architecture arch of Alu_cntr is
+  --The Following constants represent the operation of the ALU
+  constant Add: std_logic_vector(3 downto 0):= x"0";
+  constant sub: std_logic_vector(3 downto 0):= x"1";
+  constant or_: std_logic_vector(3 downto 0):= x"2";
+  constant and_: std_logic_vector(3 downto 0):= x"3";
+  constant xor_: std_logic_vector(3 downto 0):= x"4";
+  constant slt: std_logic_vector(3 downto 0):= x"5";
+  constant sltu: std_logic_vector(3 downto 0):= x"6";
+  constant sll_: std_logic_vector(3 downto 0):= x"7";
+  constant slr: std_logic_vector(3 downto 0):= x"8";
+  constant sar: std_logic_vector(3 downto 0):= x"9";
+
+  --The Following constants represent the Opcodes for each 'type'
+  constant R_type_instruction: std_logic_vector (6 downto 0) := "0110011";
+  constant I_type_instruction_arih: std_logic_vector(6 downto 0) := "0010011";
+  constant Store_instructions: std_logic_vector(6 downto 0) := "0100011";
+  constant Branch_intstructions: std_logic_vector(6 downto 0) := "1100011";
+  constant Jump_instructions: std_logic_vector(6 downto 0) := "1101111";
+  constant Jump_And_Link_Reg_instruction: std_logic_vector(6 downto 0) :="1100111";
+  constant Load_upper_immediate: std_logic_vector(6 downto 0) := "0110111";
+  constant Add_Upper_immediate_to_PC: std_logic_vector(6 downto 0) := "0010111";
+  constant Load_Instructions: std_logic_vector(6 downto 0) := "0000011";
+
+  --The Following constants represent The Funct3 for R-type
+  constant Add_Sub: std_logic_vector(2 downto 0):= "000";
+  constant Shift_Logical_Left: std_logic_vector(2 downto 0):= "001";
+  constant Set_Less_Than: std_logic_vector(2 downto 0):= "010";
+  constant Set_Less_Than_U: std_logic_vector(2 downto 0):= "011";
+  constant Logic_Xor: std_logic_vector(2 downto 0):= "100";
+  constant Shift_Right_LA: std_logic_vector(2 downto 0):= "101";--Includes arithmetic and logical
+  constant Logic_or: std_logic_vector(2 downto 0):= "110";
+  constant Logic_and: std_logic_vector(2 downto 0);= "111";
+
+  --The Following constants represent The Funct3 for branches 
+  constant If_equal : std_logic_vector(2 downto 0):= "000";
+  constant If_not_equal: std_logic_vector(2 downto 0):= "001";
+  constant If_less_than: std_logic_vector(2 downto 0):= "100";
+  constant If_greater_or_equal: std_logic_vector(2 downto 0):= "101";
+  constant If_less_than_U: std_logic_vector(2 downto 0):= "110";
+  constant If_greater_or_equal_U: std_logic_vector(2 downto 0):= "111";
+
+Begin
+  process (Opcode, Funct3, Funct7_Bit5) Begin
+    case( Opcode ) is
+      when Load_Instructions=> Alu_OP<= Add;
+      when Add_Upper_immediate_to_PC=> Alu_OP<= Add;
+      when Load_upper_immediate=> Alu_OP<= Add;
+      when Store_instructions=> Alu_OP<= Add;
+      when Jump_And_Link_Reg_instruction=> Alu_OP<= Add;
+      when Jump_instructions=> Alu_Op<= "----";
+      when Branch_intstructions=> 
+        case Funct3 is  
+          when If_equal => Alu_Op<= sub;
+          when If_not_equal => Alu_Op<= sub;
+          when If_less_than => Alu_Op<= slt;
+          when If_greater_or_equal => Alu_Op <= slt;
+          when If_less_than_U => Alu_Op<= sltu;
+          when If_greater_or_equal_U => Alu_Op<= sltu;
+          when others => Alu_Op<= "----";
+        end case;
+      when others => --Should Describe I-type and R-type instructions together
+          case Funct3 is 
+            when Add_Sub =>  
+
+              if (Funct7_Bit5= '0' or Opcode = I_type_instruction_arih) then
+                Alu_Op<= Add;
+              else
+                Alu_Op<= sub;
+              end if;
+
+            when Shift_Logical_Left => Alu_Op<= sll_;
+            when Set_Less_Than => Alu_Op<= slt;
+            when Set_Less_Than_U => Alu_Op<= sltu;
+            when Logic_Xor => Alu_Op<= xor_;
+            when Shift_Right_LA => 
+
+              if (Funct7_Bit5='0') then
+                Alu_Op<= slr;
+              else
+                Alu_OP<= sar;
+              end if;
+
+            when Logic_or => Alu_Op<= or_;
+            when Logic_and => Alu_OP<= and_;
+            when others => Alu_OP<= "----";
+          end case;
+    end case ;
+end arch ; -- arch

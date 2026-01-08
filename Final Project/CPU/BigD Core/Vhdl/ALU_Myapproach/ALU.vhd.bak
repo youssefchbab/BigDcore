@@ -1,0 +1,72 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+use ieee.Numeric_std.all;
+--My approach 
+entity ALU is
+	generic(Alu_bits: integer:= 32);
+	port(A,B: in std_logic_vector(Alu_bits-1 downto 0);
+		 Alu_cntr: in std_logic_vector(3 downto 0);
+		 Alu_out: out std_logic_vector(Alu_bits-1 downto 0);
+		 Z: out std_logic);--Zero flag
+end entity;
+
+architecture arch of Alu is
+	--Constants Becuase why the fuck not
+	constant Alu_MSB : integer := Alu_bits -1;
+	constant Zero: std_logic_vector(Alu_MSB downto 0) := (others=>'0');
+	constant One: std_logic_vector(Alu_MSB downto 0) := ((Alu_MSB downto 1=>'0') & '1');
+	--Signals Because........
+	Signal add,sub: Signed(Alu_bits downto 0);
+	Signal Alu_result, slt, sltu: std_logic_vector(Alu_MSB downto 0);
+	Signal A_U, B_U,shift_LL,shift_LR: unsigned(Alu_MSB downto 0);
+	Signal A_temp, B_temp, Shift_AR: Signed(Alu_MSB downto 0);
+Begin 
+
+	Process(Alu_cntr, add, sub, A,B, slt, sltu, shift_LL, Shift_LR, Shift_AR) Begin 
+		case Alu_cntr is
+			when x"0" => Alu_result<= std_logic_vector(add(Alu_MSB downto 0));--add
+			when x"1" => Alu_result<= std_logic_vector(sub(Alu_MSB downto 0));--sub
+			when x"2" => Alu_result<= A and B;--and
+			when x"3" => Alu_result<= A or B;--or
+			when x"4" => Alu_result<= A xor B;	--xor
+			when x"5" => Alu_result<= slt;--slt
+			when x"6" => Alu_result<= sltu;--sltu
+			when x"7" => Alu_result<= std_logic_vector(shift_LL);--sll
+			when x"8" => Alu_result<= std_logic_vector(Shift_LR);--slr
+			when x"9" => Alu_result<= std_logic_vector(Shift_AR);--sar
+			when others => Alu_result<= (others=> 'Z');
+		end case;
+	end process;
+	A_temp<= Signed(A);
+	B_temp<= Signed(B);
+	A_U<= Unsigned(A);
+	B_U<= Unsigned(B);
+	--addition and substraction
+	add<= '0' & A_temp + B_temp;
+	sub<= '0' & A_temp - B_temp;
+	--Set less than 
+		process(A_temp,B_temp) Begin 
+			if (A_temp < B_temp)then 
+				slt<= One;
+			else 
+				slt<= Zero;
+			end if;
+		end process;
+	--Set less than unsigned
+		process(A_U,B_U) Begin 
+			if(A_U < B_U) then 
+				sltu<= One;
+			else
+				sltu<= Zero;
+			end if;
+		end process;
+	--Shift logical left
+	shift_LL<= Shift_left(A_U, to_integer(unsigned(B)));
+	--Shift Logical right
+	Shift_LR<= Shift_Right(A_U, to_integer(unsigned(B)));
+	--Shift Arithmetic Right
+	Shift_AR<= shift_right(A_temp, to_integer(unsigned(B)));
+	Z<= '1' when Alu_result= Zero else '0';
+ 		
+ 	Alu_out<=Alu_Result;	
+ end architecture;

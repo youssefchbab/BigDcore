@@ -1,0 +1,21 @@
+
+
+D:/Work and shit/Quartus13/Project Files/BigD Core/Temporary design block/lpm_dff0.vhd
+
+Jun 01 05PM:34:13>: Megafunction LPM_FF is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+D:/Work and shit/Quartus13/Project Files/BigD Core/Temporary design block/lpm_dff0.vhd
+
+Jun 01 07PM:23:29>: Megafunction LPM_FF is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+D:/Work and shit/Quartus13/Project Files/BigD Core/Temporary design block/lpm_dff0.vhd
+
+Jun 01 07PM:23:30>: Megafunction LPM_FF is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+D:/Work and shit/Quartus13/Project Files/BigD Core/Temporary design block/lpm_dff0.vhd
+
+Jun 01 07PM:23:33>: Megafunction LPM_FF is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted

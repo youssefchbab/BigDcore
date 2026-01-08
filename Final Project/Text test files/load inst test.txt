@@ -1,0 +1,188 @@
+# ========================================
+# RV32I LOAD BYTE AND HALFWORD TEST
+# ========================================
+# Simple test for LB, LBU, LH, LHU
+# Memory constraint: 256 words (1024 bytes)
+
+.text
+.globl _start
+_start:
+    # ============================================
+    # Setup: Initialize memory base address
+    # ============================================
+    addi x10, x0, 100       # 06400513  | x10 = 100 (byte address)
+                            #           | word address = 100/4 = 25
+    
+    # ============================================
+    # Prepare test data
+    # ============================================
+    addi x1, x0, 0x7F       # 07F00093  | x1 = 127 (0x7F) - positive byte
+    addi x2, x0, -1         # FFF00113  | x2 = -1 (0xFFFFFFFF)
+    addi x3, x0, 0xFF       # 0FF00193  | x3 = 255 (0xFF) - will be neg if sign-extended
+    
+    lui x4, 0x12345         # 12345237  | x4 = 0x12345000
+    addi x4, x4, 0x678      # 67820213  | x4 = 0x12345678
+    
+    addi x5, x0, 0x7FFF     # 7FF00293  | x5 = 32767 (0x7FFF) - positive halfword
+    lui x6, 0x80000         # 80000337  | x6 = 0x80000000
+    srli x6, x6, 16         # 01035313  | x6 = 0x00008000 - neg halfword when sign-extended
+    
+    # ============================================
+    # STORE TEST DATA TO MEMORY
+    # ============================================
+    # Store bytes
+    sb x1, 0(x10)           # 00150023  | mem[100] = 0x7F (byte 0)
+    sb x2, 1(x10)           # 002500A3  | mem[101] = 0xFF (byte 1)
+    sb x3, 2(x10)           # 00350123  | mem[102] = 0xFF (byte 2)
+    addi x7, x0, 0x80       # 08000393  | x7 = 128 (0x80) - negative if sign-extended
+    sb x7, 3(x10)           # 007501A3  | mem[103] = 0x80 (byte 3)
+    
+    # Store halfwords
+    sh x5, 4(x10)           # 00551223  | mem[104-105] = 0x7FFF (halfword 0)
+    sh x6, 6(x10)           # 006512A3  | mem[106-107] = 0x8000 (halfword 1)
+    sh x2, 8(x10)           # 00251423  | mem[108-109] = 0xFFFF (halfword 2)
+    
+    # Store word for reference
+    sw x4, 12(x10)          # 00452623  | mem[112-115] = 0x12345678 (word)
+    
+    # ============================================
+    # TEST 1: Load Byte Signed (LB)
+    # ============================================
+    lb x11, 0(x10)          # 00050583  | x11 = mem[100] sign-extended
+                            #           | Load 0x7F → 0x0000007F (positive)
+    
+    lb x12, 1(x10)          # 00150603  | x12 = mem[101] sign-extended
+                            #           | Load 0xFF → 0xFFFFFFFF (negative)
+    
+    lb x13, 3(x10)          # 00350683  | x13 = mem[103] sign-extended
+                            #           | Load 0x80 → 0xFFFFFF80 (negative)
+    
+    # ============================================
+    # TEST 2: Load Byte Unsigned (LBU)
+    # ============================================
+    lbu x14, 0(x10)         # 00054703  | x14 = mem[100] zero-extended
+                            #           | Load 0x7F → 0x0000007F (positive)
+    
+    lbu x15, 1(x10)         # 00154783  | x15 = mem[101] zero-extended
+                            #           | Load 0xFF → 0x000000FF (positive)
+    
+    lbu x16, 3(x10)         # 00354803  | x16 = mem[103] zero-extended
+                            #           | Load 0x80 → 0x00000080 (positive)
+    
+    # ============================================
+    # TEST 3: Load Halfword Signed (LH)
+    # ============================================
+    lh x17, 4(x10)          # 00451883  | x17 = mem[104-105] sign-extended
+                            #           | Load 0x7FFF → 0x00007FFF (positive)
+    
+    lh x18, 6(x10)          # 00651903  | x18 = mem[106-107] sign-extended
+                            #           | Load 0x8000 → 0xFFFF8000 (negative)
+    
+    lh x19, 8(x10)          # 00851983  | x19 = mem[108-109] sign-extended
+                            #           | Load 0xFFFF → 0xFFFFFFFF (negative)
+    
+    # ============================================
+    # TEST 4: Load Halfword Unsigned (LHU)
+    # ============================================
+    lhu x20, 4(x10)         # 00455A03  | x20 = mem[104-105] zero-extended
+                            #           | Load 0x7FFF → 0x00007FFF (positive)
+    
+    lhu x21, 6(x10)         # 00655A83  | x21 = mem[106-107] zero-extended
+                            #           | Load 0x8000 → 0x00008000 (positive)
+    
+    lhu x22, 8(x10)         # 00855B03  | x22 = mem[108-109] zero-extended
+                            #           | Load 0xFFFF → 0x0000FFFF (positive)
+    
+    # ============================================
+    # TEST 5: Load Word (LW) - for reference
+    # ============================================
+    lw x23, 12(x10)         # 00C52B83  | x23 = mem[112-115]
+                            #           | Load 0x12345678 → 0x12345678
+    
+    # ============================================
+    # SUCCESS MARKER
+    # ============================================
+    addi x31, x0, 0xFF      # 0FF00F93  | x31 = 255 (SUCCESS)
+    
+    # Halt
+halt:
+    jal x0, halt            # 0000006F  | infinite loop
+
+
+# ========================================
+# EXPECTED REGISTER VALUES
+# ========================================
+#
+# Setup registers:
+# x1  = 0x0000007F (127)
+# x2  = 0xFFFFFFFF (-1)
+# x3  = 0x000000FF (255)
+# x4  = 0x12345678
+# x5  = 0x000007FF (2047)
+# x6  = 0x00008000 (32768)
+# x7  = 0x00000080 (128)
+# x10 = 0x00000064 (100 - base address)
+#
+# Load Byte Signed (LB):
+# x11 = 0x0000007F (127)   - loaded 0x7F, positive, no sign extension
+# x12 = 0xFFFFFFFF (-1)    - loaded 0xFF, negative, sign-extended
+# x13 = 0xFFFFFF80 (-128)  - loaded 0x80, negative, sign-extended
+#
+# Load Byte Unsigned (LBU):
+# x14 = 0x0000007F (127)   - loaded 0x7F, zero-extended
+# x15 = 0x000000FF (255)   - loaded 0xFF, zero-extended (NOT negative)
+# x16 = 0x00000080 (128)   - loaded 0x80, zero-extended (NOT negative)
+#
+# Load Halfword Signed (LH):
+# x17 = 0x000007FF (2047)  - loaded 0x7FFF, positive, no sign extension
+# x18 = 0xFFFF8000 (-32768) - loaded 0x8000, negative, sign-extended
+# x19 = 0xFFFFFFFF (-1)     - loaded 0xFFFF, negative, sign-extended
+#
+# Load Halfword Unsigned (LHU):
+# x20 = 0x000007FF (2047)  - loaded 0x7FFF, zero-extended
+# x21 = 0x00008000 (32768)  - loaded 0x8000, zero-extended (NOT negative)
+# x22 = 0x0000FFFF (65535)  - loaded 0xFFFF, zero-extended (NOT negative)
+#
+# Load Word (LW):
+# x23 = 0x12345678          - loaded full word
+#
+# Success marker:
+# x31 = 0x000000FF (255)
+#
+# ========================================
+# MEMORY LAYOUT (Byte Addressable)
+# ========================================
+# Byte Address | Value | Description
+# -------------|-------|-------------
+# 100          | 0x7F  | Positive byte (127)
+# 101          | 0xFF  | Negative byte when signed (-1)
+# 102          | 0xFF  | Negative byte when signed (-1)
+# 103          | 0x80  | Negative byte when signed (-128)
+# 104-105      | 0x7FFF| Positive halfword (32767)
+# 106-107      | 0x8000| Negative halfword when signed (-32768)
+# 108-109      | 0xFFFF| Negative halfword when signed (-1)
+# 112-115      | 0x12345678 | Full word
+#
+# Word Index (if word-addressable memory):
+# Words 25-28 (bytes 100-115)
+#
+# ========================================
+# KEY DIFFERENCES TO VERIFY
+# ========================================
+# 
+# LB vs LBU for 0xFF:
+# - LB  → 0xFFFFFFFF (sign bit extended)
+# - LBU → 0x000000FF (zero extended)
+#
+# LB vs LBU for 0x80:
+# - LB  → 0xFFFFFF80 (sign bit extended)
+# - LBU → 0x00000080 (zero extended)
+#
+# LH vs LHU for 0x8000:
+# - LH  → 0xFFFF8000 (sign bit extended)
+# - LHU → 0x00008000 (zero extended)
+#
+# LH vs LHU for 0xFFFF:
+# - LH  → 0xFFFFFFFF (sign bit extended)
+# - LHU → 0x0000FFFF (zero extended)
+

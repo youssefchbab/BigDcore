@@ -21,7 +21,8 @@ entity P_Control_Unit is
         Alu_input_for_auipc_and_lui: out std_logic_vector(1 downto 0);--Done
         Reg_WriteM: out std_logic;--Used by hazard unit
         Write_backE: out std_logic;--Used by hazard unit
-        FlushE: in std_logic
+        FlushE: in std_logic;
+        Pc_Select_Initial_Hazard: out std_logic_vector(1 downto 0)
     );
 end entity;
 
@@ -66,7 +67,8 @@ architecture arch of P_Control_Unit is
         generic(N: integer := 21);
         port (
             clk,Reset: in std_logic;
-            En, Flush: in std_logic;
+            stall, Flush: in std_logic;
+            En: in std_logic;
             NoN: in std_logic_vector(N-1 downto 0) ;
             D: in std_logic_vector(N-1 downto 0) ;
             Q: out std_logic_vector(N-1 downto 0)
@@ -139,7 +141,7 @@ Begin
     Control_bus(1 downto 0)<= Alu_input_for_auipc_and_lui_Sig;
     Control_Signals_PLR03: RegEn port map(
         clk, reset,
-        '0', FlushE,
+        '0', FlushE,'0',
         "000000000000001000000",
         Control_bus,
         Control_bus_PLR3
@@ -163,6 +165,7 @@ Begin
         Control_bus_PLR4
     );
     Write_backE<= Control_bus_PLR3(8);
+    Pc_Select_Initial_Hazard<= Control_bus_PLR3(7 downto 6);
     --Memory Cycle
     Word_Half_Byte<= Control_bus_PLR4(8 downto 7);
     MemWrite<= Control_bus_PLR4(5);

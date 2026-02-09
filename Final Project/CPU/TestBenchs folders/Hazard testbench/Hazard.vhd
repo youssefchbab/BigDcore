@@ -1,6 +1,5 @@
 Library ieee;
 use ieee.std_logic_1164.all;
-
 entity Hazard_Testbench is
 end entity;
 
@@ -41,6 +40,7 @@ architecture arch of Hazard_Testbench is
     Signal MemWrite: std_logic;
     Signal Pc: std_logic_vector(31 downto 0);
     Signal DataAdr, WriteData: std_logic_vector(31 downto 0);
+    Signal clk_cnt: integer := 0;--number Of clocks counter
 begin
     UUT: P_Processor_Hazard port map(
         clk ,reset,
@@ -73,7 +73,13 @@ begin
             wait for 10 ns;
         end loop;
     end process;
-    
+
+    Clock_counter: process(clk) begin
+        if(rising_edge(clk)) then
+            clk_cnt<= clk_cnt + 1;
+        end if;
+    end process;
+
     Stimulus: process Begin
         reset<= '1';
         wait for 40 ns;

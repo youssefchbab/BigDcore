@@ -13,20 +13,20 @@ Z0 w1744903976
 Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z4 dC:/Users/dell/Desktop/Final Project/CPU/TestBenchs folders/Hazard
-Z5 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd
-Z6 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd
+Z4 dF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/TestBenchs folders/Hazard
+Z5 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd
+Z6 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd
 l0
 L5
 VYVoRTmN<C_KVBW`739cL[1
 !s100 a1;ad^Dh]7QLm?bhGFCL60
 Z7 OV;C;10.5b;63
 32
-Z8 !s110 1764878386
+Z8 !s110 1770566458
 !i10b 1
-Z9 !s108 1764878385.000000
-Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd|
-Z11 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd|
+Z9 !s108 1770566458.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd|
+Z11 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd|
 !i113 1
 Z12 o-work work -2002 -explicit
 Z13 tExplicit 1 CvgOpt 0
@@ -55,8 +55,8 @@ R1
 R2
 R3
 R4
-Z15 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adderss_Shift.vhd
-Z16 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adderss_Shift.vhd
+Z15 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adderss_Shift.vhd
+Z16 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adderss_Shift.vhd
 l0
 L5
 V?ED?KZ8b9E@T=imHBh=el0
@@ -65,9 +65,9 @@ R7
 32
 R8
 !i10b 1
-Z17 !s108 1764878386.000000
-Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adderss_Shift.vhd|
-Z19 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adderss_Shift.vhd|
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adderss_Shift.vhd|
+Z18 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adderss_Shift.vhd|
 !i113 1
 R12
 R13
@@ -84,20 +84,20 @@ R7
 32
 R8
 !i10b 1
+R9
 R17
 R18
-R19
 !i113 1
 R12
 R13
 Ealu
-Z20 w1763400789
+Z19 w1763400789
 R1
 R2
 R3
 R4
-Z21 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd
-Z22 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd
+Z20 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd
+Z21 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd
 l0
 L5
 VXfCGV_azFL]d_W`7ZN=@Z0
@@ -106,9 +106,9 @@ R7
 32
 R8
 !i10b 1
-R17
-Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd|
-Z24 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd|
+R9
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd|
+Z23 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd|
 !i113 1
 R12
 R13
@@ -125,30 +125,30 @@ R7
 32
 R8
 !i10b 1
-R17
+R9
+R22
 R23
-R24
 !i113 1
 R12
 R13
 Ealu_cntr
-Z25 w1748978328
+Z24 w1748978328
 R2
 R3
 R4
-Z26 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd
-Z27 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd
+Z25 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd
+Z26 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd
 l0
 L4
 V6:JbKHleDgg@CMd4OW2?@3
 !s100 ^Ug3z=WO4U28EgJSaFSeN1
 R7
 32
-R8
+Z27 !s110 1770566459
 !i10b 1
-R17
-Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd|
-Z29 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd|
+R9
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd|
+Z29 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd|
 !i113 1
 R12
 R13
@@ -162,9 +162,9 @@ VI=^YEH>bLR>OiRlAK:Z:03
 !s100 Z`hU13lJPaj?R1R5W:^[W1
 R7
 32
-R8
+R27
 !i10b 1
-R17
+R9
 R28
 R29
 !i113 1
@@ -175,19 +175,19 @@ Z30 w1749041909
 R2
 R3
 R4
-Z31 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd
-Z32 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd
+Z31 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd
+Z32 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd
 l0
 L5
 V]X1_dH1IQSjmUB=nN6kQJ3
 !s100 X::3YC1Y66Og7B3JLg>M91
 R7
 32
-Z33 !s110 1764878387
+R27
 !i10b 1
-Z34 !s108 1764878387.000000
-Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd|
-Z36 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd|
+Z33 !s108 1770566459.000000
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd|
+Z35 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd|
 !i113 1
 R12
 R13
@@ -201,32 +201,32 @@ VaN1OnabFWQ3[0:Fm3H2263
 !s100 XhE7[5ndLkhAMWPGN@[cE1
 R7
 32
-R33
+R27
 !i10b 1
+R33
 R34
 R35
-R36
 !i113 1
 R12
 R13
 Ebit_manipulation_store
-Z37 w1759841929
+Z36 w1759841929
 R2
 R3
 R4
-Z38 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd
-Z39 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd
+Z37 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd
+Z38 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd
 l0
 L5
 VggVOQAYn9`QN7iOYYd[]f1
 !s100 UQkTF<EG7SSNR<zjj:Bi62
 R7
 32
-R33
+R27
 !i10b 1
-R34
-Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd|
-Z41 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd|
+R33
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd|
+Z40 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd|
 !i113 1
 R12
 R13
@@ -240,33 +240,33 @@ VWC10MhW=J1INnY_e8eYI82
 !s100 jJ`dJ13?]^54``]OLm0bC0
 R7
 32
-R33
+R27
 !i10b 1
-R34
+R33
+R39
 R40
-R41
 !i113 1
 R12
 R13
 Econstant_value
-Z42 w1746030364
+Z41 w1746030364
 R1
 R2
 R3
 R4
-Z43 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Constant_value.vhd
-Z44 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Constant_value.vhd
+Z42 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Constant_value.vhd
+Z43 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Constant_value.vhd
 l0
 L5
 Vg2>oWJ]B3^9ZcXHA=I8bP2
 !s100 7ViAn9SJzl[mG3BSPOO]A2
 R7
 32
-R33
+R27
 !i10b 1
-R34
-Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Constant_value.vhd|
-Z46 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Constant_value.vhd|
+R33
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Constant_value.vhd|
+Z45 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Constant_value.vhd|
 !i113 1
 R12
 R13
@@ -281,33 +281,33 @@ V:X?O:3m[>WB>_1QLI2n3H0
 !s100 Y>7a8zD^4cYcf1G2XK1_82
 R7
 32
-R33
+R27
 !i10b 1
-R34
+R33
+R44
 R45
-R46
 !i113 1
 R12
 R13
 Edata_mem
-Z47 w1744672023
+Z46 w1744672023
 R1
 R2
 R3
 R4
-Z48 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Data_mem.vhd
-Z49 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Data_mem.vhd
+Z47 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Data_mem.vhd
+Z48 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Data_mem.vhd
 l0
 L5
 VQBZI^JW>FG5BfTPimdcaW1
 !s100 ^TbH@HgI0ef0bY8QQ58dG3
 R7
 32
-Z50 !s110 1764878388
+R27
 !i10b 1
-R34
-Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Data_mem.vhd|
-Z52 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Data_mem.vhd|
+R33
+Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Data_mem.vhd|
+Z50 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Data_mem.vhd|
 !i113 1
 R12
 R13
@@ -322,32 +322,32 @@ VBeM1jCkW7dOEokzSi5m[23
 !s100 lhbZ;z>O>X=8>0NLeDLmQ0
 R7
 32
-R50
+R27
 !i10b 1
-R34
-R51
-R52
+R33
+R49
+R50
 !i113 1
 R12
 R13
 Eexcution_flow
-Z53 w1763574199
+Z51 w1763574199
 R2
 R3
 R4
-Z54 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd
-Z55 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd
+Z52 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd
+Z53 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd
 l0
 L4
 Vd]Fdin:5f]dF3AzZak6_f1
 !s100 Uk4`TG[bdNF1YQgiTf`BQ3
 R7
 32
-R50
+R27
 !i10b 1
-Z56 !s108 1764878388.000000
-Z57 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd|
-Z58 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd|
+R33
+Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd|
+Z55 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd|
 !i113 1
 R12
 R13
@@ -361,32 +361,32 @@ V3hmSH2nET@bl19K`0A32Y1
 !s100 g>7MdO4=1a^Am5_3Zl6jV0
 R7
 32
-R50
+R27
 !i10b 1
-R56
-R57
-R58
+R33
+R54
+R55
 !i113 1
 R12
 R13
 Efirst_stage
-Z59 w1746102340
+Z56 w1746102340
 R2
 R3
 R4
-Z60 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/First_stage.vhd
-Z61 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/First_stage.vhd
+Z57 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/First_stage.vhd
+Z58 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/First_stage.vhd
 l0
 L4
 V;YK>`QS@nOZOQX^A:OQLN3
 !s100 P[PALIM13=gBhJc3TW3;C0
 R7
 32
-R50
+Z59 !s110 1770566460
 !i10b 1
-R56
-Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/First_stage.vhd|
-Z63 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/First_stage.vhd|
+R33
+Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/First_stage.vhd|
+Z61 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/First_stage.vhd|
 !i113 1
 R12
 R13
@@ -400,110 +400,110 @@ VWCTQ2F0ak=SNGJWGCB^JJ0
 !s100 5l@CBdmFH4_Q=Pk=UA_2W1
 R7
 32
-R50
+R59
 !i10b 1
-R56
-R62
-R63
+R33
+R60
+R61
 !i113 1
 R12
 R13
 Ehazard_testbench
-Z64 w1765028220
+Z62 w1770638205
 R2
 R3
 R4
-Z65 8C:/Users/dell/Desktop/Final Project/CPU/TestBenchs folders/Hazard testbench/Hazard.vhd
-Z66 FC:/Users/dell/Desktop/Final Project/CPU/TestBenchs folders/Hazard testbench/Hazard.vhd
+Z63 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/TestBenchs folders/Hazard testbench/Hazard.vhd
+Z64 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/TestBenchs folders/Hazard testbench/Hazard.vhd
 l0
-L4
-VV0hE@V2jCVc=TgB4;H>af2
-!s100 ;abaTWI>lJKS92d[6MJBX1
+L3
+VN`I6dYEiZ7a9_3TffP6D@1
+!s100 [CK=5fPMLz:7;G_T1>MP90
 R7
 32
-Z67 !s110 1765028416
+Z65 !s110 1770638218
 !i10b 1
-Z68 !s108 1765028416.000000
-Z69 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/TestBenchs folders/Hazard testbench/Hazard.vhd|
-Z70 !s107 C:/Users/dell/Desktop/Final Project/CPU/TestBenchs folders/Hazard testbench/Hazard.vhd|
+Z66 !s108 1770638218.000000
+Z67 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/TestBenchs folders/Hazard testbench/Hazard.vhd|
+Z68 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/TestBenchs folders/Hazard testbench/Hazard.vhd|
 !i113 1
 R12
 R13
 Aarch
 R2
 R3
-DEx4 work 16 hazard_testbench 0 22 V0hE@V2jCVc=TgB4;H>af2
+DEx4 work 16 hazard_testbench 0 22 N`I6dYEiZ7a9_3TffP6D@1
 l44
-L7
-VeF03FKM0?IIlSEc?UC]kP3
-!s100 zJ^C>o85kWZ@X6E?@DCeV2
+L6
+V[SVIQQc<z0YH2Tl4=;jND1
+!s100 Q6i5oInHTcWeFg9zmbdXc2
 R7
 32
-R67
+R65
 !i10b 1
+R66
+R67
 R68
-R69
-R70
 !i113 1
 R12
 R13
 Ehazard_unit
-Z71 w1765054176
+Z69 w1770565254
 R2
 R3
 R4
-Z72 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Hazard_Unit.vhd
-Z73 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Hazard_Unit.vhd
+Z70 8F:\Personal\Github Files\BigDcore\BigDCoreFr\BigDcore\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\Hazard_Unit.vhd
+Z71 FF:\Personal\Github Files\BigDcore\BigDCoreFr\BigDcore\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\Hazard_Unit.vhd
 l0
 L4
-V1n2107OhJcQ0KQX6ohBYJ3
-!s100 PVAW`LH79B0jJFbfMZDXX0
+VgRJfQBXaRI;eQ8Vd1EoTX1
+!s100 _cUa<B8AeP_a;Q<=M_>>B3
 R7
 32
-Z74 !s110 1765054189
+R59
 !i10b 1
-Z75 !s108 1765054189.000000
-Z76 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Hazard_Unit.vhd|
-Z77 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Hazard_Unit.vhd|
+Z72 !s108 1770566460.000000
+Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:\Personal\Github Files\BigDcore\BigDCoreFr\BigDcore\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\Hazard_Unit.vhd|
+Z74 !s107 F:\Personal\Github Files\BigDcore\BigDCoreFr\BigDcore\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\Hazard_Unit.vhd|
 !i113 1
 R12
 R13
 Aarch
 R2
 R3
-DEx4 work 11 hazard_unit 0 22 1n2107OhJcQ0KQX6ohBYJ3
-l20
-L18
-V2:A2hkJb83OZhH3`fOBd53
-!s100 63I6LcMCakM3MDQJgci::0
+DEx4 work 11 hazard_unit 0 22 gRJfQBXaRI;eQ8Vd1EoTX1
+l22
+L20
+VNkILY]KI?S2l742ULc<mA3
+!s100 6BddYJfHec;z2WWYF;;3J2
 R7
 32
-R74
+R59
 !i10b 1
-R75
-R76
-R77
+R72
+R73
+R74
 !i113 1
 R12
 R13
 Eimmext
-Z78 w1748858178
+Z75 w1770576717
 R2
 R3
 R4
-Z79 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd
-Z80 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd
+Z76 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd
+Z77 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd
 l0
 L5
 V0eiX9L7]hfZGdJbj6J:?f3
 !s100 V;KhNeR0B]jMFDOa_jW]03
 R7
 32
-R50
+Z78 !s110 1770576723
 !i10b 1
-R56
-Z81 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd|
-Z82 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd|
+Z79 !s108 1770576723.000000
+Z80 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd|
+Z81 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd|
 !i113 1
 R12
 R13
@@ -513,36 +513,36 @@ R3
 DEx4 work 6 immext 0 22 0eiX9L7]hfZGdJbj6J:?f3
 l13
 L11
-VM^^jHBMmSdIn:I6Z@:Imc0
-!s100 SkIS>dmo@CJ]h7?IR;XK<3
+V`_92fPbhzZImlIVC]Wkb]1
+!s100 VEeN]E0E0C1A6F8GEicP22
 R7
 32
-R50
+R78
 !i10b 1
-R56
+R79
+R80
 R81
-R82
 !i113 1
 R12
 R13
 Elast_stage
-Z83 w1746102328
+Z82 w1746102328
 R2
 R3
 R4
-Z84 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd
-Z85 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd
+Z83 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd
+Z84 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd
 l0
 L4
 VGkGJNQ94]4KS<^?WT?fb>2
 !s100 jg34<k]mKRZ4GORE^S30m0
 R7
 32
-R50
+R59
 !i10b 1
-R56
-Z86 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd|
-Z87 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd|
+R72
+Z85 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd|
+Z86 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd|
 !i113 1
 R12
 R13
@@ -556,32 +556,32 @@ V=ZhTl@3g0ijzKgbS<k:JQ1
 !s100 W]jj4PGnVObeZER4Y<]jV3
 R7
 32
-R50
+R59
 !i10b 1
-R56
+R72
+R85
 R86
-R87
 !i113 1
 R12
 R13
 Elpm_dff0
-Z88 w1745183239
+Z87 w1745183239
 R2
 R3
 R4
-Z89 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd
-Z90 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd
+Z88 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd
+Z89 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd
 l0
 L42
 VdU<CJkGROK<O3ac6Si=460
 !s100 SaK3R>a7oJLD?ZM@zfSA41
 R7
 32
-R50
+R59
 !i10b 1
-R56
-Z91 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd|
-Z92 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd|
+R72
+Z90 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd|
+Z91 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd|
 !i113 1
 R12
 R13
@@ -595,38 +595,38 @@ V^b7?R3LP2V[N8E7;_iLM52
 !s100 RTf^:>b>YP_kZ;T_=>@m;0
 R7
 32
-R50
+R59
 !i10b 1
-R56
+R72
+R90
 R91
-R92
 !i113 1
 R12
 R13
 Elpm_mux0
-Z93 w1748786995
-Z94 DPx3 lpm 14 lpm_components 0 22 BZZBj]8LhndN7CkCjD@L`2
+Z92 w1748786995
+Z93 DPx3 lpm 14 lpm_components 0 22 BZZBj]8LhndN7CkCjD@L`2
 R2
 R3
 R4
-Z95 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd
-Z96 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd
+Z94 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd
+Z95 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd
 l0
 L42
 V;QmlGAYR0mOeAf4=EfYEW2
 !s100 PAD^dD3U>X<E`<;RD8US02
 R7
 32
-Z97 !s110 1764878389
+R59
 !i10b 1
-R56
-Z98 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd|
-Z99 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd|
+R72
+Z96 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd|
+Z97 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd|
 !i113 1
 R12
 R13
 Asyn
-R94
+R93
 R2
 R3
 DEx4 work 8 lpm_mux0 0 22 ;QmlGAYR0mOeAf4=EfYEW2
@@ -636,38 +636,38 @@ VT6Xk6B<UQVN<53k<NR@1B1
 !s100 ^N8DTZH>a1eGWGH3j_PK<2
 R7
 32
-R97
+R59
 !i10b 1
-R56
-R98
-R99
+R72
+R96
+R97
 !i113 1
 R12
 R13
 Elpm_mux1
-Z100 w1748787473
-R94
+Z98 w1748787473
+R93
 R2
 R3
 R4
-Z101 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd
-Z102 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd
+Z99 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd
+Z100 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd
 l0
 L42
 V=32kSQiXCO_Ho0c;SUaRS1
 !s100 LQUoZ_eh8NidRllaM>XMB3
 R7
 32
-R97
+R59
 !i10b 1
-Z103 !s108 1764878389.000000
-Z104 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd|
-Z105 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd|
+R72
+Z101 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd|
+Z102 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd|
 !i113 1
 R12
 R13
 Asyn
-R94
+R93
 R2
 R3
 DEx4 work 8 lpm_mux1 0 22 =32kSQiXCO_Ho0c;SUaRS1
@@ -677,32 +677,32 @@ VMk>ZZUj@7fZ^i7mjlK;H]0
 !s100 z<bAzffJ0zdkk]nUJ]6=g3
 R7
 32
-R97
+R59
 !i10b 1
-R103
-R104
-R105
+R72
+R101
+R102
 !i113 1
 R12
 R13
 Emem_signext
-Z106 w1760815103
+Z103 w1760815103
 R2
 R3
 R4
-Z107 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd
-Z108 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd
+Z104 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd
+Z105 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd
 l0
 L4
 V:zd4mA^;hz8eVPmS18<nm0
 !s100 ?271d;jjUbZj7`mgG6>oj2
 R7
 32
-R97
+Z106 !s110 1770566461
 !i10b 1
-R103
-Z109 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd|
-Z110 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd|
+Z107 !s108 1770566461.000000
+Z108 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd|
+Z109 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd|
 !i113 1
 R12
 R13
@@ -716,32 +716,32 @@ V4P^Y44LN4ii8k]fk@Yg4]2
 !s100 iPJJBK<hG^;mzm[3WZ>kI3
 R7
 32
-R97
+R106
 !i10b 1
-R103
+R107
+R108
 R109
-R110
 !i113 1
 R12
 R13
 Emux2
-Z111 w1764878685
+Z110 w1764878685
 R2
 R3
 R4
-Z112 8C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\Mux2.vhd
-Z113 FC:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\Mux2.vhd
+Z111 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux2.vhd
+Z112 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux2.vhd
 l0
 L4
 Vj_42jKR3Fb^V8T`zLOaTW0
 !s100 J:gVPcA5ek]W[mh3n3GmB1
 R7
 32
-Z114 !s110 1764878688
+R106
 !i10b 1
-Z115 !s108 1764878688.000000
-Z116 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\Mux2.vhd|
-Z117 !s107 C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\Mux2.vhd|
+R107
+Z113 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux2.vhd|
+Z114 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux2.vhd|
 !i113 1
 R12
 R13
@@ -755,32 +755,32 @@ VD4[3HMb;B6f<1U^4QRSPI1
 !s100 iP0`ae4l[6:e`RhHPkQSQ1
 R7
 32
-R114
+R106
 !i10b 1
-R115
-R116
-R117
+R107
+R113
+R114
 !i113 1
 R12
 R13
 Emux3
-Z118 w1744898845
+Z115 w1744898845
 R2
 R3
 R4
-Z119 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd
-Z120 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd
+Z116 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd
+Z117 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd
 l0
 L4
 VAF1<A7W>Umal`G7]z^ao03
 !s100 DlS<z[d5[cIbXH5@<c4E61
 R7
 32
-R97
+R106
 !i10b 1
-R103
-Z121 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd|
-Z122 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd|
+R107
+Z118 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd|
+Z119 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd|
 !i113 1
 R12
 R13
@@ -794,32 +794,32 @@ VG<ShN3=:hnS=H4;ZaiSN;2
 !s100 3eUc3zzQL^BA;bf4]bIHL1
 R7
 32
-R97
+R106
 !i10b 1
-R103
-R121
-R122
+R107
+R118
+R119
 !i113 1
 R12
 R13
 Emux4
-Z123 w1764878659
+Z120 w1764878659
 R2
 R3
 R4
-Z124 8C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\Mux4.vhd
-Z125 FC:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\Mux4.vhd
+Z121 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux4.vhd
+Z122 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux4.vhd
 l0
 L4
 V2>6o_L<kb3b[2D;5Z1>3g0
 !s100 UCY1NS<N?CDzModiU?dJZ2
 R7
 32
-Z126 !s110 1764878665
+R106
 !i10b 1
-Z127 !s108 1764878665.000000
-Z128 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\Mux4.vhd|
-Z129 !s107 C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\Mux4.vhd|
+R107
+Z123 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux4.vhd|
+Z124 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux4.vhd|
 !i113 1
 R12
 R13
@@ -833,72 +833,72 @@ VLX6Emgcn9RdaTh=]X0kGc0
 !s100 ]nTjVhHj7RaK6FPf:@M2Q2
 R7
 32
-R126
+R106
 !i10b 1
-R127
-R128
-R129
+R107
+R123
+R124
 !i113 1
 R12
 R13
 Ep_control_unit
-Z130 w1765054477
+Z125 w1770633655
 R2
 R3
 R4
-Z131 8C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\P_Control_Unit.vhd
-Z132 FC:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\P_Control_Unit.vhd
+Z126 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Control_Unit.vhd
+Z127 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Control_Unit.vhd
 l0
 L4
-VRH4GaFz<oGa1Dz9;F;KTb0
-!s100 0`D^mR]Hi2TDLegf4YJ0j2
+VAIn0E6:cUQj_?:n^E<=BR2
+!s100 m4JX2^H86@>BCW[Xka9Re2
 R7
 32
-Z133 !s110 1765054484
+Z128 !s110 1770633663
 !i10b 1
-Z134 !s108 1765054484.000000
-Z135 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\P_Control_Unit.vhd|
-Z136 !s107 C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\P_Control_Unit.vhd|
+Z129 !s108 1770633663.000000
+Z130 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Control_Unit.vhd|
+Z131 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Control_Unit.vhd|
 !i113 1
 R12
 R13
 Aarch
 R2
 R3
-DEx4 work 14 p_control_unit 0 22 RH4GaFz<oGa1Dz9;F;KTb0
-l110
-L28
-VRjf?lQ3_KkJ]W02H]nRP;3
-!s100 W@??G3dL^9ZaR;j]]F01=3
+DEx4 work 14 p_control_unit 0 22 AIn0E6:cUQj_?:n^E<=BR2
+l112
+L29
+VF12`i_0WOF4Mk;1zMXB7O0
+!s100 S<XKoU3GH``Mjdk?0MBgj2
 R7
 32
-R133
+R128
 !i10b 1
-R134
-R135
-R136
+R129
+R130
+R131
 !i113 1
 R12
 R13
 Ep_datapath
-Z137 w1765057244
+Z132 w1770633336
 R1
 R2
 R3
 R4
-Z138 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd
-Z139 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd
+Z133 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd
+Z134 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd
 l0
 L11
 VV8XT6fjoj:1`a5Hm9H4dl0
 !s100 TJ[;gie@2EcZD;4@oH5SY0
 R7
 32
-Z140 !s110 1765057250
+Z135 !s110 1770633456
 !i10b 1
-Z141 !s108 1765057250.000000
-Z142 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd|
-Z143 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd|
+Z136 !s108 1770633456.000000
+Z137 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd|
+Z138 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd|
 !i113 1
 R12
 R13
@@ -907,38 +907,38 @@ R1
 R2
 R3
 DEx4 work 10 p_datapath 0 22 V8XT6fjoj:1`a5Hm9H4dl0
-l165
+l166
 L44
-VKT9L6e3DK4iJ>WX:[0iD^1
-!s100 NXH5ZR^Oa;>YRB=@lAl2C3
+VAIQPD?>QBQz42>Q6PkSjd0
+!s100 Cb5h=N5R4?b:=2[W6XeIc2
 R7
 32
-R140
+R135
 !i10b 1
-R141
-R142
-R143
+R136
+R137
+R138
 !i113 1
 R12
 R13
 Ep_main_unit
-Z144 w1763577495
+Z139 w1763577495
 R2
 R3
 R4
-Z145 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd
-Z146 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd
+Z140 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd
+Z141 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd
 l0
 L4
 VHgi>6E7;YkV>i]R[^6mnR2
 !s100 k2nni1>Y?emzHQhJVWMVH0
 R7
 32
-Z147 !s110 1764878390
+Z142 !s110 1770566462
 !i10b 1
-Z148 !s108 1764878390.000000
-Z149 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd|
-Z150 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd|
+Z143 !s108 1770566462.000000
+Z144 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd|
+Z145 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd|
 !i113 1
 R12
 R13
@@ -952,32 +952,32 @@ VzSVOEl:Q;[nE6ojWBe5L02
 !s100 SO?;48IXLLFUok`AiWfJo0
 R7
 32
-R147
+R142
 !i10b 1
-R148
-R149
-R150
+R143
+R144
+R145
 !i113 1
 R12
 R13
 Ep_processor_hazard
-Z151 w1765054290
+Z146 w1770637103
 R2
 R3
 R4
-Z152 8C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\p_processor_hazard.vhd
-Z153 FC:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\p_processor_hazard.vhd
+Z147 8F:\Personal\Github Files\BigDcore\BigDCoreFr\BigDcore\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\p_processor_hazard.vhd
+Z148 FF:\Personal\Github Files\BigDcore\BigDCoreFr\BigDcore\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\p_processor_hazard.vhd
 l0
 L4
 V@IzVLINZ6WW_YCX]?1[X42
 !s100 6o[0zR86MZ[V2^jjUC81n0
 R7
 32
-Z154 !s110 1765054301
+Z149 !s110 1770637119
 !i10b 1
-Z155 !s108 1765054301.000000
-Z156 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\p_processor_hazard.vhd|
-Z157 !s107 C:\Users\dell\Desktop\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\p_processor_hazard.vhd|
+Z150 !s108 1770637118.000000
+Z151 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:\Personal\Github Files\BigDcore\BigDCoreFr\BigDcore\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\p_processor_hazard.vhd|
+Z152 !s107 F:\Personal\Github Files\BigDcore\BigDCoreFr\BigDcore\Final Project\CPU\Pipelined BigD Core\P_Processor_Hazard\p_processor_hazard.vhd|
 !i113 1
 R12
 R13
@@ -985,39 +985,39 @@ Aarch
 R2
 R3
 DEx4 work 18 p_processor_hazard 0 22 @IzVLINZ6WW_YCX]?1[X42
-l98
+l103
 L16
-VUNB:>5PoXAhKM>ABS5=2`3
-!s100 K?SQH;UPMOm_51[9Q[5Am1
+V16D4DBX@_lCbWL3Xj?E=B0
+!s100 KPF>of@>eW?GBeCfCF<FC2
 R7
 32
-R154
+R149
 !i10b 1
-R155
-R156
-R157
+R150
+R151
+R152
 !i113 1
 R12
 R13
 Eram
-Z158 w1765125080
+Z153 w1765125080
 R1
 R2
 R3
 R4
-Z159 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/RAM/ram.vhd
-Z160 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/RAM/ram.vhd
+Z154 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/RAM/ram.vhd
+Z155 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/RAM/ram.vhd
 l0
 L4
 V;IPHXW7B@:zOTl]4nDT6E2
 !s100 DH?[2nXVeP<SBTk>XMLZX2
 R7
 32
-Z161 !s110 1765125089
+Z156 !s110 1770574847
 !i10b 1
-Z162 !s108 1765125089.000000
-Z163 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/RAM/ram.vhd|
-Z164 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/RAM/ram.vhd|
+Z157 !s108 1770574847.000000
+Z158 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/RAM/ram.vhd|
+Z159 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/RAM/ram.vhd|
 !i113 1
 R12
 R13
@@ -1032,33 +1032,33 @@ V24o<?HE:5WZAAZ`_M5KYo1
 !s100 E:_GZ<=XjEmhOe=kQSO?70
 R7
 32
-R161
+R156
 !i10b 1
-R162
-R163
-R164
+R157
+R158
+R159
 !i113 1
 R12
 R13
 Eram_inst
-Z165 w1765132851
+Z160 w1770576890
 R1
 R2
 R3
 R4
-Z166 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd
-Z167 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd
+Z161 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd
+Z162 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd
 l0
 L5
 VUZWSCC3^IngT[VmFY@0S70
 !s100 <lIFS]@kfejFOgRJl98En3
 R7
 32
-Z168 !s110 1765132857
+Z163 !s110 1770576940
 !i10b 1
-Z169 !s108 1765132857.000000
-Z170 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd|
-Z171 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd|
+Z164 !s108 1770576940.000000
+Z165 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd|
+Z166 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd|
 !i113 1
 R12
 R13
@@ -1066,39 +1066,39 @@ Aarch
 R1
 R2
 R3
-Z172 DEx4 work 8 ram_inst 0 22 UZWSCC3^IngT[VmFY@0S70
+DEx4 work 8 ram_inst 0 22 UZWSCC3^IngT[VmFY@0S70
 l46
 L16
 V_O]Il37hFFS71A;HoAGJ>3
 !s100 TBBl[X8MFgLR3J=fXb5nI1
 R7
 32
-R168
+R163
 !i10b 1
-R169
-R170
-R171
+R164
+R165
+R166
 !i113 1
 R12
 R13
 Ereg
-Z173 w1749033899
+Z167 w1749033899
 R2
 R3
 R4
-Z174 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg.vhd
-Z175 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg.vhd
+Z168 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg.vhd
+Z169 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg.vhd
 l0
 L4
 VMjIz@0MEC=RcKeQQE0n_<3
 !s100 b]ieH;MhS]EPZT^QhI;b=3
 R7
 32
-R147
+R142
 !i10b 1
-R148
-Z176 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg.vhd|
-Z177 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg.vhd|
+R143
+Z170 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg.vhd|
+Z171 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg.vhd|
 !i113 1
 R12
 R13
@@ -1112,33 +1112,33 @@ VbUM74@U6@IdzKlSegOZg@1
 !s100 MI>Cz]lT9[ac`b1S>m4C^0
 R7
 32
-R147
+R142
 !i10b 1
-R148
-R176
-R177
+R143
+R170
+R171
 !i113 1
 R12
 R13
 Ereg_file
-Z178 w1748866428
+Z172 w1770583415
 R1
 R2
 R3
 R4
-Z179 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd
-Z180 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd
+Z173 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd
+Z174 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd
 l0
 L5
 Vl=gC4Gk^R4BgJ4^_HEXgb2
 !s100 X>KdLUD9a4b9o=[U@c6bm3
 R7
 32
-R147
+Z175 !s110 1770583432
 !i10b 1
-R148
-Z181 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd|
-Z182 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd|
+Z176 !s108 1770583432.000000
+Z177 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd|
+Z178 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd|
 !i113 1
 R12
 R13
@@ -1149,75 +1149,75 @@ R3
 DEx4 work 8 reg_file 0 22 l=gC4Gk^R4BgJ4^_HEXgb2
 l16
 L12
-VmWKjdjQFHbbL`3n6T>cCC1
-!s100 Sged9ZLPbj592mi;d[hi51
+VXHYHY3ePJ0U``H]6ae?V63
+!s100 Q@:>]nO7Vd5m?R9imf]:N3
 R7
 32
-R147
+R175
 !i10b 1
-R148
-R181
-R182
+R176
+R177
+R178
 !i113 1
 R12
 R13
 Eregen
-Z183 w1764876153
+Z179 w1770636462
 R2
 R3
 R4
-Z184 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn.vhd
-Z185 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn.vhd
+Z180 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn.vhd
+Z181 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn.vhd
 l0
 L4
-Vd53IlC2A7Jl6gbNRm8X471
-!s100 MQ:0@U5:5SUdhXUF@;h1m0
+VN79bUC=N7ADnbSdXAeNo02
+!s100 M1:zk57DZke6Xkm8C`n3K3
 R7
 32
-R147
+Z182 !s110 1770636473
 !i10b 1
-R148
-Z186 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn.vhd|
-Z187 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn.vhd|
+Z183 !s108 1770636473.000000
+Z184 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn.vhd|
+Z185 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn.vhd|
 !i113 1
 R12
 R13
 Aarch
 R2
 R3
-DEx4 work 5 regen 0 22 d53IlC2A7Jl6gbNRm8X471
-l18
-L16
-VizZ8J@_05D0;VVBoNFQij3
-!s100 @9eR13f=9cgK`]_aILOBN0
+DEx4 work 5 regen 0 22 N79bUC=N7ADnbSdXAeNo02
+l19
+L17
+Va`C:lf>5>DM<2mh6lCfUB0
+!s100 OEc0Jdc`8iX3D6DnfBZWd3
 R7
 32
-R147
+R182
 !i10b 1
-R148
-R186
-R187
+R183
+R184
+R185
 !i113 1
 R12
 R13
 Eregen_5bit
-Z188 w1764876081
+Z186 w1764876081
 R2
 R3
 R4
-Z189 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd
-Z190 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd
+Z187 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd
+Z188 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd
 l0
 L4
 VZ5E4eE8`o7<PYDH0RMelA0
 !s100 eSG2KfPC]0ZgkiRNK`1H30
 R7
 32
-R147
+R142
 !i10b 1
-R148
-Z191 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd|
-Z192 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd|
+R143
+Z189 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd|
+Z190 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd|
 !i113 1
 R12
 R13
@@ -1231,32 +1231,32 @@ Vhe5;ZVX3RE4fF2TT>AA683
 !s100 ee^I^?fI_o4V7hg9NE;d73
 R7
 32
-R147
+R142
 !i10b 1
-R148
-R191
-R192
+R143
+R189
+R190
 !i113 1
 R12
 R13
 Eregen_6bit
-Z193 w1764868746
+Z191 w1764868746
 R2
 R3
 R4
-Z194 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd
-Z195 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd
+Z192 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd
+Z193 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd
 l0
 L4
 VSS8Ne3>@QPXcTAjX3]LhD3
 !s100 l@FY?e_2flS91R?A>OdT<0
 R7
 32
-Z196 !s110 1764878391
+Z194 !s110 1770566463
 !i10b 1
-R148
-Z197 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd|
-Z198 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd|
+R143
+Z195 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd|
+Z196 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd|
 !i113 1
 R12
 R13
@@ -1270,32 +1270,32 @@ V_2JA0X4jOO?]DQC]Ian9b0
 !s100 J76^m>Si8Vc`N908hWI4[0
 R7
 32
-R196
+R194
 !i10b 1
-R148
-R197
-R198
+R143
+R195
+R196
 !i113 1
 R12
 R13
 Eregen_9bit
-Z199 w1764868747
+Z197 w1764868747
 R2
 R3
 R4
-Z200 8C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd
-Z201 FC:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd
+Z198 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd
+Z199 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd
 l0
 L4
 VAW;Q3f[Ml@Qf0J>;QGFHH1
 !s100 k75HLPOSR5OmA>jX`<HKR3
 R7
 32
-R196
+R194
 !i10b 1
-Z202 !s108 1764878391.000000
-Z203 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd|
-Z204 !s107 C:/Users/dell/Desktop/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd|
+Z200 !s108 1770566463.000000
+Z201 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd|
+Z202 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd|
 !i113 1
 R12
 R13
@@ -1309,11 +1309,11 @@ Vee2<E:]J>kR=bTKJ81@k]2
 !s100 <eLE`h91OMJc>6a:AoREh0
 R7
 32
-R196
+R194
 !i10b 1
+R200
+R201
 R202
-R203
-R204
 !i113 1
 R12
 R13

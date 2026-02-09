@@ -34,36 +34,41 @@ architecture arch of P_Processor_Hazard is
       Alu_input_for_auipc_and_lui: out std_logic_vector(1 downto 0);
       Reg_WriteM: out std_logic;--Used by hazard unit
       Write_backE: out std_logic;--Used by hazard unit
-      FlushE: in std_logic
+      FlushE: in std_logic;
+      Pc_Select_Initial_Hazard: out std_logic_vector(1 downto 0)
+
     );
   end component;
   component P_Datapath is
     port (
-      Clk,Reset: in std_logic;
-      Alu_Input_for_auipc_and_lui: in std_logic_vector(1 downto 0) ;
-      Alu_cntr: in std_logic_vector(3 downto 0) ;
-      Alu_input: in std_logic;
-      ImmExt_cntr: in std_logic_vector(2 downto 0) ;
-      MemExt_cntr: in std_logic_vector(2 downto 0) ;
-      Pc_clr: in std_logic; --Later to be replaced by Reset
-      Pc_select: in std_logic_vector(1 downto 0) ;
-      Reg_file_WE: in std_logic;
-      Word_Half_Byte_sel: in std_logic_vector(1 downto 0) ;
-      Write_back_cntr: in std_logic_vector(1 downto 0) ;
-      ReadData: in std_logic_vector(31 downto 0) ;
-      Instruction: in std_logic_vector(31 downto 0);
-      Alu_LSB: out std_logic;
-      Zero: out std_logic;--Siganl indicating the result is 0
-      DataAdr: out std_logic_vector(31 downto 0) ;
-      WriteData: out std_logic_vector(31 downto 0) ;
-      PC: out std_logic_vector(31 downto 0);
-      --Hazard Unit related Signals
-      StallF, StallD: in std_logic;
-      FlushE, FlushD: in std_logic;
-      ForwardA, ForwardB: in std_logic_vector(1 downto 0);
-      Rs1D, Rs2D: out std_logic_vector(4 downto 0);
-      Rs1E, Rs2E: out std_logic_vector(4 downto 0);
-      RdE, RdM, RdW: out std_logic_vector(4 downto 0)
+        Clk,Reset: in std_logic;
+        Alu_Input_for_auipc_and_lui: in std_logic_vector(1 downto 0) ;
+        Alu_cntr: in std_logic_vector(3 downto 0) ;
+        Alu_input: in std_logic;
+        ImmExt_cntr: in std_logic_vector(2 downto 0) ;
+        MemExt_cntr: in std_logic_vector(2 downto 0) ;
+        Pc_clr: in std_logic; --Later to be replaced by Reset
+        Pc_select: in std_logic_vector(1 downto 0) ;
+        Reg_file_WE: in std_logic;
+        Word_Half_Byte_sel: in std_logic_vector(1 downto 0) ;
+        Write_back_cntr: in std_logic_vector(1 downto 0) ;
+        ReadData: in std_logic_vector(31 downto 0) ;
+        Instruction: in std_logic_vector(31 downto 0);
+        Alu_LSB: out std_logic;
+        Zero: out std_logic;--Siganl indicating the result is 0
+        DataAdr: out std_logic_vector(31 downto 0) ;
+        WriteData: out std_logic_vector(31 downto 0) ;
+        PC: out std_logic_vector(31 downto 0);
+        Funct7: out std_logic_vector(6 downto 0) ;-- From decode Cycle
+        Opcode: out std_logic_vector(6 downto 0) ;-- From decode Cycle
+        Funct3: out std_logic_vector(2 downto 0) ;-- From decode Cycle
+        --Hazard Unit related Signals
+        StallF, StallD: in std_logic;
+        FlushE, FlushD: in std_logic;
+        ForwardA, ForwardB: in std_logic_vector(1 downto 0);
+        Rs1D, Rs2D: out std_logic_vector(4 downto 0);
+        Rs1E, Rs2E: out std_logic_vector(4 downto 0);
+        RdE, RdM, RdW: out std_logic_vector(4 downto 0)
     );
   end component;
   component Hazard_Unit is
@@ -71,6 +76,7 @@ architecture arch of P_Processor_Hazard is
       RsD1, RsD2: in std_logic_vector(4 downto 0);
       RsE1, RsE2: in std_logic_vector(4 downto 0);
       RdE,RdM,RdW: in std_logic_vector(4 downto 0);
+      Pc_Select_Initial: in std_logic_vector(1 downto 0);
       RegWriteM, RegWriteW: in std_logic;
       Writeback_cntr: in std_logic; --The Lsb is enough
       Pc_Select: in std_logic;--MSB
@@ -90,7 +96,10 @@ architecture arch of P_Processor_Hazard is
   Signal ForwardA, ForwardB: std_logic_vector(1 downto 0) ;
   Signal Rs1D, Rs2D, Rs1E, Rs2E: std_logic_vector(4 downto 0) ;
   Signal RdE, RdM, RdW: std_logic_vector(4 downto 0) ;
-  
+  Signal Funct7, Opcode: std_logic_vector(6 downto 0);
+  Signal Funct3: std_logic_vector(2 downto 0) ;
+  Signal Pc_Select_Initial_Hazard_S: std_logic_vector(1 downto 0)
+
 begin
 
   Datapath: P_Datapath port map(
@@ -112,19 +121,22 @@ begin
     DataAdr,
     WriteData,
     PC,
+    Funct7,
+    Opcode,
+    Funct3,
     StallF, StallD,
     FlushE, FlushD,
     ForwardA, ForwardB,
     Rs1D, Rs2D,
     Rs1E, Rs2E,
-    RdD, RdE, RdM, RdW
+    RdE, RdM, RdW
   );
   ControlUnit: P_Control_Unit port map(
     clk, reset,
     Alu_LSB, Zero,
-    instruction(31 downto 25),
-    instruction(6 downto 0),
-    instruction(14 downto 12),
+    Funct7,
+    Opcode,
+    Funct3,
     Alu_control,
     ImmExt,
     Word_Half_Byte,
@@ -137,14 +149,16 @@ begin
     Alu_input,
     Alu_input_for_auipc_and_lui,
     Reg_WriteM,
-    Write_backE, FlushE
+    Write_backE, FlushE,
+    Pc_Select_Initial_Hazard_S
   );
   HazardUnit: Hazard_Unit port map(
     Rs1D, Rs2D, Rs1E, Rs2E,
     RdE, RdM, RdW,
+    Pc_Select_Initial_Hazard_S,
     Reg_WriteM, RegWrite,
-    Write_Back_cntr(0),
-    Pc_Select,
+    Write_backE,
+    Pc_Select(1),
     ForwardA, ForwardB,
     StallF, StallD,
     FlushE

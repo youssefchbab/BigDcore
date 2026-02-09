@@ -84,7 +84,8 @@ architecture arch of P_Datapath is
         generic(N: integer := 32);
         port (
             clk,Reset: in std_logic;
-            En, Flush: in std_logic;
+            stall, Flush: in std_logic;
+            En: in std_logic;
             NoN: in std_logic_vector(N-1 downto 0) ;
             D: in std_logic_vector(N-1 downto 0) ;
             Q: out std_logic_vector(N-1 downto 0)
@@ -168,6 +169,7 @@ Begin
     Pc_Register: RegEn port map(
         clk,Pc_clr,
         StallF,'0',
+        '0',
         (others=>'0'),
         Pc_Next,
         Pc_Signal
@@ -175,6 +177,7 @@ Begin
     instruction_PLR: RegEn port map(
         clk, reset,
         StallD,FlushD,
+        '0',
         x"00000033",
         instruction,
         instruction_PLR2
@@ -194,6 +197,7 @@ Begin
     PC_PLR: RegEn port map(
         clk, reset,
         StallD,FlushD,
+        '0',
         (others=>'0'),
         PC_Signal,
         PC_Signal_PLR2
@@ -201,6 +205,7 @@ Begin
     Pc_Plus_Four_PLR: RegEn port map(
         clk, reset,
         StallD,FlushD,
+        '0',
         (others=>'0'),
         Pc_Plus_4,
         Pc_Plus_4_PLR2
@@ -225,6 +230,7 @@ Begin
     Imm_Extended_PLR: RegEn port map(
         clk,reset,
         '0',FlushE,
+        '0',
         (others=>'0'),
         Imm_Extended,
         Imm_Extended_PLR3
@@ -239,6 +245,7 @@ Begin
     Reg_file_Register1_PLR3: RegEn port map(
         clk, reset,
         '0',FlushE,
+        '0',
         (others=>'0'),
         Reg_file_R1,
         Reg_file_R1_PLR3
@@ -246,6 +253,7 @@ Begin
     Reg_file_Register2_PLR3: RegEn port map(
         clk, reset,
         '0',FlushE,
+        '0',
         (others=>'0'),
         Reg_file_R2,
         Reg_file_R2_PLR3
@@ -253,6 +261,7 @@ Begin
     Pc_PLR_Seocnd: RegEn port map(
         clk, reset,
         '0',FlushE,
+        '0',
         (others=>'0'),
         Pc_Signal_PLR2,
         Pc_Signal_PLR3
@@ -260,6 +269,7 @@ Begin
     Pc_Plus_Four_PLR_Second: RegEn port map(
         clk, reset,
         '0',FlushE,
+        '0',
         (others=>'0'),
         Pc_Plus_4_PLR2,
         Pc_Plus_4_PLR3
@@ -316,6 +326,7 @@ Begin
     Alu_result_PLR: RegEn port map(
         clk, reset,
         '0','0',
+        '0',
         (others=>'0'),
         Alu_result,
         Alu_result_PLR4
@@ -329,7 +340,7 @@ Begin
     );
     Pc_Plus_Four_PLR_Third: RegEn port map(
         clk, reset,
-        '0','0',
+        '0','0', '0',
         (others=>'0'),
         Pc_Plus_4_PLR3,
         Pc_Plus_4_PLR4
@@ -350,7 +361,7 @@ Begin
     );
     ForwaredB_PLR: RegEn port map(
         clk, reset,
-        '0','0',
+        '0','0', '0',
         (others=>'0'),
         ForwarededB,
         ForwarededB_PLR4
@@ -370,7 +381,7 @@ Begin
     );
     Alu_result_PLR_second: RegEn port map(
         clk, reset,
-        '0','0',
+        '0','0','0',
         (others=>'0'),
         Alu_result_PLR4,
         Alu_result_PLR5
@@ -384,14 +395,14 @@ Begin
     );
     Read_Data_PLR: RegEn port map(
         clk, reset,
-        '0','0',
+        '0','0','0',
         (others=>'0'),
         ReadData,
         ReadData_PLR5
     );
     Pc_Plus_Four_PLR_Fourth: RegEn port map(
         clk, reset,
-        '0','0',
+        '0','0','0',
         (others=>'0'),
         Pc_Plus_4_PLR4,
         Pc_Plus_4_PLR5

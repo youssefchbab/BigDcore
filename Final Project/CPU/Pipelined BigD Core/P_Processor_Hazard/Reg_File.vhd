@@ -24,14 +24,18 @@ Begin
 		end if;
 	end process;
 	--Hard wiring x0
-	process(a1,a2,M) begin
+	process(a1,a2,M,we,a3,W) begin
 		if(a1="00000")then 
 			R1<=(others=>'0');
+		elsif (a1=a3) then
+			R1<=W;
 		else
 			R1<= M(to_integer(unsigned(a1)));
 		end if;
 		if(a2="00000")then
 			R2<=(others=>'0');
+		elsif (a2=a3) then
+			R2<= W;
 		else
 			R2<= M(to_integer(unsigned(a2)));
 		end if;

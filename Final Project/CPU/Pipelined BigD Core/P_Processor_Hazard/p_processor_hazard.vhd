@@ -34,7 +34,9 @@ architecture arch of P_Processor_Hazard is
       Alu_input_for_auipc_and_lui: out std_logic_vector(1 downto 0);
       Reg_WriteM: out std_logic;--Used by hazard unit
       Write_backE: out std_logic;--Used by hazard unit
-      FlushE: in std_logic
+      FlushE: in std_logic;
+      Pc_Select_Initial_Hazard: out std_logic_vector(1 downto 0)
+
     );
   end component;
   component P_Datapath is
@@ -74,6 +76,7 @@ architecture arch of P_Processor_Hazard is
       RsD1, RsD2: in std_logic_vector(4 downto 0);
       RsE1, RsE2: in std_logic_vector(4 downto 0);
       RdE,RdM,RdW: in std_logic_vector(4 downto 0);
+      Pc_Select_Initial: in std_logic_vector(1 downto 0);
       RegWriteM, RegWriteW: in std_logic;
       Writeback_cntr: in std_logic; --The Lsb is enough
       Pc_Select: in std_logic;--MSB
@@ -95,6 +98,8 @@ architecture arch of P_Processor_Hazard is
   Signal RdE, RdM, RdW: std_logic_vector(4 downto 0) ;
   Signal Funct7, Opcode: std_logic_vector(6 downto 0);
   Signal Funct3: std_logic_vector(2 downto 0) ;
+  Signal Pc_Select_Initial_Hazard_S: std_logic_vector(1 downto 0);
+
 begin
 
   Datapath: P_Datapath port map(
@@ -128,7 +133,7 @@ begin
   );
   ControlUnit: P_Control_Unit port map(
     clk, reset,
-    Alu_LSB, Zero,
+    Zero, Alu_LSB,
     Funct7,
     Opcode,
     Funct3,
@@ -144,16 +149,18 @@ begin
     Alu_input,
     Alu_input_for_auipc_and_lui,
     Reg_WriteM,
-    Write_backE, FlushE
+    Write_backE, FlushE,
+    Pc_Select_Initial_Hazard_S
   );
   HazardUnit: Hazard_Unit port map(
     Rs1D, Rs2D, Rs1E, Rs2E,
     RdE, RdM, RdW,
+    Pc_Select_Initial_Hazard_S,
     Reg_WriteM, RegWrite,
     Write_backE,
     Pc_Select(1),
     ForwardA, ForwardB,
     StallF, StallD,
-    FlushE
+    FlushE, FlushD
   );
 end arch ; -- arch

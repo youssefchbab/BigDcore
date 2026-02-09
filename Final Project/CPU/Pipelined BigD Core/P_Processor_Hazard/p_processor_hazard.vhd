@@ -7,6 +7,7 @@ entity P_Processor_Hazard is
     instruction: in std_logic_vector (31 downto 0);
     ReadData: in std_logic_vector (31 downto 0);
     MemWrite: out std_logic;
+    ByteEn, Mode: out std_logic_vector(1 downto 0);
     Pc: out std_logic_vector(31 downto 0) ;
     DataAdr: out std_logic_vector(31 downto 0) ;
     WriteData: out std_logic_vector(31 downto 0)
@@ -50,11 +51,11 @@ architecture arch of P_Processor_Hazard is
         Pc_clr: in std_logic; --Later to be replaced by Reset
         Pc_select: in std_logic_vector(1 downto 0) ;
         Reg_file_WE: in std_logic;
-        Word_Half_Byte_sel: in std_logic_vector(1 downto 0) ;
         Write_back_cntr: in std_logic_vector(1 downto 0) ;
         ReadData: in std_logic_vector(31 downto 0) ;
         Instruction: in std_logic_vector(31 downto 0);
         Alu_LSB: out std_logic;
+        Alu_LSB_Mem: out std_logic_vector(1 downto 0) ;
         Zero: out std_logic;--Siganl indicating the result is 0
         DataAdr: out std_logic_vector(31 downto 0) ;
         WriteData: out std_logic_vector(31 downto 0) ;
@@ -88,7 +89,7 @@ architecture arch of P_Processor_Hazard is
   Signal Alu_LSB, Zero: std_logic ;
   Signal Alu_control: std_logic_vector(3 downto 0) ;
   Signal ImmExt, Mem_Ext_cntr: std_logic_vector(2 downto 0) ;
-  Signal Word_Half_Byte, Write_Back_cntr: std_logic_vector(1 downto 0) ;
+  Signal Write_Back_cntr, Alu_LSB_Mem: std_logic_vector(1 downto 0) ;
   Signal Pc_select, Alu_input_for_auipc_and_lui: std_logic_vector(1 downto 0) ;
   Signal RegWrite, Pc_clr, Alu_input: std_logic;
   Signal Reg_WriteM, Write_backE, FlushE, FlushD: std_logic;
@@ -112,11 +113,11 @@ begin
     Pc_clr,
     Pc_select,
     RegWrite,
-    Word_Half_Byte,
     Write_Back_cntr,
     ReadData,
     Instruction,
     Alu_LSB,
+    Alu_LSB_Mem,
     Zero,
     DataAdr,
     WriteData,
@@ -139,7 +140,7 @@ begin
     Funct3,
     Alu_control,
     ImmExt,
-    Word_Half_Byte,
+    Mode,
     RegWrite,
     MemWrite,
     Mem_Ext_cntr,
@@ -163,4 +164,5 @@ begin
     StallF, StallD,
     FlushE, FlushD
   );
+  ByteEn<= Alu_LSB_Mem;
 end arch ; -- arch

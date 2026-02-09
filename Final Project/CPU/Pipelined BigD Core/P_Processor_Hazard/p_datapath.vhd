@@ -19,12 +19,12 @@ entity P_Datapath is
         Pc_clr: in std_logic; --Later to be replaced by Reset
         Pc_select: in std_logic_vector(1 downto 0) ;
         Reg_file_WE: in std_logic;
-        Word_Half_Byte_sel: in std_logic_vector(1 downto 0) ;
         Write_back_cntr: in std_logic_vector(1 downto 0) ;
         ReadData: in std_logic_vector(31 downto 0) ;
         Instruction: in std_logic_vector(31 downto 0);
         Alu_LSB: out std_logic;
-        Zero: out std_logic;--Siganl indicating the result is 0
+        Alu_LSB_Mem: out std_logic_vector(1 downto 0) ;
+        Zero: out std_logic;--Signal indicating the result is 0
         DataAdr: out std_logic_vector(31 downto 0) ;
         WriteData: out std_logic_vector(31 downto 0) ;
         PC: out std_logic_vector(31 downto 0);
@@ -50,12 +50,6 @@ architecture arch of P_Datapath is
             y: out std_logic_vector(N-1 downto 0)
         );
     end component;
-    component Adderss_Shift is
-        port(
-            Address_in: in std_logic_vector(31 downto 0);
-            Address_out: out std_logic_vector(31 downto 0)
-        );
-    end component;
     component ALU is
         generic(Alu_bits: integer:= 32);
 	    port(A,B: in std_logic_vector(Alu_bits-1 downto 0);
@@ -63,15 +57,6 @@ architecture arch of P_Datapath is
 		 Alu_out: out std_logic_vector(Alu_bits-1 downto 0);
 		 Zero: out std_logic
         );--Zero flag
-    end component;
-    component Bit_Manipulation_Store is 
-        port(
-            Mem_Data: in std_logic_vector(31 downto 0);
-            Reg_Data: in std_logic_vector(31 downto 0);
-            Sel_Mode: in std_logic_vector(1 downto 0);
-            Sel_data: in std_logic_vector(1 downto 0);
-            Data_out: out std_logic_vector(31 downto 0)
-        );
     end component;
     component ImmExt is
         port(
@@ -368,17 +353,8 @@ Begin
     );
     RdE<= Reg_A3_PLR3;
     --Memory Access Cycle Components
-    Bit_Manipulation: Bit_Manipulation_Store port map(
-        ReadData,
-        ForwarededB_PLR4,
-        Word_Half_Byte_sel,
-        Alu_result_PLR4(1 downto 0),
-        WriteData
-    );
-    Addr_Shift: Adderss_Shift port map(
-        Alu_result_PLR4,
-        DataAdr
-    );
+    WriteData<= ForwarededB_PLR4;
+    DataAdr<= Alu_result_PLR4;
     Alu_result_PLR_second: RegEn port map(
         clk, reset,
         '0','0','0',
@@ -426,4 +402,5 @@ Begin
     --Signal Assigning
     PC<= Pc_Signal;
     Alu_LSB<= Alu_result(0);
+    Alu_LSB_Mem<= Alu_result_PLR4(1 downto 0);
 end arch;

@@ -1,7 +1,7 @@
 Library ieee;
 use ieee.std_logic_1164.all;
 use ieee.Numeric_std.all;
-entity RAM is
+entity Byte_Addr_Mem is
     generic(N: integer:= 32);
     port (
         clk, Reset: in std_logic;
@@ -12,16 +12,11 @@ entity RAM is
         DataAdr: in std_logic_vector(N-1 downto 0) ;
         ReadData: out std_logic_vector(N-1 downto 0) 
     ) ;
-end RAM;
+end Byte_Addr_Mem;
     
-architecture arch of RAM is
+architecture arch of Byte_Addr_Mem is
     Type RAM_type is array (255 downto 0) of std_logic_vector(31 downto 0) ;
     Signal Mem: RAM_type := (
-        25=> x"00000040",
-        26=> x"00000022",
-        27=> x"00000016",
-        28=> x"0000005A",
-        29=> x"00000004",
         others => (others=>'0')
     );
     Signal Mem_Size: integer := 256;

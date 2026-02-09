@@ -1,5 +1,5 @@
 Analysis & Synthesis report for P_Processor_Hazard
-Mon Feb 09 11:37:23 2026
+Mon Feb 09 18:50:48 2026
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -14,8 +14,8 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
  11. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Pc_Register
  12. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:instruction_PLR
  13. Parameter Settings for User Entity Instance: P_Datapath:Datapath|Mux3:Pc_Selection
@@ -48,33 +48,32 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  40. Parameter Settings for User Entity Instance: P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03
  41. Parameter Settings for User Entity Instance: P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04
  42. Parameter Settings for User Entity Instance: P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05
- 43. Port Connectivity Checks: "Hazard_Unit:HazardUnit"
- 44. Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05"
- 45. Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04"
- 46. Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03"
- 47. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Fourth"
- 48. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Read_Data_PLR"
- 49. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third"
- 50. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Alu_result_PLR_second"
- 51. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:ForwaredB_PLR"
- 52. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Third"
- 53. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second"
- 54. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Alu_result_PLR"
- 55. Port Connectivity Checks: "P_Datapath:Datapath|Mux3:ALU_in_A"
- 56. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Rs2D_PLR"
- 57. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Rs1D_PLR"
- 58. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second"
- 59. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd"
- 60. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3"
- 61. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3"
- 62. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR"
- 63. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Imm_Extended_PLR"
- 64. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR"
- 65. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:PC_PLR"
- 66. Port Connectivity Checks: "P_Datapath:Datapath|Adder:Pc_Plus_Four"
- 67. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:instruction_PLR"
- 68. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Register"
- 69. Analysis & Synthesis Messages
+ 43. Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05"
+ 44. Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04"
+ 45. Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03"
+ 46. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Fourth"
+ 47. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Read_Data_PLR"
+ 48. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third"
+ 49. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Alu_result_PLR_second"
+ 50. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:ForwaredB_PLR"
+ 51. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Third"
+ 52. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second"
+ 53. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Alu_result_PLR"
+ 54. Port Connectivity Checks: "P_Datapath:Datapath|Mux3:ALU_in_A"
+ 55. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Rs2D_PLR"
+ 56. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Rs1D_PLR"
+ 57. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second"
+ 58. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd"
+ 59. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3"
+ 60. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3"
+ 61. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR"
+ 62. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Imm_Extended_PLR"
+ 63. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR"
+ 64. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:PC_PLR"
+ 65. Port Connectivity Checks: "P_Datapath:Datapath|Adder:Pc_Plus_Four"
+ 66. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:instruction_PLR"
+ 67. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Register"
+ 68. Analysis & Synthesis Messages
 
 
 
@@ -100,13 +99,13 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Mon Feb 09 11:37:23 2026        ;
+; Analysis & Synthesis Status ; Successful - Mon Feb 09 18:50:48 2026        ;
 ; Quartus II Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name               ; P_Processor_Hazard                           ;
 ; Top-level Entity Name       ; P_Processor_Hazard                           ;
 ; Family                      ; MAX II                                       ;
-; Total logic elements        ; 0                                            ;
-; Total pins                  ; 163                                          ;
+; Total logic elements        ; 3,930                                        ;
+; Total pins                  ; 167                                          ;
 ; Total virtual pins          ; 0                                            ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                                ;
 +-----------------------------+----------------------------------------------+
@@ -189,34 +188,30 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                 ;
-+----------------------------------+-----------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                                                                              ;
-+----------------------------------+-----------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-; p_processor_hazard.vhd           ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_processor_hazard.vhd     ;
-; p_datapath.vhd                   ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd             ;
-; regen.vhd                        ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen.vhd                  ;
-; mux3.vhd                         ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mux3.vhd                   ;
-; adder.vhd                        ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/adder.vhd                  ;
-; reg_file.vhd                     ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/reg_file.vhd               ;
-; immext.vhd                       ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/immext.vhd                 ;
-; regen_5bit.vhd                   ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd             ;
-; mux2.vhd                         ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mux2.vhd                   ;
-; alu.vhd                          ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/alu.vhd                    ;
-; bit_manipulation_store.vhd       ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/bit_manipulation_store.vhd ;
-; first_stage.vhd                  ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/first_stage.vhd            ;
-; last_stage.vhd                   ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/last_stage.vhd             ;
-; adderss_shift.vhd                ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/adderss_shift.vhd          ;
-; mem_signext.vhd                  ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd            ;
-; p_control_unit.vhd               ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_control_unit.vhd         ;
-; alu_cntr.vhd                     ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/alu_cntr.vhd               ;
-; p_main_unit.vhd                  ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_main_unit.vhd            ;
-; excution_flow.vhd                ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd          ;
-; regen_9bit.vhd                   ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_9bit.vhd             ;
-; regen_6bit.vhd                   ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_6bit.vhd             ;
-; hazard_unit.vhd                  ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/hazard_unit.vhd            ;
-+----------------------------------+-----------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                             ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                                                                          ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+; p_processor_hazard.vhd           ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_processor_hazard.vhd ;
+; p_datapath.vhd                   ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd         ;
+; regen.vhd                        ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen.vhd              ;
+; mux3.vhd                         ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mux3.vhd               ;
+; adder.vhd                        ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/adder.vhd              ;
+; reg_file.vhd                     ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/reg_file.vhd           ;
+; immext.vhd                       ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/immext.vhd             ;
+; regen_5bit.vhd                   ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd         ;
+; mux2.vhd                         ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mux2.vhd               ;
+; alu.vhd                          ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/alu.vhd                ;
+; mem_signext.vhd                  ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd        ;
+; p_control_unit.vhd               ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_control_unit.vhd     ;
+; alu_cntr.vhd                     ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/alu_cntr.vhd           ;
+; p_main_unit.vhd                  ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_main_unit.vhd        ;
+; excution_flow.vhd                ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd      ;
+; regen_9bit.vhd                   ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_9bit.vhd         ;
+; regen_6bit.vhd                   ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_6bit.vhd         ;
+; hazard_unit.vhd                  ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/hazard_unit.vhd        ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -224,235 +219,131 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 0     ;
-;     -- Combinational with no register       ; 0     ;
-;     -- Register only                        ; 0     ;
-;     -- Combinational with a register        ; 0     ;
+; Total logic elements                        ; 3930  ;
+;     -- Combinational with no register       ; 2404  ;
+;     -- Register only                        ; 995   ;
+;     -- Combinational with a register        ; 531   ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- 2 input functions                    ; 0     ;
-;     -- 1 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 1958  ;
+;     -- 3 input functions                    ; 622   ;
+;     -- 2 input functions                    ; 351   ;
+;     -- 1 input functions                    ; 4     ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
+;     -- normal mode                          ; 3776  ;
+;     -- arithmetic mode                      ; 154   ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 0     ;
-;     -- asynchronous clear/load mode         ; 0     ;
+;     -- synchronous clear/load mode          ; 117   ;
+;     -- asynchronous clear/load mode         ; 992   ;
 ;                                             ;       ;
-; Total registers                             ; 0     ;
-; I/O pins                                    ; 163   ;
+; Total registers                             ; 1526  ;
+; Total logic cells in carry chains           ; 159   ;
+; I/O pins                                    ; 167   ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1526  ;
+; Total fan-out                               ; 15442 ;
+; Average fan-out                             ; 3.77  ;
 +---------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; |P_Processor_Hazard        ; 0 (0)       ; 0            ; 0          ; 163  ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard ; work         ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                              ;
++--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                 ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                             ; Library Name ;
++--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------+--------------+
+; |P_Processor_Hazard                        ; 3930 (1)    ; 1526         ; 0          ; 167  ; 0            ; 2404 (1)     ; 995 (0)           ; 531 (0)          ; 159 (0)         ; 0 (0)      ; |P_Processor_Hazard                                                             ; work         ;
+;    |Hazard_Unit:HazardUnit|                ; 25 (25)     ; 0            ; 0          ; 0    ; 0            ; 25 (25)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|Hazard_Unit:HazardUnit                                      ; work         ;
+;    |P_Control_Unit:ControlUnit|            ; 69 (0)      ; 33           ; 0          ; 0    ; 0            ; 36 (0)       ; 3 (0)             ; 30 (0)           ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit                                  ; work         ;
+;       |Alu_cntr:Alu_Control_Unit|          ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|Alu_cntr:Alu_Control_Unit        ; work         ;
+;       |Excution_Flow:Excute_Flow_cntr|     ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|Excution_Flow:Excute_Flow_cntr   ; work         ;
+;       |P_Main_unit:Main_Control_Unit|      ; 14 (14)     ; 0            ; 0          ; 0    ; 0            ; 14 (14)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|P_Main_unit:Main_Control_Unit    ; work         ;
+;       |RegEn:Control_Signals_PLR03|        ; 30 (30)     ; 18           ; 0          ; 0    ; 0            ; 12 (12)      ; 3 (3)             ; 15 (15)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03      ; work         ;
+;       |RegEn_6bit:Control_Signals_PLR05|   ; 6 (6)       ; 6            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 6 (6)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05 ; work         ;
+;       |RegEn_9bit:Control_Signals_PLR04|   ; 9 (9)       ; 9            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 9 (9)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04 ; work         ;
+;    |P_Datapath:Datapath|                   ; 3835 (0)    ; 1493         ; 0          ; 0    ; 0            ; 2342 (0)     ; 992 (0)           ; 501 (0)          ; 159 (0)         ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath                                         ; work         ;
+;       |ALU:Alu_Unit|                       ; 678 (678)   ; 0            ; 0          ; 0    ; 0            ; 678 (678)    ; 0 (0)             ; 0 (0)            ; 97 (97)         ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit                            ; work         ;
+;       |ImmExt:Immediate_Extension|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|ImmExt:Immediate_Extension              ; work         ;
+;       |Mem_SignExt:Memory_Extension|       ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|Mem_SignExt:Memory_Extension            ; work         ;
+;       |Mux2:ALU_in_B|                      ; 32 (32)     ; 0            ; 0          ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|Mux2:ALU_in_B                           ; work         ;
+;       |Mux3:ALU_in_A|                      ; 70 (70)     ; 0            ; 0          ; 0    ; 0            ; 70 (70)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:ALU_in_A                           ; work         ;
+;       |Mux3:ForwardingB|                   ; 64 (64)     ; 0            ; 0          ; 0    ; 0            ; 64 (64)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:ForwardingB                        ; work         ;
+;       |Mux3:WriteBack|                     ; 94 (94)     ; 0            ; 0          ; 0    ; 0            ; 94 (94)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:WriteBack                          ; work         ;
+;       |RegEn:Alu_result_PLR_second|        ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Alu_result_PLR_second             ; work         ;
+;       |RegEn:Alu_result_PLR|               ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Alu_result_PLR                    ; work         ;
+;       |RegEn:ForwaredB_PLR|                ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:ForwaredB_PLR                     ; work         ;
+;       |RegEn:Imm_Extended_PLR|             ; 40 (40)     ; 32           ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Imm_Extended_PLR                  ; work         ;
+;       |RegEn:PC_PLR|                       ; 30 (30)     ; 30           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 30 (30)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:PC_PLR                            ; work         ;
+;       |RegEn:Pc_PLR_Seocnd|                ; 30 (30)     ; 30           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 30 (30)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd                     ; work         ;
+;       |RegEn:Pc_Plus_Four_PLR_Fourth|      ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Fourth           ; work         ;
+;       |RegEn:Pc_Plus_Four_PLR_Second|      ; 33 (33)     ; 32           ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second           ; work         ;
+;       |RegEn:Pc_Plus_Four_PLR_Third|       ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Third            ; work         ;
+;       |RegEn:Pc_Plus_Four_PLR|             ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR                  ; work         ;
+;       |RegEn:Pc_Register|                  ; 34 (34)     ; 32           ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Register                       ; work         ;
+;       |RegEn:Read_Data_PLR|                ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Read_Data_PLR                     ; work         ;
+;       |RegEn:Reg_file_Register1_PLR3|      ; 674 (674)   ; 32           ; 0          ; 0    ; 0            ; 642 (642)    ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3           ; work         ;
+;       |RegEn:Reg_file_Register2_PLR3|      ; 674 (674)   ; 32           ; 0          ; 0    ; 0            ; 642 (642)    ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3           ; work         ;
+;       |RegEn:instruction_PLR|              ; 33 (33)     ; 32           ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:instruction_PLR                   ; work         ;
+;       |RegEn_5bit:Reg3_Address_PLR_Third|  ; 5 (5)       ; 5            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third       ; work         ;
+;       |RegEn_5bit:Reg3_Address_PLR_second| ; 5 (5)       ; 5            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second      ; work         ;
+;       |RegEn_5bit:Reg3_Address_PLR|        ; 5 (5)       ; 5            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR             ; work         ;
+;       |RegEn_5bit:Rs1D_PLR|                ; 5 (5)       ; 5            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn_5bit:Rs1D_PLR                     ; work         ;
+;       |RegEn_5bit:Rs2D_PLR|                ; 5 (5)       ; 5            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn_5bit:Rs2D_PLR                     ; work         ;
+;       |Reg_File:Register_File|             ; 1033 (1033) ; 992          ; 0          ; 0    ; 0            ; 41 (41)      ; 992 (992)         ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|Reg_File:Register_File                  ; work         ;
+;       |adder:Pc_Plus_Four|                 ; 30 (30)     ; 0            ; 0          ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|adder:Pc_Plus_Four                      ; work         ;
+;       |adder:Target_Address|               ; 32 (32)     ; 0            ; 0          ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 32 (32)         ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|adder:Target_Address                    ; work         ;
++--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                   ;
-+-----------------------------------------------------------------------+------------------------------------------------------------------------------+
-; Register name                                                         ; Reason for Removal                                                           ;
-+-----------------------------------------------------------------------+------------------------------------------------------------------------------+
-; P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Fourth|Qtemp[0..31]        ; Stuck at GND due to stuck port data_in                                       ;
-; P_Datapath:Datapath|RegEn:Read_Data_PLR|Qtemp[0..31]                  ; Stuck at GND due to stuck port data_in                                       ;
-; P_Datapath:Datapath|RegEn:Alu_result_PLR_second|Qtemp[0..31]          ; Stuck at GND due to stuck port data_in                                       ;
-; P_Datapath:Datapath|RegEn:ForwaredB_PLR|Qtemp[0..31]                  ; Stuck at GND due to stuck port data_in                                       ;
-; P_Datapath:Datapath|RegEn:Alu_result_PLR|Qtemp[0..31]                 ; Stuck at GND due to stuck port data_in                                       ;
-; P_Datapath:Datapath|RegEn:Pc_Register|Qtemp[0..31]                    ; Stuck at GND due to stuck port data_in                                       ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[0]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[8]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[16]      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[6]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[30]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[4]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[26]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[2]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[28]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[0]                   ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[8]       ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[30]                  ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[26]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[28]                  ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[24]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[26]                  ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[24]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[22,24]               ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[22]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[20]                  ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[22]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[18]                  ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[20]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[14,16]               ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[18]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[12]                  ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[20]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[10]                  ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[16]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[8]                   ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[14]      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[6]                   ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[14]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[4]                   ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[18]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[2]                   ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[12]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[4]       ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[10]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[16]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[8]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[18]      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[6]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[14]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[4]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[7,15,19] ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[23]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[23]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[23]                  ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[23]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[7]                      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[7]                   ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[7]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[7]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[31]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[31]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[15]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[31]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[15,31]               ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[15]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[15]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[3]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[11]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[27]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[11]      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[19]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[3]                      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[11]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[27]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[3]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[27]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[19,27]               ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[19]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[11]                  ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[19]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[3]                   ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[11]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[3]       ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[13]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[1]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[1]       ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[29]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[9]                      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[25]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[17]      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[21]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[5]                      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[17]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[29]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[13]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[1]                      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[9]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[9]       ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[5]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[29]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[1]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[25]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[29]                  ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[25]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[21,25]               ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[21]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[17]                  ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[21]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[13]                  ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[17]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[9]                   ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[5]       ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[5]                   ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[13]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[1]                   ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[17]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[9]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[13]      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[5]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[2]       ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[2]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[12]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[0]            ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[12]      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[30]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[10]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[28]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[0]                      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[26]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[8]                      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[22,24]        ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[6]                      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[20]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[30]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[18]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[4]                      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[16]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[10]      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[14]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[2]                      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[12]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[28]                     ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[10]           ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20] ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[20]      ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]       ; Stuck at GND due to stuck port data_in                                       ;
-; P_Datapath:Datapath|RegEn:instruction_PLR|Qtemp[7..11,15..24]         ; Stuck at GND due to stuck port data_in                                       ;
-; P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04|Q[0..8]   ; Stuck at GND due to stuck port data_in                                       ;
-; P_Datapath:Datapath|RegEn_5bit:Rs2D_PLR|Q[0..4]                       ; Stuck at GND due to stuck port data_in                                       ;
-; P_Datapath:Datapath|RegEn_5bit:Rs1D_PLR|Q[0..4]                       ; Stuck at GND due to stuck port data_in                                       ;
-; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR|Q[0..4]               ; Stuck at GND due to stuck port data_in                                       ;
-; P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05|Q[0..5]   ; Stuck at GND due to stuck port data_in                                       ;
-; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second|Q[0..4]        ; Stuck at GND due to stuck port data_in                                       ;
-; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third|Q[0..4]         ; Stuck at GND due to stuck port data_in                                       ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[6]       ; Stuck at GND due to stuck port data_in                                       ;
-; Total Number of Removed Registers = 396                               ;                                                                              ;
-+-----------------------------------------------------------------------+------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                     ;
-+------------------------------------------------------------------+---------------------------+------------------------------------------------------------------+
-; Register name                                                    ; Reason for Removal        ; Registers Removed due to This Register                           ;
-+------------------------------------------------------------------+---------------------------+------------------------------------------------------------------+
-; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR|Q[4]             ; Stuck at GND              ; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second|Q[4],     ;
-;                                                                  ; due to stuck port data_in ; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third|Q[4]       ;
-; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR|Q[3]             ; Stuck at GND              ; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second|Q[3],     ;
-;                                                                  ; due to stuck port data_in ; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third|Q[3]       ;
-; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR|Q[2]             ; Stuck at GND              ; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second|Q[2],     ;
-;                                                                  ; due to stuck port data_in ; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third|Q[2]       ;
-; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR|Q[1]             ; Stuck at GND              ; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second|Q[1],     ;
-;                                                                  ; due to stuck port data_in ; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third|Q[1]       ;
-; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR|Q[0]             ; Stuck at GND              ; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second|Q[0],     ;
-;                                                                  ; due to stuck port data_in ; P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third|Q[0]       ;
-; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[0]  ; Stuck at GND              ; P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04|Q[8] ;
-;                                                                  ; due to stuck port data_in ;                                                                  ;
-; P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04|Q[6] ; Stuck at GND              ; P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05|Q[5] ;
-;                                                                  ; due to stuck port data_in ;                                                                  ;
-; P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04|Q[4] ; Stuck at GND              ; P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05|Q[4] ;
-;                                                                  ; due to stuck port data_in ;                                                                  ;
-; P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04|Q[3] ; Stuck at GND              ; P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05|Q[3] ;
-;                                                                  ; due to stuck port data_in ;                                                                  ;
-; P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04|Q[2] ; Stuck at GND              ; P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05|Q[2] ;
-;                                                                  ; due to stuck port data_in ;                                                                  ;
-; P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04|Q[1] ; Stuck at GND              ; P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05|Q[1] ;
-;                                                                  ; due to stuck port data_in ;                                                                  ;
-; P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04|Q[0] ; Stuck at GND              ; P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05|Q[0] ;
-;                                                                  ; due to stuck port data_in ;                                                                  ;
-+------------------------------------------------------------------+---------------------------+------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                             ;
++-----------------------------------------------------------------+------------------------------------------------------------------------------+
+; Register name                                                   ; Reason for Removal                                                           ;
++-----------------------------------------------------------------+------------------------------------------------------------------------------+
+; P_Datapath:Datapath|RegEn:PC_PLR|Qtemp[1]                       ; Merged with P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR|Qtemp[1]              ;
+; P_Datapath:Datapath|RegEn:PC_PLR|Qtemp[0]                       ; Merged with P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR|Qtemp[0]              ;
+; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[1]                ; Merged with P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second|Qtemp[1]       ;
+; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[0]                ; Merged with P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second|Qtemp[0]       ;
+; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[4] ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[12] ;
+; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[3] ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[11] ;
+; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[2] ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[10] ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][0]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][1]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][2]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][3]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][4]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][5]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][6]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][7]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][8]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][9]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][10]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][11]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][12]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][13]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][14]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][15]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][16]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][17]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][18]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][19]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][20]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][21]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][22]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][23]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][24]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][25]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][26]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][27]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][28]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][29]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][30]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][31]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; Total Number of Removed Registers = 39                          ;                                                                              ;
++-----------------------------------------------------------------+------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -460,14 +351,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 1526  ;
+; Number of registers using Synchronous Clear  ; 116   ;
+; Number of registers using Synchronous Load   ; 95    ;
+; Number of registers using Asynchronous Clear ; 992   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 1118  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------+
+; 3:1                ; 88 bits   ; 176 LEs       ; 176 LEs              ; 0 LEs                  ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second|Qtemp[28]      ;
+; 4:1                ; 94 bits   ; 188 LEs       ; 188 LEs              ; 0 LEs                  ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:instruction_PLR|Qtemp[31]              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Register|Qtemp[0]                   ;
+; 5:1                ; 30 bits   ; 90 LEs        ; 60 LEs               ; 30 LEs                 ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Register|Qtemp[3]                   ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[31]             ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 22 LEs               ; 11 LEs                 ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[25]             ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[6]              ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[1]              ;
+; 36:1               ; 32 bits   ; 768 LEs       ; 704 LEs              ; 64 LEs                 ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[12]      ;
+; 36:1               ; 32 bits   ; 768 LEs       ; 704 LEs              ; 64 LEs                 ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[1]       ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; Yes        ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[19] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|Excution_Flow:Excute_Flow_cntr|Mux2   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:ForwardingB|Mux4                        ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:ALU_in_A|Mux27                          ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:WriteBack|Mux11                         ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:WriteBack|Mux18                         ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:WriteBack|Mux26                         ;
+; 17:1               ; 7 bits    ; 77 LEs        ; 49 LEs               ; 28 LEs                 ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit|Mux21                           ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 49 LEs               ; 21 LEs                 ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit|Mux13                           ;
+; 18:1               ; 4 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit|Mux24                           ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 32 LEs               ; 12 LEs                 ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit|Mux7                            ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit|Mux28                           ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit|Mux3                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------+
@@ -790,15 +712,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Hazard_Unit:HazardUnit"                                                               ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; flushd ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05" ;
 +-------+-------+----------+--------------------------------------------------------------+
@@ -821,17 +734,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+-------+----------+--------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03"                                                                                           ;
-+------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type  ; Severity ; Details                                                                                                                                      ;
-+------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; en         ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; non[20..7] ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; non[5..0]  ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; non[6]     ; Input ; Info     ; Stuck at VCC                                                                                                                                 ;
-; stall      ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03" ;
++------------+-------+----------+----------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                            ;
++------------+-------+----------+----------------------------------------------------+
+; stall      ; Input ; Info     ; Stuck at GND                                       ;
+; en         ; Input ; Info     ; Stuck at GND                                       ;
+; non[20..7] ; Input ; Info     ; Stuck at GND                                       ;
+; non[5..0]  ; Input ; Info     ; Stuck at GND                                       ;
+; non[6]     ; Input ; Info     ; Stuck at VCC                                       ;
++------------+-------+----------+----------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------+
@@ -1083,18 +996,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon Feb 09 11:37:21 2026
+    Info: Processing started: Mon Feb 09 18:50:31 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off P_Processor_Hazard -c P_Processor_Hazard
+Warning: Can't analyze file -- file ../../Modified RAM/Byte Addressable Mem/Byte Addressable Mem.vhd is missing
 Warning: Using design file p_processor_hazard.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: P_Processor_Hazard-arch
     Info: Found entity 1: P_Processor_Hazard
 Info: Elaborating entity "P_Processor_Hazard" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at p_processor_hazard.vhd(94): used implicit default value for signal "FlushD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning: Using design file p_datapath.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: P_Datapath-arch
     Info: Found entity 1: P_Datapath
 Info: Elaborating entity "P_Datapath" for hierarchy "P_Datapath:Datapath"
-Warning (10036): Verilog HDL or VHDL warning at p_datapath.vhd(164): object "RdDS" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at p_datapath.vhd(149): object "RdDS" assigned a value but never read
 Warning: Using design file regen.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: RegEn-arch
     Info: Found entity 1: RegEn
@@ -1127,22 +1040,6 @@ Warning: Using design file alu.vhd, which is not specified as a design file for 
     Info: Found design unit 1: Alu-arch
     Info: Found entity 1: ALU
 Info: Elaborating entity "ALU" for hierarchy "P_Datapath:Datapath|ALU:Alu_Unit"
-Warning: Using design file bit_manipulation_store.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info: Found design unit 1: Bit_Manipulation_Store-arch
-    Info: Found entity 1: Bit_Manipulation_Store
-Info: Elaborating entity "Bit_Manipulation_Store" for hierarchy "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation"
-Warning: Using design file first_stage.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info: Found design unit 1: First_stage-arch
-    Info: Found entity 1: First_stage
-Info: Elaborating entity "First_stage" for hierarchy "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First"
-Warning: Using design file last_stage.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info: Found design unit 1: Last_stage-arch
-    Info: Found entity 1: Last_stage
-Info: Elaborating entity "Last_stage" for hierarchy "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last"
-Warning: Using design file adderss_shift.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info: Found design unit 1: Adderss_Shift-arch
-    Info: Found entity 1: Adderss_Shift
-Info: Elaborating entity "Adderss_Shift" for hierarchy "P_Datapath:Datapath|Adderss_Shift:Addr_Shift"
 Warning: Using design file mem_signext.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: Mem_SignExt-arch
     Info: Found entity 1: Mem_SignExt
@@ -1244,38 +1141,6 @@ Warning: Tri-state node(s) do not directly drive top-level pin(s)
     Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[29]" feeding internal logic into a wire
     Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[30]" feeding internal logic into a wire
     Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[31]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[0]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[1]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[2]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[3]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[4]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[5]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[6]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[7]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[8]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[9]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[10]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[11]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[12]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[13]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[14]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[15]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[16]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[17]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[18]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[19]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[20]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[21]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[22]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[23]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[24]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[25]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[26]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[27]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[28]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[29]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[30]" feeding internal logic into a wire
-    Warning: Converted tri-state buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|First_stage:First|A2[31]" feeding internal logic into a wire
     Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[0]" feeding internal logic into a wire
     Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[1]" feeding internal logic into a wire
     Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[2]" feeding internal logic into a wire
@@ -1404,212 +1269,78 @@ Warning: Tri-state node(s) do not directly drive top-level pin(s)
     Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[29]" feeding internal logic into a wire
     Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[30]" feeding internal logic into a wire
     Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[31]" feeding internal logic into a wire
-Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning: Reduced the following open-drain buffers that are fed by GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[0]" to the output pin "WriteData[0]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[1]" to the output pin "WriteData[1]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[2]" to the output pin "WriteData[2]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[3]" to the output pin "WriteData[3]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[4]" to the output pin "WriteData[4]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[5]" to the output pin "WriteData[5]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[6]" to the output pin "WriteData[6]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[7]" to the output pin "WriteData[7]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[8]" to the output pin "WriteData[8]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[9]" to the output pin "WriteData[9]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[10]" to the output pin "WriteData[10]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[11]" to the output pin "WriteData[11]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[12]" to the output pin "WriteData[12]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[13]" to the output pin "WriteData[13]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[14]" to the output pin "WriteData[14]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[15]" to the output pin "WriteData[15]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[16]" to the output pin "WriteData[16]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[17]" to the output pin "WriteData[17]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[18]" to the output pin "WriteData[18]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[19]" to the output pin "WriteData[19]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[20]" to the output pin "WriteData[20]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[21]" to the output pin "WriteData[21]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[22]" to the output pin "WriteData[22]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[23]" to the output pin "WriteData[23]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[24]" to the output pin "WriteData[24]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[25]" to the output pin "WriteData[25]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[26]" to the output pin "WriteData[26]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[27]" to the output pin "WriteData[27]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[28]" to the output pin "WriteData[28]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[29]" to the output pin "WriteData[29]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[30]" to the output pin "WriteData[30]" to GND
-    Warning: Reduced fanout from the always-enabled open-drain buffer "P_Datapath:Datapath|Bit_Manipulation_Store:Bit_Manipulation|Last_stage:Last|Data_out[31]" to the output pin "WriteData[31]" to GND
-Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "MemWrite" is stuck at GND
-    Warning (13410): Pin "Pc[0]" is stuck at GND
-    Warning (13410): Pin "Pc[1]" is stuck at GND
-    Warning (13410): Pin "Pc[2]" is stuck at GND
-    Warning (13410): Pin "Pc[3]" is stuck at GND
-    Warning (13410): Pin "Pc[4]" is stuck at GND
-    Warning (13410): Pin "Pc[5]" is stuck at GND
-    Warning (13410): Pin "Pc[6]" is stuck at GND
-    Warning (13410): Pin "Pc[7]" is stuck at GND
-    Warning (13410): Pin "Pc[8]" is stuck at GND
-    Warning (13410): Pin "Pc[9]" is stuck at GND
-    Warning (13410): Pin "Pc[10]" is stuck at GND
-    Warning (13410): Pin "Pc[11]" is stuck at GND
-    Warning (13410): Pin "Pc[12]" is stuck at GND
-    Warning (13410): Pin "Pc[13]" is stuck at GND
-    Warning (13410): Pin "Pc[14]" is stuck at GND
-    Warning (13410): Pin "Pc[15]" is stuck at GND
-    Warning (13410): Pin "Pc[16]" is stuck at GND
-    Warning (13410): Pin "Pc[17]" is stuck at GND
-    Warning (13410): Pin "Pc[18]" is stuck at GND
-    Warning (13410): Pin "Pc[19]" is stuck at GND
-    Warning (13410): Pin "Pc[20]" is stuck at GND
-    Warning (13410): Pin "Pc[21]" is stuck at GND
-    Warning (13410): Pin "Pc[22]" is stuck at GND
-    Warning (13410): Pin "Pc[23]" is stuck at GND
-    Warning (13410): Pin "Pc[24]" is stuck at GND
-    Warning (13410): Pin "Pc[25]" is stuck at GND
-    Warning (13410): Pin "Pc[26]" is stuck at GND
-    Warning (13410): Pin "Pc[27]" is stuck at GND
-    Warning (13410): Pin "Pc[28]" is stuck at GND
-    Warning (13410): Pin "Pc[29]" is stuck at GND
-    Warning (13410): Pin "Pc[30]" is stuck at GND
-    Warning (13410): Pin "Pc[31]" is stuck at GND
-    Warning (13410): Pin "DataAdr[0]" is stuck at GND
-    Warning (13410): Pin "DataAdr[1]" is stuck at GND
-    Warning (13410): Pin "DataAdr[2]" is stuck at GND
-    Warning (13410): Pin "DataAdr[3]" is stuck at GND
-    Warning (13410): Pin "DataAdr[4]" is stuck at GND
-    Warning (13410): Pin "DataAdr[5]" is stuck at GND
-    Warning (13410): Pin "DataAdr[6]" is stuck at GND
-    Warning (13410): Pin "DataAdr[7]" is stuck at GND
-    Warning (13410): Pin "DataAdr[8]" is stuck at GND
-    Warning (13410): Pin "DataAdr[9]" is stuck at GND
-    Warning (13410): Pin "DataAdr[10]" is stuck at GND
-    Warning (13410): Pin "DataAdr[11]" is stuck at GND
-    Warning (13410): Pin "DataAdr[12]" is stuck at GND
-    Warning (13410): Pin "DataAdr[13]" is stuck at GND
-    Warning (13410): Pin "DataAdr[14]" is stuck at GND
-    Warning (13410): Pin "DataAdr[15]" is stuck at GND
-    Warning (13410): Pin "DataAdr[16]" is stuck at GND
-    Warning (13410): Pin "DataAdr[17]" is stuck at GND
-    Warning (13410): Pin "DataAdr[18]" is stuck at GND
-    Warning (13410): Pin "DataAdr[19]" is stuck at GND
-    Warning (13410): Pin "DataAdr[20]" is stuck at GND
-    Warning (13410): Pin "DataAdr[21]" is stuck at GND
-    Warning (13410): Pin "DataAdr[22]" is stuck at GND
-    Warning (13410): Pin "DataAdr[23]" is stuck at GND
-    Warning (13410): Pin "DataAdr[24]" is stuck at GND
-    Warning (13410): Pin "DataAdr[25]" is stuck at GND
-    Warning (13410): Pin "DataAdr[26]" is stuck at GND
-    Warning (13410): Pin "DataAdr[27]" is stuck at GND
-    Warning (13410): Pin "DataAdr[28]" is stuck at GND
-    Warning (13410): Pin "DataAdr[29]" is stuck at GND
-    Warning (13410): Pin "DataAdr[30]" is stuck at GND
-    Warning (13410): Pin "DataAdr[31]" is stuck at GND
-    Warning (13410): Pin "WriteData[0]" is stuck at GND
-    Warning (13410): Pin "WriteData[1]" is stuck at GND
-    Warning (13410): Pin "WriteData[2]" is stuck at GND
-    Warning (13410): Pin "WriteData[3]" is stuck at GND
-    Warning (13410): Pin "WriteData[4]" is stuck at GND
-    Warning (13410): Pin "WriteData[5]" is stuck at GND
-    Warning (13410): Pin "WriteData[6]" is stuck at GND
-    Warning (13410): Pin "WriteData[7]" is stuck at GND
-    Warning (13410): Pin "WriteData[8]" is stuck at GND
-    Warning (13410): Pin "WriteData[9]" is stuck at GND
-    Warning (13410): Pin "WriteData[10]" is stuck at GND
-    Warning (13410): Pin "WriteData[11]" is stuck at GND
-    Warning (13410): Pin "WriteData[12]" is stuck at GND
-    Warning (13410): Pin "WriteData[13]" is stuck at GND
-    Warning (13410): Pin "WriteData[14]" is stuck at GND
-    Warning (13410): Pin "WriteData[15]" is stuck at GND
-    Warning (13410): Pin "WriteData[16]" is stuck at GND
-    Warning (13410): Pin "WriteData[17]" is stuck at GND
-    Warning (13410): Pin "WriteData[18]" is stuck at GND
-    Warning (13410): Pin "WriteData[19]" is stuck at GND
-    Warning (13410): Pin "WriteData[20]" is stuck at GND
-    Warning (13410): Pin "WriteData[21]" is stuck at GND
-    Warning (13410): Pin "WriteData[22]" is stuck at GND
-    Warning (13410): Pin "WriteData[23]" is stuck at GND
-    Warning (13410): Pin "WriteData[24]" is stuck at GND
-    Warning (13410): Pin "WriteData[25]" is stuck at GND
-    Warning (13410): Pin "WriteData[26]" is stuck at GND
-    Warning (13410): Pin "WriteData[27]" is stuck at GND
-    Warning (13410): Pin "WriteData[28]" is stuck at GND
-    Warning (13410): Pin "WriteData[29]" is stuck at GND
-    Warning (13410): Pin "WriteData[30]" is stuck at GND
-    Warning (13410): Pin "WriteData[31]" is stuck at GND
-Warning: Design contains 66 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk"
-    Warning (15610): No output dependent on input pin "reset"
-    Warning (15610): No output dependent on input pin "instruction[0]"
-    Warning (15610): No output dependent on input pin "instruction[1]"
-    Warning (15610): No output dependent on input pin "instruction[2]"
-    Warning (15610): No output dependent on input pin "instruction[3]"
-    Warning (15610): No output dependent on input pin "instruction[4]"
-    Warning (15610): No output dependent on input pin "instruction[5]"
-    Warning (15610): No output dependent on input pin "instruction[6]"
-    Warning (15610): No output dependent on input pin "instruction[7]"
-    Warning (15610): No output dependent on input pin "instruction[8]"
-    Warning (15610): No output dependent on input pin "instruction[9]"
-    Warning (15610): No output dependent on input pin "instruction[10]"
-    Warning (15610): No output dependent on input pin "instruction[11]"
-    Warning (15610): No output dependent on input pin "instruction[12]"
-    Warning (15610): No output dependent on input pin "instruction[13]"
-    Warning (15610): No output dependent on input pin "instruction[14]"
-    Warning (15610): No output dependent on input pin "instruction[15]"
-    Warning (15610): No output dependent on input pin "instruction[16]"
-    Warning (15610): No output dependent on input pin "instruction[17]"
-    Warning (15610): No output dependent on input pin "instruction[18]"
-    Warning (15610): No output dependent on input pin "instruction[19]"
-    Warning (15610): No output dependent on input pin "instruction[20]"
-    Warning (15610): No output dependent on input pin "instruction[21]"
-    Warning (15610): No output dependent on input pin "instruction[22]"
-    Warning (15610): No output dependent on input pin "instruction[23]"
-    Warning (15610): No output dependent on input pin "instruction[24]"
-    Warning (15610): No output dependent on input pin "instruction[25]"
-    Warning (15610): No output dependent on input pin "instruction[26]"
-    Warning (15610): No output dependent on input pin "instruction[27]"
-    Warning (15610): No output dependent on input pin "instruction[28]"
-    Warning (15610): No output dependent on input pin "instruction[29]"
-    Warning (15610): No output dependent on input pin "instruction[30]"
-    Warning (15610): No output dependent on input pin "instruction[31]"
-    Warning (15610): No output dependent on input pin "ReadData[0]"
-    Warning (15610): No output dependent on input pin "ReadData[1]"
-    Warning (15610): No output dependent on input pin "ReadData[2]"
-    Warning (15610): No output dependent on input pin "ReadData[3]"
-    Warning (15610): No output dependent on input pin "ReadData[4]"
-    Warning (15610): No output dependent on input pin "ReadData[5]"
-    Warning (15610): No output dependent on input pin "ReadData[6]"
-    Warning (15610): No output dependent on input pin "ReadData[7]"
-    Warning (15610): No output dependent on input pin "ReadData[8]"
-    Warning (15610): No output dependent on input pin "ReadData[9]"
-    Warning (15610): No output dependent on input pin "ReadData[10]"
-    Warning (15610): No output dependent on input pin "ReadData[11]"
-    Warning (15610): No output dependent on input pin "ReadData[12]"
-    Warning (15610): No output dependent on input pin "ReadData[13]"
-    Warning (15610): No output dependent on input pin "ReadData[14]"
-    Warning (15610): No output dependent on input pin "ReadData[15]"
-    Warning (15610): No output dependent on input pin "ReadData[16]"
-    Warning (15610): No output dependent on input pin "ReadData[17]"
-    Warning (15610): No output dependent on input pin "ReadData[18]"
-    Warning (15610): No output dependent on input pin "ReadData[19]"
-    Warning (15610): No output dependent on input pin "ReadData[20]"
-    Warning (15610): No output dependent on input pin "ReadData[21]"
-    Warning (15610): No output dependent on input pin "ReadData[22]"
-    Warning (15610): No output dependent on input pin "ReadData[23]"
-    Warning (15610): No output dependent on input pin "ReadData[24]"
-    Warning (15610): No output dependent on input pin "ReadData[25]"
-    Warning (15610): No output dependent on input pin "ReadData[26]"
-    Warning (15610): No output dependent on input pin "ReadData[27]"
-    Warning (15610): No output dependent on input pin "ReadData[28]"
-    Warning (15610): No output dependent on input pin "ReadData[29]"
-    Warning (15610): No output dependent on input pin "ReadData[30]"
-    Warning (15610): No output dependent on input pin "ReadData[31]"
-Info: Implemented 163 device resources after synthesis - the final resource count might be different
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[31]" feeding internal logic into a wire
+Info: Implemented 4097 device resources after synthesis - the final resource count might be different
     Info: Implemented 66 input pins
-    Info: Implemented 97 output pins
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 451 warnings
-    Info: Peak virtual memory: 247 megabytes
-    Info: Processing ended: Mon Feb 09 11:37:23 2026
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Implemented 101 output pins
+    Info: Implemented 3930 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 280 warnings
+    Info: Peak virtual memory: 255 megabytes
+    Info: Processing ended: Mon Feb 09 18:50:48 2026
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:19
 
 

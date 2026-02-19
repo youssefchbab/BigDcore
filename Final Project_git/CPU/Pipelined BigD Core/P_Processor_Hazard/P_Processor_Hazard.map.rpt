@@ -1,0 +1,1346 @@
+Analysis & Synthesis report for P_Processor_Hazard
+Mon Feb 09 21:57:56 2026
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Pc_Register
+ 12. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:instruction_PLR
+ 13. Parameter Settings for User Entity Instance: P_Datapath:Datapath|Mux3:Pc_Selection
+ 14. Parameter Settings for User Entity Instance: P_Datapath:Datapath|Adder:Pc_Plus_Four
+ 15. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:PC_PLR
+ 16. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR
+ 17. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Imm_Extended_PLR
+ 18. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR
+ 19. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3
+ 20. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3
+ 21. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd
+ 22. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second
+ 23. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn_5bit:Rs1D_PLR
+ 24. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn_5bit:Rs2D_PLR
+ 25. Parameter Settings for User Entity Instance: P_Datapath:Datapath|Mux3:ALU_in_A
+ 26. Parameter Settings for User Entity Instance: P_Datapath:Datapath|Mux2:ALU_in_B
+ 27. Parameter Settings for User Entity Instance: P_Datapath:Datapath|ALU:Alu_Unit
+ 28. Parameter Settings for User Entity Instance: P_Datapath:Datapath|Adder:Target_Address
+ 29. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Alu_result_PLR
+ 30. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second
+ 31. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Third
+ 32. Parameter Settings for User Entity Instance: P_Datapath:Datapath|Mux3:ForwardingA
+ 33. Parameter Settings for User Entity Instance: P_Datapath:Datapath|Mux3:ForwardingB
+ 34. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:ForwaredB_PLR
+ 35. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Alu_result_PLR_second
+ 36. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third
+ 37. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Read_Data_PLR
+ 38. Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Fourth
+ 39. Parameter Settings for User Entity Instance: P_Datapath:Datapath|Mux3:WriteBack
+ 40. Parameter Settings for User Entity Instance: P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03
+ 41. Parameter Settings for User Entity Instance: P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04
+ 42. Parameter Settings for User Entity Instance: P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05
+ 43. Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05"
+ 44. Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04"
+ 45. Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03"
+ 46. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Fourth"
+ 47. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Read_Data_PLR"
+ 48. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third"
+ 49. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Alu_result_PLR_second"
+ 50. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:ForwaredB_PLR"
+ 51. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Third"
+ 52. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second"
+ 53. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Alu_result_PLR"
+ 54. Port Connectivity Checks: "P_Datapath:Datapath|Mux3:ALU_in_A"
+ 55. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Rs2D_PLR"
+ 56. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Rs1D_PLR"
+ 57. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second"
+ 58. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd"
+ 59. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3"
+ 60. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3"
+ 61. Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR"
+ 62. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Imm_Extended_PLR"
+ 63. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR"
+ 64. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:PC_PLR"
+ 65. Port Connectivity Checks: "P_Datapath:Datapath|Adder:Pc_Plus_Four"
+ 66. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:instruction_PLR"
+ 67. Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Register"
+ 68. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                               ;
++-----------------------------+----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Feb 09 21:57:56 2026        ;
+; Quartus II Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
+; Revision Name               ; P_Processor_Hazard                           ;
+; Top-level Entity Name       ; P_Processor_Hazard                           ;
+; Family                      ; MAX II                                       ;
+; Total logic elements        ; 3,930                                        ;
+; Total pins                  ; 167                                          ;
+; Total virtual pins          ; 0                                            ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                                ;
++-----------------------------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; P_Processor_Hazard ; P_Processor_Hazard ;
+; Family name                                                                ; MAX II             ; Cyclone IV GX      ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Synchronization Register Chain Length                                      ; 2                  ; 3                  ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                             ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                                                                          ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+; p_processor_hazard.vhd           ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_processor_hazard.vhd ;
+; p_datapath.vhd                   ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd         ;
+; regen.vhd                        ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen.vhd              ;
+; mux3.vhd                         ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mux3.vhd               ;
+; adder.vhd                        ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/adder.vhd              ;
+; reg_file.vhd                     ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/reg_file.vhd           ;
+; immext.vhd                       ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/immext.vhd             ;
+; regen_5bit.vhd                   ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd         ;
+; mux2.vhd                         ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mux2.vhd               ;
+; alu.vhd                          ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/alu.vhd                ;
+; mem_signext.vhd                  ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd        ;
+; p_control_unit.vhd               ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_control_unit.vhd     ;
+; alu_cntr.vhd                     ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/alu_cntr.vhd           ;
+; p_main_unit.vhd                  ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_main_unit.vhd        ;
+; excution_flow.vhd                ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd      ;
+; regen_9bit.vhd                   ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_9bit.vhd         ;
+; regen_6bit.vhd                   ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_6bit.vhd         ;
+; hazard_unit.vhd                  ; yes             ; Auto-Found VHDL File  ; F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/hazard_unit.vhd        ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 3930  ;
+;     -- Combinational with no register       ; 2404  ;
+;     -- Register only                        ; 995   ;
+;     -- Combinational with a register        ; 531   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 1958  ;
+;     -- 3 input functions                    ; 622   ;
+;     -- 2 input functions                    ; 351   ;
+;     -- 1 input functions                    ; 4     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 3776  ;
+;     -- arithmetic mode                      ; 154   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 117   ;
+;     -- asynchronous clear/load mode         ; 992   ;
+;                                             ;       ;
+; Total registers                             ; 1526  ;
+; Total logic cells in carry chains           ; 159   ;
+; I/O pins                                    ; 167   ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1526  ;
+; Total fan-out                               ; 15442 ;
+; Average fan-out                             ; 3.77  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                              ;
++--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                 ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                             ; Library Name ;
++--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------+--------------+
+; |P_Processor_Hazard                        ; 3930 (1)    ; 1526         ; 0          ; 167  ; 0            ; 2404 (1)     ; 995 (0)           ; 531 (0)          ; 159 (0)         ; 0 (0)      ; |P_Processor_Hazard                                                             ; work         ;
+;    |Hazard_Unit:HazardUnit|                ; 25 (25)     ; 0            ; 0          ; 0    ; 0            ; 25 (25)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|Hazard_Unit:HazardUnit                                      ; work         ;
+;    |P_Control_Unit:ControlUnit|            ; 69 (0)      ; 33           ; 0          ; 0    ; 0            ; 36 (0)       ; 3 (0)             ; 30 (0)           ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit                                  ; work         ;
+;       |Alu_cntr:Alu_Control_Unit|          ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|Alu_cntr:Alu_Control_Unit        ; work         ;
+;       |Excution_Flow:Excute_Flow_cntr|     ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|Excution_Flow:Excute_Flow_cntr   ; work         ;
+;       |P_Main_unit:Main_Control_Unit|      ; 14 (14)     ; 0            ; 0          ; 0    ; 0            ; 14 (14)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|P_Main_unit:Main_Control_Unit    ; work         ;
+;       |RegEn:Control_Signals_PLR03|        ; 30 (30)     ; 18           ; 0          ; 0    ; 0            ; 12 (12)      ; 3 (3)             ; 15 (15)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03      ; work         ;
+;       |RegEn_6bit:Control_Signals_PLR05|   ; 6 (6)       ; 6            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 6 (6)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05 ; work         ;
+;       |RegEn_9bit:Control_Signals_PLR04|   ; 9 (9)       ; 9            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 9 (9)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04 ; work         ;
+;    |P_Datapath:Datapath|                   ; 3835 (0)    ; 1493         ; 0          ; 0    ; 0            ; 2342 (0)     ; 992 (0)           ; 501 (0)          ; 159 (0)         ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath                                         ; work         ;
+;       |ALU:Alu_Unit|                       ; 678 (678)   ; 0            ; 0          ; 0    ; 0            ; 678 (678)    ; 0 (0)             ; 0 (0)            ; 97 (97)         ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit                            ; work         ;
+;       |ImmExt:Immediate_Extension|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|ImmExt:Immediate_Extension              ; work         ;
+;       |Mem_SignExt:Memory_Extension|       ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|Mem_SignExt:Memory_Extension            ; work         ;
+;       |Mux2:ALU_in_B|                      ; 32 (32)     ; 0            ; 0          ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|Mux2:ALU_in_B                           ; work         ;
+;       |Mux3:ALU_in_A|                      ; 70 (70)     ; 0            ; 0          ; 0    ; 0            ; 70 (70)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:ALU_in_A                           ; work         ;
+;       |Mux3:ForwardingB|                   ; 64 (64)     ; 0            ; 0          ; 0    ; 0            ; 64 (64)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:ForwardingB                        ; work         ;
+;       |Mux3:WriteBack|                     ; 94 (94)     ; 0            ; 0          ; 0    ; 0            ; 94 (94)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:WriteBack                          ; work         ;
+;       |RegEn:Alu_result_PLR_second|        ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Alu_result_PLR_second             ; work         ;
+;       |RegEn:Alu_result_PLR|               ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Alu_result_PLR                    ; work         ;
+;       |RegEn:ForwaredB_PLR|                ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:ForwaredB_PLR                     ; work         ;
+;       |RegEn:Imm_Extended_PLR|             ; 40 (40)     ; 32           ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Imm_Extended_PLR                  ; work         ;
+;       |RegEn:PC_PLR|                       ; 30 (30)     ; 30           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 30 (30)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:PC_PLR                            ; work         ;
+;       |RegEn:Pc_PLR_Seocnd|                ; 30 (30)     ; 30           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 30 (30)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd                     ; work         ;
+;       |RegEn:Pc_Plus_Four_PLR_Fourth|      ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Fourth           ; work         ;
+;       |RegEn:Pc_Plus_Four_PLR_Second|      ; 33 (33)     ; 32           ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second           ; work         ;
+;       |RegEn:Pc_Plus_Four_PLR_Third|       ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Third            ; work         ;
+;       |RegEn:Pc_Plus_Four_PLR|             ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR                  ; work         ;
+;       |RegEn:Pc_Register|                  ; 34 (34)     ; 32           ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Register                       ; work         ;
+;       |RegEn:Read_Data_PLR|                ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Read_Data_PLR                     ; work         ;
+;       |RegEn:Reg_file_Register1_PLR3|      ; 674 (674)   ; 32           ; 0          ; 0    ; 0            ; 642 (642)    ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3           ; work         ;
+;       |RegEn:Reg_file_Register2_PLR3|      ; 674 (674)   ; 32           ; 0          ; 0    ; 0            ; 642 (642)    ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3           ; work         ;
+;       |RegEn:instruction_PLR|              ; 33 (33)     ; 32           ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:instruction_PLR                   ; work         ;
+;       |RegEn_5bit:Reg3_Address_PLR_Third|  ; 5 (5)       ; 5            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third       ; work         ;
+;       |RegEn_5bit:Reg3_Address_PLR_second| ; 5 (5)       ; 5            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second      ; work         ;
+;       |RegEn_5bit:Reg3_Address_PLR|        ; 5 (5)       ; 5            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR             ; work         ;
+;       |RegEn_5bit:Rs1D_PLR|                ; 5 (5)       ; 5            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn_5bit:Rs1D_PLR                     ; work         ;
+;       |RegEn_5bit:Rs2D_PLR|                ; 5 (5)       ; 5            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn_5bit:Rs2D_PLR                     ; work         ;
+;       |Reg_File:Register_File|             ; 1033 (1033) ; 992          ; 0          ; 0    ; 0            ; 41 (41)      ; 992 (992)         ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|Reg_File:Register_File                  ; work         ;
+;       |adder:Pc_Plus_Four|                 ; 30 (30)     ; 0            ; 0          ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|adder:Pc_Plus_Four                      ; work         ;
+;       |adder:Target_Address|               ; 32 (32)     ; 0            ; 0          ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 32 (32)         ; 0 (0)      ; |P_Processor_Hazard|P_Datapath:Datapath|adder:Target_Address                    ; work         ;
++--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                             ;
++-----------------------------------------------------------------+------------------------------------------------------------------------------+
+; Register name                                                   ; Reason for Removal                                                           ;
++-----------------------------------------------------------------+------------------------------------------------------------------------------+
+; P_Datapath:Datapath|RegEn:PC_PLR|Qtemp[1]                       ; Merged with P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR|Qtemp[1]              ;
+; P_Datapath:Datapath|RegEn:PC_PLR|Qtemp[0]                       ; Merged with P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR|Qtemp[0]              ;
+; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[1]                ; Merged with P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second|Qtemp[1]       ;
+; P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd|Qtemp[0]                ; Merged with P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second|Qtemp[0]       ;
+; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[4] ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[12] ;
+; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[3] ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[11] ;
+; P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[2] ; Merged with P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[10] ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][0]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][1]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][2]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][3]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][4]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][5]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][6]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][7]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][8]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][9]              ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][10]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][11]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][12]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][13]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][14]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][15]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][16]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][17]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][18]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][19]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][20]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][21]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][22]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][23]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][24]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][25]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][26]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][27]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][28]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][29]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][30]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; P_Datapath:Datapath|Reg_File:Register_File|M[0][31]             ; Stuck at GND due to stuck port clock_enable                                  ;
+; Total Number of Removed Registers = 39                          ;                                                                              ;
++-----------------------------------------------------------------+------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1526  ;
+; Number of registers using Synchronous Clear  ; 116   ;
+; Number of registers using Synchronous Load   ; 95    ;
+; Number of registers using Asynchronous Clear ; 992   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1118  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------+
+; 3:1                ; 88 bits   ; 176 LEs       ; 176 LEs              ; 0 LEs                  ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second|Qtemp[28]      ;
+; 4:1                ; 94 bits   ; 188 LEs       ; 188 LEs              ; 0 LEs                  ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:instruction_PLR|Qtemp[31]              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Register|Qtemp[0]                   ;
+; 5:1                ; 30 bits   ; 90 LEs        ; 60 LEs               ; 30 LEs                 ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Pc_Register|Qtemp[3]                   ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[31]             ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 22 LEs               ; 11 LEs                 ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[25]             ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[6]              ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Imm_Extended_PLR|Qtemp[1]              ;
+; 36:1               ; 32 bits   ; 768 LEs       ; 704 LEs              ; 64 LEs                 ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3|Qtemp[12]      ;
+; 36:1               ; 32 bits   ; 768 LEs       ; 704 LEs              ; 64 LEs                 ; Yes        ; |P_Processor_Hazard|P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3|Qtemp[1]       ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; Yes        ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03|Qtemp[19] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |P_Processor_Hazard|P_Control_Unit:ControlUnit|Excution_Flow:Excute_Flow_cntr|Mux2   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:ForwardingB|Mux4                        ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:ALU_in_A|Mux27                          ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:WriteBack|Mux11                         ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:WriteBack|Mux18                         ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|Mux3:WriteBack|Mux26                         ;
+; 17:1               ; 7 bits    ; 77 LEs        ; 49 LEs               ; 28 LEs                 ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit|Mux21                           ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 49 LEs               ; 21 LEs                 ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit|Mux13                           ;
+; 18:1               ; 4 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit|Mux24                           ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 32 LEs               ; 12 LEs                 ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit|Mux7                            ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit|Mux28                           ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; No         ; |P_Processor_Hazard|P_Datapath:Datapath|ALU:Alu_Unit|Mux3                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Pc_Register ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:instruction_PLR ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|Mux3:Pc_Selection ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|Adder:Pc_Plus_Four ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:PC_PLR ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Imm_Extended_PLR ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; n              ; 5     ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn_5bit:Rs1D_PLR ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; n              ; 5     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn_5bit:Rs2D_PLR ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; n              ; 5     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|Mux3:ALU_in_A ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|Mux2:ALU_in_B ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|ALU:Alu_Unit ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; alu_bits       ; 32    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|Adder:Target_Address ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Alu_result_PLR ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second ;
++----------------+-------+----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                       ;
++----------------+-------+----------------------------------------------------------------------------+
+; n              ; 5     ; Signed Integer                                                             ;
++----------------+-------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Third ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|Mux3:ForwardingA ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|Mux3:ForwardingB ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:ForwaredB_PLR ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Alu_result_PLR_second ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; n              ; 5     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Read_Data_PLR ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Fourth ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Datapath:Datapath|Mux3:WriteBack ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03 ;
++----------------+-------+----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                       ;
++----------------+-------+----------------------------------------------------------------------------+
+; n              ; 21    ; Signed Integer                                                             ;
++----------------+-------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; n              ; 9     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; n              ; 6     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05" ;
++-------+-------+----------+--------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                      ;
++-------+-------+----------+--------------------------------------------------------------+
+; en    ; Input ; Info     ; Stuck at GND                                                 ;
+; flush ; Input ; Info     ; Stuck at GND                                                 ;
+; non   ; Input ; Info     ; Stuck at GND                                                 ;
++-------+-------+----------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04" ;
++-------+-------+----------+--------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                      ;
++-------+-------+----------+--------------------------------------------------------------+
+; en    ; Input ; Info     ; Stuck at GND                                                 ;
+; flush ; Input ; Info     ; Stuck at GND                                                 ;
+; non   ; Input ; Info     ; Stuck at GND                                                 ;
++-------+-------+----------+--------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03" ;
++------------+-------+----------+----------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                            ;
++------------+-------+----------+----------------------------------------------------+
+; stall      ; Input ; Info     ; Stuck at GND                                       ;
+; en         ; Input ; Info     ; Stuck at GND                                       ;
+; non[20..7] ; Input ; Info     ; Stuck at GND                                       ;
+; non[5..0]  ; Input ; Info     ; Stuck at GND                                       ;
+; non[6]     ; Input ; Info     ; Stuck at VCC                                       ;
++------------+-------+----------+----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Fourth" ;
++-------+-------+----------+----------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                            ;
++-------+-------+----------+----------------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                                       ;
+; flush ; Input ; Info     ; Stuck at GND                                       ;
+; en    ; Input ; Info     ; Stuck at GND                                       ;
+; non   ; Input ; Info     ; Stuck at GND                                       ;
++-------+-------+----------+----------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Read_Data_PLR" ;
++-------+-------+----------+------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                  ;
++-------+-------+----------+------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                             ;
+; flush ; Input ; Info     ; Stuck at GND                             ;
+; en    ; Input ; Info     ; Stuck at GND                             ;
+; non   ; Input ; Info     ; Stuck at GND                             ;
++-------+-------+----------+------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_Third" ;
++-------+-------+----------+--------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                ;
++-------+-------+----------+--------------------------------------------------------+
+; en    ; Input ; Info     ; Stuck at GND                                           ;
+; flush ; Input ; Info     ; Stuck at GND                                           ;
+; non   ; Input ; Info     ; Stuck at GND                                           ;
++-------+-------+----------+--------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Alu_result_PLR_second" ;
++-------+-------+----------+--------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                          ;
++-------+-------+----------+--------------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                                     ;
+; flush ; Input ; Info     ; Stuck at GND                                     ;
+; en    ; Input ; Info     ; Stuck at GND                                     ;
+; non   ; Input ; Info     ; Stuck at GND                                     ;
++-------+-------+----------+--------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:ForwaredB_PLR" ;
++-------+-------+----------+------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                  ;
++-------+-------+----------+------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                             ;
+; flush ; Input ; Info     ; Stuck at GND                             ;
+; en    ; Input ; Info     ; Stuck at GND                             ;
+; non   ; Input ; Info     ; Stuck at GND                             ;
++-------+-------+----------+------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Third" ;
++-------+-------+----------+---------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                           ;
++-------+-------+----------+---------------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                                      ;
+; flush ; Input ; Info     ; Stuck at GND                                      ;
+; en    ; Input ; Info     ; Stuck at GND                                      ;
+; non   ; Input ; Info     ; Stuck at GND                                      ;
++-------+-------+----------+---------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR_second" ;
++-------+-------+----------+---------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                 ;
++-------+-------+----------+---------------------------------------------------------+
+; en    ; Input ; Info     ; Stuck at GND                                            ;
+; flush ; Input ; Info     ; Stuck at GND                                            ;
+; non   ; Input ; Info     ; Stuck at GND                                            ;
++-------+-------+----------+---------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Alu_result_PLR" ;
++-------+-------+----------+-------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                   ;
++-------+-------+----------+-------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                              ;
+; flush ; Input ; Info     ; Stuck at GND                              ;
+; en    ; Input ; Info     ; Stuck at GND                              ;
+; non   ; Input ; Info     ; Stuck at GND                              ;
++-------+-------+----------+-------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|Mux3:ALU_in_A" ;
++------+-------+----------+-------------------------------------+
+; Port ; Type  ; Severity ; Details                             ;
++------+-------+----------+-------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                        ;
++------+-------+----------+-------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Rs2D_PLR" ;
++------+-------+----------+-------------------------------------------+
+; Port ; Type  ; Severity ; Details                                   ;
++------+-------+----------+-------------------------------------------+
+; en   ; Input ; Info     ; Stuck at GND                              ;
+; non  ; Input ; Info     ; Stuck at GND                              ;
++------+-------+----------+-------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Rs1D_PLR" ;
++------+-------+----------+-------------------------------------------+
+; Port ; Type  ; Severity ; Details                                   ;
++------+-------+----------+-------------------------------------------+
+; en   ; Input ; Info     ; Stuck at GND                              ;
+; non  ; Input ; Info     ; Stuck at GND                              ;
++------+-------+----------+-------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR_Second" ;
++-------+-------+----------+----------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                            ;
++-------+-------+----------+----------------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                                       ;
+; en    ; Input ; Info     ; Stuck at GND                                       ;
+; non   ; Input ; Info     ; Stuck at GND                                       ;
++-------+-------+----------+----------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_PLR_Seocnd" ;
++-------+-------+----------+------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                  ;
++-------+-------+----------+------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                             ;
+; en    ; Input ; Info     ; Stuck at GND                             ;
+; non   ; Input ; Info     ; Stuck at GND                             ;
++-------+-------+----------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Reg_file_Register2_PLR3" ;
++-------+-------+----------+----------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                            ;
++-------+-------+----------+----------------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                                       ;
+; en    ; Input ; Info     ; Stuck at GND                                       ;
+; non   ; Input ; Info     ; Stuck at GND                                       ;
++-------+-------+----------+----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Reg_file_Register1_PLR3" ;
++-------+-------+----------+----------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                            ;
++-------+-------+----------+----------------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                                       ;
+; en    ; Input ; Info     ; Stuck at GND                                       ;
+; non   ; Input ; Info     ; Stuck at GND                                       ;
++-------+-------+----------+----------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR" ;
++------+-------+----------+---------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                           ;
++------+-------+----------+---------------------------------------------------+
+; en   ; Input ; Info     ; Stuck at GND                                      ;
+; non  ; Input ; Info     ; Stuck at GND                                      ;
++------+-------+----------+---------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Imm_Extended_PLR" ;
++-------+-------+----------+---------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                     ;
++-------+-------+----------+---------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                                ;
+; en    ; Input ; Info     ; Stuck at GND                                ;
+; non   ; Input ; Info     ; Stuck at GND                                ;
++-------+-------+----------+---------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Plus_Four_PLR" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; en   ; Input ; Info     ; Stuck at GND                                 ;
+; non  ; Input ; Info     ; Stuck at GND                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:PC_PLR" ;
++------+-------+----------+------------------------------------+
+; Port ; Type  ; Severity ; Details                            ;
++------+-------+----------+------------------------------------+
+; en   ; Input ; Info     ; Stuck at GND                       ;
+; non  ; Input ; Info     ; Stuck at GND                       ;
++------+-------+----------+------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|Adder:Pc_Plus_Four" ;
++----------+-------+----------+--------------------------------------+
+; Port     ; Type  ; Severity ; Details                              ;
++----------+-------+----------+--------------------------------------+
+; a[31..3] ; Input ; Info     ; Stuck at GND                         ;
+; a[1..0]  ; Input ; Info     ; Stuck at GND                         ;
+; a[2]     ; Input ; Info     ; Stuck at VCC                         ;
++----------+-------+----------+--------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:instruction_PLR" ;
++------------+-------+----------+---------------------------------------+
+; Port       ; Type  ; Severity ; Details                               ;
++------------+-------+----------+---------------------------------------+
+; en         ; Input ; Info     ; Stuck at GND                          ;
+; non[5..4]  ; Input ; Info     ; Stuck at VCC                          ;
+; non[1..0]  ; Input ; Info     ; Stuck at VCC                          ;
+; non[31..6] ; Input ; Info     ; Stuck at GND                          ;
+; non[3..2]  ; Input ; Info     ; Stuck at GND                          ;
++------------+-------+----------+---------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "P_Datapath:Datapath|RegEn:Pc_Register" ;
++-------+-------+----------+----------------------------------------+
+; Port  ; Type  ; Severity ; Details                                ;
++-------+-------+----------+----------------------------------------+
+; flush ; Input ; Info     ; Stuck at GND                           ;
+; en    ; Input ; Info     ; Stuck at GND                           ;
+; non   ; Input ; Info     ; Stuck at GND                           ;
++-------+-------+----------+----------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon Feb 09 21:57:41 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off P_Processor_Hazard -c P_Processor_Hazard
+Warning: Can't analyze file -- file ../../Modified RAM/Byte Addressable Mem/Byte Addressable Mem.vhd is missing
+Warning: Using design file p_processor_hazard.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: P_Processor_Hazard-arch
+    Info: Found entity 1: P_Processor_Hazard
+Info: Elaborating entity "P_Processor_Hazard" for the top level hierarchy
+Warning: Using design file p_datapath.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: P_Datapath-arch
+    Info: Found entity 1: P_Datapath
+Info: Elaborating entity "P_Datapath" for hierarchy "P_Datapath:Datapath"
+Warning (10036): Verilog HDL or VHDL warning at p_datapath.vhd(149): object "RdDS" assigned a value but never read
+Warning: Using design file regen.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: RegEn-arch
+    Info: Found entity 1: RegEn
+Info: Elaborating entity "RegEn" for hierarchy "P_Datapath:Datapath|RegEn:Pc_Register"
+Warning: Using design file mux3.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Mux3-arch
+    Info: Found entity 1: Mux3
+Info: Elaborating entity "Mux3" for hierarchy "P_Datapath:Datapath|Mux3:Pc_Selection"
+Warning: Using design file adder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: adder-arch
+    Info: Found entity 1: adder
+Info: Elaborating entity "Adder" for hierarchy "P_Datapath:Datapath|Adder:Pc_Plus_Four"
+Warning: Using design file reg_file.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Reg_File-arch
+    Info: Found entity 1: Reg_File
+Info: Elaborating entity "Reg_File" for hierarchy "P_Datapath:Datapath|Reg_File:Register_File"
+Warning: Using design file immext.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: ImmExt-arch
+    Info: Found entity 1: ImmExt
+Info: Elaborating entity "ImmExt" for hierarchy "P_Datapath:Datapath|ImmExt:Immediate_Extension"
+Warning: Using design file regen_5bit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: RegEn_5bit-arch
+    Info: Found entity 1: RegEn_5bit
+Info: Elaborating entity "RegEn_5bit" for hierarchy "P_Datapath:Datapath|RegEn_5bit:Reg3_Address_PLR"
+Warning: Using design file mux2.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Mux2-arch
+    Info: Found entity 1: Mux2
+Info: Elaborating entity "Mux2" for hierarchy "P_Datapath:Datapath|Mux2:ALU_in_B"
+Warning: Using design file alu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Alu-arch
+    Info: Found entity 1: ALU
+Info: Elaborating entity "ALU" for hierarchy "P_Datapath:Datapath|ALU:Alu_Unit"
+Warning: Using design file mem_signext.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Mem_SignExt-arch
+    Info: Found entity 1: Mem_SignExt
+Info: Elaborating entity "Mem_SignExt" for hierarchy "P_Datapath:Datapath|Mem_SignExt:Memory_Extension"
+Warning (10492): VHDL Process Statement warning at mem_signext.vhd(33): signal "Mem_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mem_signext.vhd(38): signal "Mem_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mem_signext.vhd(39): signal "Mem_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning: Using design file p_control_unit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: P_Control_Unit-arch
+    Info: Found entity 1: P_Control_Unit
+Info: Elaborating entity "P_Control_Unit" for hierarchy "P_Control_Unit:ControlUnit"
+Warning: Using design file alu_cntr.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Alu_cntr-arch
+    Info: Found entity 1: Alu_cntr
+Info: Elaborating entity "Alu_cntr" for hierarchy "P_Control_Unit:ControlUnit|Alu_cntr:Alu_Control_Unit"
+Warning: Using design file p_main_unit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: P_Main_unit-arch
+    Info: Found entity 1: P_Main_unit
+Info: Elaborating entity "P_Main_unit" for hierarchy "P_Control_Unit:ControlUnit|P_Main_unit:Main_Control_Unit"
+Info: Elaborating entity "RegEn" for hierarchy "P_Control_Unit:ControlUnit|RegEn:Control_Signals_PLR03"
+Warning: Using design file excution_flow.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Excution_Flow-arch
+    Info: Found entity 1: Excution_Flow
+Info: Elaborating entity "Excution_Flow" for hierarchy "P_Control_Unit:ControlUnit|Excution_Flow:Excute_Flow_cntr"
+Warning: Using design file regen_9bit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: RegEn_9bit-arch
+    Info: Found entity 1: RegEn_9bit
+Info: Elaborating entity "RegEn_9bit" for hierarchy "P_Control_Unit:ControlUnit|RegEn_9bit:Control_Signals_PLR04"
+Warning: Using design file regen_6bit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: RegEn_6bit-arch
+    Info: Found entity 1: RegEn_6bit
+Info: Elaborating entity "RegEn_6bit" for hierarchy "P_Control_Unit:ControlUnit|RegEn_6bit:Control_Signals_PLR05"
+Warning: Using design file hazard_unit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Hazard_Unit-arch
+    Info: Found entity 1: Hazard_Unit
+Info: Elaborating entity "Hazard_Unit" for hierarchy "Hazard_Unit:HazardUnit"
+Warning: Tri-state node(s) do not directly drive top-level pin(s)
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mem_SignExt:Memory_Extension|To_Reg[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:WriteBack|Z[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingB|Z[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ForwardingA|Z[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ALU:Alu_Unit|Alu_out[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:ALU_in_A|Z[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|ImmExt:Immediate_Extension|Imm_Extended[31]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[22]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[23]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[24]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[25]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[26]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[27]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[28]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[29]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[30]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "P_Datapath:Datapath|Mux3:Pc_Selection|Z[31]" feeding internal logic into a wire
+Info: Implemented 4097 device resources after synthesis - the final resource count might be different
+    Info: Implemented 66 input pins
+    Info: Implemented 101 output pins
+    Info: Implemented 3930 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 280 warnings
+    Info: Peak virtual memory: 255 megabytes
+    Info: Processing ended: Mon Feb 09 21:57:56 2026
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:16
+
+

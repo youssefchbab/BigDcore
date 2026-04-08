@@ -17,11 +17,6 @@ end RAM;
 architecture arch of RAM is
     Type RAM_type is array (255 downto 0) of std_logic_vector(31 downto 0) ;
     Signal Mem: RAM_type := (
-        25=> x"00000040",
-        26=> x"00000022",
-        27=> x"00000016",
-        28=> x"0000005A",
-        29=> x"00000004",
         others => (others=>'0')
     );
     Signal Mem_Size: integer := 256;

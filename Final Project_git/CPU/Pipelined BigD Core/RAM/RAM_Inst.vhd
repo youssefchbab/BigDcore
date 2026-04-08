@@ -17,31 +17,6 @@ end RAM_Inst;
 architecture arch of RAM_Inst is
     Type RAM_type is array (255 downto 0) of std_logic_vector(31 downto 0) ;
     Signal Mem: RAM_type := (
-        0 => x"06400293",
-        1 => x"00028293",
-        2 => x"06400313",
-        3 => x"01030313",
-        4 => x"00032303",
-        5 => x"00000393",
-        6 => x"04638663",
-        7 => x"00000e13",
-        8 => x"00000e93",
-        9 => x"40730f33",
-        10 => x"ffff0f13",
-        11 => x"03ee0663",
-        12 => x"002e1f93",
-        13 => x"01f284b3",
-        14 => x"0004a903",
-        15 => x"0044a983",
-        16 => x"0129d863",
-        17 => x"0134a023",
-        18 => x"0124a223",
-        19 => x"00100e93",
-        20 => x"001e0e13",
-        21 => x"fd9ff06f",
-        22 => x"000e8663",
-        23 => x"00138393",
-        24 => x"fb9ff06f",
         others => (others=>'0')
     );
     Signal Mem_Size: integer := 256;

@@ -1,0 +1,1319 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/TestBenchs folders/Hazard
+Eadder
+Z0 w1744903976
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/TestBenchs folders/Hazard2
+Z5 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd
+Z6 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd
+l0
+L5
+VYVoRTmN<C_KVBW`739cL[1
+!s100 a1;ad^Dh]7QLm?bhGFCL60
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1775648817
+!i10b 1
+Z9 !s108 1775648817.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd|
+Z11 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Aarch
+R1
+R2
+R3
+DEx4 work 5 adder 0 22 YVoRTmN<C_KVBW`739cL[1
+l13
+L11
+V@ZEJ=ZZU_6mV;lQ92^>B^1
+!s100 7n6b^Na7c:K_a>:?gzcCn0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eadderss_shift
+Z14 w1746044657
+R1
+R2
+R3
+R4
+Z15 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Adderss_Shift.vhd
+Z16 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Adderss_Shift.vhd
+l0
+L5
+V?ED?KZ8b9E@T=imHBh=el0
+!s100 noohaR_<V@lE@?=zRW_kK0
+R7
+32
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Adderss_Shift.vhd|
+Z18 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Adderss_Shift.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 13 adderss_shift 0 22 ?ED?KZ8b9E@T=imHBh=el0
+l12
+L10
+VElEEo>Vdn@=;`zTm6ehjL3
+!s100 AlH^f59]RYA0DW8O1Xo?:3
+R7
+32
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Ealu
+Z19 w1763400789
+R1
+R2
+R3
+R4
+Z20 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd
+Z21 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd
+l0
+L5
+VXfCGV_azFL]d_W`7ZN=@Z0
+!s100 ?Q<^a:obDCnE7H0:GCWGG3
+R7
+32
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd|
+Z23 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 3 alu 0 22 XfCGV_azFL]d_W`7ZN=@Z0
+l24
+L14
+Ve<zokP[=VCJob]oP7Pi8Q2
+!s100 4jl9KZOB]<Y`JLEZKL;^z2
+R7
+32
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13
+Ealu_cntr
+Z24 w1748978328
+R2
+R3
+R4
+Z25 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd
+Z26 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd
+l0
+L4
+V6:JbKHleDgg@CMd4OW2?@3
+!s100 ^Ug3z=WO4U28EgJSaFSeN1
+R7
+32
+R8
+!i10b 1
+R9
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd|
+Z28 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 8 alu_cntr 0 22 6:JbKHleDgg@CMd4OW2?@3
+l55
+L13
+VI=^YEH>bLR>OiRlAK:Z:03
+!s100 Z`hU13lJPaj?R1R5W:^[W1
+R7
+32
+R8
+!i10b 1
+R9
+R27
+R28
+!i113 1
+R12
+R13
+Ebit_manipulation_load
+Z29 w1749041909
+R2
+R3
+R4
+Z30 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd
+Z31 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd
+l0
+L5
+V]X1_dH1IQSjmUB=nN6kQJ3
+!s100 X::3YC1Y66Og7B3JLg>M91
+R7
+32
+Z32 !s110 1775648818
+!i10b 1
+Z33 !s108 1775648818.000000
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd|
+Z35 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 21 bit_manipulation_load 0 22 ]X1_dH1IQSjmUB=nN6kQJ3
+l26
+L13
+VaN1OnabFWQ3[0:Fm3H2263
+!s100 XhE7[5ndLkhAMWPGN@[cE1
+R7
+32
+R32
+!i10b 1
+R33
+R34
+R35
+!i113 1
+R12
+R13
+Ebit_manipulation_store
+Z36 w1759841929
+R2
+R3
+R4
+Z37 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd
+Z38 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd
+l0
+L5
+VggVOQAYn9`QN7iOYYd[]f1
+!s100 UQkTF<EG7SSNR<zjj:Bi62
+R7
+32
+R32
+!i10b 1
+R33
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd|
+Z40 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 22 bit_manipulation_store 0 22 ggVOQAYn9`QN7iOYYd[]f1
+l26
+L13
+VWC10MhW=J1INnY_e8eYI82
+!s100 jJ`dJ13?]^54``]OLm0bC0
+R7
+32
+R32
+!i10b 1
+R33
+R39
+R40
+!i113 1
+R12
+R13
+Econstant_value
+Z41 w1746030364
+R1
+R2
+R3
+R4
+Z42 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Constant_value.vhd
+Z43 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Constant_value.vhd
+l0
+L5
+Vg2>oWJ]B3^9ZcXHA=I8bP2
+!s100 7ViAn9SJzl[mG3BSPOO]A2
+R7
+32
+R32
+!i10b 1
+R33
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Constant_value.vhd|
+Z45 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Constant_value.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 14 constant_value 0 22 g2>oWJ]B3^9ZcXHA=I8bP2
+l13
+L11
+V:X?O:3m[>WB>_1QLI2n3H0
+!s100 Y>7a8zD^4cYcf1G2XK1_82
+R7
+32
+R32
+!i10b 1
+R33
+R44
+R45
+!i113 1
+R12
+R13
+Edata_mem
+Z46 w1744672023
+R1
+R2
+R3
+R4
+Z47 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Data_mem.vhd
+Z48 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Data_mem.vhd
+l0
+L5
+VQBZI^JW>FG5BfTPimdcaW1
+!s100 ^TbH@HgI0ef0bY8QQ58dG3
+R7
+32
+R32
+!i10b 1
+R33
+Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Data_mem.vhd|
+Z50 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Data_mem.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 8 data_mem 0 22 QBZI^JW>FG5BfTPimdcaW1
+l14
+L11
+VBeM1jCkW7dOEokzSi5m[23
+!s100 lhbZ;z>O>X=8>0NLeDLmQ0
+R7
+32
+R32
+!i10b 1
+R33
+R49
+R50
+!i113 1
+R12
+R13
+Eexcution_flow
+Z51 w1763574199
+R2
+R3
+R4
+Z52 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd
+Z53 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd
+l0
+L4
+Vd]Fdin:5f]dF3AzZak6_f1
+!s100 Uk4`TG[bdNF1YQgiTf`BQ3
+R7
+32
+R32
+!i10b 1
+R33
+Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd|
+Z55 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 13 excution_flow 0 22 d]Fdin:5f]dF3AzZak6_f1
+l16
+L14
+V3hmSH2nET@bl19K`0A32Y1
+!s100 g>7MdO4=1a^Am5_3Zl6jV0
+R7
+32
+R32
+!i10b 1
+R33
+R54
+R55
+!i113 1
+R12
+R13
+Efirst_stage
+Z56 w1746102340
+R2
+R3
+R4
+Z57 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/First_stage.vhd
+Z58 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/First_stage.vhd
+l0
+L4
+V;YK>`QS@nOZOQX^A:OQLN3
+!s100 P[PALIM13=gBhJc3TW3;C0
+R7
+32
+R32
+!i10b 1
+R33
+Z59 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/First_stage.vhd|
+Z60 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/First_stage.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 11 first_stage 0 22 ;YK>`QS@nOZOQX^A:OQLN3
+l13
+L10
+VWCTQ2F0ak=SNGJWGCB^JJ0
+!s100 5l@CBdmFH4_Q=Pk=UA_2W1
+R7
+32
+R32
+!i10b 1
+R33
+R59
+R60
+!i113 1
+R12
+R13
+Ehazard_testbench
+Z61 w1770661531
+R2
+R3
+R4
+Z62 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/TestBenchs folders/Hazard testbench/Hazard.vhd
+Z63 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/TestBenchs folders/Hazard testbench/Hazard.vhd
+l0
+L3
+VN`I6dYEiZ7a9_3TffP6D@1
+!s100 [CK=5fPMLz:7;G_T1>MP90
+R7
+32
+Z64 !s110 1775648821
+!i10b 1
+Z65 !s108 1775648821.000000
+Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/TestBenchs folders/Hazard testbench/Hazard.vhd|
+Z67 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/TestBenchs folders/Hazard testbench/Hazard.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 16 hazard_testbench 0 22 N`I6dYEiZ7a9_3TffP6D@1
+l50
+L6
+Vze=7[o>XVbZU`PHzYaPZf2
+!s100 M?cf[O9fo>?0aA5m08L6T1
+R7
+32
+R64
+!i10b 1
+R65
+R66
+R67
+!i113 1
+R12
+R13
+Ehazard_unit
+Z68 w1770565254
+R2
+R3
+R4
+Z69 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Hazard_Unit.vhd
+Z70 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Hazard_Unit.vhd
+l0
+L4
+VgRJfQBXaRI;eQ8Vd1EoTX1
+!s100 _cUa<B8AeP_a;Q<=M_>>B3
+R7
+32
+Z71 !s110 1775648819
+!i10b 1
+Z72 !s108 1775648819.000000
+Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Hazard_Unit.vhd|
+Z74 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Hazard_Unit.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 11 hazard_unit 0 22 gRJfQBXaRI;eQ8Vd1EoTX1
+l22
+L20
+VNkILY]KI?S2l742ULc<mA3
+!s100 6BddYJfHec;z2WWYF;;3J2
+R7
+32
+R71
+!i10b 1
+R72
+R73
+R74
+!i113 1
+R12
+R13
+Eimmext
+Z75 w1770576717
+R2
+R3
+R4
+Z76 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd
+Z77 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd
+l0
+L5
+V0eiX9L7]hfZGdJbj6J:?f3
+!s100 V;KhNeR0B]jMFDOa_jW]03
+R7
+32
+R71
+!i10b 1
+R72
+Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd|
+Z79 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 6 immext 0 22 0eiX9L7]hfZGdJbj6J:?f3
+l13
+L11
+V`_92fPbhzZImlIVC]Wkb]1
+!s100 VEeN]E0E0C1A6F8GEicP22
+R7
+32
+R71
+!i10b 1
+R72
+R78
+R79
+!i113 1
+R12
+R13
+Elast_stage
+Z80 w1746102328
+R2
+R3
+R4
+Z81 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd
+Z82 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd
+l0
+L4
+VGkGJNQ94]4KS<^?WT?fb>2
+!s100 jg34<k]mKRZ4GORE^S30m0
+R7
+32
+R71
+!i10b 1
+R72
+Z83 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd|
+Z84 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 10 last_stage 0 22 GkGJNQ94]4KS<^?WT?fb>2
+l13
+L10
+V=ZhTl@3g0ijzKgbS<k:JQ1
+!s100 W]jj4PGnVObeZER4Y<]jV3
+R7
+32
+R71
+!i10b 1
+R72
+R83
+R84
+!i113 1
+R12
+R13
+Elpm_dff0
+Z85 w1745183239
+R2
+R3
+R4
+Z86 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd
+Z87 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd
+l0
+L42
+VdU<CJkGROK<O3ac6Si=460
+!s100 SaK3R>a7oJLD?ZM@zfSA41
+R7
+32
+R71
+!i10b 1
+R72
+Z88 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd|
+Z89 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd|
+!i113 1
+R12
+R13
+Asyn
+R2
+R3
+DEx4 work 8 lpm_dff0 0 22 dU<CJkGROK<O3ac6Si=460
+l73
+L53
+V^b7?R3LP2V[N8E7;_iLM52
+!s100 RTf^:>b>YP_kZ;T_=>@m;0
+R7
+32
+R71
+!i10b 1
+R72
+R88
+R89
+!i113 1
+R12
+R13
+Elpm_mux0
+Z90 w1748786995
+Z91 DPx3 lpm 14 lpm_components 0 22 BZZBj]8LhndN7CkCjD@L`2
+R2
+R3
+R4
+Z92 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd
+Z93 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd
+l0
+L42
+V;QmlGAYR0mOeAf4=EfYEW2
+!s100 PAD^dD3U>X<E`<;RD8US02
+R7
+32
+R71
+!i10b 1
+R72
+Z94 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd|
+Z95 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd|
+!i113 1
+R12
+R13
+Asyn
+R91
+R2
+R3
+DEx4 work 8 lpm_mux0 0 22 ;QmlGAYR0mOeAf4=EfYEW2
+l64
+L54
+VT6Xk6B<UQVN<53k<NR@1B1
+!s100 ^N8DTZH>a1eGWGH3j_PK<2
+R7
+32
+R71
+!i10b 1
+R72
+R94
+R95
+!i113 1
+R12
+R13
+Elpm_mux1
+Z96 w1748787473
+R91
+R2
+R3
+R4
+Z97 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd
+Z98 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd
+l0
+L42
+V=32kSQiXCO_Ho0c;SUaRS1
+!s100 LQUoZ_eh8NidRllaM>XMB3
+R7
+32
+R71
+!i10b 1
+R72
+Z99 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd|
+Z100 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd|
+!i113 1
+R12
+R13
+Asyn
+R91
+R2
+R3
+DEx4 work 8 lpm_mux1 0 22 =32kSQiXCO_Ho0c;SUaRS1
+l64
+L53
+VMk>ZZUj@7fZ^i7mjlK;H]0
+!s100 z<bAzffJ0zdkk]nUJ]6=g3
+R7
+32
+R71
+!i10b 1
+R72
+R99
+R100
+!i113 1
+R12
+R13
+Emem_signext
+Z101 w1760815103
+R2
+R3
+R4
+Z102 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd
+Z103 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd
+l0
+L4
+V:zd4mA^;hz8eVPmS18<nm0
+!s100 ?271d;jjUbZj7`mgG6>oj2
+R7
+32
+Z104 !s110 1775648820
+!i10b 1
+R72
+Z105 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd|
+Z106 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 11 mem_signext 0 22 :zd4mA^;hz8eVPmS18<nm0
+l14
+L11
+V4P^Y44LN4ii8k]fk@Yg4]2
+!s100 iPJJBK<hG^;mzm[3WZ>kI3
+R7
+32
+R104
+!i10b 1
+R72
+R105
+R106
+!i113 1
+R12
+R13
+Emux2
+Z107 w1764878685
+R2
+R3
+R4
+Z108 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux2.vhd
+Z109 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux2.vhd
+l0
+L4
+Vj_42jKR3Fb^V8T`zLOaTW0
+!s100 J:gVPcA5ek]W[mh3n3GmB1
+R7
+32
+R104
+!i10b 1
+Z110 !s108 1775648820.000000
+Z111 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux2.vhd|
+Z112 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux2.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 4 mux2 0 22 j_42jKR3Fb^V8T`zLOaTW0
+l13
+L11
+VD4[3HMb;B6f<1U^4QRSPI1
+!s100 iP0`ae4l[6:e`RhHPkQSQ1
+R7
+32
+R104
+!i10b 1
+R110
+R111
+R112
+!i113 1
+R12
+R13
+Emux3
+Z113 w1744898845
+R2
+R3
+R4
+Z114 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd
+Z115 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd
+l0
+L4
+VAF1<A7W>Umal`G7]z^ao03
+!s100 DlS<z[d5[cIbXH5@<c4E61
+R7
+32
+R104
+!i10b 1
+R110
+Z116 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd|
+Z117 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 4 mux3 0 22 AF1<A7W>Umal`G7]z^ao03
+l13
+L11
+VG<ShN3=:hnS=H4;ZaiSN;2
+!s100 3eUc3zzQL^BA;bf4]bIHL1
+R7
+32
+R104
+!i10b 1
+R110
+R116
+R117
+!i113 1
+R12
+R13
+Emux4
+Z118 w1764878659
+R2
+R3
+R4
+Z119 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux4.vhd
+Z120 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux4.vhd
+l0
+L4
+V2>6o_L<kb3b[2D;5Z1>3g0
+!s100 UCY1NS<N?CDzModiU?dJZ2
+R7
+32
+R104
+!i10b 1
+R110
+Z121 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux4.vhd|
+Z122 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux4.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 4 mux4 0 22 2>6o_L<kb3b[2D;5Z1>3g0
+l13
+L11
+VLX6Emgcn9RdaTh=]X0kGc0
+!s100 ]nTjVhHj7RaK6FPf:@M2Q2
+R7
+32
+R104
+!i10b 1
+R110
+R121
+R122
+!i113 1
+R12
+R13
+Ep_control_unit
+Z123 w1770633655
+R2
+R3
+R4
+Z124 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_control_unit.vhd
+Z125 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_control_unit.vhd
+l0
+L4
+VAIn0E6:cUQj_?:n^E<=BR2
+!s100 m4JX2^H86@>BCW[Xka9Re2
+R7
+32
+R104
+!i10b 1
+R110
+Z126 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_control_unit.vhd|
+Z127 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_control_unit.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 14 p_control_unit 0 22 AIn0E6:cUQj_?:n^E<=BR2
+l112
+L29
+VF12`i_0WOF4Mk;1zMXB7O0
+!s100 S<XKoU3GH``Mjdk?0MBgj2
+R7
+32
+R104
+!i10b 1
+R110
+R126
+R127
+!i113 1
+R12
+R13
+Ep_datapath
+Z128 w1770659423
+R1
+R2
+R3
+R4
+Z129 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd
+Z130 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd
+l0
+L11
+VTbdZ3EhblT?JFVO7ne3Jm3
+!s100 B:]3<lnGAbZBbI9Z[l[Ig3
+R7
+32
+R104
+!i10b 1
+R110
+Z131 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd|
+Z132 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_datapath.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 10 p_datapath 0 22 TbdZ3EhblT?JFVO7ne3Jm3
+l151
+L44
+VP^`VlFdolkd6YO5e>znOB0
+!s100 [9RT`[4XzUXgS:I96@iU@2
+R7
+32
+R104
+!i10b 1
+R110
+R131
+R132
+!i113 1
+R12
+R13
+Ep_main_unit
+Z133 w1763577495
+R2
+R3
+R4
+Z134 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd
+Z135 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd
+l0
+L4
+VHgi>6E7;YkV>i]R[^6mnR2
+!s100 k2nni1>Y?emzHQhJVWMVH0
+R7
+32
+R104
+!i10b 1
+R110
+Z136 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd|
+Z137 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 11 p_main_unit 0 22 Hgi>6E7;YkV>i]R[^6mnR2
+l34
+L23
+VzSVOEl:Q;[nE6ojWBe5L02
+!s100 SO?;48IXLLFUok`AiWfJo0
+R7
+32
+R104
+!i10b 1
+R110
+R136
+R137
+!i113 1
+R12
+R13
+Ep_processor_hazard
+Z138 w1770659285
+R2
+R3
+R4
+Z139 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_processor_hazard.vhd
+Z140 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_processor_hazard.vhd
+l0
+L4
+VJVLn]G<lR?8]A4ge3B@TI1
+!s100 1>a65JSK<QEcm:LBo9;@F2
+R7
+32
+R104
+!i10b 1
+R110
+Z141 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_processor_hazard.vhd|
+Z142 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_processor_hazard.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 18 p_processor_hazard 0 22 JVLn]G<lR?8]A4ge3B@TI1
+l104
+L17
+VWV0hLO^PVW>5GBhz<04m]2
+!s100 QYNKN=X<Wf7mmeUZOAlJ>2
+R7
+32
+R104
+!i10b 1
+R110
+R141
+R142
+!i113 1
+R12
+R13
+Eram
+Z143 w1775648274
+R1
+R2
+R3
+R4
+Z144 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/RAM/ram.vhd
+Z145 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/RAM/ram.vhd
+l0
+L4
+V:FPVPn;>][i]7EI=Q[an33
+!s100 M=ozZAcJRfzOL[B3=7Z^=3
+R7
+32
+Z146 !s110 1775648893
+!i10b 1
+Z147 !s108 1775648893.000000
+Z148 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/RAM/ram.vhd|
+Z149 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/RAM/ram.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 3 ram 0 22 :FPVPn;>][i]7EI=Q[an33
+l23
+L17
+V1>Wfj`I``fTd?<ij?1Rbh3
+!s100 D;g=>DLY1`DAgm6oMPO_b1
+R7
+32
+R146
+!i10b 1
+R147
+R148
+R149
+!i113 1
+R12
+R13
+Eram_inst
+Z150 w1775648219
+R1
+R2
+R3
+R4
+Z151 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd
+Z152 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd
+l0
+L4
+VKCGWbOfRR0J1hb4KYVnB:3
+!s100 GoNPlj3LeY`m6mEE1X?I73
+R7
+32
+R146
+!i10b 1
+R147
+Z153 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd|
+Z154 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 8 ram_inst 0 22 KCGWbOfRR0J1hb4KYVnB:3
+l23
+L17
+Vc3[C[[a6_LF=XS`<X@4Fh3
+!s100 JHmRXY_2Pz;dRH<o5ENho2
+R7
+32
+R146
+!i10b 1
+R147
+R153
+R154
+!i113 1
+R12
+R13
+Ereg
+Z155 w1749033899
+R2
+R3
+R4
+Z156 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg.vhd
+Z157 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg.vhd
+l0
+L4
+VMjIz@0MEC=RcKeQQE0n_<3
+!s100 b]ieH;MhS]EPZT^QhI;b=3
+R7
+32
+R64
+!i10b 1
+R65
+Z158 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg.vhd|
+Z159 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 3 reg 0 22 MjIz@0MEC=RcKeQQE0n_<3
+l16
+L14
+VbUM74@U6@IdzKlSegOZg@1
+!s100 MI>Cz]lT9[ac`b1S>m4C^0
+R7
+32
+R64
+!i10b 1
+R65
+R158
+R159
+!i113 1
+R12
+R13
+Ereg_file
+Z160 w1770583415
+R1
+R2
+R3
+R4
+Z161 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd
+Z162 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd
+l0
+L5
+Vl=gC4Gk^R4BgJ4^_HEXgb2
+!s100 X>KdLUD9a4b9o=[U@c6bm3
+R7
+32
+R64
+!i10b 1
+R65
+Z163 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd|
+Z164 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 8 reg_file 0 22 l=gC4Gk^R4BgJ4^_HEXgb2
+l16
+L12
+VXHYHY3ePJ0U``H]6ae?V63
+!s100 Q@:>]nO7Vd5m?R9imf]:N3
+R7
+32
+R64
+!i10b 1
+R65
+R163
+R164
+!i113 1
+R12
+R13
+Eregen
+Z165 w1770636462
+R2
+R3
+R4
+Z166 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/regen.vhd
+Z167 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/regen.vhd
+l0
+L4
+VN79bUC=N7ADnbSdXAeNo02
+!s100 M1:zk57DZke6Xkm8C`n3K3
+R7
+32
+R64
+!i10b 1
+R65
+Z168 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/regen.vhd|
+Z169 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/regen.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 5 regen 0 22 N79bUC=N7ADnbSdXAeNo02
+l19
+L17
+Va`C:lf>5>DM<2mh6lCfUB0
+!s100 OEc0Jdc`8iX3D6DnfBZWd3
+R7
+32
+R64
+!i10b 1
+R65
+R168
+R169
+!i113 1
+R12
+R13
+Eregen_5bit
+Z170 w1764876081
+R2
+R3
+R4
+Z171 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd
+Z172 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd
+l0
+L4
+VZ5E4eE8`o7<PYDH0RMelA0
+!s100 eSG2KfPC]0ZgkiRNK`1H30
+R7
+32
+R64
+!i10b 1
+R65
+Z173 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd|
+Z174 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/regen_5bit.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 10 regen_5bit 0 22 Z5E4eE8`o7<PYDH0RMelA0
+l18
+L16
+Vhe5;ZVX3RE4fF2TT>AA683
+!s100 ee^I^?fI_o4V7hg9NE;d73
+R7
+32
+R64
+!i10b 1
+R65
+R173
+R174
+!i113 1
+R12
+R13
+Eregen_6bit
+Z175 w1764868746
+R2
+R3
+R4
+Z176 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd
+Z177 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd
+l0
+L4
+VSS8Ne3>@QPXcTAjX3]LhD3
+!s100 l@FY?e_2flS91R?A>OdT<0
+R7
+32
+R64
+!i10b 1
+R65
+Z178 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd|
+Z179 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 10 regen_6bit 0 22 SS8Ne3>@QPXcTAjX3]LhD3
+l18
+L16
+V_2JA0X4jOO?]DQC]Ian9b0
+!s100 J76^m>Si8Vc`N908hWI4[0
+R7
+32
+R64
+!i10b 1
+R65
+R178
+R179
+!i113 1
+R12
+R13
+Eregen_9bit
+Z180 w1764868747
+R2
+R3
+R4
+Z181 8F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd
+Z182 FF:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd
+l0
+L4
+VAW;Q3f[Ml@Qf0J>;QGFHH1
+!s100 k75HLPOSR5OmA>jX`<HKR3
+R7
+32
+R64
+!i10b 1
+R65
+Z183 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd|
+Z184 !s107 F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+DEx4 work 10 regen_9bit 0 22 AW;Q3f[Ml@Qf0J>;QGFHH1
+l18
+L16
+Vee2<E:]J>kR=bTKJ81@k]2
+!s100 <eLE`h91OMJc>6a:AoREh0
+R7
+32
+R64
+!i10b 1
+R65
+R183
+R184
+!i113 1
+R12
+R13

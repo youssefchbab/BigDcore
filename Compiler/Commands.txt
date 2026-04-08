@@ -1,0 +1,16 @@
+Create an output file:
+riscv-none-elf-gcc -march=rv32i -mabi=ilp32 -nostdlib -nostartfiles -T link.ld -o output.elf startup.S main.c
+
+Turn it into Raw binary file:
+riscv-none-elf-objcopy -O binary output.elf output.bin
+
+Turn it into hex:
+riscv-none-elf-objcopy -O verilog output.elf output.hex
+
+Check the compiled file information (Assembly/Machine Code):
+riscv-none-elf-objdump -d output.elf
+
+To match Our word orientation use a pythone file and the following command:
+python convert.py
+
+Useful Tcl commands:

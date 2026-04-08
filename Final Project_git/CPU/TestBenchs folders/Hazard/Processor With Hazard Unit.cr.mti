@@ -56,6 +56,23 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Last_stage
 -- Compiling architecture arch of Last_stage
 
+} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity lpm_dff0
+-- Compiling architecture SYN of lpm_dff0
+
+} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity adder
+-- Compiling architecture arch of adder
+
 } {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_processor_hazard.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/p_processor_hazard.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -87,23 +104,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_1164
 -- Compiling entity Mem_SignExt
 -- Compiling architecture arch of Mem_SignExt
-
-} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity lpm_dff0
--- Compiling architecture SYN of lpm_dff0
-
-} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Adder.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity adder
--- Compiling architecture arch of adder
 
 } {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Hazard_Unit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project/CPU/Pipelined BigD Core/P_Processor_Hazard/Hazard_Unit.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016

@@ -14,3 +14,4 @@ To match Our word orientation use a pythone file and the following command:
 python convert.py
 
 Useful Tcl commands:
+mem load -infile output_word.hex -format hex sim:/hazard_testbench/Inst_RAM/Mem 

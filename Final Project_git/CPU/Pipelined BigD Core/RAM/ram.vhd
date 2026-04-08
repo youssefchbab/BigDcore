@@ -21,7 +21,7 @@ architecture arch of RAM is
     );
     Signal Mem_Size: integer := 256;
 Begin
-    Process(clk, WE, DataAdr, ByteEn, Mode, Reset) 
+    Process(clk, WE, DataAdr, ByteEn, Mode, Reset, WriteData) 
         variable Address, Addresstemp: integer;
     Begin
         Addresstemp:= to_integer(unsigned(DataAdr));

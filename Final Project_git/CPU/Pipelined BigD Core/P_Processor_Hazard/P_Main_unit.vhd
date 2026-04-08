@@ -54,12 +54,7 @@ Begin
     --Word_Half_Byte (Decides The size of data to be Stored into memory)
     Process (Opcode, Funct3) Begin 
         if (Opcode = Store_instructions) then
-        case Funct3 is
-            when "000"=> Word_Half_Byte <= "10";
-            when "001"=> Word_Half_Byte <= "01";
-            when "010"=> Word_Half_Byte <= "00";
-            when others => Word_Half_Byte<= "--";
-        end case;
+            Word_Half_Byte<= Funct3(1 downto 0);
         else 
         Word_Half_Byte<= "00";
         end if;
@@ -89,7 +84,7 @@ Begin
         "01" when Add_Upper_immediate_to_PC,
         "00" when others;
     --RegWrite
-    RegWrite <= '0' when (Opcode = Store_instructions or Opcode = Branch_intstructions or Opcode = Jump_instructions) else '1';
+    RegWrite <= '0' when (Opcode = Store_instructions or Opcode = Branch_intstructions) else '1';
     --Write_Back_cntr
     With Opcode select 
         Write_Back_cntr<= "00" when Jump_instructions | Jump_And_Link_Reg_instruction,

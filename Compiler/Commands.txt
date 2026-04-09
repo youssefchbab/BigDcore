@@ -15,3 +15,7 @@ python convert.py
 
 Useful Tcl commands:
 mem load -infile output_word.hex -format hex sim:/hazard_testbench/Inst_RAM/Mem 
+
+
+
+Halt is not Halting and the c functions doesnt give correct values

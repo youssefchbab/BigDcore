@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Full_Processor">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Full_Processor|RAM:Instruction_Memory|altsyncram:Mem_rtl_0" CBX_FILE_NAME="altsyncram_sgc1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

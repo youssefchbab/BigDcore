@@ -586,77 +586,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-P_Main_unit
-# storage
-db|P_Processor_Hazard.(17).cnf
-db|P_Processor_Hazard.(17).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-p_main_unit.vhd
-29decf73fb1bd71db417711536fa8782
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(funct3)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(opcode)
-6 downto 0
-PARAMETER_STRING
-USR
- constraint(immext)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(word_half_byte)
-1 downto 0
-PARAMETER_STRING
-USR
- constraint(mem_ext_cntr)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(write_back_cntr)
-1 downto 0
-PARAMETER_STRING
-USR
- constraint(pc_select)
-1 downto 0
-PARAMETER_STRING
-USR
- constraint(branch_mode)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(alu_input_for_auipc_and_lui)
-1 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-P_Control_Unit:ControlUnit|P_Main_unit:Main_Control_Unit
-}
-# lmf
-|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 Excution_Flow
 # storage
 db|P_Processor_Hazard.(19).cnf
@@ -1334,6 +1263,77 @@ USR
 }
 # hierarchies {
 P_Datapath:Datapath
+}
+# lmf
+|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+P_Main_unit
+# storage
+db|P_Processor_Hazard.(17).cnf
+db|P_Processor_Hazard.(17).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+p_main_unit.vhd
+505ae5b35040dfd432e7a62dc1168ab5
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(funct3)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(opcode)
+6 downto 0
+PARAMETER_STRING
+USR
+ constraint(immext)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(word_half_byte)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(mem_ext_cntr)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(write_back_cntr)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(pc_select)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(branch_mode)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(alu_input_for_auipc_and_lui)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+P_Control_Unit:ControlUnit|P_Main_unit:Main_Control_Unit
 }
 # lmf
 |quartus|lmf|maxplus2.lmf

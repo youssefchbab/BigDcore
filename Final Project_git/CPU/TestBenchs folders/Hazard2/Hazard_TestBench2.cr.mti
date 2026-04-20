@@ -40,15 +40,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity P_Control_Unit
 -- Compiling architecture arch of P_Control_Unit
 
-} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/RAM/ram.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:\Personal\Github Files\BigDcore\BigDCoreFr\BigDcore\Final Project_git\CPU\Pipelined BigD Core\RAM\ram.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity RAM
--- Compiling architecture arch of RAM
-
 } {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/mem_signext.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -116,14 +107,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Hazard_Testbench
 -- Compiling architecture arch of Hazard_Testbench
 
-} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity Bit_Manipulation_Load
--- Compiling architecture arch of Bit_Manipulation_Load
-
 } {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/excution_flow.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -131,6 +114,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_1164
 -- Compiling entity Excution_Flow
 -- Compiling architecture arch of Excution_Flow
+
+} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Load.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Bit_Manipulation_Load
+-- Compiling architecture arch of Bit_Manipulation_Load
 
 } {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Last_stage.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -140,21 +131,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Last_stage
 -- Compiling architecture arch of Last_stage
 
-} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd}
+} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity RegEn_9bit
--- Compiling architecture arch of RegEn_9bit
-
-} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_processor_hazard.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_processor_hazard.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity P_Processor_Hazard
--- Compiling architecture arch of P_Processor_Hazard
+-- Compiling entity Alu_cntr
+-- Compiling architecture arch of Alu_cntr
 
 } {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_dff0.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -164,13 +147,21 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity lpm_dff0
 -- Compiling architecture SYN of lpm_dff0
 
-} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Alu_cntr.vhd}
+} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_processor_hazard.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/p_processor_hazard.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity Alu_cntr
--- Compiling architecture arch of Alu_cntr
+-- Compiling entity P_Processor_Hazard
+-- Compiling architecture arch of P_Processor_Hazard
+
+} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_9bit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity RegEn_9bit
+-- Compiling architecture arch of RegEn_9bit
 
 } {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/regen.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/regen.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -179,15 +170,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_1164
 -- Compiling entity RegEn
 -- Compiling architecture arch of RegEn
-
-} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package LPM_COMPONENTS
--- Compiling entity lpm_mux0
--- Compiling architecture SYN of lpm_mux0
 
 } {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/ALU.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -198,14 +180,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity ALU
 -- Compiling architecture arch of Alu
 
-} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd}
+} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux0.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package LPM_COMPONENTS
--- Compiling entity lpm_mux1
--- Compiling architecture SYN of lpm_mux1
+-- Compiling entity lpm_mux0
+-- Compiling architecture SYN of lpm_mux0
 
 } {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Bit_Manipulation_Store.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -215,13 +197,22 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Bit_Manipulation_Store
 -- Compiling architecture arch of Bit_Manipulation_Store
 
-} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux2.vhd}
+} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/lpm_mux1.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity Mux2
--- Compiling architecture arch of Mux2
+-- Loading package LPM_COMPONENTS
+-- Compiling entity lpm_mux1
+-- Compiling architecture SYN of lpm_mux1
+
+} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/P_Main_unit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity P_Main_unit
+-- Compiling architecture arch of P_Main_unit
 
 } {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/ImmExt.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -231,22 +222,21 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity ImmExt
 -- Compiling architecture arch of ImmExt
 
-} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd}
+} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux2.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity RAM_Inst
--- Compiling architecture arch of RAM_Inst
+-- Compiling entity Mux2
+-- Compiling architecture arch of Mux2
 
-} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd}
+} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity RegEn_6bit
--- Compiling architecture arch of RegEn_6bit
+-- Compiling entity Mux3
+-- Compiling architecture arch of Mux3
 
 } {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Reg_File.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -257,12 +247,21 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Reg_File
 -- Compiling architecture arch of Reg_File
 
-} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/Mux3.vhd}
+} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/P_Processor_Hazard/RegEn_6bit.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity Mux3
--- Compiling architecture arch of Mux3
+-- Compiling entity RegEn_6bit
+-- Compiling architecture arch of RegEn_6bit
+
+} {} {}} {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd} {1 {vcom -work work -2002 -explicit -stats=none {F:/Personal/Github Files/BigDcore/BigDCoreFr/BigDcore/Final Project_git/CPU/Pipelined BigD Core/RAM/RAM_Inst.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity RAM_Inst
+-- Compiling architecture arch of RAM_Inst
 
 } {} {}}

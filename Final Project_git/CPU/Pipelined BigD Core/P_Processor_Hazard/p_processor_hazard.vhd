@@ -80,7 +80,7 @@ architecture arch of P_Processor_Hazard is
       Pc_Select_Initial: in std_logic_vector(1 downto 0);
       RegWriteM, RegWriteW: in std_logic;
       Writeback_cntr: in std_logic; --The Lsb is enough
-      Pc_Select: in std_logic;--MSB
+      Pc_Select: in std_logic_vector(1 downto 0);--MSB
       ForwardA, ForwardB: out std_logic_vector(1 downto 0);
       StallF, StallD: out std_logic;
       FlushE, FlushD: out std_logic
@@ -159,7 +159,7 @@ begin
     Pc_Select_Initial_Hazard_S,
     Reg_WriteM, RegWrite,
     Write_backE,
-    Pc_Select(1),
+    Pc_Select,
     ForwardA, ForwardB,
     StallF, StallD,
     FlushE, FlushD

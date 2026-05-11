@@ -1,0 +1,24 @@
+\section{Introduction}
+\paragraph{}
+A processor is considered functionally correct when it successfully executes the complete set of target ISA instructions, producing results consistent with the architectural specification. To verify RV32ICore, a set of C programs of increasing complexity are compiled using the xPack RISC-V GCC toolchain and executed in simulation. Correct execution is determined by inspecting the values held in memory or the register file at the end of simulation and comparing them against analytically computed expected results. 
+\section{Simulation Environment:}
+Most of the tests performed on RV32ICore will follow a structured simulation environment. The environment contains:
+\subsection{Testbench Code:}
+\begin{minted}{riscv}
+    00000000 <_start>:
+   0:   40000113                li      sp,1024
+   4:   11400513                li      a0,276
+   8:   11400593                li      a1,276
+
+0000000c <bss_loop>:
+   c:   00b55863                bge     a0,a1,1c <bss_done>
+  10:   00052023                sw      zero,0(a0)
+  14:   00450513                addi    a0,a0,4
+  18:   ff5ff06f                j       c <bss_loop>
+
+0000001c <bss_done>:
+  1c:   07c000ef                jal     98 <main>
+
+00000020 <halt>:
+  20:   0000006f                j       20 <halt>
+\end{minted}

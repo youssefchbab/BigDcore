@@ -11466,8 +11466,9 @@ Pc_Select_Initial[1] => Equal1.IN0
 RegWriteM => process_0.IN1
 RegWriteW => process_0.IN1
 Writeback_cntr => process_0.IN1
-Pc_Select => FlushE.IN1
-Pc_Select => FlushD.DATAIN
+Pc_Select[0] => FlushE.IN1
+Pc_Select[0] => FlushD.DATAIN
+Pc_Select[1] => ~NO_FANOUT~
 ForwardA[0] <= ForwardA.DB_MAX_OUTPUT_PORT_TYPE
 ForwardA[1] <= process_0.DB_MAX_OUTPUT_PORT_TYPE
 ForwardB[0] <= ForwardB.DB_MAX_OUTPUT_PORT_TYPE
@@ -11475,6 +11476,6 @@ ForwardB[1] <= process_0.DB_MAX_OUTPUT_PORT_TYPE
 StallF <= process_0.DB_MAX_OUTPUT_PORT_TYPE
 StallD <= process_0.DB_MAX_OUTPUT_PORT_TYPE
 FlushE <= FlushE.DB_MAX_OUTPUT_PORT_TYPE
-FlushD <= Pc_Select.DB_MAX_OUTPUT_PORT_TYPE
+FlushD <= Pc_Select[0].DB_MAX_OUTPUT_PORT_TYPE
 
 

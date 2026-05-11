@@ -1,0 +1,111 @@
+\documentclass[16pt]{mythesis}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{tabto} 
+\usepackage{minted}
+\setminted{
+    linenos=true,     % Add line numbers
+    breaklines=true,  % Wrap long lines
+    frame=lines,      % Add lines above and below the code
+    fontsize=\footnotesize
+}
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}  
+
+
+\newcommand{\mynote}[3]{
+    \fbox{\bfseries\sffamily\scriptsize#1}
+    {\small$\blacktriangleright$\textsf{\emph{\color{#3}{#2}}}$\blacktriangleleft$}}
+\newcommand{\yb}[1]{\mynote{Yahia}{#1}{red}}
+%\usepackage{arabtex}
+
+\input{preamble/packages}
+\input{preamble/bib-setup}
+\input{preamble/details}
+
+
+\begin{document}
+
+\maketitle
+
+% Input anything that can go before the acknowledgements 
+
+%\input{chapters/blank-pages.tex}
+
+% Then the acknowledgements
+\input{chapters/dedication}
+
+\input{chapters/acknowledgement}
+
+
+
+
+\input{chapters/abstractEn}
+
+
+%\input{chapters/abstractAr}
+% Print out the table of tables and table of figures and
+% tell the template we're about to start the body of the
+% thesis.
+
+\thesisTables
+
+
+\input{chapters/Abbreviations}
+%\thesisBodyStart
+
+% start of thesis body
+% ---------------------------
+%\Include {introduction}
+
+
+
+
+
+
+% Print out the table of tables and table of figures and
+% tell the template we're about to start the body of the
+% thesis.
+%\thesisTab  
+\thesisBodyStart
+
+% start of thesis body
+% ---------------------------
+%\Include {introduction}
+
+\chapter{Introduction}
+\input{chapters/introduction}
+
+% Literature review / Background / Related work
+\chapter{Theoretical Background}
+\input{chapters/Chapter2}
+
+
+\chapter{System Architecture and Design}
+\input{chapters/Chapter3}
+
+
+\chapter{Implementation}
+\input{chapters/Chapter4}
+
+
+
+\chapter{Verification \& Testing}
+\input{chapters/Chapter5}
+
+
+
+% Conclusions / Findings
+\chapter{Conclusion}
+\input{chapters/conclusions}
+
+% Reflective analysis
+% end of thesis body
+% --------------------------
+% Print out the references
+
+\printReferences
+%\include{chapters/appendices}
+
+\end{document}

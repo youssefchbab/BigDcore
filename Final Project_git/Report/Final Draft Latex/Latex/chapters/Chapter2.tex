@@ -1,0 +1,52 @@
+
+\section{Introduction}
+\paragraph{}
+
+This chapter presents the theoretical foundations underlying the design and implementation of BigDCore. It covers three principal areas: the RISC-V instruction set architecture, fundamental processor design concepts, and an overview of existing RISC-V soft-core implementations. Together, these establish the academic and technical context within which this project is situated.
+
+\section{RISC-V Instruction Set Architecture}
+\subsection{History and Origin}
+
+The RISC-V ISA was conceived in 2010 at the University of California, Berkeley, as part of the fifth generation of RISC research projects conducted at the institution. It was developed by Krste Asanović, Andrew Waterman, and Yunsup Lee under the supervision of David Patterson, one of the pioneers of the original RISC architecture. Unlike previous ISA efforts, RISC-V was designed from the outset to be open, stable, and free from proprietary constraints, making it suitable for both academic research and commercial deployment. In 2015, the RISC-V Foundation was established to govern the specification, which was later transferred to RISC-V International in 2020 to ensure its long-term neutrality and global accessibility.
+\subsection{Design Philosophy}
+
+RISC-V adheres to the core principles of Reduced Instruction Set Computing. Its design philosophy prioritizes simplicity, regularity, and extensibility. The base ISA is intentionally kept minimal, containing only the instructions necessary for general-purpose computation, while optional standard extensions allow the ISA to be tailored for specific application domains such as floating-point arithmetic, atomic operations, compressed instructions, and vector processing. This modularity ensures that a processor designer can implement only the subset relevant to their use case without carrying the overhead of unused hardware.
+
+A key distinguishing characteristic of RISC-V is its fixed 32-bit instruction width in the base integer ISA, which simplifies instruction fetch and decode logic. All instructions follow a small number of regular formats, and frequently used fields such as the source and destination register indices appear at fixed bit positions across all formats, reducing decoder complexity.
+\subsection{RV32I Instruction Formats}
+The RV32I base integer ISA defines six instruction formats, each encoding a different combination of operands and immediate values while maintaining a fixed 32-bit instruction width.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.3]{Figures/Chapter 2/Instruction-Formats-RV32I.png}
+    \caption{RV32I Instruction Formats}
+    \label{fig:RV32I Instruction Formats}
+\end{figure}
+
+The \textbf{R-type} format is used for register-to-register arithmetic and logical operations. It encodes two source registers (rs1, rs2) and one destination register (rd), along with a 7-bit opcode, a 3-bit funct3 field, and a 7-bit funct7 field that together uniquely identify the operation.
+
+The \textbf{I-type} format is used for immediate arithmetic operations, load instructions, and environment calls. It encodes one source register (rs1), one destination register (rd), and a 12-bit signed immediate value.
+
+The \textbf{S-type} format is used exclusively for store instructions. It encodes two source registers and a 12-bit signed immediate that is split across two non-contiguous fields in the instruction word, a deliberate design choice to keep the register fields at fixed positions.
+
+The \textbf{B-type} format is used for conditional branch instructions. It encodes two source registers and a 13-bit signed immediate representing a PC-relative branch offset. Like the S-type, the immediate bits are shuffled to preserve fixed register field positions.
+
+The \textbf{U-type} format is used for instructions that operate on upper immediates, namely LUI (Load Upper Immediate) and AUIPC (Add Upper Immediate to PC). It encodes a 20-bit immediate and a destination register.
+
+The \textbf{J-type} format is used exclusively by the JAL (Jump and Link) instruction. It encodes a 21-bit PC-relative jump offset and a destination register that receives the return address.
+\subsection{Processor Design Concepts}
+\subsubsection{Von Neumann vs. Harvard Architecture}
+Two fundamental memory architectures underpin modern processor design. The von Neumann architecture, proposed by John von Neumann in 1945, uses a single shared memory space and a single bus to carry both instructions and data. While this simplifies the memory system and allows flexible allocation of memory between code and data, it introduces a structural bottleneck known as the von Neumann bottleneck: the processor cannot fetch an instruction and access data simultaneously, limiting throughput.
+
+The Harvard architecture addresses this limitation by providing physically separate memories and buses for instructions and data. This allows simultaneous access to both, eliminating the structural hazard present in von Neumann designs and improving pipeline throughput. The cost is a less flexible memory system, as instruction and data memory cannot share capacity.
+
+A Modified Harvard architecture is a practical compromise widely adopted in modern processors. It maintains separate instruction and data caches at the first level, providing the performance benefits of Harvard architecture, while using a unified main memory accessible by both, preserving the flexibility of von Neumann memory management.
+
+BigDCore adopts a Harvard architecture with fully separate instruction and data memories. This design decision directly supports the five-stage pipeline by ensuring that instruction fetch and data memory access never contend for the same resource.
+\subsubsection{Single-Cycle vs. Pipelined Execution}
+A single-cycle processor completes the execution of one instruction per clock cycle by routing it through all functional units in a single pass. While conceptually simple, this approach requires the clock period to be long enough to accommodate the slowest possible instruction, resulting in poor clock frequency and underutilization of hardware during the execution of faster instructions.
+
+A pipelined processor overlaps the execution of multiple instructions by dividing the datapath into discrete stages, each handling one phase of execution. While an individual instruction still takes multiple cycles to complete, the throughput approaches one instruction per cycle under ideal conditions, and the clock period is determined by the slowest pipeline stage rather than the slowest instruction. This trade-off introduces pipeline hazards — structural, data, and control hazards — which must be managed through stalling, forwarding, and flushing mechanisms.
+
+BigDCore implements a classical five-stage pipeline comprising the Instruction Fetch (IF), Instruction Decode (ID), Execute (EX), Memory Access (MEM), and Write-Back (WB) stages. A hazard detection unit manages data hazards through stalling and forwarding, and control hazards arising from branch instructions are resolved through pipeline flushing.
+
+

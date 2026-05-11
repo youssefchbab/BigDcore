@@ -735,77 +735,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-Hazard_Unit
-# storage
-db|P_Processor_Hazard.(22).cnf
-db|P_Processor_Hazard.(22).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-hazard_unit.vhd
-a7964e54df5a826275afb86d72f58ace
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(rsd1)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(rsd2)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(rse1)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(rse2)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(rde)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(rdm)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(rdw)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(forwarda)
-1 downto 0
-PARAMETER_STRING
-USR
- constraint(forwardb)
-1 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-Hazard_Unit:HazardUnit
-}
-# lmf
-|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 Reg_File
 # storage
 db|P_Processor_Hazard.(5).cnf
@@ -1107,39 +1036,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-P_Processor_Hazard
-# storage
-db|P_Processor_Hazard.(0).cnf
-db|P_Processor_Hazard.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-p_processor_hazard.vhd
-b9b286384beb9a4dbf974984c3cb8f7e
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-|
-}
-# lmf
-|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 P_Datapath
 # storage
 db|P_Processor_Hazard.(1).cnf
@@ -1334,6 +1230,118 @@ USR
 }
 # hierarchies {
 P_Control_Unit:ControlUnit|P_Main_unit:Main_Control_Unit
+}
+# lmf
+|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+P_Processor_Hazard
+# storage
+db|P_Processor_Hazard.(0).cnf
+db|P_Processor_Hazard.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+p_processor_hazard.vhd
+69f7add75947e629f2862a930d87e87
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
+}
+# lmf
+|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Hazard_Unit
+# storage
+db|P_Processor_Hazard.(22).cnf
+db|P_Processor_Hazard.(22).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+hazard_unit.vhd
+c3a1735393a7dee9436afa2b0d63a5a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(rsd1)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(rsd2)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(rse1)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(rse2)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(rde)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(rdm)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(rdw)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(pc_select_initial)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(pc_select)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(forwarda)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(forwardb)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+Hazard_Unit:HazardUnit
 }
 # lmf
 |quartus|lmf|maxplus2.lmf

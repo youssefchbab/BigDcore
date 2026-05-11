@@ -9,7 +9,7 @@ entity Hazard_Unit is
         Pc_Select_Initial: in std_logic_vector(1 downto 0) ;
         RegWriteM, RegWriteW: in std_logic;
         Writeback_cntr: in std_logic; --The Lsb is enough
-        Pc_Select: in std_logic;--MSB
+        Pc_Select: in std_logic_vector(1 downto 0);--MSB
         ForwardA, ForwardB: out std_logic_vector(1 downto 0);
         StallF, StallD: out std_logic;
         FlushE, FlushD: out std_logic
@@ -49,6 +49,6 @@ Begin
     
     StallF<= Lw_stall;
     StallD<= Lw_stall;
-    FlushE<= Lw_stall or Pc_Select;
-    FlushD<= Pc_Select;
+    FlushE<= Lw_stall or (not Pc_select(0));
+    FlushD<= not Pc_select(0);
 end arch;

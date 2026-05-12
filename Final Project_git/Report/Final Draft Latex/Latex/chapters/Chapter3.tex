@@ -119,3 +119,5 @@ Control hazards arise from branch and jump instructions, whose target addresses 
     \caption{RV32ICore Hazard Unit}
     \label{fig:RV32ICore Hazard Unit}
 \end{figure}
+\section{Conclusion}
+This chapter has presented the complete architecture of RV32ICore, covering its top-level decomposition into Datapath, Control Unit, and Hazard Unit, and providing a detailed description of each pipeline stage and the registers connecting them. The five-stage Harvard pipeline provides a structured and efficient framework for RV32I instruction execution. The forwarding and stalling mechanisms implemented in the Hazard Unit ensure correct execution in the presence of data dependencies, while pipeline flushing resolves control hazards introduced by branch and jump instructions. The architectural decisions described in this chapter form the direct basis for the VHDL implementation presented in the following chapter.

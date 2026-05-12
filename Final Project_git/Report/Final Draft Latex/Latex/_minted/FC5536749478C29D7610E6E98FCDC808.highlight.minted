@@ -1,0 +1,62 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{k}{Library}\PYG{+w}{ }\PYG{n+nn}{ieee}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{use}\PYG{+w}{ }\PYG{n+nn}{ieee.std\PYGZus{}logic\PYGZus{}1164.}\PYG{k}{all}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{entity}\PYG{+w}{ }\PYG{n+nc}{Hazard\PYGZus{}Testbench}\PYG{+w}{ }\PYG{k}{is}
+\PYG{+w}{	}\PYG{k}{end}\PYG{+w}{ }\PYG{k}{entity}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{k}{architecture}\PYG{+w}{ }\PYG{n+nc}{arch}\PYG{+w}{ }\PYG{k}{of}\PYG{+w}{ }\PYG{n+nc}{Hazard\PYGZus{}Testbench}\PYG{+w}{ }\PYG{k}{is}
+\PYG{+w}{	}\PYG{k}{component}\PYG{+w}{ }\PYG{n+nc}{P\PYGZus{}Processor\PYGZus{}Hazard}\PYG{+w}{ }\PYG{k}{is}
+\PYG{+w}{	}\PYG{k}{port}\PYG{p}{(...}
+\PYG{+w}{	}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{end}\PYG{+w}{ }\PYG{k}{component}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{component}\PYG{+w}{ }\PYG{n+nc}{RAM\PYGZus{}Inst}\PYG{+w}{ }\PYG{k}{is}
+\PYG{+w}{	}\PYG{k}{port}\PYG{p}{(...}
+\PYG{+w}{	}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{end}\PYG{+w}{ }\PYG{k}{component}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{component}\PYG{+w}{ }\PYG{n+nc}{RAM}\PYG{+w}{ }\PYG{k}{is}
+\PYG{+w}{	}\PYG{k}{port}\PYG{p}{(...}
+\PYG{+w}{	}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{end}\PYG{+w}{ }\PYG{k}{component}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{Signal}\PYG{+w}{ }\PYG{n}{clk}\PYG{+w}{ }\PYG{p}{,}\PYG{n}{reset}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}logic}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{Signal}\PYG{+w}{ }\PYG{n}{instruction}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ReadData}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{31}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{Signal}\PYG{+w}{ }\PYG{n}{MemWrite}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}logic}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{Signal}\PYG{+w}{ }\PYG{n}{ByteEn}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Mode}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{Signal}\PYG{+w}{ }\PYG{n}{Pc}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{31}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{Signal}\PYG{+w}{ }\PYG{n}{DataAdr}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{WriteData}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{31}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{Signal}\PYG{+w}{ }\PYG{n}{clk\PYGZus{}cnt}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Inst\PYGZus{}Change\PYGZus{}Cnt}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{integer}\PYG{+w}{ }\PYG{o}{:=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{c+c1}{\PYGZhy{}\PYGZhy{}number Of clocks counter}
+\PYG{+w}{	}\PYG{k}{begin}
+\PYG{+w}{	}\PYG{n}{UUT}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{P\PYGZus{}Processor\PYGZus{}Hazard}\PYG{+w}{ }\PYG{k}{port}\PYG{+w}{ }\PYG{k}{map}\PYG{p}{(...}
+\PYG{+w}{	}\PYG{p}{);}
+\PYG{+w}{	}\PYG{n}{Data\PYGZus{}RAM}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{RAM}\PYG{+w}{ }\PYG{k}{port}\PYG{+w}{ }\PYG{k}{map}\PYG{p}{(...}
+\PYG{+w}{	}\PYG{p}{);}
+\PYG{+w}{	}\PYG{n}{Inst\PYGZus{}RAM}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{RAM\PYGZus{}Inst}\PYG{+w}{ }\PYG{k}{port}\PYG{+w}{ }\PYG{k}{map}\PYG{p}{(...}
+\PYG{+w}{	}\PYG{p}{);}
+\PYG{+w}{	}\PYG{n+nc}{clock}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{process}\PYG{+w}{ }\PYG{k}{Begin}
+\PYG{+w}{	}\PYG{k}{loop}
+\PYG{+w}{	}\PYG{n}{clk}\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{wait}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{+w}{ }\PYG{n}{ns}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{clk}\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{wait}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{+w}{ }\PYG{n}{ns}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{end}\PYG{+w}{ }\PYG{k}{loop}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{end}\PYG{+w}{ }\PYG{k}{process}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{n+nc}{Clock\PYGZus{}counter}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{process}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{)}
+\PYG{+w}{	}\PYG{k}{variable}\PYG{+w}{ }\PYG{n}{last}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{31}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{Begin}
+\PYG{+w}{	}\PYG{k}{if}\PYG{p}{(}\PYG{n}{rising\PYGZus{}edge}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{))}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{	}\PYG{n}{clk\PYGZus{}cnt}\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{clk\PYGZus{}cnt}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{instruction}\PYG{+w}{ }\PYG{o}{/=}\PYG{+w}{ }\PYG{n}{last}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{	}\PYG{n}{Inst\PYGZus{}Change\PYGZus{}Cnt}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{Inst\PYGZus{}Change\PYGZus{}Cnt}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{end}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{last}\PYG{+w}{ }\PYG{o}{:=}\PYG{+w}{ }\PYG{n}{instruction}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{end}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{end}\PYG{+w}{ }\PYG{k}{process}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{n+nc}{Stimulus}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{process}\PYG{+w}{ }\PYG{k}{Begin}
+\PYG{+w}{	}\PYG{n}{reset}\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{wait}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{l+m+mi}{40}\PYG{+w}{ }\PYG{n}{ns}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{reset}\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{wait}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{end}\PYG{+w}{ }\PYG{k}{process}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{end}\PYG{+w}{ }\PYG{k}{architecture}\PYG{p}{;}
+\end{MintedVerbatim}

@@ -101,4 +101,5 @@ A startup assembly file initializes the processor state before transferring cont
 \end{minted}
 
 \textbf{Note:} The compiled code is very large hence a sample is given, and the remaining is illustrated in the Appendix.
-
+\section{Conclusion}
+This chapter has described the complete VHDL implementation of RV32ICore, from the top-level entity structure through the detailed implementation of each pipeline stage, the control bus pipelining strategy, the hazard unit combinational logic, and the software toolchain used to generate and load test programs. Several implementation decisions — including the generic RegEn pipeline register component, the progressive narrowing of the control bus, the choice of ADD x0, x0, x0 as the NOP encoding, and the dedicated forwarded rs2 pipeline register for store instructions — reflect deliberate engineering choices made to balance correctness, clarity, and design reuse. The implementation described here is verified through the simulation-based testing methodology presented in the following chapter.

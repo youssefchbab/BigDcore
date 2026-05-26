@@ -1,0 +1,352 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Tue May 26 23:32:28 2026
+| Host         : DESKTOP-87RVPO3 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file SoC_control_sets_placed.rpt
+| Design       : SoC
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   274 |
+|    Minimum number of control sets                        |   274 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |     6 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   274 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |   274 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             525 |          198 |
+| Yes          | No                    | No                     |            8192 |         4603 |
+| Yes          | No                    | Yes                    |             480 |          212 |
+| Yes          | Yes                   | No                     |             117 |           38 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------+-------------------------------------------------------+------------------+------------------+----------------+--------------+
+|   Clock Signal   |                     Enable Signal                     | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------+-------------------------------------------------------+------------------+------------------+----------------+--------------+
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[175]_161[0] |                  |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Q_reg[5]_1      |                  |               28 |             32 |         1.14 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[163]_209[0] |                  |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[203]_216[0] |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[205]_234[0] |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[157]_208[0] |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[213]_175[0] |                  |               11 |             32 |         2.91 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[208]_174[0] |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[165]_229[0] |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[10]_181[0]  |                  |               24 |             32 |         1.33 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[142]_224[0] |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[218]_218[0] |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[22]_168[0]  |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[245]_220[0] |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[148]_225[0] |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[126]_185[0] |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[156]_227[0] |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[23]_167[0]  |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[114]_210[0] |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[17]_176[0]  |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[246]_187[0] |                  |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[248]_189[0] |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[11]_240[0]  |                  |               24 |             32 |         1.33 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[115]_156[0] |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[123]_179[0] |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[150]_206[0] |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[152]_171[0] |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[204]_233[0] |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[20]_215[0]  |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[21]_172[0]  |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[224]_238[0] |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[12]_239[0]  |                  |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[239]_184[0] |                  |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[174]_231[0] |                  |               25 |             32 |         1.28 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[99]_235[0]  |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[179]_163[0] |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[125]_222[0] |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[134]_221[0] |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[15]_177[0]  |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[171]_211[0] |                  |               27 |             32 |         1.19 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[116]_157[0] |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[176]_162[0] |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[111]_160[0] |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[169]_230[0] |                  |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[1]_247[0]   |                  |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[192]_232[0] |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[232]_182[0] |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[238]_244[0] |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[151]_207[0] |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[180]_164[0] |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[19]_173[0]  |                  |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[106]_169[0] |                  |               24 |             32 |         1.33 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[13]_178[0]  |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[33]_192[0]  |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[54]_204[0]  |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[98]_193[0]  |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[44]_228[0]  |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[9]_241[0]   |                  |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[26]_166[0]  |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[77]_203[0]  |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[7]_243[0]   |                  |               24 |             32 |         1.33 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[84]_199[0]  |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[97]_236[0]  |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[24]_213[0]  |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[49]_180[0]  |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[57]_226[0]  |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[91]_195[0]  |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[32]_165[0]  |                  |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[94]_91[0]             |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[87]_197[0]  |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[62]_214[0]  |                  |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[41]_158[0]  |                  |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[5]_245[0]   |                  |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[47]_205[0]  |                  |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[80]_202[0]  |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[50]_223[0]  |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[45]_170[0]  |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[76]_201[0]  |                  |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[249]_190[0] |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[66]_194[0]  |                  |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[74]_200[0]  |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[63]_217[0]  |                  |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[31]_212[0]  |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[253]_191[0] |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[2]_186[0]   |                  |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[69]_196[0]  |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[6]_183[0]   |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[68]_219[0]  |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[95]_237[0]  |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[81]_188[0]  |                  |               27 |             32 |         1.19 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[8]_242[0]   |                  |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[35]_159[0]  |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[78]_246[0]  |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/ControlUnit/Control_Signals_PLR04/Mem[86]_198[0]  |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5]_5[0]     | reset_IN_IBUF    |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5]_6[0]     | reset_IN_IBUF    |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5]_7[0]     | reset_IN_IBUF    |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5]_8[0]     | reset_IN_IBUF    |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5]_9[0]     | reset_IN_IBUF    |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR/Qtemp_reg[8]_1[0]       | reset_IN_IBUF    |               12 |             32 |         2.67 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[96]_90[0]             |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5][0]       | reset_IN_IBUF    |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/E[0]              | reset_IN_IBUF    |                9 |             32 |         3.56 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5]_0[0]     | reset_IN_IBUF    |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5]_1[0]     | reset_IN_IBUF    |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5]_10[0]    | reset_IN_IBUF    |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5]_2[0]     | reset_IN_IBUF    |               11 |             32 |         2.91 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5]_11[0]    | reset_IN_IBUF    |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5]_12[0]    | reset_IN_IBUF    |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5]_3[0]     | reset_IN_IBUF    |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR_Third/Q_reg[5]_4[0]     | reset_IN_IBUF    |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Qtemp_reg[16]_0           |                  |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Qtemp_reg[31]_152         |                  |               24 |             32 |         1.33 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Qtemp_reg[31]_154         |                  |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Qtemp_reg[31]_153         |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Qtemp_reg[3]_14           |                  |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Qtemp_reg[6]_16           |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Qtemp_reg[7]_12           |                  |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[113]_81[0]            |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[112]_82[0]            |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[128]_107[0]           |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[129]_73[0]            |                  |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[104]_86[0]            |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[137]_144[0]           |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[108]_84[0]            |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[100]_139[0]           |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[138]_59[0]            |                  |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[140]_132[0]           |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[103]_87[0]            |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[144]_57[0]            |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[146]_21[0]            |                  |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[133]_136[0]           |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[147]_20[0]            |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[153]_48[0]            |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[119]_79[0]            |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[121]_78[0]            |                  |               11 |             32 |         2.91 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[124]_128[0]           |                  |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[154]_19[0]            |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[158]_47[0]            |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[159]_151[0]           |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[161]_56[0]            |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[141]_58[0]            |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[149]_49[0]            |                  |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[107]_85[0]            |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[145]_152[0]           |                  |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[14]_60[0]             |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[131]_137[0]           |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[102]_88[0]            |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[101]_89[0]            |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[117]_80[0]            |                  |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[118]_148[0]           |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[110]_83[0]            |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[127]_131[0]           |                  |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[136]_134[0]           |                  |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[139]_133[0]           |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[155]_122[0]           |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[135]_135[0]           |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[122]_77[0]            |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[132]_143[0]           |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[160]_46[0]            |                  |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[130]_138[0]           |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[143]_50[0]            |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[109]_140[0]           |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[105]_129[0]           |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[120]_147[0]           |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[233]_18[0]            |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[182]_4[0]             |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[235]_24[0]            |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[167]_45[0]            |                  |               24 |             32 |         1.33 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[185]_39[0]            |                  |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[188]_36[0]            |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[190]_51[0]            |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[214]_12[0]            |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[226]_109[0]           |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[229]_26[0]            |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[236]_23[0]            |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[212]_13[0]            |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[172]_142[0]           |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[234]_110[0]           |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[200]_31[0]            |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[237]_9[0]             |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[216]_29[0]            |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[240]_22[0]            |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[241]_115[0]           |                  |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[242]_8[0]             |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[243]_7[0]             |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[244]_6[0]             |                  |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[225]_10[0]            |                  |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[194]_17[0]            |                  |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[166]_141[0]           |                  |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[186]_38[0]            |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[162]_120[0]           |                  |               24 |             32 |         1.33 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[196]_3[0]             |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[209]_2[0]             |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[223]_1[0]             |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[189]_52[0]            |                  |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[16]_106[0]            |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[193]_35[0]            |                  |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[215]_11[0]            |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[170]_121[0]           |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[227]_0[0]             |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[191]_53[0]            |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[220]_28[0]            |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[228]_108[0]           |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[173]_55[0]            |                  |               24 |             32 |         1.33 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[168]_44[0]            |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[178]_54[0]            |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[184]_40[0]            |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[197]_16[0]            |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[177]_43[0]            |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[207]_119[0]           |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[221]_27[0]            |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[183]_41[0]            |                  |               25 |             32 |         1.28 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[230]_25[0]            |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[181]_42[0]            |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[219]_111[0]           |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[201]_30[0]            |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[195]_34[0]            |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[202]_15[0]            |                  |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[211]_145[0]           |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[217]_118[0]           |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[222]_117[0]           |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[231]_116[0]           |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[187]_37[0]            |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[210]_146[0]           |                  |               12 |             32 |         2.67 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[18]_126[0]            |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[198]_33[0]            |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[206]_14[0]            |                  |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[199]_32[0]            |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[67]_95[0]             |                  |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[34]_124[0]            |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[56]_75[0]             |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[53]_149[0]            |                  |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[58]_154[0]            |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[71]_99[0]             |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[254]_5[0]             |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[28]_62[0]             |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[61]_153[0]            |                  |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[64]_155[0]            |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[70]_97[0]             |                  |               12 |             32 |         2.67 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[40]_68[0]             |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[247]_114[0]           |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[29]_63[0]             |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[25]_61[0]             |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[43]_69[0]             |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[51]_71[0]             |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[55]_74[0]             |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[38]_66[0]             |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[73]_102[0]            |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[251]_112[0]           |                  |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[36]_123[0]            |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[30]_64[0]             |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[60]_127[0]            |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[39]_67[0]             |                  |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[4]_105[0]             |                  |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[65]_92[0]             |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[72]_100[0]            |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[75]_103[0]            |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[48]_150[0]            |                  |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[27]_125[0]            |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[59]_76[0]             |                  |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[79]_104[0]            |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[82]_130[0]            |                  |               24 |             32 |         1.33 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[37]_65[0]             |                  |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[85]_101[0]            |                  |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[52]_72[0]             |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[89]_96[0]             |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[92]_94[0]             |                  |               25 |             32 |         1.28 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[93]_93[0]             |                  |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[250]_113[0]           |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[88]_98[0]             |                  |               15 |             32 |         2.13 |
+|  clock_IBUF_BUFG | CPU/Datapath/Alu_result_PLR/Mem[46]_70[0]             |                  |               20 |             32 |         1.60 |
+|  clock_IBUF_BUFG | CPU/Datapath/Reg3_Address_PLR/E[0]                    | reset_IN_IBUF    |               26 |             85 |         3.27 |
+|  clock_IBUF_BUFG |                                                       | reset_IN_IBUF    |              198 |            525 |         2.65 |
++------------------+-------------------------------------------------------+------------------+------------------+----------------+--------------+
+
+

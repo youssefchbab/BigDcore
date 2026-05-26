@@ -1,0 +1,12 @@
+create_clock -period 20.000 -name clock [get_ports clock]
+set_property PACKAGE_PIN N18 [get_ports clock]
+set_property PACKAGE_PIN P16 [get_ports reset_IN]
+set_property PACKAGE_PIN P15 [get_ports {ReadDataOut[0]}]
+set_property PACKAGE_PIN U12 [get_ports {ReadDataOut[1]}]
+
+set_property PACKAGE_PIN U12 [get_ports {LEDTest[1]}]
+set_property PACKAGE_PIN P15 [get_ports {LEDTest[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {LEDTest[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {LEDTest[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports clock]
+set_property IOSTANDARD LVCMOS33 [get_ports reset_IN]

@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Thu May 28 18:44:38 2026
+# Process ID         : 10424
+# Current directory  : D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore UART/RV32ICore UART/RV32ICore UART.runs/impl_1
+# Command line       : vivado.exe -log SoC.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source SoC.tcl -notrace
+# Log file           : D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore UART/RV32ICore UART/RV32ICore UART.runs/impl_1/SoC.vdi
+# Journal file       : D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore UART/RV32ICore UART/RV32ICore UART.runs/impl_1\vivado.jou
+# Running On         : DESKTOP-87RVPO3
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i3-12100
+# CPU Frequency      : 3302 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16920 MB
+# Swap memory        : 14972 MB
+# Total Virtual      : 31893 MB
+# Available Virtual  : 6436 MB
+#-----------------------------------------------------------
+source SoC.tcl -notrace

@@ -1,0 +1,35 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+
+entity Last_stage is
+	port(A1, A2: in std_logic_vector(31 downto 0);
+		 M,S: in std_logic_vector(1 downto 0);--M is sent by the CU, S is extracted from the 2 lsb's of address
+		 Data_out: out std_logic_vector(31 downto 0));
+end entity;
+
+architecture arch of Last_stage is
+	Signal A1_Byte: std_logic_vector(7 downto 0);
+	Signal A1_half: std_logic_vector(15 downto 0);
+Begin 
+	A1_Byte<= A1(7 downto 0);
+	A1_half<= A1(15 downto 0);
+	Process(M, S, A1, A2, A1_Byte, A1_half) Begin 
+		case M is
+			when "00"=> Data_out<= A1;
+			when "01"=> if(S(0)='0') then
+							Data_out<= A2(31 downto 16) & (A2(15 downto 0) or A1_half);
+						else 
+							Data_out<= (A2(31 downto 16) or A1_half) & A2(15 downto 0);
+						end if;
+			when "10"=> case S is
+							when "00"=> Data_out<= A1 or A2;
+							when "01"=> Data_out<= A2(31 downto 16) & (A2(15 downto 8) or A1_Byte) & A2(7 downto 0);
+							when "10"=> Data_out<= A2(31 downto 24) & (A2(23 downto 16) or A1_Byte) & A2(15 downto 0);
+							when "11"=> Data_out<= (A2(31 downto 24) or A1_Byte) & A2(23 downto 0);
+							when others=> Data_out<= (others=>'-');	
+						end case;
+			when others=> Data_out<= (others=>'Z');		
+		end case;
+	end process;
+ end architecture; 
+			

@@ -48,6 +48,7 @@ architecture arch of Soc is
 
     --Signal Declaration 
     Signal clk ,reset: std_logic;
+    Signal LEDTest_Temp: std_logic_vector(1 downto 0);
     Signal instruction, ReadData: std_logic_vector(31 downto 0);
     Signal MemWrite: std_logic;
     Signal ByteEn, Mode: std_logic_vector(1 downto 0);
@@ -81,7 +82,14 @@ begin
         DataAdr,
         ReadData
     );
+    process(clk) begin
+        if (rising_edge(clk)) then
+            LEDTest_Temp<= WriteData(1 downto 0);
+        else
+            LEDTest_Temp<= LEDTest_Temp;
+        end if;
+    end process;
     clk<= clock;
     reset<= reset_IN;
-    LEDTest<= ReadData(1 downto 0);
+    LEDTest<= LEDTest_Temp;
 end arch ; --Soc

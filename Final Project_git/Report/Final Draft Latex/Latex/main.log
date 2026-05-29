@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.5.29)  29 MAY 2026 17:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.5.29)  29 MAY 2026 18:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1302,27 +1302,1344 @@ Package shellesc Info: Restricted shell escape enabled on input line 77.
 \@float@every@listing=\toks48
 \c@listing=\count572
 )
+(preamble/packages.tex
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+6.
 
-! LaTeX Error: File `lstlisting.sty' not found.
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+))
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
+! LaTeX Error: Option clash for package geometry.
 
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.8 \setminted
-              {^^M
-*** (cannot \read from terminal in nonstop modes)
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 \usepackage
+                {graphicx}
+The package geometry has already been loaded with options:
+  []
+There has now been an attempt to load it with options
+  [a4paper, top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]
+Adding the global options:
+  ,a4paper, top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm
+to your \documentclass declaration may fix this.
+Try typing  <return>  to proceed.
 
- 
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen321
+\ar@mcellbox=\box81
+\extrarowheight=\dimen322
+\NC@list=\toks49
+\extratabsurround=\skip98
+\backup@length=\skip99
+\ar@cellbox=\box82
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen323
+\TX@old@table=\dimen324
+\TX@old@col=\dimen325
+\TX@target=\dimen326
+\TX@delta=\dimen327
+\TX@cols=\count573
+\TX@ftn=\toks50
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count574
+\lst@gtempboxa=\box83
+\lst@token=\toks51
+\lst@length=\count575
+\lst@currlwidth=\dimen328
+\lst@column=\count576
+\lst@pos=\count577
+\lst@lostspace=\dimen329
+\lst@width=\dimen330
+\lst@newlines=\count578
+\lst@lineno=\count579
+\lst@maxwidth=\dimen331
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+\c@lstnumber=\count580
+\lst@skipnumbers=\count581
+\lst@framebox=\box84
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2025/11/14 1.11b listings configuration
+))
+Package: listings 2025/11/14 1.11b (Carsten Heinz)
+
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/emptypage\emptypage.sty
+Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty 
+pages
+))
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip100
+\cftbeforetoctitleskip=\skip101
+\cftaftertoctitleskip=\skip102
+\cftbeforepartskip=\skip103
+\cftpartnumwidth=\skip104
+\cftpartindent=\skip105
+\cftbeforechapskip=\skip106
+\cftchapindent=\skip107
+\cftchapnumwidth=\skip108
+\cftbeforesecskip=\skip109
+\cftsecindent=\skip110
+\cftsecnumwidth=\skip111
+\cftbeforesubsecskip=\skip112
+\cftsubsecindent=\skip113
+\cftsubsecnumwidth=\skip114
+\cftbeforesubsubsecskip=\skip115
+\cftsubsubsecindent=\skip116
+\cftsubsubsecnumwidth=\skip117
+\cftbeforeparaskip=\skip118
+\cftparaindent=\skip119
+\cftparanumwidth=\skip120
+\cftbeforesubparaskip=\skip121
+\cftsubparaindent=\skip122
+\cftsubparanumwidth=\skip123
+\cftbeforeloftitleskip=\skip124
+\cftafterloftitleskip=\skip125
+\cftbeforefigskip=\skip126
+\cftfigindent=\skip127
+\cftfignumwidth=\skip128
+\c@lofdepth=\count582
+\c@lotdepth=\count583
+\cftbeforelottitleskip=\skip129
+\cftafterlottitleskip=\skip130
+\cftbeforetabskip=\skip131
+\cfttabindent=\skip132
+\cfttabnumwidth=\skip133
+
+
+Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing
+ out. on input line 1156.
+
+) (preamble/bib-setup.tex) (preamble/details.tex)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'UKenglish'.
+ (main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count584
+\scratchdimen=\dimen332
+\scratchbox=\box85
+\nofMPsegments=\count585
+\nofMParguments=\count586
+\everyMPshowfont=\toks52
+\MPscratchCnt=\count587
+\MPscratchDim=\dimen333
+\MPnumerator=\count588
+\makeMPintoPDFobject=\count589
+\everyMPtoPDFconversion=\toks53
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base
+.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+isodate: babel.sty has been loaded
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring OFF on input line 27.
+(main.out) (main.out)
+\@outlinefile=\write6
+\openout6 = `main.out'.
+
+Package biblatex Info: Trying to load language 'UKenglish'...
+Package biblatex Info: ... file 'UKenglish.lbx' found.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\UKenglish.lbx
+File: UKenglish.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'british'...
+Package biblatex Info: ... file 'british.lbx' found.
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\british.lbx
+File: british.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'british'...
+Package biblatex Info: ... file 'british.lbx' found.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\british.lbx
+File: british.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
+File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout3 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' not found.
+
+No file main.bbl.
+Package biblatex Info: Reference section=0 on input line 27.
+Package biblatex Info: Reference segment=0 on input line 27.
+\c@lstlisting=\count590
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(113.81102pt, 415.12572pt, 85.35826pt)
+* v-part:(T,H,B)=(113.81102pt, 610.02708pt, 71.13188pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=415.12572pt
+* \textheight=610.02708pt
+* \oddsidemargin=41.54103pt
+* \evensidemargin=41.54103pt
+* \topmargin=41.54103pt
+* \headheight=0.0pt
+* \headsep=0.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+
+pdfTeX warning: pdflatex.exe (file ./logo.pdf): PDF inclusion: found PDF versio
+n <1.7>, but at most version <1.5> allowed
+<logo.pdf, id=338, 670.00313pt x 475.02469pt>
+File: logo.pdf Graphic file (type pdf)
+<use logo.pdf>
+Package pdftex.def Info: logo.pdf  used on input line 29.
+(pdftex.def)             Requested size: 101.9274pt x 72.26999pt.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
+9.
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
+9.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+29.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+29.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 29.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 29.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 29.
+ [1
+
+
+{C:/Users/PC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/PC/AppD
+ata/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./logo.pdf>]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(113.81102pt, 429.3521pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=429.3521pt
+* \textheight=652.70622pt
+* \oddsidemargin=41.54103pt
+* \evensidemargin=41.54103pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(chapters/dedication.tex) (chapters/acknowledgement.tex [1
+
+
+
+])
+(chapters/abstractEn.tex [2
+
+
+]
+Overfull \hbox (4.15405pt too wide) in paragraph at lines 3--6
+[] [][] \T1/lmr/m/n/12 This pro-ject presents an in-teg-rated hardware-software
+ sys-tem com-bin-ing a pipelined
+ []
+
+) [3
+
+
+] (main.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 11.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 11.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 11.
+ [4
+
+]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
+4.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.78 ...}Implementation \& Testing}{28}{chapter.5}
+                                                  %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[5])
+\tf@toc=\write7
+\openout7 = `main.toc'.
+
+
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.50 \thesisTables
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6] (main.lof)
+\tf@lof=\write8
+\openout8 = `main.lof'.
+
+ [7
+
+] (main.lot)
+\tf@lot=\write9
+\openout9 = `main.lot'.
+
+ (chapters/Abbreviations.tex [8
+
+])
+Underfull \hbox (badness 10000) in paragraph at lines 4--55
+
+ []
+
+[9
+
+
+]
+Chapter 1.
+(chapters/introduction.tex)
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.79 \chapter
+             {RISC-V Theoretical Background \& System Architecture} [1
+
+
+]
+Chapter 2.
+(chapters/Chapter2.tex
+<Figures/Chapter 2/Instruction-Formats-RV32I.png, id=529, 1282.7925pt x 326.218
+75pt>
+File: Figures/Chapter 2/Instruction-Formats-RV32I.png Graphic file (type png)
+<use Figures/Chapter 2/Instruction-Formats-RV32I.png>
+Package pdftex.def Info: Figures/Chapter 2/Instruction-Formats-RV32I.png  used 
+on input line 16.
+(pdftex.def)             Requested size: 384.84071pt x 97.86636pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+2.
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [2
+
+{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.39 R
+      V32ICore implements a five-stage pipeline (IF, ID, EX, MEM, WB) with f...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[3 <./Figures/Chapter 2/Instruction-Formats-RV32I.png>]
+
+pdfTeX warning: pdflatex.exe (file ./Figures/Chapter 3/Top Level.pdf): PDF incl
+usion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Chapter 3/Top Level.pdf, id=541, 1569.94525pt x 890.36638pt>
+File: Figures/Chapter 3/Top Level.pdf Graphic file (type pdf)
+<use Figures/Chapter 3/Top Level.pdf>
+Package pdftex.def Info: Figures/Chapter 3/Top Level.pdf  used on input line 52
+.
+(pdftex.def)             Requested size: 470.98721pt x 267.11197pt.
+
+Overfull \hbox (41.63512pt too wide) in paragraph at lines 52--53
+ [][] 
+ []
+
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.60 \subsection{Instruction Fetch (IF)}
+                                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4 <./Figures/Chapter 3/Top Level.pdf>]
+<Figures/Chapter 3/IF Stage.png, id=558, 364.86313pt x 356.83313pt>
+File: Figures/Chapter 3/IF Stage.png Graphic file (type png)
+<use Figures/Chapter 3/IF Stage.png>
+Package pdftex.def Info: Figures/Chapter 3/IF Stage.png  used on input line 65.
+
+(pdftex.def)             Requested size: 109.45978pt x 107.05075pt.
+<Figures/Chapter 3/ID Stage.png, id=560, 132.99687pt x 321.2pt>
+File: Figures/Chapter 3/ID Stage.png Graphic file (type png)
+<use Figures/Chapter 3/ID Stage.png>
+Package pdftex.def Info: Figures/Chapter 3/ID Stage.png  used on input line 75.
+
+(pdftex.def)             Requested size: 39.89935pt x 96.36073pt.
+
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.83 \textbf{MuxX3}
+                    selects ALU input A from: rs1, the current PC (AUIPC), o...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[5 <./Figures/Chapter 3/IF Stage.png> <./Figures/Chapter 3/ID Stage.png>]
+<Figures/Chapter 3/EX Stage.png, id=567, 313.67188pt x 257.96375pt>
+File: Figures/Chapter 3/EX Stage.png Graphic file (type png)
+<use Figures/Chapter 3/EX Stage.png>
+Package pdftex.def Info: Figures/Chapter 3/EX Stage.png  used on input line 89.
+
+(pdftex.def)             Requested size: 94.10228pt x 77.38971pt.
+<Figures/Chapter 3/MEM Stage.png, id=568, 319.69438pt x 288.07625pt>
+File: Figures/Chapter 3/MEM Stage.png Graphic file (type png)
+<use Figures/Chapter 3/MEM Stage.png>
+Package pdftex.def Info: Figures/Chapter 3/MEM Stage.png  used on input line 99
+.
+(pdftex.def)             Requested size: 95.90904pt x 86.42354pt.
+<Figures/Chapter 3/WR Stage.png, id=569, 207.77625pt x 204.765pt>
+File: Figures/Chapter 3/WR Stage.png Graphic file (type png)
+<use Figures/Chapter 3/WR Stage.png>
+Package pdftex.def Info: Figures/Chapter 3/WR Stage.png  used on input line 109
+.
+(pdftex.def)             Requested size: 62.33334pt x 61.42996pt.
+
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.112 \end{figure}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6 <./Figures/Chapter 3/EX Stage.png> <./Figures/Chapter 3/MEM Stage.png>]
+<Figures/Chapter 3/Hazard Unit.png, id=576, 873.76437pt x 93.85063pt>
+File: Figures/Chapter 3/Hazard Unit.png Graphic file (type png)
+<use Figures/Chapter 3/Hazard Unit.png>
+Package pdftex.def Info: Figures/Chapter 3/Hazard Unit.png  used on input line 
+127.
+(pdftex.def)             Requested size: 262.13133pt x 28.1554pt.
+)
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.83 \chapter
+             {Implementation \& Verification}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[7 <./Figures/Chapter 3/WR Stage.png> <./Figures/Chapter 3/Hazard Unit.png>]
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.83 \chapter
+             {Implementation \& Verification}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8]
+Chapter 3.
+(chapters/Chapter3.tex
+Overfull \hbox (53.15187pt too wide) in paragraph at lines 5--6
+\T1/lmr/m/it/12 P_Processor_Hazard \T1/lmr/m/n/12 in-stan-ti-ates the datapath 
+\T1/lmr/m/it/12 (P_Datapath)\T1/lmr/m/n/12 , con-trol unit \T1/lmr/m/it/12 (P_C
+ontrol_Unit)\T1/lmr/m/n/12 ,
+ []
+
+[9
+
+]
+Overfull \hbox (8.19202pt too wide) in paragraph at lines 17--18
+[]\T1/lmr/bx/n/12 P_Main_unit \T1/lmr/m/n/12 ^^V com-bin-a-tional de-coder map-
+ping op-code and Funct3 to all datapath
+ []
+
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.36 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[10]
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.55 \section{Toolchain and Program Loading}
+                                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[11]
+\pydata@fh@0=\write10
+\openout10 = `_FAD58DE7366495DB4650CFEFAC2FCD61.data.minted'.
+
+runsystem(latexminted config  --timestamp 20260529184519 FAD58DE7366495DB4650CF
+EFAC2FCD61)...disabled (restricted).
+
+
+
+! Package minted Error: minted v3+ executable is not installed, is not added to
+ PATH, or is not permitted with restricted shell escape; or MiKTeX is being use
+d with -aux-directory or -output-directory without setting a TEXMF_OUTPUT_DIREC
+TORY environment variable.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 \end{minted}
+                 
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+(_minted/default.style.minted)
+
+! Package minted Error: Cannot highlight code (minted executable is unavailable
+ or disabled); attempting to typeset without highlighting.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 \end{minted}
+                 
+(That was another \errmessage.)
+
+
+! Package minted Error: Cannot highlight code (minted executable is unavailable
+ or disabled); attempting to typeset without highlighting.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 \end{minted}
+                 
+(That was another \errmessage.)
+
+
+! Package minted Error: Cannot highlight code (minted executable is unavailable
+ or disabled); attempting to typeset without highlighting.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.92 \end{minted}
+                 
+(That was another \errmessage.)
+
+
+! Package minted Error: Cannot highlight code (minted executable is unavailable
+ or disabled); attempting to typeset without highlighting.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137 \end{minted}
+                  
+(That was another \errmessage.)
+
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.137 \end{minted}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+137.
+ (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmtt.fd
+File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.141 \section{Verification Tests}
+                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}
+{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+<../../Images to be used/Waveform.png, id=614, 1163.0953pt x 532.23843pt>
+File: ../../Images to be used/Waveform.png Graphic file (type png)
+<use ../../Images to be used/Waveform.png>
+Package pdftex.def Info: ../../Images to be used/Waveform.png  used on input li
+ne 148.
+(pdftex.def)             Requested size: 300.54515pt x 137.5341pt.
+<../../Images to be used/Sum array result.png, id=615, 688.82344pt x 143.03438p
+t>
+File: ../../Images to be used/Sum array result.png Graphic file (type png)
+<use ../../Images to be used/Sum array result.png>
+Package pdftex.def Info: ../../Images to be used/Sum array result.png  used on 
+input line 157.
+(pdftex.def)             Requested size: 300.54515pt x 62.40714pt.
+
+
+! Package minted Error: Cannot highlight code (minted executable is unavailable
+ or disabled); attempting to typeset without highlighting.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.194 \end{minted}
+                  
+(That was another \errmessage.)
+
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.194 \end{minted}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[14 <../../Images to be used/Waveform.png> <../../Images to be used/Sum array r
+esult.png>]
+<../../Images to be used/Second Test.png, id=622, 928.97063pt x 173.64874pt>
+File: ../../Images to be used/Second Test.png Graphic file (type png)
+<use ../../Images to be used/Second Test.png>
+Package pdftex.def Info: ../../Images to be used/Second Test.png  used on input
+ line 198.
+(pdftex.def)             Requested size: 300.54515pt x 56.1808pt.
+)
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.87 \chapter
+             {IDS Theoretical Background \& System Architecture}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15 <../../Images to be used/Second Test.png>]
+Chapter 4.
+(chapters/Chapter4.tex
+<ids_pipeline_diagram.png, id=629, 974.89218pt x 609.77812pt>
+File: ids_pipeline_diagram.png Graphic file (type png)
+<use ids_pipeline_diagram.png>
+Package pdftex.def Info: ids_pipeline_diagram.png  used on input line 14.
+(pdftex.def)             Requested size: 407.88318pt x 255.11879pt.
+ [16
+
+]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 21.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 24.
+
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.35 ...ame Counter (\texttt{frame\_counter.vhd})}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17 <./ids_pipeline_diagram.png>]
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.68 ...n{TCP Checker (\texttt{tcp\_checker.vhd})}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18]
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.121 
+      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]|\T1/lmtt/m/n/12 udp_src_port $\OMS/lmsy/m/n/12 2$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--158
+[]|\T1/lmtt/m/n/12 ip_src=ip_dst $\OMS/lmsy/m/n/12 ^$
+ []
+
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.167 
+      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20]
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.199 
+      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21])
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.92 \chapter
+             {Implementation \& Testing}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22]
+Chapter 5.
+(chapters/Chapter5.tex
+Overfull \hbox (8.11948pt too wide) in paragraph at lines 2--3
+\T1/lmr/m/n/12 and check-ing alert sig-nals in sim-u-la-tion. The full-pipeline
+ test-bench (\T1/lmtt/m/n/12 ids_top_tb.vhd\T1/lmr/m/n/12 )
+ []
+
+[23
+
+]
+Overfull \hbox (13.89255pt too wide) in paragraph at lines 29--37
+\T1/lmtt/m/n/12 ip_ihl=3 \TS1/lmr/m/n/12 ^^Y \T1/lmtt/m/n/12 alert_bad_ihl\T1/l
+mr/m/n/12 ; R3: \T1/lmtt/m/n/12 ip_length=10 \TS1/lmr/m/n/12 ^^Y \T1/lmtt/m/n/1
+2 alert_bad_length\T1/lmr/m/n/12 ; R4: \T1/lmtt/m/n/12 ip_ttl=1
+ []
+
+
+Overfull \hbox (34.28893pt too wide) in paragraph at lines 29--37
+\TS1/lmr/m/n/12 ^^Y \T1/lmtt/m/n/12 alert_low_ttl\T1/lmr/m/n/12 ; R5: non-zero 
+frag-ment off-set \TS1/lmr/m/n/12 ^^Y \T1/lmtt/m/n/12 alert_fragment\T1/lmr/m/n
+/12 ; R6: \T1/lmtt/m/n/12 ip_src=0.0.0.0
+ []
+
+
+Overfull \hbox (2.71579pt too wide) in paragraph at lines 38--42
+[]\T1/lmr/bx/n/12 Bogon Ad-dress Rules (R8--R10): \T1/lmr/m/n/12 R8: \T1/lmtt/m
+/n/12 ip_src=127.0.0.1 \TS1/lmr/m/n/12 ^^Y \T1/lmtt/m/n/12 alert_bogon_loop\T1/
+lmr/m/n/12 ;
+ []
+
+
+Overfull \hbox (78.4573pt too wide) in paragraph at lines 38--42
+\T1/lmr/m/n/12 R9: \T1/lmtt/m/n/12 ip_src=169.254.0.1 \TS1/lmr/m/n/12 ^^Y \T1/l
+mtt/m/n/12 alert_bogon_link\T1/lmr/m/n/12 ; R10: \T1/lmtt/m/n/12 ip_src=224.0.0
+.1 \TS1/lmr/m/n/12 ^^Y \T1/lmtt/m/n/12 alert_bogon_mcast\T1/lmr/m/n/12 . 
+ []
+
+
+Overfull \hbox (25.92418pt too wide) in paragraph at lines 48--53
+\T1/lmr/m/n/12 T1: \T1/lmtt/m/n/12 tcp_flags=0x03 \T1/lmr/m/n/12 (SYN+FIN) \TS1
+/lmr/m/n/12 ^^Y \T1/lmtt/m/n/12 alert_syn_fin\T1/lmr/m/n/12 ; T2: \T1/lmtt/m/n/
+12 tcp_flags=0x06 \T1/lmr/m/n/12 (SYN+RST)
+ []
+
+
+Overfull \hbox (48.83188pt too wide) in paragraph at lines 48--53
+\TS1/lmr/m/n/12 ^^Y \T1/lmtt/m/n/12 alert_syn_rst\T1/lmr/m/n/12 ; T3: \T1/lmtt/
+m/n/12 tcp_flags=0x00 \T1/lmr/m/n/12 (NULL) \TS1/lmr/m/n/12 ^^Y \T1/lmtt/m/n/12
+ alert_null_scan\T1/lmr/m/n/12 ; T4: \T1/lmtt/m/n/12 tcp_flags=0xFF
+ []
+
+<tcp_checker_waveform.png, id=690, 1417.54594pt x 520.19344pt>
+File: tcp_checker_waveform.png Graphic file (type png)
+<use tcp_checker_waveform.png>
+Package pdftex.def Info: tcp_checker_waveform.png  used on input line 56.
+(pdftex.def)             Requested size: 429.3521pt x 157.55942pt.
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.64 ...tbf{Forbidden Port / Structural (U1--U3):}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24 <./tcp_checker_waveform.png>]
+Overfull \hbox (48.13927pt too wide) in paragraph at lines 64--68
+[]\T1/lmr/bx/n/12 Forbidden Port / Struc-tural (U1--U3): \T1/lmr/m/n/12 U1: \T1
+/lmtt/m/n/12 udp_dst_port=69 \TS1/lmr/m/n/12 ^^Y \T1/lmtt/m/n/12 alert_udp_forb
+idden\T1/lmr/m/n/12 ;
+ []
+
+
+Overfull \hbox (17.32332pt too wide) in paragraph at lines 69--72
+[]\T1/lmr/bx/n/12 Amplification / Spoof-ing (U4--U5): \T1/lmr/m/n/12 U4: \T1/lm
+tt/m/n/12 udp_src_port=53 \TS1/lmr/m/n/12 ^^Y \T1/lmtt/m/n/12 alert_udp_amplify
+\T1/lmr/m/n/12 ;
+ []
+
+)
+Overfull \hbox (66.73631pt too wide) in paragraph at lines 73--94
+\T1/lmr/m/n/12 U7: \T1/lmtt/m/n/12 udp_dst_port=0 \TS1/lmr/m/n/12 ^^Y \T1/lmtt/
+m/n/12 alert_udp_port_zero\T1/lmr/m/n/12 ; U8: \T1/lmtt/m/n/12 udp_dst_port=190
+0 \TS1/lmr/m/n/12 ^^Y \T1/lmtt/m/n/12 alert_ssdp_abuse\T1/lmr/m/n/12 ;
+ []
+
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.96 \chapter
+             {System Integration}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25]
+Chapter 6.
+(chapters/Chapter6.tex
+<integration_diagram.png, id=702, 845.40843pt x 522.45187pt>
+File: integration_diagram.png Graphic file (type png)
+<use integration_diagram.png>
+Package pdftex.def Info: integration_diagram.png  used on input line 25.
+(pdftex.def)             Requested size: 407.88318pt x 252.0655pt.
+ [26
+
+]
+Overfull \hbox (9.98714pt too wide) in paragraph at lines 30--31
+[]\T1/lmr/m/n/12 The \T1/lmtt/m/n/12 axis_rx.vhd \T1/lmr/m/n/12 wrap-per as-ser
+ts \T1/lmtt/m/n/12 tready \T1/lmr/m/n/12 per-man-ently and maps: \T1/lmtt/m/n/1
+2 tvalid$\OMS/lmsy/m/n/12 !$\T1/lmtt/m/n/12 rx_valid\T1/lmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (45.4994pt too wide) in paragraph at lines 30--31
+\T1/lmtt/m/n/12 tdata[7:0]$\OMS/lmsy/m/n/12 !$\T1/lmtt/m/n/12 rx_byte\T1/lmr/m/
+n/12 , \T1/lmtt/m/n/12 tlast$\OMS/lmsy/m/n/12 !$\T1/lmtt/m/n/12 rx_eof\T1/lmr/m
+/n/12 , and a one-cycle delayed \T1/lmtt/m/n/12 tvalid \T1/lmr/m/n/12 rising ed
+ge$\OMS/lmsy/m/n/12 !$\T1/lmtt/m/n/12 rx_sof\T1/lmr/m/n/12 . 
+ []
+
+
+Overfull \hbox (29.78656pt too wide) in paragraph at lines 35--36
+\T1/lmr/m/n/12 RV32ICore ex-poses a stand-ard ex-ternal memory in-ter-face (\T1
+/lmtt/m/n/12 DataAdr\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 ReadData\T1/lmr/m/n/12 , \
+T1/lmtt/m/n/12 WriteData\T1/lmr/m/n/12 ,
+ []
+
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.63 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27 <./integration_diagram.png>]
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.82 	\item C
+             reate a Vivado block design for xc7z020clg400-1 with Zynq PS co...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28])
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.101 \chapter
+              {Conclusion}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[29]
+Chapter 7.
+(chapters/conclusions.tex)
+Overfull \hbox (0.5401pt too wide) in paragraph at lines 17--103
+\T1/lmr/m/n/12 Planned ex-ten-sions in-clude: a \T1/lmtt/m/n/12 payload_extract
+or.vhd \T1/lmr/m/n/12 mod-ule buf-fer-ing TCP/UDP
+ []
+
+[30
+
+]
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.111 \begin{thebibliography}{99}
+                                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[31] [32
+
+]
+! Undefined control sequence.
+\f@nch@orh ->\headnotesize 
+                           \emph {\leftmark } \hspace {0.0cm} \strut 
+l.176 \end{document}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[33] (main.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-04-28>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: A070325064D8522DC860E07D6C867C04;14161.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
 Here is how much of TeX's memory you used:
- 37814 strings out of 467683
- 770074 string characters out of 5416173
- 1475283 words of memory out of 5000000
- 66372 multiletter control sequences out of 15000+600000
- 628783 words of font info for 42 fonts, out of 8000000 for 9000
+ 42550 strings out of 467683
+ 854978 string characters out of 5416173
+ 1812491 words of memory out of 5000000
+ 70714 multiletter control sequences out of 15000+600000
+ 703073 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,0n,145p,548b,198s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 98i,12n,145p,1427b,2490s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><
+C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/
+Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Use
+rs/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/P
+C/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/PC/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/PC/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/PC/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/PC/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/PC/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/PC/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/PC/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/PC/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/lm/lmtt12.pfb>
+Output written on main.pdf (43 pages, 2979636 bytes).
+PDF statistics:
+ 883 PDF objects out of 1000 (max. 8388607)
+ 203 named destinations out of 1000 (max. 500000)
+ 752 words of extra memory for PDF output out of 10000 (max. 10000000)
+

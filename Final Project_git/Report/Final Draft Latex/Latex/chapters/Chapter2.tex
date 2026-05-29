@@ -1,171 +1,133 @@
-
 \section{Introduction}
-\paragraph{}
-
-This chapter presents the theoretical foundations underlying the design and implementation of BigDCore. It covers three principal areas: the RISC-V instruction set architecture, fundamental processor design concepts, and an overview of existing RISC-V soft-core implementations. Together, these establish the academic and technical context within which this project is situated.
+This chapter presents the theoretical foundations of RV32ICore, covering the RISC-V ISA, core processor design concepts, and the system architecture of the implemented pipeline.
 
 \section{RISC-V Instruction Set Architecture}
 \subsection{History and Origin}
+RISC-V was conceived in 2010 at UC Berkeley by Krste Asanović, Andrew Waterman, and Yunsup Lee under David Patterson. It was designed to be open, stable, and free from proprietary constraints. The RISC-V Foundation was established in 2015 and transferred to RISC-V International in 2020 to ensure long-term neutrality.
 
-The RISC-V ISA was conceived in 2010 at the University of California, Berkeley, as part of the fifth generation of RISC research projects conducted at the institution. It was developed by Krste Asanović, Andrew Waterman, and Yunsup Lee under the supervision of David Patterson, one of the pioneers of the original RISC architecture. Unlike previous ISA efforts, RISC-V was designed from the outset to be open, stable, and free from proprietary constraints, making it suitable for both academic research and commercial deployment. In 2015, the RISC-V Foundation was established to govern the specification, which was later transferred to RISC-V International in 2020 to ensure its long-term neutrality and global accessibility.
 \subsection{Design Philosophy}
+RISC-V adheres to RISC principles: simplicity, regularity, and extensibility. The base ISA is minimal, with optional standard extensions for floating-point, atomics, compressed instructions, and vector processing. Instructions are fixed 32-bit wide, and frequently used fields (source/destination registers) appear at fixed bit positions across all formats, reducing decoder complexity.
 
-RISC-V adheres to the core principles of Reduced Instruction Set Computing. Its design philosophy prioritizes simplicity, regularity, and extensibility. The base ISA is intentionally kept minimal, containing only the instructions necessary for general-purpose computation, while optional standard extensions allow the ISA to be tailored for specific application domains such as floating-point arithmetic, atomic operations, compressed instructions, and vector processing. This modularity ensures that a processor designer can implement only the subset relevant to their use case without carrying the overhead of unused hardware.
-
-A key distinguishing characteristic of RISC-V is its fixed 32-bit instruction width in the base integer ISA, which simplifies instruction fetch and decode logic. All instructions follow a small number of regular formats, and frequently used fields such as the source and destination register indices appear at fixed bit positions across all formats, reducing decoder complexity.
 \subsection{RV32I Instruction Formats}
-The RV32I base integer ISA defines six instruction formats, each encoding a different combination of operands and immediate values while maintaining a fixed 32-bit instruction width.
+RV32I defines six fixed-width 32-bit instruction formats:
+
 \begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.3]{Figures/Chapter 2/Instruction-Formats-RV32I.png}
-    \caption{RV32I Instruction Formats}
-    \label{fig:RV32I Instruction Formats}
+	\centering
+	\includegraphics[scale=0.3]{Figures/Chapter 2/Instruction-Formats-RV32I.png}
+	\caption{RV32I Instruction Formats}
+	\label{fig:RV32I Instruction Formats}
 \end{figure}
 
-The \textbf{R-type} format is used for register-to-register arithmetic and logical operations. It encodes two source registers (rs1, rs2) and one destination register (rd), along with a 7-bit opcode, a 3-bit funct3 field, and a 7-bit funct7 field that together uniquely identify the operation.
+\begin{itemize}
+	\item \textbf{R-type} — register-to-register operations; encodes rs1, rs2, rd, funct3, funct7.
+	\item \textbf{I-type} — immediate arithmetic, loads, and environment calls; encodes rs1, rd, 12-bit signed immediate.
+	\item \textbf{S-type} — store instructions; 12-bit immediate split across two fields to keep register fields fixed.
+	\item \textbf{B-type} — conditional branches; 13-bit PC-relative offset with shuffled immediate bits.
+	\item \textbf{U-type} — upper immediate instructions (LUI, AUIPC); 20-bit immediate and rd.
+	\item \textbf{J-type} — JAL only; 21-bit PC-relative offset and rd for the return address.
+\end{itemize}
 
-The \textbf{I-type} format is used for immediate arithmetic operations, load instructions, and environment calls. It encodes one source register (rs1), one destination register (rd), and a 12-bit signed immediate value.
+\section{Processor Design Concepts}
+\subsection{Von Neumann vs.\ Harvard Architecture}
+Von Neumann architecture uses a single shared bus for instructions and data, introducing a fetch/access bottleneck. Harvard architecture uses separate memories and buses, allowing simultaneous instruction fetch and data access. A Modified Harvard design — separate L1 caches with unified main memory — is the practical compromise used in most modern processors.
 
-The \textbf{S-type} format is used exclusively for store instructions. It encodes two source registers and a 12-bit signed immediate that is split across two non-contiguous fields in the instruction word, a deliberate design choice to keep the register fields at fixed positions.
+RV32ICore adopts a Harvard architecture with fully separate instruction and data memories, ensuring that instruction fetch and data memory access never contend for the same resource.
 
-The \textbf{B-type} format is used for conditional branch instructions. It encodes two source registers and a 13-bit signed immediate representing a PC-relative branch offset. Like the S-type, the immediate bits are shuffled to preserve fixed register field positions.
+\subsection{Single-Cycle vs.\ Pipelined Execution}
+A single-cycle processor completes one instruction per clock cycle but requires the clock period to accommodate the slowest instruction, limiting frequency. A pipelined processor divides the datapath into stages, overlapping instruction execution to approach one instruction per cycle throughput, with the clock period set by the slowest stage. This introduces structural, data, and control hazards, managed through stalling, forwarding, and flushing.
 
-The \textbf{U-type} format is used for instructions that operate on upper immediates, namely LUI (Load Upper Immediate) and AUIPC (Add Upper Immediate to PC). It encodes a 20-bit immediate and a destination register.
-
-The \textbf{J-type} format is used exclusively by the JAL (Jump and Link) instruction. It encodes a 21-bit PC-relative jump offset and a destination register that receives the return address.
-\subsection{Processor Design Concepts}
-\subsubsection{Von Neumann vs. Harvard Architecture}
-Two fundamental memory architectures underpin modern processor design. The von Neumann architecture, proposed by John von Neumann in 1945, uses a single shared memory space and a single bus to carry both instructions and data. While this simplifies the memory system and allows flexible allocation of memory between code and data, it introduces a structural bottleneck known as the von Neumann bottleneck: the processor cannot fetch an instruction and access data simultaneously, limiting throughput.
-
-The Harvard architecture addresses this limitation by providing physically separate memories and buses for instructions and data. This allows simultaneous access to both, eliminating the structural hazard present in von Neumann designs and improving pipeline throughput. The cost is a less flexible memory system, as instruction and data memory cannot share capacity.
-
-A Modified Harvard architecture is a practical compromise widely adopted in modern processors. It maintains separate instruction and data caches at the first level, providing the performance benefits of Harvard architecture, while using a unified main memory accessible by both, preserving the flexibility of von Neumann memory management.
-
-BigDCore adopts a Harvard architecture with fully separate instruction and data memories. This design decision directly supports the five-stage pipeline by ensuring that instruction fetch and data memory access never contend for the same resource.
-\subsubsection{Single-Cycle vs. Pipelined Execution}
-A single-cycle processor completes the execution of one instruction per clock cycle by routing it through all functional units in a single pass. While conceptually simple, this approach requires the clock period to be long enough to accommodate the slowest possible instruction, resulting in poor clock frequency and underutilization of hardware during the execution of faster instructions.
-
-A pipelined processor overlaps the execution of multiple instructions by dividing the datapath into discrete stages, each handling one phase of execution. While an individual instruction still takes multiple cycles to complete, the throughput approaches one instruction per cycle under ideal conditions, and the clock period is determined by the slowest pipeline stage rather than the slowest instruction. This trade-off introduces pipeline hazards — structural, data, and control hazards — which must be managed through stalling, forwarding, and flushing mechanisms.
-
-BigDCore implements a classical five-stage pipeline comprising the Instruction Fetch (IF), Instruction Decode (ID), Execute (EX), Memory Access (MEM), and Write-Back (WB) stages. A hazard detection unit manages data hazards through stalling and forwarding, and control hazards arising from branch instructions are resolved through pipeline flushing.
+RV32ICore implements a five-stage pipeline (IF, ID, EX, MEM, WB) with forwarding and stall-based hazard resolution and flush-based control hazard handling.
 
 \section{Top-Level Architecture}
-At the highest level of abstraction, RV32ICore is composed of two primary units: the Datapath and the Control Unit, along with a dedicated Hazard Unit that operates across pipeline stages.
+RV32ICore is composed of three units:
 
-\textbf{The Datapath} is responsible for processing and routing data throughout the processor. Its inputs include control signals generated by the Control Unit, instructions fetched from instruction memory, and data read from data memory. Its outputs include the Program Counter (PC) supplied to instruction memory, data written to data memory, and status information such as instruction fields and condition flags fed back to the Control Unit.
+\textbf{Datapath} — processes and routes data through the pipeline. Inputs: control signals, instructions, and data memory output. Outputs: PC to instruction memory, write data and address to data memory, and status signals to the Control Unit.
 
-\textbf{The Control Unit} is responsible for managing the correct execution of instructions by interpreting instruction fields and generating the appropriate control signals for each pipeline stage. Its inputs are the opcode (bits [6:0]), Funct3 (bits [14:12]), and Funct7 bit 30, along with the processor clock and reset. Its outputs are the set of control signals that govern the behavior of multiplexers, the register file, the ALU, and the data memory throughout the datapath.
+\textbf{Control Unit} — decodes opcode[6:0], Funct3[14:12], and Funct7[30] to generate control signals governing multiplexers, the register file, ALU, and data memory.
 
-\textbf{The Hazard Unit} monitors the pipeline state and intervenes when hazard conditions are detected. It generates stall and flush signals to preserve correct program execution in the presence of data dependencies and control flow changes. Its operation is described in detail in Section 3.9.
+\textbf{Hazard Unit} — monitors pipeline registers and generates stall and flush signals to maintain correctness under data dependencies and control flow changes.
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.3]{Figures/Chapter 3/Top Level.pdf}
 	\caption{RV32ICore Top-Level Architecture}
-	\label{fig: RV32ICore Top-Level Architecture}
+	\label{fig:RV32ICore Top-Level Architecture}
 \end{figure}
-\section{Pipeline Overview}
-RV32ICore implements a classical five-stage pipeline. Pipelining allows multiple instructions to be in different stages of execution simultaneously, improving throughput by overlapping work across stages. The five stages are:
 
-\begin{itemize}
-	\item \textbf{IF} — Instruction Fetch
-	\item \textbf{ID} — Instruction Decode
-	\item \textbf{EX} — Execute
-	\item \textbf{MEM} — Memory Access
-	\item \textbf{WB} — Write-Back
-\end{itemize}
+\section{Pipeline Stages}
+RV32ICore implements a classical five-stage pipeline. Each stage is separated by a pipeline register with synchronous reset and NOP-insertion control signals.
 
-Each stage is separated from the next by a pipeline register that captures the outputs of the current stage and holds them stable for the following stage on the next clock edge. All pipeline registers share the same clock as the rest of the processor and are controlled by two signals: a synchronous reset that clears the register to zero, and a NOP insertion signal that loads a harmless no-operation instruction into the register without clearing its other fields, used during flush operations.
-\section{Instruction Fetch (IF) Stage}
-The Instruction Fetch stage is responsible for retrieving the current instruction from instruction memory and advancing the Program Counter
+\subsection{Instruction Fetch (IF)}
+The PC register updates on every rising clock edge. Its value addresses instruction memory, which returns the 32-bit instruction combinationally. A dedicated adder computes PC+4 for sequential advancement and as the return address for jump instructions. On a taken branch, the PC is updated to the branch target computed in EX in the same cycle the flush is issued.
 
-The PC is stored in a dedicated register that updates on every rising clock edge under normal operation. Its value is used directly as the address supplied to the instruction memory, which responds combinationally with the 32-bit instruction word stored at that address.
-
-A dedicated adder computes PC+4, representing the address of the next sequential instruction. This value is carried forward through the pipeline and is used in the Write-Back stage as the return address for jump instructions.
-
-On a taken branch, the PC is updated to the branch target address computed in the Execute stage in the same cycle that the flush signal is issued. Under normal sequential execution, the PC is updated to PC+4.
-
-The instruction memory is separate from the data memory, consistent with the Harvard architecture adopted by RV32ICore. This ensures that instruction fetch never contends with data memory access, eliminating structural hazards between the IF and MEM stages.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.3]{Figures/Chapter 3/IF Stage.png}
 	\caption{RV32ICore IF Stage}
-	\label{fig: RV32ICore IF Stage}
+	\label{fig:RV32ICore IF Stage}
 \end{figure}
-\section{Instruction Decode (ID) Stage}
-The Instruction Decode stage deconstructs the fetched instruction and prepares the operands and control signals required for execution.
 
-The 32-bit instruction word is partitioned into its constituent fields according to the RV32I specification. The source register addresses rs1 and rs2 are located at bits [19:15] and [24:20] respectively, and the destination register address rd is located at bits [11:7]. These addresses are wired directly to the read ports of the register file, which responds combinationally with the contents of the addressed registers. Register x0 is hardwired to zero; any read of x0 returns zero and any write to x0 is silently discarded.
+\subsection{Instruction Decode (ID)}
+The instruction word is partitioned per the RV32I spec. rs1[19:15], rs2[24:20], and rd[11:7] address the register file combinationally; x0 is hardwired to zero. An Immediate Extension unit produces a 32-bit sign-extended immediate by selecting the appropriate format (I, S, B, U, J) from the opcode. The opcode, Funct3, and Funct7[30] are forwarded to the Control Unit, whose output control signals propagate through the pipeline with the instruction.
 
-An Immediate Extension unit receives the full 32-bit instruction word and produces a 32-bit sign-extended immediate value. The extension logic selects the appropriate immediate format — I, S, B, U, or J — based on the opcode, and assembles the immediate from the relevant instruction bits according to the RV32I encoding specification.
-
-The opcode (bits [6:0]), Funct3 (bits [14:12]), and Funct7 bit 30 are forwarded to the Control Unit, which decodes them and generates the full set of control signals for the instruction. These control signals are stored in the ID/EX pipeline register alongside the register data and immediate value and propagate through the pipeline with the instruction.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.3]{Figures/Chapter 3/ID Stage.png}
 	\caption{RV32ICore ID Stage}
-	\label{fig: RV32ICore ID Stage}
+	\label{fig:RV32ICore ID Stage}
 \end{figure}
-\section{Execute (EX) Stage}
-The Execute stage performs the arithmetic, logical, or address computation required by the current instruction. It is the most complex stage of the datapath, containing the ALU, two input multiplexers, a branch adder, and the forwarding multiplexer logic.
-\subsection{ALU Input Selection}
-Two multiplexers select the operands presented to the ALU inputs.
 
-\textbf{MuxX3} selects ALU input A from three possible sources: the value of register rs1, the current PC (used by AUIPC), or zero (used by LUI, which adds the upper immediate to zero so that the ALU result path is reused without requiring dedicated hardware). The selection is governed by a control signal generated by the Control Unit.
+\subsection{Execute (EX)}
+The EX stage contains the ALU, input multiplexers, branch adder, and forwarding logic.
 
-\textbf{MuxX2} selects ALU input B from two possible sources: the value of register rs2 (for register-to-register instructions) or the sign-extended immediate (for immediate-type instructions). The selection is governed by a corresponding control signal.
+\textbf{MuxX3} selects ALU input A from: rs1, the current PC (AUIPC), or zero (LUI). \textbf{MuxX2} selects ALU input B from: rs2 or the sign-extended immediate. The ALU performs addition, subtraction, bitwise AND/OR/XOR, logical/arithmetic shift, and signed/unsigned comparison, producing a 32-bit result and a zero flag for branch evaluation. A dedicated adder computes the branch target as PC + sign-extended immediate.
 
-\subsection{ALU Operation}
-The ALU receives the two selected operands and performs the operation specified by the ALU control signal, which is derived from the opcode, Funct3, and Funct7 fields decoded in the Control Unit. Supported operations include addition, subtraction, bitwise AND, OR, and XOR, logical and arithmetic shift, and signed and unsigned comparison. The ALU produces a 32-bit result and a zero flag used for branch condition evaluation.
-\subsection{Branch Address Computation}
-A dedicated adder computes the branch target address by summing the PC value carried from the IF stage with the sign-extended immediate. This target address is passed to the PC register when a branch is taken.
-\subsection{Branch Resolution}
-Branch conditions are evaluated in the Execute stage. When a branch is taken, the Hazard Unit issues a flush signal that inserts NOP instructions into the IF/ID and ID/EX pipeline registers in the same cycle that the PC is updated to the branch target. This discards the two incorrectly fetched instructions that entered the pipeline after the branch. No branch prediction is employed; the pipeline always flushes on a taken branch.
+On a taken branch, the Hazard Unit flushes the IF/ID and ID/EX registers in the same cycle the PC is updated, discarding the two incorrectly fetched instructions. No branch prediction is used.
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.3]{Figures/Chapter 3/EX Stage.png}
 	\caption{RV32ICore EX Stage}
-	\label{fig:RV32ICore RV32ICore EX Stage}
+	\label{fig:RV32ICore EX Stage}
 \end{figure}
-\section{Memory Access (MEM) Stage}
-The Memory Access stage handles Load and Store instructions by interfacing with the data memory.
 
-For Store instructions, the address computed by the ALU in the Execute stage is used as the write address, and the value of register rs2 — carried through the pipeline — is written to data memory. For Load instructions, the same computed address is used as the read address, and the data memory responds with the value stored at that location.
+\subsection{Memory Access (MEM)}
+For stores, the ALU result is the write address and rs2 (pipeline-carried) is the write data. For loads, the ALU result is the read address. Access width (byte, halfword, word) is controlled by Funct3. Non-memory instructions pass the ALU result through to WB without accessing data memory.
 
-The data memory supports three access widths controlled by a signal derived from the Funct3 field: byte (8-bit), halfword (16-bit), and word (32-bit). For instructions that do not access memory, this stage passes the ALU result and control signals through to the Write-Back stage without interacting with the data memory.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.3]{Figures/Chapter 3/MEM Stage.png}
 	\caption{RV32ICore MEM Stage}
 	\label{fig:RV32ICore MEM Stage}
 \end{figure}
-\section{Write-Back (WB) Stage}
-The Write-Back stage selects the value to be written to the destination register and commits it to the register file.
 
-A Memory Extension unit first processes the raw data returned by the data memory. It performs sign extension or zero extension of byte and halfword values according to the access type specified by the Funct3 field, ensuring that the value written to the 32-bit register file conforms to the RV32I specification for load instructions.
+\subsection{Write-Back (WB)}
+A Memory Extension unit sign- or zero-extends byte and halfword load results per the Funct3 field. A multiplexer selects among three write-back sources: the ALU result, extended memory data (loads), or PC+4 (JAL/JALR return address). The selected value is written to rd on the rising clock edge.
 
-A multiplexer then selects among three possible write-back sources: the ALU result (for arithmetic, logical, and address computation instructions), the extended memory data (for load instructions), and PC+4 (for JAL and JALR, which write the return address to the destination register). The selected value is written to the register file at the address specified by rd on the rising clock edge, completing the instruction's execution.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.3]{Figures/Chapter 3/WR Stage.png}
-	\caption{RV32ICore WR Stage}
-	\label{fig:RV32ICore WR Stage}
+	\caption{RV32ICore WB Stage}
+	\label{fig:RV32ICore WB Stage}
 \end{figure}
+
 \section{Hazard Unit}
-The Hazard Unit monitors the pipeline registers and intervenes when conditions arise that would cause incorrect execution. It handles three categories of hazards: data hazards, load-use hazards, and control hazards.
 
 \subsection{Data Hazards and Forwarding}
-Data hazards occur when an instruction depends on the result of a preceding instruction that has not yet been written back to the register file. RV32ICore resolves most data hazards through forwarding, which routes computed results directly from later pipeline stages back to the ALU inputs in the Execute stage, bypassing the register file.
+When the destination register of an instruction in EX/MEM or MEM/WB matches a source register of the instruction in EX, the Hazard Unit selects the forwarded value at MuxX2 or MuxX3 instead of the register file output. When forwarding from MEM/WB after a load, the value is taken from the Memory Extension unit output.
 
-The Hazard Unit compares the destination register of instructions in the EX/MEM and MEM/WB pipeline registers against the source registers of the instruction currently in the Execute stage. When a match is detected, forwarded values are selected at both MuxX2 and MuxX3 in place of the register file outputs. When forwarding from the MEM/WB stage following a load instruction, the forwarded value is taken from the output of the Memory Extension unit, ensuring that the correctly sign-extended loaded value is used.
 \subsection{Load-Use Hazards}
-A load-use hazard occurs when a load instruction is immediately followed by an instruction that uses the loaded value. Since the loaded data is not available until the end of the Memory Access stage, forwarding alone cannot resolve this hazard. The Hazard Unit detects this condition by checking whether the instruction in the Execute stage is a load and whether its destination register matches a source register of the instruction in the Decode stage. When detected, the Hazard Unit stalls the pipeline for one cycle by freezing the IF/ID and ID/EX pipeline registers and inserting a NOP into the Execute stage, allowing the loaded value to reach the MEM/WB stage where it can be forwarded.
+When a load in EX is followed immediately by an instruction that consumes the loaded value, forwarding alone is insufficient. The Hazard Unit freezes the IF/ID and ID/EX registers for one cycle and inserts a NOP into EX, allowing the loaded value to reach MEM/WB where it can be forwarded.
+
 \subsection{Control Hazards}
-Control hazards arise from branch and jump instructions, whose target addresses are not known until the Execute stage. Since two instructions are fetched after every branch before its outcome is resolved, those instructions must be discarded if the branch is taken. The Hazard Unit handles this by issuing a flush signal that inserts NOP instructions into the IF/ID and ID/EX pipeline registers in the same cycle that the PC is updated to the branch target address.
+Branch and jump targets are resolved in EX. The two instructions fetched after the branch are discarded by flushing IF/ID and ID/EX in the same cycle the PC is updated to the target address.
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.3]{Figures/Chapter 3/Hazard Unit.png}
 	\caption{RV32ICore Hazard Unit}
 	\label{fig:RV32ICore Hazard Unit}
 \end{figure}
+
 \section{Conclusion}
-This chapter has presented the complete architecture of RV32ICore, covering its top-level decomposition into Datapath, Control Unit, and Hazard Unit, and providing a detailed description of each pipeline stage and the registers connecting them. The five-stage Harvard pipeline provides a structured and efficient framework for RV32I instruction execution. The forwarding and stalling mechanisms implemented in the Hazard Unit ensure correct execution in the presence of data dependencies, while pipeline flushing resolves control hazards introduced by branch and jump instructions. The architectural decisions described in this chapter form the direct basis for the VHDL implementation presented in the following chapter.
+This chapter covered the RV32I ISA, the architectural decisions behind RV32ICore's Harvard five-stage pipeline, and the mechanisms used to handle data, load-use, and control hazards. These form the direct basis for the VHDL implementation in the following chapter.

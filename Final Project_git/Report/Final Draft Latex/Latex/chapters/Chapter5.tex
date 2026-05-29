@@ -1,28 +1,21 @@
 \section{Methodology}
+Each checker module is verified independently by instantiating only the relevant parser--checker pair, injecting synthetic byte streams targeting boundary conditions, and checking alert signals in simulation. The full-pipeline testbench (\texttt{ids\_top\_tb.vhd}) then exercises the complete chain from RMII dibit injection to alert latch output.
 
-Each checker module is verified independently before the full-pipeline testbench is run. The testbench for a given checker instantiates only the relevant parser--checker pair, injects synthetic byte streams that exercise boundary conditions, and verifies alert signals in the simulation waveform. This makes debugging straightforward: a failing assertion on \texttt{alert\_syn\_fin} in \texttt{tcp\_checker\_tb} is isolated from anything happening in the Ethernet or IP layers.
-
-The full-pipeline testbench (\texttt{ids\_top\_tb.vhd}) then exercises the entire chain from RMII dibit injection to alert latch, confirming that parser outputs are correctly connected as checker inputs and that the alert latch persists across frames.
-
-A critical testbench optimisation is the use of a reduced clock frequency generic:
-
-\begin{lstlisting}[caption={Generic override in the testbench}, label=lst:generic]
+A key optimization is the \texttt{CLK\_FREQ\_HZ} generic override:
+\begin{lstlisting}[caption={Generic override in the testbench}]
 	u_dut : entity work.ids_top
 	generic map (CLK_FREQ_HZ => 1000)
 	port map (...);
 \end{lstlisting}
-
-At \texttt{CLK\_FREQ\_HZ = 1000}, the frame counter's one-second tick fires after 1000 clock cycles instead of 50\,000\,000. A 50\,MHz simulation would require running tens of millions of cycles to observe counter behaviour; at 1\,kHz it is observable in microseconds.
+At 1\,kHz, the frame counter's one-second tick fires after 1000 cycles instead of 50\,000\,000, making counter behaviour observable without long simulation runs.
 
 \section{Test Procedures}
-
-The testbench uses VHDL procedures to encapsulate frame injection. Each procedure drives the RMII signals cycle-by-cycle in the correct dibit order, including preamble, SFD, header bytes, and end-of-frame signalling. This allows a complete test case to be expressed in a few lines:
-
-\begin{lstlisting}[caption={Injecting a land attack in the testbench}, label=lst:landattack]
+VHDL procedures encapsulate frame injection, driving RMII signals cycle-by-cycle including preamble, SFD, header bytes, and EOF. A complete test case reduces to a few lines:
+\begin{lstlisting}[caption={Injecting a land attack}]
 	send_ipv4_frame(
-	src_ip   => x"C0A80101",   -- 192.168.1.1
-	dst_ip   => x"C0A80101",   -- same as source
-	protocol => x"06",         -- TCP
+	src_ip   => x"C0A80101",
+	dst_ip   => x"C0A80101",
+	protocol => x"06",
 	ttl      => x"40"
 	);
 	wait until rising_edge(clk);
@@ -30,144 +23,55 @@ The testbench uses VHDL procedures to encapsulate frame injection. Each procedur
 	report "Land attack not detected" severity failure;
 \end{lstlisting}
 
-\section{IPv4 Checker}
+\section{IPv4 Checker Verification}
+All twelve R1--R12 rules were verified in a single simulation run. Each frame triggers exactly one rule; no secondary alerts were observed.
 
-All twelve R1--R12 rules were verified in a single simulation run by injecting
-a sequence of frames, each crafted to trigger one specific rule while keeping
-all other fields valid. The rules are grouped into three categories:
-header validation (R1--R7), bogon address checks (R8--R10), and header
-abuse detection (R11--R12).
+\textbf{Header Validation (R1--R7):}
+R1: \texttt{ip\_version=6} → \texttt{alert\_bad\_version};
+R2: \texttt{ip\_ihl=3} → \texttt{alert\_bad\_ihl};
+R3: \texttt{ip\_length=10} → \texttt{alert\_bad\_length};
+R4: \texttt{ip\_ttl=1} → \texttt{alert\_low\_ttl};
+R5: non-zero fragment offset → \texttt{alert\_fragment};
+R6: \texttt{ip\_src=0.0.0.0} → \texttt{alert\_spoof\_src};
+R7: \texttt{ip\_src=ip\_dst} → \texttt{alert\_land\_attack}.
 
-\subsection*{Header Validation Rules (R1--R7)}
-The following rules were confirmed to fire at the correct simulation time:
-\begin{itemize}
-	\item R1: Frame with \texttt{ip\_version = 6} --- \texttt{alert\_bad\_version} asserted.
-	\item R2: Frame with \texttt{ip\_ihl = 3} --- \texttt{alert\_bad\_ihl} asserted.
-	\item R3: Frame with \texttt{ip\_length = 10} --- \texttt{alert\_bad\_length} asserted.
-	\item R4: Frame with \texttt{ip\_ttl = 1} --- \texttt{alert\_low\_ttl} asserted.
-	\item R5: Frame with non-zero fragment offset --- \texttt{alert\_fragment} asserted.
-	\item R6: Frame with \texttt{ip\_src = 0.0.0.0} --- \texttt{alert\_spoof\_src} asserted.
-	\item R7: Frame with \texttt{ip\_src = ip\_dst} --- \texttt{alert\_land\_attack} asserted.
-\end{itemize}
+\textbf{Bogon Address Rules (R8--R10):}
+R8: \texttt{ip\_src=127.0.0.1} → \texttt{alert\_bogon\_loop};
+R9: \texttt{ip\_src=169.254.0.1} → \texttt{alert\_bogon\_link};
+R10: \texttt{ip\_src=224.0.0.1} → \texttt{alert\_bogon\_mcast}.
 
-\subsection*{Bogon Address Rules (R8--R10)}
-Bogon checks operate on the upper bits of \texttt{ip\_src} and fire as soon
-as the source address bytes are assembled, before the end of the frame is
-reached. Each rule was verified with a dedicated frame:
-\begin{itemize}
-	\item R8: Frame with \texttt{ip\_src = 127.0.0.1}
-	(\texttt{ip\_src[31:24] = 0x7F}) ---
-	\texttt{alert\_bogon\_loop} asserted.
-	\item R9: Frame with \texttt{ip\_src = 169.254.0.1}
-	(\texttt{ip\_src[31:16] = 0xA9FE}) ---
-	\texttt{alert\_bogon\_link} asserted.
-	\item R10: Frame with \texttt{ip\_src = 224.0.0.1}
-	(\texttt{ip\_src[31:28] = 0xE}) ---
-	\texttt{alert\_bogon\_mcast} asserted.
-\end{itemize}
-
-\subsection*{Header Abuse Rules (R11--R12)}
-\begin{itemize}
-	\item R11: Frame with \texttt{ip\_ihl = 6} (options field present,
-	header exceeds minimum 20 bytes) ---
-	\texttt{alert\_ip\_options} asserted.
-	\item R12: Frame with the reserved IPv4 flag bit set
-	(\texttt{ip\_flags[2] = '1'}) ---
-	\texttt{alert\_reserved\_bit} asserted.
-\end{itemize}
-
-In all twelve cases, no secondary alert was triggered on frames designed
-to exercise a single rule, confirming that the rules are mutually independent
-in their evaluation logic.
-
-% --- FIGURE PLACEHOLDER ---
-% Add your IPv4 checker waveform screenshot here
-%
-% \begin{figure}[H]
-	%     \centering
-	%     \includegraphics[width=\textwidth]{ipv4_checker_waveform.png}
-	%     \caption{Simulation waveform showing all seven IPv4 IDS rules firing sequentially.}
-	%     \label{fig:ipv4wave}
-	% \end{figure}
+\textbf{Header Abuse Rules (R11--R12):}
+R11: \texttt{ip\_ihl=6} → \texttt{alert\_ip\_options};
+R12: \texttt{ip\_flags[2]='1'} → \texttt{alert\_reserved\_bit}.
 
 \section{TCP Checker Verification}
+T1: \texttt{tcp\_flags=0x03} (SYN+FIN) → \texttt{alert\_syn\_fin};
+T2: \texttt{tcp\_flags=0x06} (SYN+RST) → \texttt{alert\_syn\_rst};
+T3: \texttt{tcp\_flags=0x00} (NULL) → \texttt{alert\_null\_scan};
+T4: \texttt{tcp\_flags=0xFF} (all flags) → \texttt{alert\_xmas\_scan};
+T5: \texttt{dst\_port=23} (Telnet) → \texttt{alert\_forbidden}.
 
-Rules T1--T5 were verified by injecting five TCP frames with specific flag values and destination ports. Key test cases:
-
-\begin{itemize}
-	\item T1: \texttt{tcp\_flags = 0x03} (SYN+FIN) --- \texttt{alert\_syn\_fin} asserted.
-	\item T2: \texttt{tcp\_flags = 0x06} (SYN+RST) --- \texttt{alert\_syn\_rst} asserted.
-	\item T3: \texttt{tcp\_flags = 0x00} (NULL) --- \texttt{alert\_null\_scan} asserted.
-	\item T4: \texttt{tcp\_flags = 0xFF} (all flags) --- \texttt{alert\_xmas\_scan} asserted.
-	\item T5: \texttt{dst\_port = 23} (Telnet) --- \texttt{alert\_forbidden} asserted.
-\end{itemize}
-
-% --- FIGURE PLACEHOLDER ---
-% Add your TCP checker waveform screenshot here
-%
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{tcp_checker_waveform.png}
 	\caption{Simulation waveform showing TCP rules T1--T5 firing in sequence.}
 	\label{fig:tcpwave}
 \end{figure}
-\section{UDP Checker}
 
-All nine U1--U9 rules were verified by injecting dedicated UDP frames, each
-violating exactly one rule while keeping all other fields valid. The rules
-are grouped into three categories: forbidden port and structural checks
-(U1--U3), amplification and spoofing detection (U4--U5), and size and
-service abuse checks (U6--U9).
+\section{UDP Checker Verification}
+All nine U1--U9 rules were verified. Each alert fired within the expected number of clock cycles from header assembly; no secondary alerts were triggered on single-violation frames.
 
-\subsection*{Forbidden Port and Structural Rules (U1--U3)}
-\begin{itemize}
-	\item U1: Frame with \texttt{udp\_dst\_port = 69} (TFTP, in the
-	configured forbidden port table) ---
-	\texttt{alert\_udp\_forbidden} asserted.
-	\item U2: Frame with \texttt{udp\_length = 4} (below the minimum
-	valid value of 8) --- \texttt{alert\_udp\_short} asserted.
-	\item U3: Frame with \texttt{udp\_length = 0} ---
-	\texttt{alert\_udp\_zero} asserted.
-\end{itemize}
+\textbf{Forbidden Port / Structural (U1--U3):}
+U1: \texttt{udp\_dst\_port=69} → \texttt{alert\_udp\_forbidden};
+U2: \texttt{udp\_length=4} → \texttt{alert\_udp\_short};
+U3: \texttt{udp\_length=0} → \texttt{alert\_udp\_zero}.
 
-\subsection*{Amplification and Spoofing Rules (U4--U5)}
-\begin{itemize}
-	\item U4: Frame with \texttt{udp\_src\_port = 53} (DNS response
-	arriving from an amplification reflector) ---
-	\texttt{alert\_udp\_amplify} asserted.
-	\item U5: Frame with \texttt{ip\_src = ip\_dst} and
-	\texttt{udp\_src\_port = udp\_dst\_port} (UDP land attack,
-	both IP-layer and port-layer conditions required simultaneously) ---
-	\texttt{alert\_udp\_land} asserted. A frame satisfying only one
-	of the two conditions was also sent and confirmed to produce no
-	alert, verifying the AND logic of the checker.
-\end{itemize}
+\textbf{Amplification / Spoofing (U4--U5):}
+U4: \texttt{udp\_src\_port=53} → \texttt{alert\_udp\_amplify};
+U5: \texttt{ip\_src=ip\_dst} $\wedge$ \texttt{src\_port=dst\_port} → \texttt{alert\_udp\_land} (confirmed that satisfying only one condition produces no alert).
 
-\subsection*{Size and Service Abuse Rules (U6--U9)}
-\begin{itemize}
-	\item U6: Frame with \texttt{udp\_length = 1480} (exceeding the
-	1472-byte MTU threshold) ---
-	\texttt{alert\_udp\_oversize} asserted.
-	\item U7: Frame with \texttt{udp\_dst\_port = 0} (reserved port
-	zero, never valid in legitimate traffic) ---
-	\texttt{alert\_udp\_port\_zero} asserted.
-	\item U8: Frame with \texttt{udp\_dst\_port = 1900} (SSDP/UPnP,
-	a common amplification vector) ---
-	\texttt{alert\_ssdp\_abuse} asserted.
-	\item U9: Frame with \texttt{udp\_dst\_port = 11211} (Memcached
-	amplification request) ---
-	\texttt{alert\_memcached} asserted.
-\end{itemize}
-
-In all nine cases, the alert signal was asserted within the expected
-number of clock cycles from the relevant header field being assembled,
-and no secondary alerts were triggered on single-violation frames.
-% --- FIGURE PLACEHOLDER ---
-% Add your end-to-end pipeline waveform here
-%
-% \begin{figure}[H]
-	%     \centering
-	%     \includegraphics[width=\textwidth]{pipeline_endtoend_waveform.png}
-	%     \caption{Full-pipeline waveform: three simultaneous alerts and the alert latch asserting.}
-	%     \label{fig:e2ewave}
-	% \end{figure}
+\textbf{Size / Service Abuse (U6--U9):}
+U6: \texttt{udp\_length=1480} → \texttt{alert\_udp\_oversize};
+U7: \texttt{udp\_dst\_port=0} → \texttt{alert\_udp\_port\_zero};
+U8: \texttt{udp\_dst\_port=1900} → \texttt{alert\_ssdp\_abuse};
+U9: \texttt{udp\_dst\_port=11211} → \texttt{alert\_memcached}.

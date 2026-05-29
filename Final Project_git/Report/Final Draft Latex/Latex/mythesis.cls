@@ -241,7 +241,7 @@
     \pagenumbering{roman}
             
     % Set double spacing (from cleanthesis.sty)
-    \setstretch{1.5}
+    \setstretch{1.1}
     \clubpenalty = 10000
     \widowpenalty = 10000
     \displaywidowpenalty = 10000
@@ -261,7 +261,7 @@
 
 % Print out submission text
 \newcommand{\submissionStatement}{
-    \setstretch{1.25}
+    \setstretch{1.1}
     \@ifundefined{@submissiontext}{Submitted in partial satisfaction of the requirements for the \\Degree of \@degree \\ in \@programme}{\@submissiontext}
 }
 

@@ -1,8 +1,17 @@
-\paragraph{}
-This project has presented the design, implementation, and verification of RV32ICore, a pipelined 32-bit processor implementing the RV32I Base Integer ISA, described in VHDL and verified through simulation. 
-\paragraph{}
-The work began with a study of the RISC-V ISA and foundational processor design concepts, establishing the academic context within which the project is situated. The architectural design of RV32ICore was then developed, comprising a classical five-stage Harvard pipeline with a dedicated hazard unit responsible for resolving data hazards through forwarding and stalling, and control hazards through pipeline flushing. The implementation translated this architecture directly into a hierarchy of VHDL entities, with notable design decisions including a generic reusable pipeline register component, a progressively narrowed control bus, and an external memory interface that improves modularity. The processor was verified by compiling and executing C programs of increasing complexity in ModelSim, with results confirmed against expected values. The full RV32I Base Integer ISA was demonstrated to execute correctly under simulation.
-\paragraph{}
-The project objectives stated in Chapter 1 have been met: a complete RV32I processor has been implemented in VHDL, verified through simulation using compiler-generated test programs, and documented to a standard suitable for academic presentation.
-\paragraph{}
-Several directions for future work are identified. The most immediate extension is deployment on an FPGA target, which would allow measurement of actual clock frequency, resource utilization, and real-world performance. Adding the RV32M extension would introduce hardware multiply and divide instructions, significantly broadening the range of programs the processor can efficiently execute. Implementation of the RISC-V privileged architecture specification — specifically Supervisor mode and the virtual memory system — would enable a full operating system to run on the processor, representing a substantial step toward a complete soft-core system. Finally, pipeline optimization through branch prediction or deeper pipelining could improve instruction throughput beyond what the current flush-on-branch approach achieves.
+\section{Summary of Achievements}
+This project produced a fully simulation-verified hardware IDS pipeline comprising eight VHDL modules and twenty detection rules across the Ethernet, IPv4, TCP, and UDP protocol layers. Every rule was verified individually and validated again in a full end-to-end testbench exercising the complete chain from raw dibit input to alert latch output.
+
+The integration architecture connects the IDS to RV32ICore through a 29-register memory-mapped bank, giving the processor read access to live traffic statistics and write access to configurable rule parameters without modifying the IDS hardware. The result combines deterministic hardware inspection throughput with software-processor adaptability.
+
+\section{Academic Contribution}
+This project extends typical hardware IDS work in two respects:
+\begin{enumerate}
+	\item \textbf{Runtime reconfigurability:} Detection thresholds and forbidden port lists can be updated through the RISC-V without FPGA reprogramming.
+	\item \textbf{Adaptive severity:} The weighted scoring engine with decay creates a feedback loop between traffic behaviour and rule sensitivity, approximating an adaptive IDS in hardware.
+\end{enumerate}
+
+\section{Limitations}
+The system does not inspect packet payloads; all rules operate on header fields only, excluding application-layer attacks (SQL injection, XSS, etc.). Hardware integration with the Zynq PS has been designed and planned but not yet validated on physical hardware; simulation results are the primary evidence of correctness.
+
+\section{Future Work}
+Planned extensions include: a \texttt{payload\_extractor.vhd} module buffering TCP/UDP payload into dual-port BRAM for RISC-V signature search; a configurable BRAM-based IP blacklist; ICMP parsing for reconnaissance detection (ping sweeps, redirect attacks); and hardware bring-up on the Z7-Lite for wire-speed validation on a live network segment.

@@ -1,266 +1,198 @@
 \section{Introduction}
-This chapter describes the implementation of RV32ICore in VHDL and its simulation-based verification, covering the structural organization of the design, the implementation of each major component, key design decisions made during development, and the toolchain used to compile and load test programs into the simulation environment. The implementation follows directly from the architecture described in Chapter 3, with each architectural unit realized as a distinct VHDL entity. A processor is considered functionally correct when it successfully executes the complete set of target ISA instructions, producing results consistent with the architectural specification. To verify RV32ICore, a set of C programs of increasing complexity are compiled using the xPack RISC-V GCC toolchain and executed in simulation. Correct execution is determined by inspecting the values held in memory or the register file at the end of simulation and comparing them against analytically computed expected results.   
+This chapter describes the VHDL implementation of RV32ICore and its simulation-based verification. Each architectural unit from Chapter 2 is realized as a distinct VHDL entity. Functional correctness is verified by compiling C programs of increasing complexity using the xPack RISC-V GCC toolchain, executing them in simulation, and comparing memory/register results against analytically computed expected values.
+
 \section{VHDL Design Organization}
-RV32ICore is organized as a hierarchy of VHDL entities, each encapsulating a well-defined functional unit. The top-level entity \textit{P\_Processor\_Hazard} instantiates three major components: the datapath \textit{(P\_Datapath)}, the control unit \textit{(P\_Control\_Unit)}, and the hazard unit \textit{(Hazard\_Unit)}. Memory is intentionally kept external to the processor entity, treated as a peripheral connected through the top-level ports. This separation reflects a deliberate design decision: by exposing the instruction and data memory interfaces at the top level, the processor can be connected to different memory configurations without modifying its internal logic, improving modularity and testability.
+RV32ICore is organized as a hierarchy of VHDL entities. The top-level entity \textit{P\_Processor\_Hazard} instantiates the datapath \textit{(P\_Datapath)}, control unit \textit{(P\_Control\_Unit)}, and hazard unit \textit{(Hazard\_Unit)}. Memory is kept external to the processor entity, connected through top-level ports, allowing different memory configurations without modifying internal logic.
 
-The top-level interface exposes the following ports: a clock and reset, a 32-bit instruction input, a 32-bit read data input from data memory, and outputs for the program counter, data address, write data, memory write enable, byte enable, and access mode signals. This interface is sufficient to connect RV32ICore to any external Harvard memory system.
+Top-level ports: clock, reset, 32-bit instruction input, 32-bit read data input, and outputs for PC, data address, write data, memory write enable, byte enable, and access mode.
+
 \section{Pipeline Register Implementation}
-A central implementation decision in RV32ICore is the use of a single generic VHDL component, \textit{RegEn}, to implement all pipeline registers throughout the design. This component is parameterized by data width through a generic and supports four operating modes controlled by its input signals: normal clocked operation, stall (output held, input ignored), flush (output loaded with a predefined NOP value), and synchronous reset (output cleared to zero).
+All pipeline registers are implemented using a single generic VHDL component \textit{RegEn}, parameterized by data width. It supports four modes: normal clocked operation, stall (output held), flush (NOP inserted), and synchronous reset.
 
-The NOP value inserted during a flush is x"\textit{00000033}", corresponding to the RV32I instruction \textit{ADD x0, x0, x0}. This is a valid instruction that writes to register x0, which is hardwired to zero, making it functionally harmless. Using a valid instruction rather than an all-zero pattern avoids potential undefined behavior in the decode and control logic during pipeline recovery.
+The NOP value is \texttt{x"00000033"} (\textit{ADD x0, x0, x0}) — a valid instruction that writes to x0, which is hardwired to zero, avoiding undefined behavior in decode/control logic during pipeline recovery. Narrower variants (\textit{RegEn\_5bit}, \textit{RegEn\_9bit}, \textit{RegEn\_6bit}) handle register addresses and reduced control buses.
 
-Separate width variants of the same component (\textit{RegEn\_5bit, RegEn\_9bit, RegEn\_6bit}) are used for narrower signals such as register addresses and reduced control buses, maintaining the same structural pattern throughout the design.
 \section{Control Unit Implementation}
-The control unit is implemented as \textit{P\_Control\_Unit} and is itself structured as a hierarchy of sub-components. It contains three functional blocks: the main control unit (\textit{P\_Main\_unit}), the ALU control unit (\textit{Alu\_cntr}), and the execution flow controller (\textit{Excution\_Flow}).
+\textit{P\_Control\_Unit} contains three sub-components:
 
-\textit{P\_Main\_unit} is a combinational decoder that maps the opcode and Funct3 fields to the full set of control signals required by the datapath. Its outputs include the immediate extension select, memory access width, register write enable, memory write enable, memory extension control, write-back select, PC select, ALU input select, branch mode, and ALU input override for AUIPC and LUI instructions.
+\textbf{P\_Main\_unit} — combinational decoder mapping opcode and Funct3 to all datapath control signals (immediate select, memory width, register/memory write enables, write-back select, PC select, ALU input select, branch mode).
 
-\textit{Alu\_cntr} decodes the opcode, Funct3, and bit 5 of Funct7 to produce the 4-bit ALU operation code. Using only bit 5 of Funct7 is sufficient to distinguish between arithmetic pairs such as ADD/SUB and SRL/SRA, avoiding the need to decode all seven Funct7 bits.
+\textbf{Alu\_cntr} — decodes opcode, Funct3, and Funct7[5] to produce the 4-bit ALU operation code. Funct7[5] alone distinguishes arithmetic pairs (ADD/SUB, SRL/SRA).
 
-\textit{Excution\_Flow} resolves the final PC select signal in the Execute stage. It receives the initial PC select from the control bus pipeline register, the branch mode encoding, the ALU zero flag, and the ALU LSB, and produces the final 2-bit PC select that determines whether the next PC is PC+4, the ALU result (for JALR), or the branch target address.
+\textbf{Excution\_Flow} — resolves the final PC select in EX from the pipelined PC select, branch mode, ALU zero flag, and ALU LSB, producing a 2-bit output selecting PC+4, ALU result (JALR), or branch target.
+
 \subsection{Control Bus Pipelining}
-A notable implementation strategy in the control unit is the aggregation of all control signals into a single control bus that is pipelined through\textit{RegEn} registers in parallel with the datapath pipeline registers. Rather than routing individual control signals through separate pipeline registers, the control signals are packed into a 21-bit bus at the Decode stage output and propagated as a unit through successive pipeline stages. At each stage boundary, only the subset of control signals relevant to that stage is extracted from the bus.
+All control signals are packed into a single 21-bit bus at the Decode stage output and pipelined through \textit{RegEn} registers in parallel with the datapath. At each stage boundary, only the relevant subset is extracted. The bus narrows progressively: 21-bit → 9-bit entering MEM (memory and write-back controls) → 6-bit entering WB (register write enable, memory extension, write-back select).
 
-The bus is progressively narrowed as signals are consumed: the full 21-bit bus is reduced to a 9-bit bus entering the Memory stage (retaining only memory and write-back controls), and further reduced to a 6-bit bus entering the Write-Back stage (retaining only register write enable, memory extension control, and write-back select). This approach simplifies the pipeline register instantiation and makes the control signal flow explicit and traceable in the VHDL source.
 \section{Datapath Implementation}
-The datapath is implemented as \textit{P\_Datapath} and instantiates all pipeline stages, pipeline registers, forwarding multiplexers, and functional units. The following describes the implementation of each stage.
+
 \subsection{Fetch Stage}
-The PC is stored in a \textit{RegEn} instance configured with the stall input connected to \textit{StallF}. Under normal operation it loads \textit{Pc\_Next} on every rising clock edge. The \textit{Pc\_Next} signal is selected by a three-input multiplexer (\textit{Mux3}) among three sources: the ALU result (for JALR), PC+4 (for sequential execution), and the branch target address computed in the Execute stage (for taken branches). PC+4 is computed by a dedicated adder that adds the constant four to the current PC. Both the current PC and PC+4 are registered into the IF/ID pipeline register for use in later stages.
+The PC is a \textit{RegEn} instance with stall input connected to \textit{StallF}. \textit{Pc\_Next} is selected by \textit{Mux3} among: ALU result (JALR), PC+4 (sequential), and branch target (taken branch). PC and PC+4 are registered into IF/ID for later stages.
+
 \subsection{Decode Stage}
-The register file is read combinationally using rs1 and rs2 addresses extracted directly from the pipelined instruction word at bits [19:15] and [24:20] respectively. The destination register address rd is extracted from bits [11:7] and propagated through the pipeline in a dedicated 5-bit pipeline register chain (\textit{Reg\_A3\_PLR3} through \textit{Reg\_A3\_PLR5}) alongside the instruction, reaching the Write-Back stage where it addresses the register file write port.
+The register file is read combinationally using rs1[19:15] and rs2[24:20]. rd[11:7] is propagated through a dedicated 5-bit pipeline register chain to WB. The immediate extension unit takes the full instruction word and a 3-bit format select, producing a 32-bit sign-extended immediate. rs1 and rs2 are also registered separately as Rs1E and Rs2E for hazard unit comparisons.
 
-The immediate extension unit receives the full 32-bit instruction word and a 3-bit select signal from the control unit, and produces the appropriate 32-bit sign-extended immediate for the instruction's format.
-
-The register source addresses rs1 and rs2 are also registered separately into Rs1E and Rs2E for use by the Hazard Unit in forwarding comparisons.
 \subsection{Execute Stage}
-Two forwarding multiplexers (\textit{ForwardingA} and \textit{ForwardingB}) sit at the inputs of the ALU input selection multiplexers. Each is a Mux3 instance that selects among the register file output (no forwarding), the current Write-Back result (forwarding from WB), and the EX/MEM ALU result (forwarding from MEM). The selection is controlled by the 2-bit \textit{ForwardA} and \textit{ForwardB} signals from the Hazard Unit.
+Forwarding multiplexers \textit{ForwardingA} and \textit{ForwardingB} (Mux3 instances) select among: register file output, WB result, or EX/MEM ALU result, controlled by 2-bit \textit{ForwardA/ForwardB} from the Hazard Unit. The forwarded rs2 value is also registered into MEM via \textit{ForwaredB\_PLR4} for use by Store instructions. ALU input A is selected by \textit{Mux3} (forwarded rs1, PC for AUIPC, or zero for LUI); ALU input B by \textit{Mux2} (sign-extended immediate or forwarded rs2). The branch target is computed as the Decode-stage PC plus the sign-extended immediate.
 
-The forwarded rs2 value (\textit{ForwarededB}) is also registered into the MEM stage in a dedicated pipeline register (\textit{ForwaredB\_PLR4}). This is necessary for Store instructions, which require the value of rs2 at the Memory stage as the data to be written to memory, while the ALU computes the store address using rs1 and the immediate.
-
-ALU input A is selected by \textit{ALU\_in\_A} (\textit{Mux3}) among the forwarded rs1 value, the PC (for AUIPC), and zero (for LUI). ALU input B is selected by \textit{ALU\_in\_B }(\textit{Mux2}) between the sign-extended immediate and the forwarded rs2 value.
-
-The branch target address is computed by a dedicated adder summing the PC value carried from the Decode stage with the sign-extended immediate.
 \subsection{Memory Stage}
-The data address presented to external memory is the ALU result from the EX/MEM pipeline register. The write data is the forwarded rs2 value from \textit{ForwaredB\_PLR4}. The two least significant bits of the ALU result (\textit{Alu\_LSB\_Mem}) are passed to the top level as the ByteEn signal, providing the byte offset within a word to the external memory for sub-word accesses.
+The data address is the EX/MEM ALU result. Write data is from \textit{ForwaredB\_PLR4}. The two LSBs of the ALU result are passed to the top level as \textit{ByteEn} for sub-word memory access.
+
 \subsection{Write-Back Stage}
-The Memory Extension unit (\textit{Mem\_SignExt}) receives the raw 32-bit read data from memory, the two LSBs of the ALU result as a byte offset, and the memory extension control signal derived from Funct3. It produces a correctly sign- or zero-extended 32-bit value for byte and halfword load instructions.
+\textit{Mem\_SignExt} sign- or zero-extends byte/halfword load results per Funct3 and the ALU result LSBs. The WB multiplexer selects among PC+4 (JAL/JALR), extended memory data (loads), or ALU result (all others), writing to the register file at the address in \textit{Reg\_A3\_PLR5}.
 
-The Write-Back multiplexer (\textit{Mux3}) selects among PC+4 (for JAL/JALR return address), the extended memory data (for load instructions), and the ALU result (for all other instructions). The selected value is written to the register file at the address held in \textit{Reg\_A3\_PLR5}.
 \section{Hazard Unit Implementation}
-The Hazard Unit is implemented as a fully combinational entity Hazard\_Unit. It receives the source register addresses from the Decode and Execute stages, the destination register addresses from the Execute, Memory, and Write-Back stages, the register write enables from the Memory and Write-Back stages, and the write-back control LSB and PC select MSB from the control pipeline.
-\subsection{Forwarding Logic}
-Forwarding priority is implemented as a priority-encoded conditional check. For each ALU input, the MEM stage forwarding path takes priority over the WB stage path, ensuring that the most recently computed value is always selected in the case of back-to-back dependent instructions. Forwarding is suppressed when the destination register is x0, since x0 is hardwired to zero and forwarding from it would produce incorrect results.
+\textit{Hazard\_Unit} is fully combinational, receiving source/destination register addresses from all pipeline stages, register write enables, write-back control LSB, and PC select MSB.
 
-The forwarding condition also checks a combined signal: forwarding is enabled when either \textit{RegWriteM} is asserted or when the LSB of \textit{Pc\_Select\_Initial} is '\textit{0}', which identifies JAL and JALR instructions that write PC+4 to a destination register but are not flagged by the standard \textit{RegWrite} path at that pipeline stage.
+\subsection{Forwarding Logic}
+MEM-stage forwarding takes priority over WB-stage forwarding (most recent value wins). Forwarding is suppressed when the destination is x0. Forwarding is also enabled when the PC select LSB is \texttt{'0'}, capturing JAL/JALR instructions that write PC+4 but are not flagged by the standard \textit{RegWrite} path.
+
 \subsection{Load-Use Stall}
-The load-use stall is detected by checking whether the \textit{Writeback\_cntr} LSB is asserted — indicating a load instruction in the Execute stage — and whether the load destination register matches either source register of the instruction currently in the Decode stage. When detected, \textit{StallF} and \textit{StallD} are asserted to freeze the Fetch and Decode stage pipeline registers, and \textit{FlushE} is asserted to insert a NOP into the Execute stage for one cycle.
+Detected when the EX-stage instruction is a load (\textit{Writeback\_cntr} LSB asserted) and its destination matches either source register in Decode. Response: assert \textit{StallF} and \textit{StallD} to freeze IF/ID and ID/EX, assert \textit{FlushE} to insert a NOP into EX for one cycle.
+
 \subsection{Control Hazard Flush}
-The flush signal for taken branches is derived from the MSB of the \textit{Pc\_Select} signal, which is asserted whenever the processor takes a branch or jump. \textit{FlushE} is asserted as the logical OR of the load-use stall and the PC select signal, flushing the Execute stage in both cases. \textit{FlushD} is asserted on the PC select signal alone, flushing the Decode stage on taken branches. This correctly discards the two instructions fetched after the branch while leaving the Fetch stage free to begin fetching from the branch target on the following cycle.
+\textit{FlushE} = load-use stall OR PC select MSB. \textit{FlushD} = PC select MSB alone. This discards the two incorrectly fetched instructions while leaving the Fetch stage free to begin fetching from the branch target.
+
 \section{Toolchain and Program Loading}
-To verify RV32ICore through simulation, a software toolchain is used to compile C test programs into binary executables targeting the RV32I ISA, which are then converted into a format that can be initialized into the instruction memory for simulation. The following code will be used as an Example:
-\begin{minted}{C}
-	// test.c
-	
-	// Tests loops and addition
+Test programs are compiled using \textit{riscv-none-elf-gcc} targeting RV32I (no compressed instructions or floating-point). A custom linker script places the text segment at \texttt{0x00000000} matching the reset vector, with the stack pointer initialized to the top of data memory. A startup assembly file sets the stack pointer and zeros the BSS section before transferring control to \texttt{main}.
+
+\begin{minted}{c}
 	int sum_array(int arr[], int len) {
 		int sum = 0;
-		for (int i = 0; i < len; i++) {
-			sum += arr[i];
-		}
+		for (int i = 0; i < len; i++) sum += arr[i];
 		return sum;
 	}
 	int main() {
 		int arr[] = {3, 7, 2, 9, 1};
-		
-		int s = sum_array(arr, 5);       // expected: 22
-		
+		int s = sum_array(arr, 5); // expected: 22
 		return 0;
 	}
 \end{minted}
 
-The compiler used is the xPack RISC-V Embedded GCC toolchain (\textit{riscv-none-elf-gcc}), configured to target the RV32I base ISA without compressed instructions or floating-point extensions, matching exactly the instruction set implemented by RV32ICore. A custom linker script defines the memory layout, setting the origin of the text segment to address \textit{0x00000000} to match the reset vector of the processor, and configuring the initial stack pointer to the top of the available data memory region.
-
-A startup assembly file initializes the processor state before transferring control to the C main function. It sets the stack pointer register and performs any necessary early initialization before the C runtime environment is available.
 \begin{minted}{riscv}
 	00000000 <_start>:
-	0:   40000113                li      sp,1024
-	4:   11400513                li      a0,276
-	8:   11400593                li      a1,276
-	
+	0:  40000113   li   sp, 1024
+	4:  11400513   li   a0, 276
+	8:  11400593   li   a1, 276
 	0000000c <bss_loop>:
-	c:   00b55863                bge     a0,a1,1c <bss_done>
-	10:   00052023                sw      zero,0(a0)
-	14:   00450513                addi    a0,a0,4
-	18:   ff5ff06f                j       c <bss_loop>
-	
+	c:  00b55863   bge  a0, a1, 1c <bss_done>
+	10:  00052023   sw   zero, 0(a0)
+	14:  00450513   addi a0, a0, 4
+	18:  ff5ff06f   j    c <bss_loop>
 	0000001c <bss_done>:
-	1c:   07c000ef                jal     98 <main>
-	
+	1c:  07c000ef   jal  98 <main>
 	00000020 <halt>:
-	20:   0000006f                j       20 <halt>
+	20:  0000006f   j    20 <halt>
+\end{minted}
+\textbf{Note:} Full compiled output is provided in the Appendix.
+
+The output ELF is converted to a hex file and loaded into simulation memory via:
+\begin{minted}{text}
+	mem load -infile output.hex -format hex
+	sim:/hazard_testbench/Inst_RAM/Mem
 \end{minted}
 
-\textbf{Note:} The compiled code is very large hence a sample is given, and the remaining is illustrated in the Appendix.
-\section{Conclusion}
-This chapter has described the complete VHDL implementation of RV32ICore, from the top-level entity structure through the detailed implementation of each pipeline stage, the control bus pipelining strategy, the hazard unit combinational logic, and the software toolchain used to generate and load test programs. Several implementation decisions — including the generic RegEn pipeline register component, the progressive narrowing of the control bus, the choice of ADD x0, x0, x0 as the NOP encoding, and the dedicated forwarded rs2 pipeline register for store instructions — reflect deliberate engineering choices made to balance correctness, clarity, and design reuse. The implementation described here is verified through the simulation-based testing methodology presented in the following chapter.
-
-\section{Simulation Environment:}
-Most of the tests performed on RV32ICore will follow a structured simulation environment. The environment contains:
-\subsection{Testbench Code:}
-\begin{minted}[baselinestretch=1]{vhdl}
+\section{Simulation Environment}
+\subsection{Testbench}
+\begin{minted}{vhdl}
 	Library ieee;
 	use ieee.std_logic_1164.all;
-	entity Hazard_Testbench is
-	end entity;
+	entity Hazard_Testbench is end entity;
 	
 	architecture arch of Hazard_Testbench is
-	component P_Processor_Hazard is
-	port(...
-	);
-	end component;
-	component RAM_Inst is
-	port(...
-	);
-	end component;
-	component RAM is
-	port(...
-	);
-	end component;
-	Signal clk ,reset: std_logic;
-	Signal instruction, ReadData: std_logic_vector(31 downto 0);
-	Signal MemWrite: std_logic;
-	Signal ByteEn, Mode: std_logic_vector(1 downto 0);
-	Signal Pc: std_logic_vector(31 downto 0);
-	Signal DataAdr, WriteData: std_logic_vector(31 downto 0);
-	Signal clk_cnt, Inst_Change_Cnt: integer := 0;--number Of clocks counter
+	component P_Processor_Hazard is port(...); end component;
+	component RAM_Inst is port(...); end component;
+	component RAM is port(...); end component;
+	signal clk, reset : std_logic;
+	signal instruction, ReadData : std_logic_vector(31 downto 0);
+	signal MemWrite : std_logic;
+	signal ByteEn, Mode : std_logic_vector(1 downto 0);
+	signal Pc, DataAdr, WriteData : std_logic_vector(31 downto 0);
+	signal clk_cnt, Inst_Change_Cnt : integer := 0;
 	begin
-	UUT: P_Processor_Hazard port map(...
-	);
-	Data_RAM: RAM port map(...
-	);
-	Inst_RAM: RAM_Inst port map(...
-	);
-	clock: process Begin
-	loop
-	clk<= '1';
-	wait for 10 ns;
-	clk<= '0';
-	wait for 10 ns;
+	UUT:      P_Processor_Hazard port map(...);
+	Data_RAM: RAM                 port map(...);
+	Inst_RAM: RAM_Inst            port map(...);
+	
+	clock: process begin
+	loop clk <= '1'; wait for 10 ns;
+	clk <= '0'; wait for 10 ns;
 	end loop;
 	end process;
 	
-	Clock_counter: process(clk) 
-	variable last: std_logic_vector(31 downto 0);
-	Begin
-	if(rising_edge(clk)) then
-	clk_cnt<= clk_cnt + 1;
-	if (instruction /= last) then
-	Inst_Change_Cnt <= Inst_Change_Cnt + 1;
-	end if;
+	Clock_counter: process(clk)
+	variable last : std_logic_vector(31 downto 0);
+	begin
+	if rising_edge(clk) then
+	clk_cnt <= clk_cnt + 1;
+	if instruction /= last then Inst_Change_Cnt <= Inst_Change_Cnt + 1; end if;
 	last := instruction;
 	end if;
 	end process;
 	
-	Stimulus: process Begin
-	reset<= '1';
-	wait for 40 ns;
-	reset<= '0';
-	wait;
+	Stimulus: process begin
+	reset <= '1'; wait for 40 ns;
+	reset <= '0'; wait;
 	end process;
 	end architecture;
 \end{minted}
-\label{RV32ICore Testbench Code}
-The code maps between the processor and its memories and defines the necessary signals to do so. The testbench initializes by applying a reset for two clock cycles ensuring that the Pc, register file, and memory are all starting with Zero. A clock of 20 ns period is simulated using a Clock process and wait commands, and a counter is added to calculate the number of instructions preformed in a program used to calculate performance.
-\subsection{Memory Loading}
-The programs used for testing can be very long making impractical to load them manually. A more efficient way is to use the compiler. The output file can be turned into an output hex file which can be directly loaded into memory using a command supported by ModelSim (mem load -infile output.hex -format hex \allowbreak  sim:/hazard\_testbench/Inst\_RAM/Mem\allowbreak).
-\subsection{Running The Simulation}
-By running the simulation for an appropriate amount of time the results generated by the processor can be verified in memory where they are stored. Additionally if a it is necessary to check the behavior of any signal during the processing it is possible to do so using Waveforms.
-\section{Tests}
-Two tests will be preformed one of a summing function called by main and the other is more complex containing multiple arithmetic functions.
-\subsection{Test N:°1}
 
-The Processor initialize by resetting for two clock periods the PC starts with address 0 and increment by 4 in Normal sequence (No execution flow instructions) instructions are being fetched as the waveform suggests.
+The testbench applies reset for two clock cycles, initializing PC, register file, and memory to zero. A 20\,ns clock is generated via wait commands. \textit{Inst\_Change\_Cnt} counts distinct instructions executed, used to measure performance.
 
-\pagebreak
+\section{Verification Tests}
 
-% TODO: \usepackage{graphicx} required
+\subsection{Test 1 — Sum Array}
+After reset, the PC initializes to 0 and increments by 4 each cycle. Figure~\ref{fig:waveform} shows correct initialization behavior.
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\linewidth]{"../../Images to be used/Waveform"}
-	\caption{R32ICore Initialization}
+	\caption{RV32ICore Initialization}
 	\label{fig:waveform}
 \end{figure}
 
-When the execution of the program ends we can check the final values stored in stack due to instruction
-\begin{minted}{riscv}
-	E4:	sw  a0,-20(s0) ; [000003BC] = a0 where a0= 16H
-\end{minted}
-The following Figure indicates that indeed the program executed as expected by computing the value 16H and storing it in location address 0x000003BC, which when divided by the word size of 4 bytes corresponds to word index 0xEF in the data memory.
-% TODO: \usepackage{graphicx} required
+At program completion, the result 0x16 (22) is stored at address \texttt{0x000003BC} (word index 0xEF in data memory), consistent with the expected sum of \{3,7,2,9,1\}.
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\linewidth]{"../../Images to be used/Sum array result"}
 	\caption{Sum Array Result}
 	\label{fig:sum-array-result}
 \end{figure}
-With this result it is appropriate to say that the processor is working properly another test will be done for further verification.
-\subsection{Test N:°2}
-The second test uses the following C code. It contains the previously used array summer it also contains a multiplayer, a pointer manipulator, and a bit-wise manipulator. The analyzed values should be 16H, 78H, 09H, and 08H respectively. 
-\begin{minted}[baselinestretch=1]{c}
-	// test.c
-	
-	// Tests loops and addition
-	int sum_array(int arr[], int len) {
-		int sum = 0;
-		for (int i = 0; i < len; i++) {
-			sum += arr[i];
-		}
-		return sum;
-	}
-	
-	// Tests recursion and stack depth
+
+\subsection{Test 2 — Multi-Function}
+A second test exercises sum\_array, a multiplication-by-repeated-addition factorial, pointer-based find\_max, and bitwise count\_bits. Expected results: 0x16 (22), 0x78 (120), 0x09 (9), 0x08 (8).
+
+\begin{minted}{c}
 	int factorial(int n) {
-		int result = 1; // multiply by repeated addition
+		int result = 1;
 		for (int i = 2; i <= n; i++) {
 			int temp = 0;
-			for (int j = 0; j < i; j++) {
-				temp += result;  
-			}
+			for (int j = 0; j < i; j++) temp += result;
 			result = temp;
 		}
 		return result;
 	}
-	// Tests pointer manipulation
 	int find_max(int arr[], int len) {
 		int max = arr[0];
-		for (int i = 1; i < len; i++) {
-			if (arr[i] > max)
-			max = arr[i];
-		}
+		for (int i = 1; i < len; i++)
+		if (arr[i] > max) max = arr[i];
 		return max;
 	}
-	
-	// Tests bitwise operations
 	unsigned int count_bits(unsigned int n) {
 		unsigned int count = 0;
-		while (n) {
-			count += n & 1;
-			n >>= 1;
-		}
+		while (n) { count += n & 1; n >>= 1; }
 		return count;
 	}
-	
 	int main() {
 		int arr[] = {3, 7, 2, 9, 1};
-		int s = sum_array(arr, 5);       // expected: 22
-		int f = factorial(5);             // expected: 120
-		int m = find_max(arr, 5);        // expected: 9
-		unsigned int b = count_bits(255); // expected: 8
+		int s = sum_array(arr, 5);        // 22
+		int f = factorial(5);              // 120
+		int m = find_max(arr, 5);         // 9
+		unsigned int b = count_bits(255); // 8
 		return 0;
 	}
 \end{minted}
-By checking the contents of the memory we find.
-% TODO: \usepackage{graphicx} required
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\linewidth]{"../../Images to be used/Second Test"}
@@ -268,9 +200,7 @@ By checking the contents of the memory we find.
 	\label{fig:second-test}
 \end{figure}
 
-The processor is preforming as intended and further testing was done on the unused instructions by the previous programs. 
+All four results match expectations. Remaining RV32I instructions were verified through targeted test programs.
+
 \section{Conclusion}
-\paragraph{}
-This chapter has described the complete VHDL implementation of RV32ICore and the simulation-based verification of its correctness. On the implementation side, the top-level entity structure, the detailed implementation of each pipeline stage, the control bus pipelining strategy, the hazard unit combinational logic, and the software toolchain used to generate and load test programs were all presented. Several implementation decisions — including the generic RegEn pipeline register component, the progressive narrowing of the control bus, the choice of ADD x0, x0, x0 as the NOP encoding, and the dedicated forwarded rs2 pipeline register for store instructions — reflect deliberate engineering choices made to balance correctness, clarity, and design reuse. On the verification side, a structured testing approach was adopted in which C programs of increasing complexity were compiled using the xPack RISC-V GCC toolchain and executed in the ModelSim simulation environment.
-\paragraph{}
-Correct execution was determined by comparing values stored in the data memory against analytically derived expected results, with complete assembly listings provided in the Appendix for reference. Reset behavior was verified to be correct, with the PC initializing to zero and the pipeline filling in proper sequence following reset release. Two principal test programs were used: the first verified loop execution, load and store operations, and basic arithmetic through a sum-of-array computation producing the correct result of 22 (0x16); the second subjected the processor to a more demanding workload involving multiple concurrent function calls, factorial computation, pointer manipulation, and bitwise operations, yielding the correct results of 22, 120, 9, and 8 respectively. The remaining RV32I instructions were individually verified through targeted test programs. The combined results confirm that RV32ICore correctly executes the full RV32I Base Integer ISA under simulation.
+This chapter presented the complete VHDL implementation of RV32ICore and its simulation-based verification. Key implementation decisions — the generic \textit{RegEn} component, progressive control bus narrowing, \texttt{ADD x0,x0,x0} as the NOP encoding, and the dedicated forwarded rs2 register for stores — reflect deliberate trade-offs between correctness, clarity, and reuse. Verification confirmed correct reset behavior, full RV32I instruction execution, and accurate results across both test programs, including loop execution, recursion, pointer manipulation, and bitwise operations.

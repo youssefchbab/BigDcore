@@ -12,91 +12,86 @@
 \contentsline {paragraph}{ }{1}{chapter.1}%
 \contentsline {paragraph}{}{1}{chapter.1}%
 \contentsline {paragraph}{}{1}{chapter.1}%
-\contentsline {paragraph}{}{2}{chapter.1}%
-\contentsline {chapter}{\numberline {2}RISC-V Theoretical Background \& System Architecture}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Introduction}{3}{section.2.1}%
-\contentsline {paragraph}{}{3}{section.2.1}%
-\contentsline {section}{\numberline {2.2}RISC-V Instruction Set Architecture}{3}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}History and Origin}{3}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Design Philosophy}{4}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}RV32I Instruction Formats}{4}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Processor Design Concepts}{5}{subsection.2.2.4}%
-\contentsline {subsubsection}{Von Neumann vs. Harvard Architecture}{5}{section*.9}%
-\contentsline {subsubsection}{Single-Cycle vs. Pipelined Execution}{6}{section*.9}%
-\contentsline {section}{\numberline {2.3}Top-Level Architecture}{7}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Pipeline Overview}{8}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Instruction Fetch (IF) Stage}{9}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Instruction Decode (ID) Stage}{10}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Execute (EX) Stage}{11}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}ALU Input Selection}{11}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}ALU Operation}{11}{subsection.2.7.2}%
-\contentsline {subsection}{\numberline {2.7.3}Branch Address Computation}{12}{subsection.2.7.3}%
-\contentsline {subsection}{\numberline {2.7.4}Branch Resolution}{12}{subsection.2.7.4}%
-\contentsline {section}{\numberline {2.8}Memory Access (MEM) Stage}{12}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Write-Back (WB) Stage}{13}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Hazard Unit}{14}{section.2.10}%
-\contentsline {subsection}{\numberline {2.10.1}Data Hazards and Forwarding}{14}{subsection.2.10.1}%
-\contentsline {subsection}{\numberline {2.10.2}Load-Use Hazards}{14}{subsection.2.10.2}%
-\contentsline {subsection}{\numberline {2.10.3}Control Hazards}{15}{subsection.2.10.3}%
-\contentsline {section}{\numberline {2.11}Conclusion}{15}{section.2.11}%
-\contentsline {chapter}{\numberline {3}Implementation \& Verification}{16}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{16}{section.3.1}%
-\contentsline {section}{\numberline {3.2}VHDL Design Organization}{16}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Pipeline Register Implementation}{17}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Control Unit Implementation}{18}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Control Bus Pipelining}{18}{subsection.3.4.1}%
-\contentsline {section}{\numberline {3.5}Datapath Implementation}{19}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Fetch Stage}{19}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Decode Stage}{19}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Execute Stage}{20}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Memory Stage}{20}{subsection.3.5.4}%
-\contentsline {subsection}{\numberline {3.5.5}Write-Back Stage}{21}{subsection.3.5.5}%
-\contentsline {section}{\numberline {3.6}Hazard Unit Implementation}{21}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Forwarding Logic}{21}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Load-Use Stall}{22}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}Control Hazard Flush}{22}{subsection.3.6.3}%
-\contentsline {section}{\numberline {3.7}Toolchain and Program Loading}{22}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Conclusion}{24}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Simulation Environment:}{24}{section.3.9}%
-\contentsline {subsection}{\numberline {3.9.1}Testbench Code:}{25}{subsection.3.9.1}%
-\contentsline {subsection}{\numberline {3.9.2}Memory Loading}{26}{subsection.3.9.2}%
-\contentsline {subsection}{\numberline {3.9.3}Running The Simulation}{26}{subsection.3.9.3}%
-\contentsline {section}{\numberline {3.10}Tests}{26}{section.3.10}%
-\contentsline {subsection}{\numberline {3.10.1}Test N:°1}{27}{subsection.3.10.1}%
-\contentsline {subsection}{\numberline {3.10.2}Test N:°2}{28}{subsection.3.10.2}%
-\contentsline {section}{\numberline {3.11}Conclusion}{30}{section.3.11}%
-\contentsline {paragraph}{}{30}{section.3.11}%
-\contentsline {paragraph}{}{30}{section.3.11}%
-\contentsline {chapter}{\numberline {4}IDS Theoretical Background \& System Architecture}{32}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{32}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Design Philosophy}{32}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Top-Level Structure}{33}{section.4.3}%
-\contentsline {section}{\numberline {4.4}RMII Receiver (\texttt {rmii\_rx.vhd})}{34}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Ethernet Parser (\texttt {eth\_parser.vhd})}{34}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Frame Counter (\texttt {frame\_counter.vhd})}{35}{section.4.6}%
-\contentsline {section}{\numberline {4.7}IPv4 Parser (\texttt {ipv4\_parser.vhd})}{35}{section.4.7}%
-\contentsline {section}{\numberline {4.8}IPv4 Checker (\texttt {ipv4\_checker.vhd})}{36}{section.4.8}%
-\contentsline {section}{\numberline {4.9}TCP Parser (\texttt {tcp\_parser.vhd})}{36}{section.4.9}%
-\contentsline {section}{\numberline {4.10}TCP Checker (\texttt {tcp\_checker.vhd})}{36}{section.4.10}%
-\contentsline {section}{\numberline {4.11}UDP Parser (\texttt {udp\_parser.vhd})}{37}{section.4.11}%
-\contentsline {section}{\numberline {4.12}UDP Checker (\texttt {udp\_checker.vhd})}{37}{section.4.12}%
-\contentsline {section}{\numberline {4.13}Detection Rules}{37}{section.4.13}%
-\contentsline {subsection}{\numberline {4.13.1}Overview}{37}{subsection.4.13.1}%
-\contentsline {subsection}{\numberline {4.13.2}IPv4 Rules (R1--R12)}{37}{subsection.4.13.2}%
-\contentsline {subsubsection}{Rules R1--R7: Core Validity Checks}{37}{section*.22}%
-\contentsline {subsubsection}{Rules R8--R12: Bogon and Header Abuse}{38}{table.caption.23}%
-\contentsline {subsection}{\numberline {4.13.3}TCP Rules (T1--T5)}{39}{subsection.4.13.3}%
-\contentsline {subsection}{\numberline {4.13.4}UDP Rules (U1--U9)}{40}{subsection.4.13.4}%
-\contentsline {subsection}{\numberline {4.13.5}Alert Weighting}{41}{subsection.4.13.5}%
-\contentsline {chapter}{\numberline {5}Implementation \& Testing}{43}{chapter.5}%
-\contentsline {section}{\numberline {5.1}introduction}{43}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Test Procedures}{44}{section.5.2}%
-\contentsline {section}{\numberline {5.3}IPv4 Checker}{44}{section.5.3}%
-\contentsline {section}{\numberline {5.4}TCP Checker Verification}{45}{section.5.4}%
-\contentsline {section}{\numberline {5.5}UDP Checker}{46}{section.5.5}%
-\contentsline {chapter}{\numberline {6}System Integration}{49}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion}{50}{chapter.7}%
-\contentsline {paragraph}{}{50}{chapter.7}%
-\contentsline {paragraph}{}{50}{chapter.7}%
-\contentsline {paragraph}{}{50}{chapter.7}%
-\contentsline {paragraph}{}{51}{chapter.7}%
+\contentsline {paragraph}{}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}RISC-V Theoretical Background \& System Architecture}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}RISC-V Instruction Set Architecture}{2}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}History and Origin}{2}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Design Philosophy}{2}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}RV32I Instruction Formats}{2}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Processor Design Concepts}{3}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Von Neumann vs.\ Harvard Architecture}{3}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Single-Cycle vs.\ Pipelined Execution}{3}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Top-Level Architecture}{4}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Pipeline Stages}{5}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Instruction Fetch (IF)}{5}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Instruction Decode (ID)}{5}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Execute (EX)}{6}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}Memory Access (MEM)}{6}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.5}Write-Back (WB)}{6}{subsection.2.5.5}%
+\contentsline {section}{\numberline {2.6}Hazard Unit}{7}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Data Hazards and Forwarding}{7}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Load-Use Hazards}{7}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Control Hazards}{7}{subsection.2.6.3}%
+\contentsline {section}{\numberline {2.7}Conclusion}{7}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Implementation \& Verification}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}VHDL Design Organization}{9}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Pipeline Register Implementation}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Control Unit Implementation}{10}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Control Bus Pipelining}{10}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}Datapath Implementation}{10}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Fetch Stage}{10}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Decode Stage}{10}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Execute Stage}{10}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Memory Stage}{11}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Write-Back Stage}{11}{subsection.3.5.5}%
+\contentsline {section}{\numberline {3.6}Hazard Unit Implementation}{11}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Forwarding Logic}{11}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Load-Use Stall}{11}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Control Hazard Flush}{12}{subsection.3.6.3}%
+\contentsline {section}{\numberline {3.7}Toolchain and Program Loading}{12}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Simulation Environment}{13}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Testbench}{13}{subsection.3.8.1}%
+\contentsline {section}{\numberline {3.9}Verification Tests}{14}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Test 1 — Sum Array}{14}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Test 2 — Multi-Function}{14}{subsection.3.9.2}%
+\contentsline {section}{\numberline {3.10}Conclusion}{15}{section.3.10}%
+\contentsline {chapter}{\numberline {4}IDS Theoretical Background \& System Architecture}{16}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{16}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Design Philosophy}{16}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Top-Level Structure}{16}{section.4.3}%
+\contentsline {section}{\numberline {4.4}RMII Receiver (\texttt {rmii\_rx.vhd})}{17}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Ethernet Parser (\texttt {eth\_parser.vhd})}{17}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Frame Counter (\texttt {frame\_counter.vhd})}{18}{section.4.6}%
+\contentsline {section}{\numberline {4.7}IPv4 Parser (\texttt {ipv4\_parser.vhd})}{18}{section.4.7}%
+\contentsline {section}{\numberline {4.8}IPv4 Checker (\texttt {ipv4\_checker.vhd})}{18}{section.4.8}%
+\contentsline {section}{\numberline {4.9}TCP Parser (\texttt {tcp\_parser.vhd})}{19}{section.4.9}%
+\contentsline {section}{\numberline {4.10}TCP Checker (\texttt {tcp\_checker.vhd})}{19}{section.4.10}%
+\contentsline {section}{\numberline {4.11}UDP Parser (\texttt {udp\_parser.vhd})}{19}{section.4.11}%
+\contentsline {section}{\numberline {4.12}UDP Checker (\texttt {udp\_checker.vhd})}{19}{section.4.12}%
+\contentsline {section}{\numberline {4.13}Detection Rules}{19}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}IPv4 Rules (R1--R12)}{19}{subsection.4.13.1}%
+\contentsline {subsection}{\numberline {4.13.2}TCP Rules (T1--T5)}{20}{subsection.4.13.2}%
+\contentsline {subsection}{\numberline {4.13.3}UDP Rules (U1--U9)}{21}{subsection.4.13.3}%
+\contentsline {subsection}{\numberline {4.13.4}Alert Weighting}{22}{subsection.4.13.4}%
+\contentsline {chapter}{\numberline {5}Implementation \& Testing}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Methodology}{23}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Test Procedures}{23}{section.5.2}%
+\contentsline {section}{\numberline {5.3}IPv4 Checker Verification}{24}{section.5.3}%
+\contentsline {section}{\numberline {5.4}TCP Checker Verification}{24}{section.5.4}%
+\contentsline {section}{\numberline {5.5}UDP Checker Verification}{25}{section.5.5}%
+\contentsline {chapter}{\numberline {6}System Integration}{26}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Hardware Platform}{26}{section.6.1}%
+\contentsline {section}{\numberline {6.2}PS-to-PL Packet Forwarding}{26}{section.6.2}%
+\contentsline {section}{\numberline {6.3}RISC-V Co-Processor Integration}{27}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Shared Register Bank}{27}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Adaptive Threat Scoring}{28}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}UART Alert Output}{28}{subsection.6.3.3}%
+\contentsline {section}{\numberline {6.4}Packet Capture Module (\texttt {packet\_capture.vhd})}{28}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Future Hardware Integration}{29}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Conclusion}{30}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of Achievements}{30}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Academic Contribution}{30}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Limitations}{30}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Future Work}{31}{section.7.4}%

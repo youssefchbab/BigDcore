@@ -4,14 +4,12 @@
 \usepackage{tikz}
 \usepackage{tabto} 
 \usepackage{minted}
-\usepackage{lstlisting}
 \setminted{
     linenos=true,     % Add line numbers
     breaklines=true,  % Wrap long lines
     frame=lines,      % Add lines above and below the code
     fontsize=\footnotesize
 }
-
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}  
 
 
@@ -107,8 +105,72 @@
 % end of thesis body
 % --------------------------
 % Print out the references
-
-\printReferences
+% ============================================================
+%  BIBLIOGRAPHY
+% ============================================================
+\begin{thebibliography}{99}
+	
+	\bibitem{rfc791}
+	J. Postel, \textit{Internet Protocol}, IETF RFC 791, September 1981.
+	
+	\bibitem{rfc793}
+	J. Postel, \textit{Transmission Control Protocol}, IETF RFC 793, September 1981.
+	
+	\bibitem{rfc768}
+	J. Postel, \textit{User Datagram Protocol}, IETF RFC 768, August 1980.
+	
+	\bibitem{ieee8023}
+	IEEE Std 802.3-2022, \textit{IEEE Standard for Ethernet}, IEEE, 2022.
+	
+	\bibitem{xilinxzynq}
+	Xilinx Inc., \textit{Zynq-7000 SoC Technical Reference Manual}, UG585, v1.13, 2022.
+	
+	\bibitem{xilinxaxidma}
+	Xilinx Inc., \textit{AXI DMA LogiCORE IP Product Guide}, PG021, v7.1, 2021.
+	
+	\bibitem{riscvspec}
+	A.~Waterman and K.~Asanovi\'c, \textit{The RISC-V Instruction Set Manual, Volume I: Unprivileged ISA}, RISC-V Foundation, 2019.
+	
+	\bibitem{nmap}
+	G. Lyon, \textit{Nmap Network Scanning}, Insecure.com LLC, 2009.
+	
+	\bibitem{snort}
+	M. Roesch, ``Snort: Lightweight intrusion detection for networks,'' in \textit{Proc. USENIX LISA}, 1999.
+	
+	\bibitem{patterson_hennessy}
+	D. A. Patterson and J. L. Hennessy, \textit{Computer Organization and Design RISC-V Edition: The Hardware/Software Interface}, 2nd ed. Morgan Kaufmann, 2021.
+	
+	\bibitem{harris_harris}
+	S. Harris and D. Harris, \textit{Digital Design and Computer Architecture: RISC-V Edition}. Morgan Kaufmann, 2022.
+	
+	\bibitem{hennessy_patterson_advanced}
+	J. L. Hennessy and D. A. Patterson, \textit{Computer Architecture: A Quantitative Approach}, 6th ed. Morgan Kaufmann, 2019.
+	
+	\bibitem{ashenden}
+	P. J. Ashenden, \textit{The Designer's Guide to VHDL}, 3rd ed. Morgan Kaufmann, 2008.
+	
+	\bibitem{pedroni}
+	V. A. Pedroni, \textit{Circuit Design and Simulation with VHDL}, 2nd ed. MIT Press, 2010.
+	
+	\bibitem{ug892}
+	AMD Xilinx, \textit{Vivado Design Suite User Guide: Design Flows Overview}, UG892, 2023.
+	
+	\bibitem{ds180}
+	AMD Xilinx, \textit{7 Series FPGAs Data Sheet: Overview}, DS180, 2023.
+	
+	\bibitem{xpack_gcc}
+	xPack Project, \textit{xPack GNU RISC-V Embedded GCC}. [Online]. Available: \url{https://xpack.github.io/riscv-none-elf-gcc/}
+	
+	\bibitem{gnu_ld}
+	Free Software Foundation, \textit{Using ld: The GNU Linker}. [Online]. Available: \url{https://sourceware.org/binutils/docs/ld/}
+	
+	\bibitem{gnu_as}
+	Free Software Foundation, \textit{Using as: The GNU Assembler}. [Online]. Available: \url{https://sourceware.org/binutils/docs/as/}
+	
+	\bibitem{modelsim}
+	Siemens EDA, \textit{ModelSim User's Manual}. Mentor Graphics, 2023.
+	
+\end{thebibliography}
 %\include{chapters/appendices}
 
 \end{document}

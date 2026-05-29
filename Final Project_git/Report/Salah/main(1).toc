@@ -1,0 +1,48 @@
+\contentsline {chapter}{Dedications}{i}{chapter*.1}%
+\contentsline {chapter}{Acknowledgements}{ii}{chapter*.2}%
+\contentsline {chapter}{Abstract}{iii}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Project Scope}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Document Structure}{2}{section.1.2}%
+\contentsline {chapter}{\numberline {2}IDS Pipeline Architecture}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Design Philosophy}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Top-Level Structure}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}RMII Receiver (\texttt {rmii\_rx.vhd})}{4}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Ethernet Parser (\texttt {eth\_parser.vhd})}{5}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Frame Counter (\texttt {frame\_counter.vhd})}{5}{section.2.5}%
+\contentsline {section}{\numberline {2.6}IPv4 Parser (\texttt {ipv4\_parser.vhd})}{5}{section.2.6}%
+\contentsline {section}{\numberline {2.7}IPv4 Checker (\texttt {ipv4\_checker.vhd})}{6}{section.2.7}%
+\contentsline {section}{\numberline {2.8}TCP Parser (\texttt {tcp\_parser.vhd})}{6}{section.2.8}%
+\contentsline {section}{\numberline {2.9}TCP Checker (\texttt {tcp\_checker.vhd})}{6}{section.2.9}%
+\contentsline {section}{\numberline {2.10}UDP Parser (\texttt {udp\_parser.vhd})}{6}{section.2.10}%
+\contentsline {section}{\numberline {2.11}UDP Checker (\texttt {udp\_checker.vhd})}{7}{section.2.11}%
+\contentsline {chapter}{\numberline {3}Detection Rules}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Overview}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}IPv4 Rules (R1--R12)}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Rules R1--R7: Core Validity Checks}{8}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Rules R8--R12: Bogon and Header Abuse}{8}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}TCP Rules (T1--T5)}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}UDP Rules (U1--U9)}{10}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Alert Weighting}{11}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Simulation and Verification}{12}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Methodology}{12}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Test Procedures}{12}{section.4.2}%
+\contentsline {section}{\numberline {4.3}IPv4 Checker}{13}{section.4.3}%
+\contentsline {section}{\numberline {4.4}TCP Checker Verification}{14}{section.4.4}%
+\contentsline {section}{\numberline {4.5}UDP Checker}{15}{section.4.5}%
+\contentsline {chapter}{\numberline {5}System Integration Architecture}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Hardware Platform}{17}{section.5.1}%
+\contentsline {section}{\numberline {5.2}PS-to-PL Packet Forwarding}{17}{section.5.2}%
+\contentsline {section}{\numberline {5.3}AXI-Stream Wrapper (\texttt {axis\_rx.vhd})}{18}{section.5.3}%
+\contentsline {section}{\numberline {5.4}RISC-V Co-Processor Integration}{19}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}BigDCore Memory Interface}{19}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Shared Register Bank}{19}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Adaptive Threat Scoring}{19}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}UART Alert Output}{20}{subsection.5.4.4}%
+\contentsline {section}{\numberline {5.5}Packet Capture Module (\texttt {packet\_capture.vhd})}{20}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Future Hardware Integration Steps}{20}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Conclusion}{21}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Summary of Achievements}{21}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Academic Contribution}{21}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Limitations}{21}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Future Work}{22}{section.6.4}%

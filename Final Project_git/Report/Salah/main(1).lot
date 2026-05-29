@@ -1,0 +1,14 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces IPv4 header fields extracted by \texttt {ipv4\_parser.vhd}}}{5}{table.caption.5}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces IPv4 detection rules R1--R7}}{8}{table.caption.6}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces IPv4 detection rules R8--R12}}{9}{table.caption.7}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces TCP detection rules T1--T5}}{9}{table.caption.8}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces UDP detection rules U1--U9}}{10}{table.caption.9}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Alert weights used by the scoring engine}}{11}{table.caption.10}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Z7-Lite pin assignments used by the PL design}}{17}{table.caption.12}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Shared register map (selected registers)}}{19}{table.caption.14}%
+\addvspace {10\p@ }

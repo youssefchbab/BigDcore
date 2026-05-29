@@ -1,0 +1,15 @@
+\babel@toc {UKenglish}{}\relax 
+\babel@toc {UKenglish}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces IPv4 header fields extracted by \texttt {ipv4\_parser.vhd}}}{35}{table.caption.21}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces IPv4 detection rules R1--R7}}{38}{table.caption.23}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces IPv4 detection rules R8--R12}}{38}{table.caption.24}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces TCP detection rules T1--T5}}{39}{table.caption.25}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces UDP detection rules U1--U9}}{40}{table.caption.26}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Alert weights used by the scoring engine}}{42}{table.caption.27}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

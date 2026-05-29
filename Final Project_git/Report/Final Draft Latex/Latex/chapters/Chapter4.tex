@@ -1,105 +1,251 @@
 \section{Introduction}
 This chapter describes the implementation of RV32ICore in VHDL, covering the structural organization of the design, the implementation of each major component, key design decisions made during development, and the toolchain used to compile and load test programs into the simulation environment. The implementation follows directly from the architecture described in Chapter 3, with each architectural unit realized as a distinct VHDL entity.    
-\section{VHDL Design Organization}
-RV32ICore is organized as a hierarchy of VHDL entities, each encapsulating a well-defined functional unit. The top-level entity \textit{P\_Processor\_Hazard} instantiates three major components: the datapath \textit{(P\_Datapath)}, the control unit \textit{(P\_Control\_Unit)}, and the hazard unit \textit{(Hazard\_Unit)}. Memory is intentionally kept external to the processor entity, treated as a peripheral connected through the top-level ports. This separation reflects a deliberate design decision: by exposing the instruction and data memory interfaces at the top level, the processor can be connected to different memory configurations without modifying its internal logic, improving modularity and testability.
 
-The top-level interface exposes the following ports: a clock and reset, a 32-bit instruction input, a 32-bit read data input from data memory, and outputs for the program counter, data address, write data, memory write enable, byte enable, and access mode signals. This interface is sufficient to connect RV32ICore to any external Harvard memory system.
-\section{Pipeline Register Implementation}
-A central implementation decision in RV32ICore is the use of a single generic VHDL component, \textit{RegEn}, to implement all pipeline registers throughout the design. This component is parameterized by data width through a generic and supports four operating modes controlled by its input signals: normal clocked operation, stall (output held, input ignored), flush (output loaded with a predefined NOP value), and synchronous reset (output cleared to zero).
+\section{Design Philosophy}
 
-The NOP value inserted during a flush is x"\textit{00000033}", corresponding to the RV32I instruction \textit{ADD x0, x0, x0}. This is a valid instruction that writes to register x0, which is hardwired to zero, making it functionally harmless. Using a valid instruction rather than an all-zero pattern avoids potential undefined behavior in the decode and control logic during pipeline recovery.
+The IDS is structured as a linear pipeline of independent modules, each consuming the same byte stream that flows from a physical interface receiver. Parsers at different protocol layers operate simultaneously on the same data; rule checkers fire one clock cycle after their corresponding parser completes. This means the system does not buffer a full packet before beginning inspection---field extraction and rule evaluation are interleaved with frame reception.
 
-Separate width variants of the same component (\textit{RegEn\_5bit, RegEn\_9bit, RegEn\_6bit}) are used for narrower signals such as register addresses and reduced control buses, maintaining the same structural pattern throughout the design.
-\section{Control Unit Implementation}
-The control unit is implemented as \textit{P\_Control\_Unit} and is itself structured as a hierarchy of sub-components. It contains three functional blocks: the main control unit (\textit{P\_Main\_unit}), the ALU control unit (\textit{Alu\_cntr}), and the execution flow controller (\textit{Excution\_Flow}).
+The choice of a byte-stream interface as the internal contract between modules makes each module independently testable and allows the physical reception mechanism to be swapped (from RMII simulation to AXI-Stream DMA for hardware) without modifying any parser or checker.
 
-\textit{P\_Main\_unit} is a combinational decoder that maps the opcode and Funct3 fields to the full set of control signals required by the datapath. Its outputs include the immediate extension select, memory access width, register write enable, memory write enable, memory extension control, write-back select, PC select, ALU input select, branch mode, and ALU input override for AUIPC and LUI instructions.
+\section{Top-Level Structure}
 
-\textit{Alu\_cntr} decodes the opcode, Funct3, and bit 5 of Funct7 to produce the 4-bit ALU operation code. Using only bit 5 of Funct7 is sufficient to distinguish between arithmetic pairs such as ADD/SUB and SRL/SRA, avoiding the need to decode all seven Funct7 bits.
+The pipeline is wired together in a single top-level entity, \texttt{ids\_top.vhd}. It instantiates all sub-modules and connects them through internal signals. The byte stream---\texttt{rx\_byte}, \texttt{rx\_valid}, \texttt{rx\_sof}, \texttt{rx\_eof}---is broadcast to every parser simultaneously.
 
-\textit{Excution\_Flow} resolves the final PC select signal in the Execute stage. It receives the initial PC select from the control bus pipeline register, the branch mode encoding, the ALU zero flag, and the ALU LSB, and produces the final 2-bit PC select that determines whether the next PC is PC+4, the ALU result (for JALR), or the branch target address.
-\subsection{Control Bus Pipelining}
-A notable implementation strategy in the control unit is the aggregation of all control signals into a single control bus that is pipelined through\textit{RegEn} registers in parallel with the datapath pipeline registers. Rather than routing individual control signals through separate pipeline registers, the control signals are packed into a 21-bit bus at the Decode stage output and propagated as a unit through successive pipeline stages. At each stage boundary, only the subset of control signals relevant to that stage is extracted from the bus.
+% --- FIGURE PLACEHOLDER ---
+% Replace with the IDS pipeline diagram (Image 1 from your PNGs)
+%
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{ids_pipeline_diagram.png}
+	\caption{IDS pipeline architecture showing parallel parsers and rule engines.}
+	\label{fig:pipeline}
+\end{figure}
 
-The bus is progressively narrowed as signals are consumed: the full 21-bit bus is reduced to a 9-bit bus entering the Memory stage (retaining only memory and write-back controls), and further reduced to a 6-bit bus entering the Write-Back stage (retaining only register write enable, memory extension control, and write-back select). This approach simplifies the pipeline register instantiation and makes the control signal flow explicit and traceable in the VHDL source.
-\section{Datapath Implementation}
-The datapath is implemented as \textit{P\_Datapath} and instantiates all pipeline stages, pipeline registers, forwarding multiplexers, and functional units. The following describes the implementation of each stage.
-\subsection{Fetch Stage}
-The PC is stored in a \textit{RegEn} instance configured with the stall input connected to \textit{StallF}. Under normal operation it loads \textit{Pc\_Next} on every rising clock edge. The \textit{Pc\_Next} signal is selected by a three-input multiplexer (\textit{Mux3}) among three sources: the ALU result (for JALR), PC+4 (for sequential execution), and the branch target address computed in the Execute stage (for taken branches). PC+4 is computed by a dedicated adder that adds the constant four to the current PC. Both the current PC and PC+4 are registered into the IF/ID pipeline register for use in later stages.
-\subsection{Decode Stage}
-The register file is read combinationally using rs1 and rs2 addresses extracted directly from the pipelined instruction word at bits [19:15] and [24:20] respectively. The destination register address rd is extracted from bits [11:7] and propagated through the pipeline in a dedicated 5-bit pipeline register chain (\textit{Reg\_A3\_PLR3} through \textit{Reg\_A3\_PLR5}) alongside the instruction, reaching the Write-Back stage where it addresses the register file write port.
+\noindent The four-signal byte-stream interface carries the following semantics:
+\begin{itemize}
+	\item \texttt{rx\_sof} pulses for one clock cycle at the start of a new frame.
+	\item \texttt{rx\_byte} / \texttt{rx\_valid} delivers one byte per clock when valid.
+	\item \texttt{rx\_eof} pulses for one clock cycle at the end of the frame.
+\end{itemize}
 
-The immediate extension unit receives the full 32-bit instruction word and a 3-bit select signal from the control unit, and produces the appropriate 32-bit sign-extended immediate for the instruction's format.
+This interface is the internal standard across all modules.
 
-The register source addresses rs1 and rs2 are also registered separately into Rs1E and Rs2E for use by the Hazard Unit in forwarding comparisons.
-\subsection{Execute Stage}
-Two forwarding multiplexers (\textit{ForwardingA} and \textit{ForwardingB}) sit at the inputs of the ALU input selection multiplexers. Each is a Mux3 instance that selects among the register file output (no forwarding), the current Write-Back result (forwarding from WB), and the EX/MEM ALU result (forwarding from MEM). The selection is controlled by the 2-bit \textit{ForwardA} and \textit{ForwardB} signals from the Hazard Unit.
+\section{RMII Receiver (\texttt{rmii\_rx.vhd})}
 
-The forwarded rs2 value (\textit{ForwarededB}) is also registered into the MEM stage in a dedicated pipeline register (\textit{ForwaredB\_PLR4}). This is necessary for Store instructions, which require the value of rs2 at the Memory stage as the data to be written to memory, while the ALU computes the store address using rs1 and the immediate.
+In simulation, Ethernet frames are injected using RMII signalling: two data bits (a \emph{dibit}) are presented every clock cycle at 50\,MHz, LSB-first. The RMII receiver is a three-state FSM (IDLE, PREAMBLE, DATA) that assembles four consecutive dibits into one byte using a right-shift register:
 
-ALU input A is selected by \textit{ALU\_in\_A} (\textit{Mux3}) among the forwarded rs1 value, the PC (for AUIPC), and zero (for LUI). ALU input B is selected by \textit{ALU\_in\_B }(\textit{Mux2}) between the sign-extended immediate and the forwarded rs2 value.
+\begin{lstlisting}[caption={Dibit assembly in \texttt{rmii\_rx.vhd}}, label=lst:rmii]
+	shift_reg <= rmii_rxd & shift_reg(7 downto 2);
+	if dibit_cnt = "11" then
+	rx_byte  <= rmii_rxd & shift_reg(7 downto 2);
+	rx_valid <= '1';
+	end if;
+\end{lstlisting}
 
-The branch target address is computed by a dedicated adder summing the PC value carried from the Decode stage with the sign-extended immediate.
-\subsection{Memory Stage}
-The data address presented to external memory is the ALU result from the EX/MEM pipeline register. The write data is the forwarded rs2 value from \textit{ForwaredB\_PLR4}. The two least significant bits of the ALU result (\textit{Alu\_LSB\_Mem}) are passed to the top level as the ByteEn signal, providing the byte offset within a word to the external memory for sub-word accesses.
-\subsection{Write-Back Stage}
-The Memory Extension unit (\textit{Mem\_SignExt}) receives the raw 32-bit read data from memory, the two LSBs of the ALU result as a byte offset, and the memory extension control signal derived from Funct3. It produces a correctly sign- or zero-extended 32-bit value for byte and halfword load instructions.
+The preamble state counts at least eight \texttt{01} dibits before accepting the Start Frame Delimiter (\texttt{11}). On hardware, this module is replaced by an AXI-Stream receiver that accepts bytes directly from the PS DMA engine; the rest of the pipeline is unchanged.
 
-The Write-Back multiplexer (\textit{Mux3}) selects among PC+4 (for JAL/JALR return address), the extended memory data (for load instructions), and the ALU result (for all other instructions). The selected value is written to the register file at the address held in \textit{Reg\_A3\_PLR5}.
-\section{Hazard Unit Implementation}
-The Hazard Unit is implemented as a fully combinational entity Hazard\_Unit. It receives the source register addresses from the Decode and Execute stages, the destination register addresses from the Execute, Memory, and Write-Back stages, the register write enables from the Memory and Write-Back stages, and the write-back control LSB and PC select MSB from the control pipeline.
-\subsection{Forwarding Logic}
-Forwarding priority is implemented as a priority-encoded conditional check. For each ALU input, the MEM stage forwarding path takes priority over the WB stage path, ensuring that the most recently computed value is always selected in the case of back-to-back dependent instructions. Forwarding is suppressed when the destination register is x0, since x0 is hardwired to zero and forwarding from it would produce incorrect results.
+\section{Ethernet Parser (\texttt{eth\_parser.vhd})}
 
-The forwarding condition also checks a combined signal: forwarding is enabled when either \textit{RegWriteM} is asserted or when the LSB of \textit{Pc\_Select\_Initial} is '\textit{0}', which identifies JAL and JALR instructions that write PC+4 to a destination register but are not flagged by the standard \textit{RegWrite} path at that pipeline stage.
-\subsection{Load-Use Stall}
-The load-use stall is detected by checking whether the \textit{Writeback\_cntr} LSB is asserted — indicating a load instruction in the Execute stage — and whether the load destination register matches either source register of the instruction currently in the Decode stage. When detected, \textit{StallF} and \textit{StallD} are asserted to freeze the Fetch and Decode stage pipeline registers, and \textit{FlushE} is asserted to insert a NOP into the Execute stage for one cycle.
-\subsection{Control Hazard Flush}
-The flush signal for taken branches is derived from the MSB of the \textit{Pc\_Select} signal, which is asserted whenever the processor takes a branch or jump. \textit{FlushE} is asserted as the logical OR of the load-use stall and the PC select signal, flushing the Execute stage in both cases. \textit{FlushD} is asserted on the PC select signal alone, flushing the Decode stage on taken branches. This correctly discards the two instructions fetched after the branch while leaving the Fetch stage free to begin fetching from the branch target on the following cycle.
-\section{Toolchain and Program Loading}
-To verify RV32ICore through simulation, a software toolchain is used to compile C test programs into binary executables targeting the RV32I ISA, which are then converted into a format that can be initialized into the instruction memory for simulation. The following code will be used as an Example:
-\begin{minted}{C}
-   // test.c
+The Ethernet parser extracts the destination MAC, source MAC, and EtherType from the first 14 bytes of each frame. It uses a sequential FSM with states for each header field group (DST\_MAC, SRC\_MAC, ETHERTYPE, PAYLOAD, DONE). On the DONE state, it asserts \texttt{frame\_done} and one of \texttt{is\_ipv4}, \texttt{is\_arp}, or \texttt{is\_unknown} based on the EtherType value (0x0800, 0x0806, or other).
 
-// Tests loops and addition
-int sum_array(int arr[], int len) {
-    int sum = 0;
-    for (int i = 0; i < len; i++) {
-        sum += arr[i];
-    }
-    return sum;
-}
-int main() {
-    int arr[] = {3, 7, 2, 9, 1};
+A key design decision is that all output signals default to \texttt{'0'} at the top of the clocked process and are only overridden in the DONE state. This prevents latches and ensures outputs are valid for exactly one clock cycle.
 
-    int s = sum_array(arr, 5);       // expected: 22
+\section{Frame Counter (\texttt{frame\_counter.vhd})}
 
-    return 0;
-}
-\end{minted}
+The frame counter accumulates per-second frame statistics (total, IPv4, ARP, unknown) using a hardware divider: a counter incremented every clock cycle triggers a \texttt{one\_sec\_tick} when it reaches \texttt{CLK\_FREQ\_HZ - 1}. On that tick, the running accumulators are latched to output registers and reset. This value is passed as a generic so the same code simulates at \texttt{CLK\_FREQ\_HZ = 1000} (1\,kHz) and synthesizes at \texttt{CLK\_FREQ\_HZ = 50\,000\,000} (50\,MHz), making testbenches fast without any code changes.
 
-The compiler used is the xPack RISC-V Embedded GCC toolchain (\textit{riscv-none-elf-gcc}), configured to target the RV32I base ISA without compressed instructions or floating-point extensions, matching exactly the instruction set implemented by RV32ICore. A custom linker script defines the memory layout, setting the origin of the text segment to address \textit{0x00000000} to match the reset vector of the processor, and configuring the initial stack pointer to the top of the available data memory region.
+\section{IPv4 Parser (\texttt{ipv4\_parser.vhd})}
 
-A startup assembly file initializes the processor state before transferring control to the C main function. It sets the stack pointer register and performs any necessary early initialization before the C runtime environment is available.
-\begin{minted}{riscv}
-    00000000 <_start>:
-   0:   40000113                li      sp,1024
-   4:   11400513                li      a0,276
-   8:   11400593                li      a1,276
+The IPv4 parser skips the 14-byte Ethernet header (counted in the ETH\_HEADER state) and then extracts the following fields from the IP header:
 
-0000000c <bss_loop>:
-   c:   00b55863                bge     a0,a1,1c <bss_done>
-  10:   00052023                sw      zero,0(a0)
-  14:   00450513                addi    a0,a0,4
-  18:   ff5ff06f                j       c <bss_loop>
+\begin{table}[H]
+	\centering
+	\caption{IPv4 header fields extracted by \texttt{ipv4\_parser.vhd}}
+	\label{tab:ipv4fields}
+	\begin{tabular}{lll}
+		\toprule
+		\textbf{Field} & \textbf{Byte offset} & \textbf{Width} \\
+		\midrule
+		Version / IHL   & 0      & 4 + 4 bits \\
+		Total Length    & 2--3   & 16 bits    \\
+		Flags / Fragment Offset & 6--7 & 3 + 13 bits \\
+		TTL             & 8      & 8 bits     \\
+		Protocol        & 9      & 8 bits     \\
+		Source IP       & 12--15 & 32 bits    \\
+		Destination IP  & 16--19 & 32 bits    \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
-0000001c <bss_done>:
-  1c:   07c000ef                jal     98 <main>
+The IHL field determines where the IP header ends (IHL\,$\times$\,4 bytes). The parser computes this boundary dynamically and transitions to WAIT\_EOF once all header bytes have been consumed, asserting \texttt{parse\_done} and \texttt{parse\_valid} (the latter only when \texttt{ip\_version = 4}) after the frame ends.
 
-00000020 <halt>:
-  20:   0000006f                j       20 <halt>
-\end{minted}
+\section{IPv4 Checker (\texttt{ipv4\_checker.vhd})}
 
-\textbf{Note:} The compiled code is very large hence a sample is given, and the remaining is illustrated in the Appendix.
-\section{Conclusion}
-This chapter has described the complete VHDL implementation of RV32ICore, from the top-level entity structure through the detailed implementation of each pipeline stage, the control bus pipelining strategy, the hazard unit combinational logic, and the software toolchain used to generate and load test programs. Several implementation decisions — including the generic RegEn pipeline register component, the progressive narrowing of the control bus, the choice of ADD x0, x0, x0 as the NOP encoding, and the dedicated forwarded rs2 pipeline register for store instructions — reflect deliberate engineering choices made to balance correctness, clarity, and design reuse. The implementation described here is verified through the simulation-based testing methodology presented in the following chapter.
+The IPv4 checker receives the parsed fields when \texttt{parse\_done} is asserted and evaluates all rules combinatorially inside a clocked process in a single clock cycle. A local variable \texttt{any\_alert} is OR'd across all rule conditions and drives the \texttt{alert\_any} output. Individual alert signals (\texttt{alert\_bad\_version}, \texttt{alert\_fragment}, etc.) are also driven, allowing the scoring engine to weight them differently.
+
+\section{TCP Parser (\texttt{tcp\_parser.vhd})}
+
+The TCP parser shares the same byte stream as the IPv4 parser. Because the TCP header begins at a byte offset that depends on the IP IHL field, the parser captures \texttt{ip\_ihl} and \texttt{ip\_protocol} from the IPv4 parser's output signals before the frame starts. It then skips to byte \texttt{14 + IHL\,$\times$\,4} (Ethernet header + IP header) before beginning TCP field extraction.
+
+Fields extracted: source port, destination port, sequence number, and the flags byte. The flags byte at offset 13 of the TCP header encodes FIN, SYN, RST, PSH, ACK, and URG in bits 0--5.
+
+\section{TCP Checker (\texttt{tcp\_checker.vhd})}
+
+The TCP checker uses VHDL \texttt{alias} declarations to give readable names to individual flag bits:
+
+\begin{lstlisting}[caption={Flag aliases in \texttt{tcp\_checker.vhd}}, label=lst:aliases]
+	alias flag_fin : std_logic is tcp_flags(0);
+	alias flag_syn : std_logic is tcp_flags(1);
+	alias flag_rst : std_logic is tcp_flags(2);
+\end{lstlisting}
+
+Rules are expressed directly as Boolean conditions on these aliases, making the intent clear without bit-masking arithmetic.
+
+\section{UDP Parser (\texttt{udp\_parser.vhd})}
+
+The UDP header is 8 bytes long: source port (2), destination port (2), length (2), and checksum (2). The parser reuses the same skip-to-transport-layer logic as the TCP parser, activated only when \texttt{ip\_protocol = 0x11}. The \texttt{parse\_valid} output is asserted only for UDP packets.
+
+\section{UDP Checker (\texttt{udp\_checker.vhd})}
+
+The UDP checker evaluates nine rules on the extracted UDP fields and a configurable set of forbidden port values, shared with the TCP checker through the rule register bank.
+
+% ============================================================
+\section{Detection Rules}
+\label{ch:rules}
+% ============================================================
+
+\subsection{Overview}
+
+The IDS evaluates twenty detection rules across four protocol layers. Rules are grouped by the checker module that evaluates them. Each rule fires for exactly one clock cycle when its condition is met; the alert is latched and its weight added to the threat score.
+
+\subsection{IPv4 Rules (R1--R12)}
+
+\subsubsection{Rules R1--R7: Core Validity Checks}
+
+These seven rules detect structurally malformed or trivially suspicious IPv4 packets.
+
+\begin{table}[H]
+	\centering
+	\caption{IPv4 detection rules R1--R7}
+	\label{tab:r1r7}
+	\begin{tabular}{lll}
+		\toprule
+		\textbf{Rule} & \textbf{Condition} & \textbf{Attack / Anomaly} \\
+		\midrule
+		R1 & \texttt{ip\_version} $\neq$ 4          & Non-IPv4 / malformed packet \\
+		R2 & \texttt{ip\_ihl} $<$ 5                  & Invalid header length       \\
+		R3 & \texttt{ip\_length} $<$ 20              & Impossible packet size      \\
+		R4 & \texttt{ip\_ttl} $\leq$ 1              & Suspicious TTL / traceroute \\
+		R5 & \texttt{ip\_frag\_off} $>$ 0           & Fragmentation attack        \\
+		R6 & \texttt{ip\_src} = \texttt{0.0.0.0}   & Spoofed source address      \\
+		R7 & \texttt{ip\_src} = \texttt{ip\_dst}   & Land attack                 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Rules R8--R12: Bogon and Header Abuse}
+
+These five rules detect packets whose source addresses belong to reserved or unroutable address blocks, or whose header fields abuse optional mechanisms.
+
+\begin{table}[H]
+	\centering
+	\caption{IPv4 detection rules R8--R12}
+	\label{tab:r8r12}
+	\begin{tabular}{lll}
+		\toprule
+		\textbf{Rule} & \textbf{Condition} & \textbf{Attack / Anomaly} \\
+		\midrule
+		R8  & \texttt{ip\_src[31:24]} = \texttt{0x7F}          & Loopback source (127.x.x.x)        \\
+		R9  & \texttt{ip\_src[31:16]} = \texttt{0xA9FE}        & Link-local source (169.254.x.x)    \\
+		R10 & \texttt{ip\_src[31:28]} = \texttt{0xE}           & Multicast source (224--239.x.x.x) \\
+		R11 & \texttt{ip\_ihl} $>$ 5                           & IP options present                  \\
+		R12 & \texttt{ip\_flags[2]} = \texttt{'1'}             & Reserved IPv4 flag bit set          \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Rules R8--R10 share a single enable bit (\texttt{bogon\_check\_en}) in the rule register bank so the RISC-V can disable them all at once on a network segment where such addresses may legitimately appear.
+
+\subsection{TCP Rules (T1--T5)}
+
+\begin{table}[H]
+	\centering
+	\caption{TCP detection rules T1--T5}
+	\label{tab:t1t5}
+	\begin{tabular}{lll}
+		\toprule
+		\textbf{Rule} & \textbf{Condition} & \textbf{Attack / Anomaly} \\
+		\midrule
+		T1 & SYN = 1 and FIN = 1                    & Illegal flag combination    \\
+		T2 & SYN = 1 and RST = 1                    & Illegal flag combination    \\
+		T3 & All flags = \texttt{0x00}              & NULL scan (port probe)      \\
+		T4 & All flags = \texttt{0xFF}              & XMAS scan (port probe)      \\
+		T5 & \texttt{dst\_port} $\in$ forbidden set & Access to forbidden service \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+The forbidden port set (rule T5) is stored in configurable registers and defaults to Telnet (23), FTP (21), and TFTP (69). The RISC-V processor can update these values without reprogramming the FPGA.
+
+\subsection{UDP Rules (U1--U9)}
+
+\begin{table}[H]
+	\centering
+	\caption{UDP detection rules U1--U9}
+	\label{tab:u1u9}
+	\begin{tabular}{lp{6cm}p{6cm}}
+		\toprule
+		\textbf{Rule} & \textbf{Condition} & \textbf{Attack / Anomaly} \\
+		\midrule
+		U1 & \texttt{udp\_dst\_port} $\in$ forbidden set & Access to forbidden UDP service \\
+		U2 & \texttt{udp\_length} $<$ 8 & Invalid UDP length field \\
+		U3 & \texttt{udp\_length} $=$ 0 & Completely malformed UDP packet \\
+		U4 & \texttt{udp\_src\_port} $\in$ \{53, 123, 11211, 19\} & Amplification attack response (DNS/NTP/Memcached/CHARGEN) \\
+		U5 & \texttt{ip\_src} $=$ \texttt{ip\_dst} $\wedge$ \texttt{udp\_src\_port} $=$ \texttt{udp\_dst\_port} & UDP land attack \\
+		U6 & \texttt{udp\_length} $>$ 1472 & Oversized datagram (exceeds Ethernet MTU) \\
+		U7 & \texttt{udp\_src\_port} $=$ 0 $\vee$ \texttt{udp\_dst\_port} $=$ 0 & Reserved port zero used \\
+		U8 & \texttt{udp\_dst\_port} $=$ 1900 & SSDP/UPnP abuse \\
+		U9 & \texttt{udp\_dst\_port} $=$ 11211 & Memcached amplification request \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\newpage
+\subsection{Alert Weighting}
+
+Each alert type is assigned a weight, and the scoring engine accumulates weights additively. The RISC-V classifies traffic into three severity tiers based on the accumulated score.
+\begin{table}[H]
+	\centering
+	\caption{Alert weights used by the scoring engine}
+	\label{tab:weights}
+	\begin{tabular}{llr}
+		\toprule
+		\textbf{Alert} & \textbf{Rule} & \textbf{Weight} \\
+		\midrule
+		Bad version          & R1       & 5  \\
+		Bad IHL              & R2       & 5  \\
+		Bad length           & R3       & 10 \\
+		Low TTL              & R4       & 5  \\
+		Fragmentation        & R5       & 15 \\
+		Spoofed source       & R6       & 20 \\
+		Land attack          & R7       & 25 \\
+		Bogon source         & R8--R10  & 15 \\
+		IP options           & R11      & 10 \\
+		Reserved flag        & R12      & 10 \\
+		SYN+FIN              & T1       & 25 \\
+		SYN+RST              & T2       & 20 \\
+		NULL scan            & T3       & 20 \\
+		XMAS scan            & T4       & 20 \\
+		Forbidden TCP port   & T5       & 15 \\
+		Forbidden UDP port   & U1       & 15 \\
+		Malformed UDP length & U2, U3   & 10 \\
+		Amplification resp.  & U4       & 20 \\
+		UDP land attack      & U5       & 25 \\
+		Oversized UDP        & U6       & 10 \\
+		Port zero            & U7       & 10 \\
+		SSDP/UPnP abuse      & U8       & 15 \\
+		Memcached amplif.    & U9       & 20 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+The score decays by a configurable rate every second when no new alerts fire, preventing a historical event from permanently elevating the severity level.

@@ -44,6 +44,22 @@ R10: \texttt{ip\_src=224.0.0.1} → \texttt{alert\_bogon\_mcast}.
 R11: \texttt{ip\_ihl=6} → \texttt{alert\_ip\_options};
 R12: \texttt{ip\_flags[2]='1'} → \texttt{alert\_reserved\_bit}.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{ipv4wave.png}
+	\caption{Simulation waveform showing R1-R7 IPv4 IDS rules firing sequentially.}
+	\label{fig:ipv4wave}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{ipv4newruleswave.png}
+	\caption{Simulation waveform showing R8-R12 IPv4 IDS rules firing sequentially.}
+	\label{fig:ipv4-2wave}
+\end{figure}
+
+
 \section{TCP Checker Verification}
 T1: \texttt{tcp\_flags=0x03} (SYN+FIN) → \texttt{alert\_syn\_fin};
 T2: \texttt{tcp\_flags=0x06} (SYN+RST) → \texttt{alert\_syn\_rst};
@@ -75,3 +91,9 @@ U6: \texttt{udp\_length=1480} → \texttt{alert\_udp\_oversize};
 U7: \texttt{udp\_dst\_port=0} → \texttt{alert\_udp\_port\_zero};
 U8: \texttt{udp\_dst\_port=1900} → \texttt{alert\_ssdp\_abuse};
 U9: \texttt{udp\_dst\_port=11211} → \texttt{alert\_memcached}.
+\begin{figure}[H]
+	\centering
+     \includegraphics[width=\textwidth]{UDP_CHCKER.png}
+     \caption{Simulation waveform showing all UDP IDS rules firing sequentially.}
+     \label{fig:UDPwave}
+	 \end{figure}

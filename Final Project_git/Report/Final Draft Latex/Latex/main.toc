@@ -79,19 +79,19 @@
 \contentsline {section}{\numberline {5.1}Methodology}{23}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Test Procedures}{23}{section.5.2}%
 \contentsline {section}{\numberline {5.3}IPv4 Checker Verification}{24}{section.5.3}%
-\contentsline {section}{\numberline {5.4}TCP Checker Verification}{24}{section.5.4}%
+\contentsline {section}{\numberline {5.4}TCP Checker Verification}{25}{section.5.4}%
 \contentsline {section}{\numberline {5.5}UDP Checker Verification}{25}{section.5.5}%
-\contentsline {chapter}{\numberline {6}System Integration}{26}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Hardware Platform}{26}{section.6.1}%
-\contentsline {section}{\numberline {6.2}PS-to-PL Packet Forwarding}{26}{section.6.2}%
-\contentsline {section}{\numberline {6.3}RISC-V Co-Processor Integration}{27}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Shared Register Bank}{27}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Adaptive Threat Scoring}{28}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}UART Alert Output}{28}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}Packet Capture Module (\texttt {packet\_capture.vhd})}{28}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Future Hardware Integration}{29}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Conclusion}{30}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Summary of Achievements}{30}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Academic Contribution}{30}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Limitations}{30}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Future Work}{31}{section.7.4}%
+\contentsline {chapter}{\numberline {6}System Integration}{27}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Hardware Platform}{27}{section.6.1}%
+\contentsline {section}{\numberline {6.2}PS-to-PL Packet Forwarding}{27}{section.6.2}%
+\contentsline {section}{\numberline {6.3}RISC-V Co-Processor Integration}{28}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Shared Register Bank}{28}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Adaptive Threat Scoring}{29}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}UART Alert Output}{29}{subsection.6.3.3}%
+\contentsline {section}{\numberline {6.4}Packet Capture Module (\texttt {packet\_capture.vhd})}{29}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Future Hardware Integration}{30}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Conclusion}{31}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of Achievements}{31}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Academic Contribution}{31}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Limitations}{31}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Future Work}{32}{section.7.4}%

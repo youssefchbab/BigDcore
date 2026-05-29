@@ -17,7 +17,10 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces IDS pipeline architecture showing parallel parsers and rule engines.}}{17}{figure.caption.16}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Simulation waveform showing TCP rules T1--T5 firing in sequence.}}{24}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Simulation waveform showing R1-R7 IPv4 IDS rules firing sequentially.}}{24}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Simulation waveform showing R8-R12 IPv4 IDS rules firing sequentially.}}{25}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Simulation waveform showing TCP rules T1--T5 firing in sequence.}}{25}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Simulation waveform showing all UDP IDS rules firing sequentially.}}{26}{figure.caption.26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces PS-PL co-design: packet path from RTL8201F through AXI-Stream DMA to the IDS pipeline, with shared register bank connecting IDS to RV32ICore.}}{27}{figure.caption.25}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces PS-PL co-design: packet path from RTL8201F through AXI-Stream DMA to the IDS pipeline, with shared register bank connecting IDS to RV32ICore.}}{28}{figure.caption.28}%
 \addvspace {10\p@ }

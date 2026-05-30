@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Tue May 26 23:35:48 2026
-# Process ID         : 19624
+# Start of session at: Sat May 30 15:59:27 2026
+# Process ID         : 12704
 # Current directory  : D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.runs/impl_1
 # Command line       : vivado.exe -log SoC.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source SoC.tcl -notrace
 # Log file           : D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.runs/impl_1/SoC.vdi
@@ -17,8 +17,8 @@
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16920 MB
-# Swap memory        : 15817 MB
-# Total Virtual      : 32738 MB
-# Available Virtual  : 6461 MB
+# Swap memory        : 13958 MB
+# Total Virtual      : 30879 MB
+# Available Virtual  : 11637 MB
 #-----------------------------------------------------------
 source SoC.tcl -notrace

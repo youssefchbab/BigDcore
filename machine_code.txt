@@ -1,0 +1,2 @@
+Notes Related to the Z7-Lite:
+1. LEDs are active LOW.

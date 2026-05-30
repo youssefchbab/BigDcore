@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.5.29)  29 MAY 2026 19:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.5.29)  30 MAY 2026 12:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2017,7 +2017,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 \pydata@fh@0=\write10
 \openout10 = `_FAD58DE7366495DB4650CFEFAC2FCD61.data.minted'.
 
-runsystem(latexminted config  --timestamp 20260529193043 FAD58DE7366495DB4650CF
+runsystem(latexminted config  --timestamp 20260530125706 FAD58DE7366495DB4650CF
 EFAC2FCD61)...disabled (restricted).
 
 
@@ -2654,7 +2654,7 @@ Here is how much of TeX's memory you used:
  70738 multiletter control sequences out of 15000+600000
  703073 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,12n,145p,1427b,2490s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,12n,145p,1428b,2490s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><
 C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/
 Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Use
@@ -2669,7 +2669,7 @@ ms/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/PC/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/PC/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (44 pages, 3150118 bytes).
+Output written on main.pdf (44 pages, 3150116 bytes).
 PDF statistics:
  900 PDF objects out of 1000 (max. 8388607)
  207 named destinations out of 1000 (max. 500000)

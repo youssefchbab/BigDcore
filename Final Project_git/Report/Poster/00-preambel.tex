@@ -1,0 +1,46 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = de_DE
+
+%Dokumentklasse, Spracheinstellung, Schriften
+\documentclass[a1paper,portrait]{baposter}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{arev}
+\usepackage[T1]{fontenc}
+
+%Mathe, Symbole, Einheitendarstellung, Chemie
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{eurosym}
+\usepackage{siunitx}  
+\sisetup{locale=DE}
+\usepackage[version=4]{mhchem}
+
+%Typographie
+\usepackage[auto]{microtype}
+
+%Einbindung von Bildern, Tabellen, pdf-Seiten, Quellcode
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{paralist}
+
+%Darstellung der Literaturangaben
+\usepackage[
+backend=biber,
+style=science,
+citestyle=numeric-comp,
+sorting=none,
+maxbibnames=1,
+firstinits=true
+]{biblatex}
+
+\bibliography{literatur/refs}
+\setlength\bibitemsep{2.5pt}
+
+%Definition der Farben
+\definecolor{standardfontcolor}{RGB}{0,0,0} 
+\definecolor{bordercol}{RGB}{113,113,113}
+\definecolor{headercol1}{RGB}{255,255,255}
+\definecolor{headercol2}{RGB}{113,113,113}
+\definecolor{headerfontcol}{RGB}{0,0,0}
+\definecolor{boxcolor}{RGB}{255,255,255}

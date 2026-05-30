@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Tue May 26 23:29:07 2026
-# Process ID         : 1456
+# Start of session at: Sat May 30 15:49:59 2026
+# Process ID         : 16540
 # Current directory  : D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.runs/synth_1
 # Command line       : vivado.exe -log SoC.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SoC.tcl
 # Log file           : D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.runs/synth_1/SoC.vds
@@ -17,12 +17,12 @@
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16920 MB
-# Swap memory        : 14737 MB
-# Total Virtual      : 31657 MB
-# Available Virtual  : 4824 MB
+# Swap memory        : 13958 MB
+# Total Virtual      : 30879 MB
+# Available Virtual  : 11391 MB
 #-----------------------------------------------------------
 source SoC.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 523.855 ; gain = 220.594
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 522.520 ; gain = 217.598
 Command: read_checkpoint -auto_incremental -incremental {D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.srcs/utils_1/imports/synth_1/SoC.dcp}
 INFO: [Vivado 12-5825] Read reference checkpoint from D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.srcs/utils_1/imports/synth_1/SoC.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -33,12 +33,12 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 7544
+INFO: [Synth 8-7075] Helper process launched with PID 11240
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1300.383 ; gain = 540.141
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1300.281 ; gain = 541.453
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'SoC' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/SoC.vhd:10]
-INFO: [Synth 8-3491] module 'P_Processor_Hazard' declared at 'D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/p_processor_hazard.vhd:4' bound to instance 'CPU' of component 'P_Processor_Hazard' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/SoC.vhd:57]
+INFO: [Synth 8-638] synthesizing module 'SoC' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/SoC.vhd:11]
+INFO: [Synth 8-3491] module 'P_Processor_Hazard' declared at 'D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/p_processor_hazard.vhd:4' bound to instance 'CPU' of component 'P_Processor_Hazard' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/SoC.vhd:59]
 INFO: [Synth 8-638] synthesizing module 'P_Processor_Hazard' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/p_processor_hazard.vhd:17]
 INFO: [Synth 8-3491] module 'P_Datapath' declared at 'D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/p_datapath.vhd:11' bound to instance 'Datapath' of component 'P_Datapath' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/p_processor_hazard.vhd:106]
 INFO: [Synth 8-638] synthesizing module 'P_Datapath' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/p_datapath.vhd:44]
@@ -131,17 +131,17 @@ INFO: [Synth 8-3491] module 'Hazard_Unit' declared at 'D:/Work and shit/Github/F
 INFO: [Synth 8-638] synthesizing module 'Hazard_Unit' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/Hazard_Unit.vhd:20]
 INFO: [Synth 8-256] done synthesizing module 'Hazard_Unit' (0#1) [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/Hazard_Unit.vhd:20]
 INFO: [Synth 8-256] done synthesizing module 'P_Processor_Hazard' (0#1) [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/p_processor_hazard.vhd:17]
-INFO: [Synth 8-3491] module 'RAM_Inst' declared at 'D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore MemVHDL/RAM_Inst.vhd:4' bound to instance 'Inst_RAM' of component 'RAM_Inst' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/SoC.vhd:68]
+INFO: [Synth 8-3491] module 'RAM_Inst' declared at 'D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore MemVHDL/RAM_Inst.vhd:4' bound to instance 'Inst_RAM' of component 'RAM_Inst' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/SoC.vhd:70]
 INFO: [Synth 8-638] synthesizing module 'RAM_Inst' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore MemVHDL/RAM_Inst.vhd:17]
 	Parameter N bound to: 32 - type: integer 
-WARNING: [Synth 8-614] signal 'Mem' is read in the process but is not in the sensitivity list [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore MemVHDL/RAM_Inst.vhd:31]
+WARNING: [Synth 8-614] signal 'Mem' is read in the process but is not in the sensitivity list [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore MemVHDL/RAM_Inst.vhd:38]
 INFO: [Synth 8-256] done synthesizing module 'RAM_Inst' (0#1) [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore MemVHDL/RAM_Inst.vhd:17]
-INFO: [Synth 8-3491] module 'RAM' declared at 'D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore MemVHDL/ram.vhd:4' bound to instance 'Data_RAM' of component 'RAM' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/SoC.vhd:76]
+INFO: [Synth 8-3491] module 'RAM' declared at 'D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore MemVHDL/ram.vhd:4' bound to instance 'Data_RAM' of component 'RAM' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/SoC.vhd:78]
 INFO: [Synth 8-638] synthesizing module 'RAM' [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore MemVHDL/ram.vhd:17]
 	Parameter N bound to: 32 - type: integer 
 WARNING: [Synth 8-614] signal 'Mem' is read in the process but is not in the sensitivity list [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore MemVHDL/ram.vhd:23]
 INFO: [Synth 8-256] done synthesizing module 'RAM' (0#1) [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore MemVHDL/ram.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'SoC' (0#1) [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/SoC.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'SoC' (0#1) [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore VHDL/SoC.vhd:11]
 WARNING: [Synth 8-7129] Port Pc_Select[1] in module Hazard_Unit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Funct7[6] in module P_Control_Unit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Funct7[4] in module P_Control_Unit is either unconnected or has no load
@@ -157,72 +157,69 @@ WARNING: [Synth 8-7129] Port inst[2] in module ImmExt is either unconnected or h
 WARNING: [Synth 8-7129] Port inst[1] in module ImmExt is either unconnected or has no load
 WARNING: [Synth 8-7129] Port inst[0] in module ImmExt is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1895.371 ; gain = 1135.129
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1896.582 ; gain = 1137.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1895.371 ; gain = 1135.129
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1896.582 ; gain = 1137.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1895.371 ; gain = 1135.129
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1896.582 ; gain = 1137.754
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.882 . Memory (MB): peak = 1895.371 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.853 . Memory (MB): peak = 1896.582 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.srcs/constrs_1/new/MainConstrainsts.xdc]
-WARNING: [Vivado 12-584] No ports matched 'ReadDataOut[0]'. [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.srcs/constrs_1/new/MainConstrainsts.xdc:4]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.srcs/constrs_1/new/MainConstrainsts.xdc:4]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ReadDataOut[1]'. [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.srcs/constrs_1/new/MainConstrainsts.xdc:5]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.srcs/constrs_1/new/MainConstrainsts.xdc:5]
+WARNING: [Vivado 12-507] No nets matched 'CPU/Datapath/PC_PLR/clock_IBUF_BUFG'. [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.srcs/constrs_1/new/MainConstrainsts.xdc:312]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.srcs/constrs_1/new/MainConstrainsts.xdc:312]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.srcs/constrs_1/new/MainConstrainsts.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.srcs/constrs_1/new/MainConstrainsts.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/SoC_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/SoC_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 2047.531 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1990.547 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.256 . Memory (MB): peak = 2047.531 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.242 . Memory (MB): peak = 1990.547 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 2047.531 ; gain = 1287.289
+Finished Constraint Validation : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 1990.547 ; gain = 1231.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 2047.531 ; gain = 1287.289
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 1990.547 ; gain = 1231.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 2047.531 ; gain = 1287.289
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 1990.547 ; gain = 1231.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Preparing Guide Design
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:39 ; elapsed = 00:00:39 . Memory (MB): peak = 2047.531 ; gain = 1287.289
+Finished Doing Graph Differ : Time (s): cpu = 00:00:39 ; elapsed = 00:00:39 . Memory (MB): peak = 1990.547 ; gain = 1231.719
 ---------------------------------------------------------------------------------
-P_Processor_HazardRAM_Inst__GB6RAM__GB3RAM_Inst__GB2RAM__GB4RAM__GB1RAM_Inst__GB0RAM_Inst__GB1RAM_Inst__GB5RAM__GB5RAM__GB0RAM_Inst__GB4RAM__GB6RAM_Inst__GB3RAM_Inst__GB7RAM__GB2---------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 2047.531 ; gain = 1287.289
+RAM__GB3RAM__GB2RAM_Inst__GB3RAM_Inst__GB2RAM_Inst__GB1RAM_Inst__GB0RAM_Inst__GB4RAM__GB1RAM__GB4RAM_Inst__GB7RAM__GB0RAM__GB6RAM__GB5RAM_Inst__GB5SoC__GC0RAM_Inst__GB6---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1990.547 ; gain = 1231.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 2047.531 ; gain = 1287.289
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 1990.547 ; gain = 1231.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Mimic Skeleton from Reference
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Mimic Skeleton from Reference : Time (s): cpu = 00:00:44 ; elapsed = 00:00:44 . Memory (MB): peak = 2047.531 ; gain = 1287.289
+Finished Mimic Skeleton from Reference : Time (s): cpu = 00:00:44 ; elapsed = 00:00:44 . Memory (MB): peak = 1990.547 ; gain = 1231.719
 ---------------------------------------------------------------------------------
 
 
@@ -242,7 +239,7 @@ Report Incremental Modules:
 +-+----------------+------------+----------+----------+
 
 
-   Full Design Size (number of cells) : 495384
+   Full Design Size (number of cells) : 495420
    Resynthesis Design Size (number of cells) : 0
    Resynth % : 0.0000,  Reuse % : 100.0000
 
@@ -263,26 +260,26 @@ Report Incremental Modules:
 
 
 Report RTL Partitions: 
-+------+---------------------------+------------+----------+
-|      |RTL Partition              |Replication |Instances |
-+------+---------------------------+------------+----------+
-|1     |P_Processor_Hazard_#REUSE# |           1|         0|
-|2     |RAM_Inst__GB0_#REUSE#      |           1|         0|
-|3     |RAM_Inst__GB1_#REUSE#      |           1|         0|
-|4     |RAM_Inst__GB2_#REUSE#      |           1|         0|
-|5     |RAM_Inst__GB3_#REUSE#      |           1|         0|
-|6     |RAM_Inst__GB4_#REUSE#      |           1|         0|
-|7     |RAM_Inst__GB5_#REUSE#      |           1|         0|
-|8     |RAM_Inst__GB6_#REUSE#      |           1|         0|
-|9     |RAM_Inst__GB7_#REUSE#      |           1|         0|
-|10    |RAM__GB0_#REUSE#           |           1|         0|
-|11    |RAM__GB1_#REUSE#           |           1|         0|
-|12    |RAM__GB2_#REUSE#           |           1|         0|
-|13    |RAM__GB3_#REUSE#           |           1|         0|
-|14    |RAM__GB4_#REUSE#           |           1|         0|
-|15    |RAM__GB5_#REUSE#           |           1|         0|
-|16    |RAM__GB6_#REUSE#           |           1|         0|
-+------+---------------------------+------------+----------+
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |RAM_Inst__GB0_#REUSE# |           1|         0|
+|2     |RAM_Inst__GB1_#REUSE# |           1|         0|
+|3     |RAM_Inst__GB2_#REUSE# |           1|         0|
+|4     |RAM_Inst__GB3_#REUSE# |           1|         0|
+|5     |RAM_Inst__GB4_#REUSE# |           1|         0|
+|6     |RAM_Inst__GB5_#REUSE# |           1|         0|
+|7     |RAM_Inst__GB6_#REUSE# |           1|         0|
+|8     |RAM_Inst__GB7_#REUSE# |           1|         0|
+|9     |RAM__GB0_#REUSE#      |           1|         0|
+|10    |RAM__GB1_#REUSE#      |           1|         0|
+|11    |RAM__GB2_#REUSE#      |           1|         0|
+|12    |RAM__GB3_#REUSE#      |           1|         0|
+|13    |RAM__GB4_#REUSE#      |           1|         0|
+|14    |RAM__GB5_#REUSE#      |           1|         0|
+|15    |RAM__GB6_#REUSE#      |           1|         0|
+|16    |SoC__GC0_#REUSE#      |           1|         0|
++------+----------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -304,38 +301,38 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7077] IncrSyn: subsequent runs will still be incremental as the reference run was parallel and that data is reused
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:48 . Memory (MB): peak = 2047.531 ; gain = 1287.289
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 1990.547 ; gain = 1231.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Stitch Unchanged AreaOpt Partitions
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Stitch Unchanged AreaOpt Partitions : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 2047.531 ; gain = 1287.289
+Finished Stitch Unchanged AreaOpt Partitions : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1990.547 ; gain = 1231.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 2047.531 ; gain = 1287.289
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1990.547 ; gain = 1231.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 2047.531 ; gain = 1287.289
+Finished Timing Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1990.547 ; gain = 1231.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7077] IncrSyn: subsequent runs will still be incremental as the reference run was parallel and that data is reused
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 2047.531 ; gain = 1287.289
+Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1990.547 ; gain = 1231.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Stitch Unchanged Partitions
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Stitch Unchanged Partitions : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 2047.531 ; gain = 1287.289
+Finished Stitch Unchanged Partitions : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1990.547 ; gain = 1231.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -353,37 +350,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:07 ; elapsed = 00:01:09 . Memory (MB): peak = 2132.430 ; gain = 1372.188
+Finished IO Insertion : Time (s): cpu = 00:01:05 ; elapsed = 00:01:07 . Memory (MB): peak = 2133.551 ; gain = 1374.723
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:07 ; elapsed = 00:01:09 . Memory (MB): peak = 2132.430 ; gain = 1372.188
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:05 ; elapsed = 00:01:07 . Memory (MB): peak = 2133.551 ; gain = 1374.723
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 2132.430 ; gain = 1372.188
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:07 ; elapsed = 00:01:08 . Memory (MB): peak = 2133.551 ; gain = 1374.723
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:13 ; elapsed = 00:01:15 . Memory (MB): peak = 2132.430 ; gain = 1372.188
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:12 ; elapsed = 00:01:13 . Memory (MB): peak = 2133.551 ; gain = 1374.723
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 2132.430 ; gain = 1372.188
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:14 ; elapsed = 00:01:15 . Memory (MB): peak = 2133.551 ; gain = 1374.723
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 2132.430 ; gain = 1372.188
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:14 ; elapsed = 00:01:16 . Memory (MB): peak = 2133.551 ; gain = 1374.723
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -401,42 +398,42 @@ Report Cell Usage:
 +------+-------+------+
 |1     |BUFG   |     1|
 |2     |CARRY4 |    61|
-|3     |LUT1   |    44|
-|4     |LUT2   |   530|
-|5     |LUT3   |   652|
-|6     |LUT4   |  2865|
-|7     |LUT5   |  2049|
-|8     |LUT6   | 14307|
-|9     |MUXF7  |  1161|
-|10    |MUXF8  |   544|
-|11    |FDCE   |   480|
-|12    |FDRE   |  8856|
+|3     |LUT1   |    46|
+|4     |LUT2   |   599|
+|5     |LUT3   |   704|
+|6     |LUT4   |  2959|
+|7     |LUT5   |  1534|
+|8     |LUT6   | 15429|
+|9     |MUXF7  |  1353|
+|10    |MUXF8  |   672|
+|11    |FDCE   |   992|
+|12    |FDRE   |  8871|
 |13    |IBUF   |     2|
 |14    |OBUF   |     2|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 2132.430 ; gain = 1372.188
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:14 ; elapsed = 00:01:16 . Memory (MB): peak = 2133.551 ; gain = 1374.723
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:45 ; elapsed = 00:01:07 . Memory (MB): peak = 2132.430 ; gain = 1220.027
-Synthesis Optimization Complete : Time (s): cpu = 00:01:15 ; elapsed = 00:01:19 . Memory (MB): peak = 2132.430 ; gain = 1372.188
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:45 ; elapsed = 00:01:04 . Memory (MB): peak = 2133.551 ; gain = 1280.758
+Synthesis Optimization Complete : Time (s): cpu = 00:01:14 ; elapsed = 00:01:16 . Memory (MB): peak = 2133.551 ; gain = 1374.723
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.297 . Memory (MB): peak = 2156.926 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1766 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.301 . Memory (MB): peak = 2158.344 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2086 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2169.641 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2172.188 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: c693ed73
+Synth Design complete | Checksum: 7a6d26f9
 INFO: [Common 17-83] Releasing license: Synthesis
-108 Infos, 21 Warnings, 2 Critical Warnings and 0 Errors encountered.
+108 Infos, 20 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:23 ; elapsed = 00:01:29 . Memory (MB): peak = 2169.641 ; gain = 1641.617
+synth_design: Time (s): cpu = 00:01:23 ; elapsed = 00:01:26 . Memory (MB): peak = 2172.188 ; gain = 1643.344
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 2169.641 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 2172.188 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'D:/Work and shit/Github/Files/BigDcore/Vivado projects/RV32ICore/RV32ICore V2/RV32ICore V2.runs/synth_1/SoC.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file SoC_utilization_synth.rpt -pb SoC_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue May 26 23:30:50 2026...
+INFO: [Common 17-206] Exiting Vivado at Sat May 30 15:51:40 2026...

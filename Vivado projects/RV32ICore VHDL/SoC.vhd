@@ -1,5 +1,6 @@
 Library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 entity SoC is
   port (
     clock, reset_IN: in std_logic;
@@ -84,12 +85,12 @@ begin
     );
     process(clk) begin
         if (rising_edge(clk)) then
-            LEDTest_Temp<= WriteData(1 downto 0);
-        else
-            LEDTest_Temp<= LEDTest_Temp;
+            if (MemWrite='1' and DataAdr = std_logic_vector(to_unsigned(100, 32))) then
+                LEDTest_Temp<= WriteData(1 downto 0);
+            end if;
         end if;
     end process;
     clk<= clock;
     reset<= reset_IN;
-    LEDTest<= LEDTest_Temp;
+    LEDTest<= not LEDTest_Temp;
 end arch ; --Soc

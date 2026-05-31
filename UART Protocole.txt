@@ -1,0 +1,10 @@
+UART Protocole
+lb x1 , x2000000
+->when location 2000000 is active then The byte is latched
+->i_TX_DV is driven High
+->the inst is followed by a conditional delay (Condition = o_TX goes High)
+->Repeat for Next byte 
+
+Notes:
+1. The Register mapping (20000000-2000000FF) or some.
+2. Proper Code must be aligned in the bare metal OS.
